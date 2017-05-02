@@ -1,0 +1,9 @@
+<li>{{ include.collection }}
+  {% if site[include.collection].size > 0 %}
+  <ul>
+    {% for item in site[include.collection] %}
+      <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>

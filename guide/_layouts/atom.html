@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <script src="/assets/javascripts/bundle.js"></script>
+    <link rel="stylesheet" href="/assets/css/guide.css"/>
+  </head>
+  <body>
+    {% include nav.html %}
+    <h1>Atom: {{ page.title }}</h1>
+    <div data-react-component="{{ page.component }}" data-react-props="{}"></div>
+    {{ content }}
+  </body>
+</html>
