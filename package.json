@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack --config guide/webpack.config.js && cd guide && bundle exec jekyll build",
     "serve-watch": "concurrently --kill-others \"webpack --config guide/webpack.config.js --watch\" \"cd guide && bundle exec jekyll serve --watch\""
-},
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",

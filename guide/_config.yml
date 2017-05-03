@@ -32,17 +32,61 @@ exclude:
 collections:
   visuals:
     output: true
+    page: visuals.md
   atoms:
     output: true
+    page: atoms.md
   molecules:
     output: true
+    page: molecules.md
   organisms:
     output: true
+    page: organisms.md
   templates:
     output: true
+    page: templates.md
+  sample-pages:
+    output: true
+    page: pages.md
 defaults:
-  - scope:
+  -
+    scope:
+      path: ""
+    values:
+      layout: collection
+  -
+    scope:
+      path: ""
+      type: visuals
+    values:
+      layout: component
+  -
+    scope:
       path: ""
       type: atoms
     values:
-      layout: atom
+      layout: component
+  -
+    scope:
+      path: ""
+      type: molecules
+    values:
+      layout: component
+  -
+    scope:
+      path: ""
+      type: organisms
+    values:
+      layout: component
+  -
+    scope:
+      path: ""
+      type: templates
+    values:
+      layout: component
+  -
+    scope:
+      path: ""
+      type: sample-pages
+    values:
+      layout: component
