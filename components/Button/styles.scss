@@ -1,0 +1,96 @@
+@import '~ca-ui/styles/border';
+@import '~ca-ui/styles/color';
+@import '~ca-ui/styles/type';
+
+%ca-button {
+  display: inline-block;
+  background: add-tint($ca-palette-ink, 80%);
+  color: rgba($ca-palette-ink, 0.3);
+  padding: 14px 21px;
+  height: 47px;
+  font-weight: $ca-weight-semibold;
+  font-size: 14px;
+  font-family: $ca-default-font-family;
+  border-radius: 3px;
+  transition: none;
+  box-shadow: 0 1px 3px $ca-box-shadow;
+  border: 0;
+  outline: none;
+
+  svg {
+    position: absolute;
+    top: 7px;
+    width: 34px;
+    height: 34px;
+    color: inherit;
+    line-height: 23px;
+  }
+
+  // We can't just used :enabled here, because we want to be able to apply these
+  // styles to non-form elements, such as hyperlinks. :not(:disabled) is
+  // equivalent on form elements, but also allows these styles to be applied to
+  // elements that have no enabled/disabled states.
+  &:not(:disabled) {
+    background: $ca-palette-coral;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background: add-shade($ca-palette-coral, 5%);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+// Variations
+
+%ca-button--with-icon {
+  @extend %ca-button;
+  padding-left: 50px;
+  position: relative;
+
+  svg {
+    left: 14px;
+  }
+}
+
+%ca-button--dropdown {
+  // Put an =icon('icon-chevron-down') in the button for this one
+  @extend %ca-button;
+  padding-right: 63px;
+  position: relative;
+  width: 100%;
+  text-align: left;
+
+  svg {
+    right: 10px;
+  }
+}
+
+// Modifiers
+
+%ca-button---positive {
+  // We can't just used :enabled here, because we want to be able to apply these
+  // styles to non-form elements, such as hyperlinks. :not(:disabled) is
+  // equivalent on form elements, but also allows these styles to be applied to
+  // elements that have no enabled/disabled states.
+  &:not(:disabled) {
+    background: add-tint($ca-palette-seedling, 20%);
+
+    &:hover,
+    &:focus {
+      background: $ca-palette-seedling;
+    }
+
+    &:active {
+      background: add-shade($ca-palette-seedling, 5%);
+    }
+  }
+}

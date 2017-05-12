@@ -1,4 +1,5 @@
-guide/assets/javascripts/bundle.js
+guide/assets/bundle.js
+guide/assets/bundle.css
 guide/dist
 node_modules
 .jekyll-metadata
