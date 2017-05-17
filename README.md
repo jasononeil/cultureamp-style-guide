@@ -12,16 +12,16 @@ Alternatively, build it yourself:
 
 ### Build Instructions
 
-1. Ensure you have Ruby<sup id="fn1">[1](#ruby)</sup>, [Bundler][bundler], NodeJS<sup id="fn2">[2](#nodejs)</sup> and [Yarn][yarn] installed.
-2. Install Ruby dependencies in the `guide` subdirectory:
+1.  Ensure you have Ruby<sup id="fn1">[1](#ruby)</sup>, [Bundler][bundler], NodeJS<sup id="fn2">[2](#nodejs)</sup> and [Yarn][yarn] installed.
+2.  Install Ruby dependencies in the `guide` subdirectory:
 ```
 cd guide && bundle install
 ```
-3. Back in the project root, install JavaScript dependencies:
+3.  Back in the project root, install JavaScript dependencies:
 ```
 cd .. && yarn
 ```
-4. Build the guide:
+4.  Build the guide:
 ```
 yarn build
 ```
@@ -31,7 +31,7 @@ and find the built site in `guide/dist`.
 ```
 yarn serve-watch
 ```
-and access the site on http://localhost:4000/.
+and access the site on <http://localhost:4000/>.
 
 ---
 
