@@ -1,47 +1,58 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const combineLoaders = require('webpack-combine-loaders');
+const decorateWithStyleGuide = require('../webpack');
 
-module.exports = {
-  entry: path.resolve(__dirname, 'index.js'),
-  output: {
-    path: path.resolve(__dirname, 'assets/javascripts/'),
-    filename: 'bundle.js',
-  },
-  resolve: {
-    alias: {
-      'ca-ui': path.resolve(__dirname, '..'),
+const extractTextPlugin = new ExtractTextPlugin('[name]-[hash].bundle.css', {
+  disable: process.env.NODE_ENV === 'development',
+});
+
+module.exports = decorateWithStyleGuide(
+  {
+    entry: path.resolve(__dirname, 'index.js'),
+    output: {
+      path: path.resolve(__dirname, 'assets/javascripts/'),
+      filename: 'bundle.js',
     },
-    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
           loader: 'babel-loader',
-          options: {
+          query: {
             presets: [['es2015', { loose: true }], 'react', 'stage-2'],
           },
         },
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            { loader: 'css-loader?modules=true' },
-            { loader: 'sass-loader' },
-          ],
-          fallback: 'style-loader',
-        }),
-      },
-    ],
+        {
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          loader: extractTextPlugin.extract(
+            'style-loader',
+            combineLoaders([
+              {
+                loader: 'css-loader',
+                query: {
+                  modules: true,
+                  importLoaders: 2,
+                  localIdentName: '[name]__[local]--[hash:base64:5]',
+                },
+              },
+              {
+                loader: 'postcss-loader',
+              },
+              {
+                loader: 'sass-loader',
+              },
+            ])
+          ),
+        },
+      ],
+    },
+    plugins: [extractTextPlugin],
   },
-  plugins: [
-    new ExtractTextPlugin({
-      filename: '[name].[contenthash].css',
-      disable: process.env.NODE_ENV === 'development',
-    }),
-  ],
-};
+  { extractTextPlugin }
+);
