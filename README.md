@@ -1,4 +1,4 @@
-# Culture Amp’s User Interface Component Library (ca-ui)
+# Culture Amp’s Component Library and Living Style Guide
 
 ## Using components in your project
 
@@ -15,7 +15,7 @@ TODO. Let us know if you need this!
 Decorate your Webpack config:
 
 ```js
-const decorateWithStyleGuide = require('ca-ui/webpack');
+const decorateWithStyleGuide = require('cultureamp-style-guide/webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractCss = new ExtractTextPlugin('[name]-[hash].bundle.css');
