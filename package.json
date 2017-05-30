@@ -7,9 +7,19 @@
   "author": "Kevin Yank <kevin@cultureamp.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "webpack --config guide/webpack.config.js && cd guide && bundle exec jekyll build",
+    "build": "webpack --config guide/webpack.config.js && cd guide && JEKYLL_ENV=production bundle exec jekyll build",
     "serve-watch": "concurrently --kill-others \"NODE_ENV=development webpack-dev-server --config guide/webpack.config.js\" \"cd guide && bundle exec jekyll serve --watch\""
   },
+  "browserslist": [
+    "> 1%",
+    "Last 2 versions",
+    "Chrome >= 42",
+    "IE >= 10",
+    "Edge >= 12",
+    "Firefox >= 38",
+    "Safari >= 5",
+    "Android >= 4"
+  ],
   "devDependencies": {
     "babel-loader": "^6.4.1",
     "concurrently": "^3.4.0",
@@ -17,12 +27,14 @@
     "extract-text-webpack-plugin": "<2",
     "node-sass": "^4.5.2",
     "postcss-loader": "<2",
+    "postcss-normalize": "^3.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.17.0",
     "webpack": "<2",
-    "webpack-dev-server": "<2"
+    "webpack-dev-server": "<2",
+    "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
     "babel-core": "^6.24.1",

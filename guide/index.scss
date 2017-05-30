@@ -1,0 +1,51 @@
+:global {
+  body {
+    margin: 0;
+  }
+
+  #guide-nav {
+    display: flex;
+    $background: rgba(0,0,0,0.8);
+    background: $background;
+    color: #fff;
+    justify-content: space-between;
+
+    li {
+      display: block;
+    }
+
+    a[href] {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    > ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      > li {
+        position: relative;
+        text-transform: capitalize;
+
+        &:not(:last-child) {
+          margin-right: 1em;
+        }
+
+        &:hover > ul {
+          display: block;
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        background: $background;
+        margin: 0;
+        padding: 0.4em;
+        top: 100%;
+        left: -0.4em;
+      }
+    }
+  }
+}

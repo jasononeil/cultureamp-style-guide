@@ -1,18 +1,19 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const combineLoaders = require('webpack-combine-loaders');
+const autoprefixer = require('autoprefixer');
+const normalize = require('postcss-normalize');
 const decorateWithStyleGuide = require('../webpack');
-
-const extractTextPlugin = new ExtractTextPlugin('[name]-[hash].bundle.css', {
-  disable: process.env.NODE_ENV === 'development',
-});
 
 module.exports = decorateWithStyleGuide(
   {
     entry: path.resolve(__dirname, 'index.js'),
     output: {
-      path: path.resolve(__dirname, 'assets/javascripts/'),
-      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'assets/'),
+      filename: isDevelopment()
+        ? '[name].bundle.js'
+        : '[name]-[hash].bundle.js',
     },
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -30,7 +31,7 @@ module.exports = decorateWithStyleGuide(
         {
           test: /\.scss$/,
           exclude: /node_modules/,
-          loader: extractTextPlugin.extract(
+          loader: extractTextPlugin().extract(
             'style-loader',
             combineLoaders([
               {
@@ -52,7 +53,20 @@ module.exports = decorateWithStyleGuide(
         },
       ],
     },
-    plugins: [extractTextPlugin],
+    plugins: [extractTextPlugin(), new ManifestPlugin()],
+    postcss: () => [autoprefixer, normalize],
   },
-  { extractTextPlugin }
+  { extractTextPlugin: extractTextPlugin() }
 );
+
+function extractTextPlugin() {
+  return (arguments.callee.memoizedValue =
+    arguments.callee.memoizedValue ||
+    new ExtractTextPlugin('[name]-[hash].bundle.css', {
+      disable: isDevelopment(),
+    }));
+}
+
+function isDevelopment() {
+  return process.env.NODE_ENV === 'development';
+}

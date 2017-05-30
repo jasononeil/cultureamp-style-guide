@@ -31,9 +31,7 @@ function excludeStyleGuideFromLoader(loaderConfig) {
 }
 
 function addPostCssPlugins(config, options) {
-  const styleGuidePlugins = [
-    require('autoprefixer')(require('./autoprefixer.config')),
-  ];
+  const styleGuidePlugins = [require('autoprefixer')()];
 
   const postcssPlugins = {
     [POSTCSS_STYLE_GUIDE_PACK]: styleGuidePlugins,
