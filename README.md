@@ -32,7 +32,7 @@ module.exports = decorateWithStyleGuide(config, {
 
 ## Viewing the Living Style Guide
 
-Visit the living style guide at TODO.
+Visit the living style guide at <https://cultureamp.github.io/cultureamp-style-guide>.
 
 Alternatively, build it yourself:
 
@@ -55,9 +55,14 @@ and find the built site in `guide/dist`.
 
   Alternatively, run the development server:
 ```
-yarn serve-watch
+yarn dev
 ```
 and access the site on <http://localhost:4000/>.
+
+  To deploy updates to GitHub Pages:
+```
+yarn gh-pages
+```
 
 ---
 

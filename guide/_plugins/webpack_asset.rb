@@ -14,7 +14,7 @@ module Jekyll
       if dev?(context)
         "http://localhost:8080/#{asset_filename}"
       else
-        "#{context.environments[0].site['baseurl']}assets/#{asset_filename}"
+        "#{context.environments[0].site['baseurl']}/assets/#{asset_filename}"
       end
     end
 

@@ -7,8 +7,18 @@
   "author": "Kevin Yank <kevin@cultureamp.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "webpack --config guide/webpack.config.js && cd guide && JEKYLL_ENV=production bundle exec jekyll build",
-    "serve-watch": "concurrently --kill-others \"NODE_ENV=development webpack-dev-server --config guide/webpack.config.js\" \"cd guide && bundle exec jekyll serve --watch\""
+    "build": "npm run build:assets && npm run build:site",
+    "build:assets": "webpack --config guide/webpack.config.js",
+    "build:site": "cd guide && JEKYLL_ENV=production bundle exec jekyll build --baseurl \"$npm_package_config_baseurl\"",
+    "clean": "rm -rf guide/assets/* guide/dist/*",
+    "dev": "concurrently --kill-others \"npm run dev-assets\" \"npm run dev-site\"",
+    "dev-assets": "NODE_ENV=development webpack-dev-server --config guide/webpack.config.js",
+    "dev-site": "cd guide && bundle exec jekyll serve --watch",
+    "gh-pages": "npm run clean && npm run gh-pages:build && npm run gh-pages:deploy",
+    "gh-pages:build": "npm run gh-pages:build:assets && npm run gh-pages:build:site",
+    "gh-pages:build:assets": "npm run build:assets",
+    "gh-pages:build:site": "npm run build:site --cultureamp-style-guide:baseurl=\"/cultureamp-style-guide\"",
+    "gh-pages:deploy": "scripts/gh-pages-deploy.js"
   },
   "browserslist": [
     "> 1%",
@@ -25,6 +35,7 @@
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "<2",
+    "gh-pages": "^1.0.0",
     "node-sass": "^4.5.2",
     "postcss-loader": "<2",
     "postcss-normalize": "^3.0.0",
