@@ -4,7 +4,7 @@
   <body>
     {% include nav.html %}
     <h1>{{ page.title }}</h1>
-    <div data-react-component="{{ page.component }}" data-react-props="{}"></div>
+    {% include component_demo.html component=page.component presets=page.presets %}
     {{ content }}
   </body>
 </html>
