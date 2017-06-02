@@ -1,4 +1,4 @@
-# Culture Amp’s Component Library and Living Style Guide
+# Kaizen<br><sub>*Culture Amp’s Component Library and Living Style Guide*</sub>
 
 ## Viewing the Living Style Guide
 
