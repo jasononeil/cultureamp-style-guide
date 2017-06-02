@@ -30,12 +30,11 @@ function mountComponents(onlyTypeName = null) {
 }
 
 function mountComponent(ComponentType, node) {
-  const props = node.dataset.reactProps;
-
+  const props = JSON.parse(node.dataset.reactProps);
   ReactDOM.render(<ComponentType {...props} />, node);
 }
 
-function getRegisteredComponentType(typeName) {
+export function getRegisteredComponentType(typeName) {
   if (!registeredComponentTypes.has(typeName)) {
     throw new Error(`component class "${typeName}" not registered`);
   }

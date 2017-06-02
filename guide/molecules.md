@@ -1,6 +1,7 @@
 ---
 title: Molecules
 collection: molecules
+permalink: molecules/index.html # https://github.com/jekyll/jekyll/issues/5023
 ---
 
 > “relatively simple groups of UI elements functioning together as a unit”
