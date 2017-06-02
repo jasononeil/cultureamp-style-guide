@@ -11,14 +11,14 @@
     "build:assets": "webpack --config guide/webpack.config.js",
     "build:site": "cd guide && JEKYLL_ENV=production bundle exec jekyll build --baseurl \"$npm_package_config_baseurl\"",
     "clean": "rm -rf guide/assets/* guide/dist/*",
-    "dev": "concurrently --kill-others \"npm run dev-assets\" \"npm run dev-site\"",
-    "dev-assets": "NODE_ENV=development webpack-dev-server --config guide/webpack.config.js",
-    "dev-site": "cd guide && bundle exec jekyll serve --watch",
     "gh-pages": "npm run clean && npm run gh-pages:build && npm run gh-pages:deploy",
     "gh-pages:build": "npm run gh-pages:build:assets && npm run gh-pages:build:site",
     "gh-pages:build:assets": "npm run build:assets",
     "gh-pages:build:site": "npm run build:site --cultureamp-style-guide:baseurl=\"/cultureamp-style-guide\"",
-    "gh-pages:deploy": "scripts/gh-pages-deploy.js"
+    "gh-pages:deploy": "scripts/gh-pages-deploy.js",
+    "start": "concurrently --kill-others \"npm run start-assets\" \"npm run start-site\"",
+    "start-assets": "NODE_ENV=development webpack-dev-server --config guide/webpack.config.js",
+    "start-site": "cd guide && bundle exec jekyll serve --watch"
   },
   "browserslist": [
     "> 1%",

@@ -1,5 +1,39 @@
 # Culture Amp’s Component Library and Living Style Guide
 
+## Viewing the Living Style Guide
+
+Visit the living style guide at <https://cultureamp.github.io/cultureamp-style-guide>.
+
+Alternatively, build it yourself:
+
+### Build Instructions
+
+1.  Ensure you have Ruby<sup id="fn1">[1](#ruby)</sup>, [Bundler][bundler], NodeJS<sup id="fn2">[2](#nodejs)</sup> and [Yarn][yarn] installed.
+2.  Install Ruby dependencies in the `guide` subdirectory:
+```
+cd guide && bundle install
+```
+3.  Back in the project root, install JavaScript dependencies:
+```
+cd .. && yarn
+```
+4.  Run the guide locally:
+```
+yarn start
+```
+and access the site on <http://localhost:4000/>.
+
+  To build a production-ready version of the site’s static files:
+```
+yarn build
+```
+and find the built site in `guide/dist`.
+
+  To build and deploy to GitHub Pages:
+```
+yarn gh-pages
+```
+
 ## Using components in your project
 
 Because our components are styled with [CSS Modules][css-modules], consuming them in your project isn’t as simple as you might expect. If you simply imported pre-compiled components from an NPM package, you’d either get the styles for those components embedded in the compiled JavaScript, which is not how we prefer to deliver our stylesheets, or you would have to import the compiled components and their compiled styles separately.
@@ -28,40 +62,6 @@ module.exports = decorateWithStyleGuide(config, {
   // Pass your ExtractTextPlugin instance to the decorator
   extractTextPlugin: extractCss
 });
-```
-
-## Viewing the Living Style Guide
-
-Visit the living style guide at <https://cultureamp.github.io/cultureamp-style-guide>.
-
-Alternatively, build it yourself:
-
-### Build Instructions
-
-1.  Ensure you have Ruby<sup id="fn1">[1](#ruby)</sup>, [Bundler][bundler], NodeJS<sup id="fn2">[2](#nodejs)</sup> and [Yarn][yarn] installed.
-2.  Install Ruby dependencies in the `guide` subdirectory:
-```
-cd guide && bundle install
-```
-3.  Back in the project root, install JavaScript dependencies:
-```
-cd .. && yarn
-```
-4.  Build the guide:
-```
-yarn build
-```
-and find the built site in `guide/dist`.
-
-  Alternatively, run the development server:
-```
-yarn dev
-```
-and access the site on <http://localhost:4000/>.
-
-  To deploy updates to GitHub Pages:
-```
-yarn gh-pages
 ```
 
 ---
