@@ -4,10 +4,12 @@ component: Button
 presets:
   - name: Basic
     props:
-      label: Apply
+      children: Apply
+    htmlProps:
+      example: <em>Apply&trade;</em>
   - name: Disabled
     props:
-      label: Apply
+      children: Apply
       disabled: true
 ---
 
