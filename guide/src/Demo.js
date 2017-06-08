@@ -3,20 +3,36 @@ import { getRegisteredComponentType } from './react-mount';
 import HtmlString from './HtmlString';
 import styles from './Demo.scss';
 
+const MIN_CANVAS_WIDTH = 240;
+
 export default class Demo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { selectedPreset: 0 };
-  }
+  state = {
+    selectedPreset: 0,
+    canvasWidth: null,
+  };
 
   render() {
     const Component = getRegisteredComponentType(this.props.component);
 
     return (
       <div className={styles.root}>
-        {this.renderSelectList()}
-        <div className={styles.canvas}>
-          <Component {...this.selectedPresetProps()} />
+        {this.renderPresetList()}
+        <div
+          className={styles.frame}
+          ref={div => {
+            this.frame = div;
+          }}
+        >
+          <div
+            className={styles.canvas}
+            style={{ width: this.state.canvasWidth }}
+          >
+            <Component {...this.selectedPresetProps()} />
+          </div>
+        </div>
+        <div className={styles.controls}>
+          {this.renderSizePresets()}
+          {this.renderCanvasSize()}
         </div>
       </div>
     );
@@ -33,7 +49,7 @@ export default class Demo extends React.Component {
     return props;
   }
 
-  renderSelectList() {
+  renderPresetList() {
     const { presets } = this.props;
     const { selectedPreset } = this.state;
 
@@ -54,4 +70,65 @@ export default class Demo extends React.Component {
     const selectedPreset = parseInt(e.target.value);
     this.setState({ ...this.state, selectedPreset });
   };
+
+  renderSizePresets() {
+    return (
+      <div className={styles.sizePresets}>
+        <button onClick={this.onClickResizeTo('full')}>Full</button>
+        <button onClick={this.onClickResizeTo('random')}>Random</button>
+        <button onClick={this.onClickResizeTo('large')}>Large</button>
+        <button onClick={this.onClickResizeTo('medium')}>Medium</button>
+        <button onClick={this.onClickResizeTo('small')}>Small</button>
+      </div>
+    );
+  }
+
+  onClickResizeTo(size) {
+    return e => this.resizeToSize(size);
+  }
+
+  resizeToSize(size) {
+    switch (Symbol.for(size)) {
+      case Symbol.for('full'):
+        this.resizeTo();
+        break;
+      case Symbol.for('random'):
+        this.resizeTo(randomBetween(MIN_CANVAS_WIDTH, this.maxCanvasWidth()));
+        break;
+      case Symbol.for('large'):
+        this.resizeTo(randomBetween(800, 1200));
+        break;
+      case Symbol.for('medium'):
+        this.resizeTo(randomBetween(500, 800));
+        break;
+      case Symbol.for('small'):
+        this.resizeTo(randomBetween(MIN_CANVAS_WIDTH, 500));
+        break;
+    }
+  }
+
+  resizeTo(canvasWidth = null) {
+    if (canvasWidth) {
+      canvasWidth = Math.min(canvasWidth, this.maxCanvasWidth());
+    }
+
+    if (this.state.canvasWidth === null && canvasWidth) {
+      this.setState({ ...this.state, canvasWidth: this.maxCanvasWidth() });
+      setTimeout(() => {
+        this.setState({ ...this.state, canvasWidth });
+      });
+    } else {
+      this.setState({ ...this.state, canvasWidth });
+    }
+  }
+
+  maxCanvasWidth() {
+    return this.frame.clientWidth;
+  }
+
+  renderCanvasSize() {}
+}
+
+function randomBetween(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 }

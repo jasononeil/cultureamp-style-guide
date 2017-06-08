@@ -5,12 +5,18 @@
   position: relative;
 }
 
+.frame {
+  background: $ca-palette-ink;
+}
+
 .canvas {
-  @include checkerboard(12px, add-tint($ca-palette-ink, 95%));
+  @include checkerboard(12px, add-tint($ca-palette-ink, 95%), #fff);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   min-height: 100px;
+  transition: width 500ms;
 }
 
 .selectPreset {
