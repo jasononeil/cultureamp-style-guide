@@ -1,3 +1,4 @@
 {% for item in site[include.collection] %}
-  {% include component_demo.html component=item.component presets=item.presets %}
+  <h2>{{ item.title }}</h2>
+  {% include component_demo.html component=item %}
 {% endfor %}

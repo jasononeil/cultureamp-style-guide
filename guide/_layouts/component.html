@@ -4,7 +4,9 @@
   <body>
     {% include nav.html %}
     <h1>{{ page.title }}</h1>
-    {% include component_demo.html component=page.component presets=page.presets %}
-    {{ content }}
+    <div class="componentDescription">
+      {{ content }}
+    </div>
+    {% include component_demo.html component=page %}
   </body>
 </html>

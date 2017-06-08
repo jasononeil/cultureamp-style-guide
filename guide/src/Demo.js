@@ -15,7 +15,9 @@ export default class Demo extends React.Component {
     return (
       <div className={styles.root}>
         {this.renderSelectList()}
-        <Component {...this.selectedPresetProps()} />
+        <div className={styles.canvas}>
+          <Component {...this.selectedPresetProps()} />
+        </div>
       </div>
     );
   }
@@ -36,13 +38,15 @@ export default class Demo extends React.Component {
     const { selectedPreset } = this.state;
 
     return (
-      <select onChange={this.onSelectPreset} value={selectedPreset}>
-        {presets.map((preset, index) =>
-          <option key={index} value={index}>
-            {preset.name}
-          </option>
-        )}
-      </select>
+      <div className={styles.selectPreset}>
+        <select onChange={this.onSelectPreset} value={selectedPreset}>
+          {presets.map((preset, index) =>
+            <option key={index} value={index}>
+              {preset.name}
+            </option>
+          )}
+        </select>
+      </div>
     );
   }
 

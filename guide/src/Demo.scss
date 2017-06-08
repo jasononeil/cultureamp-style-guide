@@ -2,5 +2,20 @@
 @import "checkerboard";
 
 .root {
+  position: relative;
+}
+
+.canvas {
   @include checkerboard(12px, add-tint($ca-palette-ink, 95%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+.selectPreset {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 1em);
+  max-width: 20%;
 }
