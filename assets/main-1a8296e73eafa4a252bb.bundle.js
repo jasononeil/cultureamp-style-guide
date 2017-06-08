@@ -4423,34 +4423,60 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var MIN_CANVAS_WIDTH = 240;
+
 	var Demo = function (_React$Component) {
 	  _inherits(Demo, _React$Component);
 
-	  function Demo(props) {
+	  function Demo() {
+	    var _temp, _this, _ret;
+
 	    _classCallCheck(this, Demo);
 
-	    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
 
-	    _this.onSelectPreset = function (e) {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
+	      selectedPreset: 0,
+	      canvasWidth: null
+	    }, _this.onSelectPreset = function (e) {
 	      var selectedPreset = parseInt(e.target.value);
 	      _this.setState(_extends({}, _this.state, { selectedPreset: selectedPreset }));
-	    };
-
-	    _this.state = { selectedPreset: 0 };
-	    return _this;
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  Demo.prototype.render = function render() {
+	    var _this2 = this;
+
 	    var Component = (0, _reactMount.getRegisteredComponentType)(this.props.component);
 
 	    return _react2.default.createElement(
 	      'div',
 	      { className: _Demo2.default.root },
-	      this.renderSelectList(),
+	      this.renderPresetList(),
 	      _react2.default.createElement(
 	        'div',
-	        { className: _Demo2.default.canvas },
-	        _react2.default.createElement(Component, this.selectedPresetProps())
+	        {
+	          className: _Demo2.default.frame,
+	          ref: function ref(div) {
+	            _this2.frame = div;
+	          }
+	        },
+	        _react2.default.createElement(
+	          'div',
+	          {
+	            className: _Demo2.default.canvas,
+	            style: { width: this.state.canvasWidth }
+	          },
+	          _react2.default.createElement(Component, this.selectedPresetProps())
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: _Demo2.default.controls },
+	        this.renderSizePresets(),
+	        this.renderCanvasSize()
 	      )
 	    );
 	  };
@@ -4469,7 +4495,7 @@
 	    return props;
 	  };
 
-	  Demo.prototype.renderSelectList = function renderSelectList() {
+	  Demo.prototype.renderPresetList = function renderPresetList() {
 	    var presets = this.props.presets;
 	    var selectedPreset = this.state.selectedPreset;
 
@@ -4491,10 +4517,100 @@
 	    );
 	  };
 
+	  Demo.prototype.renderSizePresets = function renderSizePresets() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: _Demo2.default.sizePresets },
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: this.onClickResizeTo('full') },
+	        'Full'
+	      ),
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: this.onClickResizeTo('random') },
+	        'Random'
+	      ),
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: this.onClickResizeTo('large') },
+	        'Large'
+	      ),
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: this.onClickResizeTo('medium') },
+	        'Medium'
+	      ),
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: this.onClickResizeTo('small') },
+	        'Small'
+	      )
+	    );
+	  };
+
+	  Demo.prototype.onClickResizeTo = function onClickResizeTo(size) {
+	    var _this3 = this;
+
+	    return function (e) {
+	      return _this3.resizeToSize(size);
+	    };
+	  };
+
+	  Demo.prototype.resizeToSize = function resizeToSize(size) {
+	    switch (Symbol.for(size)) {
+	      case Symbol.for('full'):
+	        this.resizeTo();
+	        break;
+	      case Symbol.for('random'):
+	        this.resizeTo(randomBetween(MIN_CANVAS_WIDTH, this.maxCanvasWidth()));
+	        break;
+	      case Symbol.for('large'):
+	        this.resizeTo(randomBetween(800, 1200));
+	        break;
+	      case Symbol.for('medium'):
+	        this.resizeTo(randomBetween(500, 800));
+	        break;
+	      case Symbol.for('small'):
+	        this.resizeTo(randomBetween(MIN_CANVAS_WIDTH, 500));
+	        break;
+	    }
+	  };
+
+	  Demo.prototype.resizeTo = function resizeTo() {
+	    var _this4 = this;
+
+	    var canvasWidth = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+	    if (canvasWidth) {
+	      canvasWidth = Math.min(canvasWidth, this.maxCanvasWidth());
+	    }
+
+	    if (this.state.canvasWidth === null && canvasWidth) {
+	      this.setState(_extends({}, this.state, { canvasWidth: this.maxCanvasWidth() }));
+	      setTimeout(function () {
+	        _this4.setState(_extends({}, _this4.state, { canvasWidth: canvasWidth }));
+	      });
+	    } else {
+	      this.setState(_extends({}, this.state, { canvasWidth: canvasWidth }));
+	    }
+	  };
+
+	  Demo.prototype.maxCanvasWidth = function maxCanvasWidth() {
+	    return this.frame.clientWidth;
+	  };
+
+	  Demo.prototype.renderCanvasSize = function renderCanvasSize() {};
+
 	  return Demo;
 	}(_react2.default.Component);
 
 	exports.default = Demo;
+
+
+	function randomBetween(min, max) {
+	  return Math.floor(Math.random() * (max - min) + min);
+	}
 
 /***/ }),
 /* 43 */
@@ -22030,7 +22146,7 @@
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"root":"Demo__root--2X_aE","canvas":"Demo__canvas--22k_r","selectPreset":"Demo__selectPreset--1_4kS"};
+	module.exports = {"root":"Demo__root--2X_aE","frame":"Demo__frame--SESv6","canvas":"Demo__canvas--22k_r","selectPreset":"Demo__selectPreset--1_4kS"};
 
 /***/ }),
 /* 192 */,
