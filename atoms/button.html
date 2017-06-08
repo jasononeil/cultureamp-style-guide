@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>Kaizen :: Button</title>
   
-  <link rel="stylesheet" href="/cultureamp-style-guide/assets/main-28f5c5df313fee22ee19.bundle.css">
-  <script src="/cultureamp-style-guide/assets/main-28f5c5df313fee22ee19.bundle.js"></script>
+  <link rel="stylesheet" href="/cultureamp-style-guide/assets/main-eea96795a73b3c6f9bfa.bundle.css">
+  <script src="/cultureamp-style-guide/assets/main-eea96795a73b3c6f9bfa.bundle.js"></script>
 </head>
 
   <body>
@@ -65,9 +65,15 @@
 </nav>
 
     <h1>Button</h1>
-    <div data-react-component="Demo" data-react-props='{"component":"Button", "presets":[{"name":"Basic","props":{"label":"Apply"}},{"name":"Disabled","props":{"label":"Apply","disabled":true}}]}'></div>
+    <div class="componentDescription">
+      <p>Buttons make common actions immediately visible and easy to perform with one click or tap. They can be used for any type of action, including navigation.</p>
 
-    <p>A button, for the clickings!</p>
+    </div>
+    <div data-react-component="Demo"
+  data-react-props='{
+    "component": "Button",
+    "presets": [{"name":"Basic","props":{"children":"Apply"},"htmlProps":{"example":"<em>Apply&trade;</em>"}},{"name":"Disabled","props":{"children":"Apply","disabled":true}}]
+  }'></div>
 
   </body>
 </html>

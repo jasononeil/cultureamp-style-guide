@@ -58,7 +58,7 @@
 
 	var _reactMount2 = _interopRequireDefault(_reactMount);
 
-	__webpack_require__(190);
+	__webpack_require__(193);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -87,13 +87,13 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function Button(_ref) {
-	  var label = _ref.label,
+	  var children = _ref.children,
 	      disabled = _ref.disabled;
 
 	  return _react2.default.createElement(
 	    'button',
 	    { disabled: disabled, className: _Button2.default.button },
-	    label
+	    children
 	  );
 	}
 	Button.displayName = 'Button';
@@ -4407,6 +4407,14 @@
 
 	var _reactMount = __webpack_require__(43);
 
+	var _HtmlString = __webpack_require__(190);
+
+	var _HtmlString2 = _interopRequireDefault(_HtmlString);
+
+	var _Demo = __webpack_require__(191);
+
+	var _Demo2 = _interopRequireDefault(_Demo);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4432,9 +4440,33 @@
 	    return _this;
 	  }
 
+	  Demo.prototype.render = function render() {
+	    var Component = (0, _reactMount.getRegisteredComponentType)(this.props.component);
+
+	    return _react2.default.createElement(
+	      'div',
+	      { className: _Demo2.default.root },
+	      this.renderSelectList(),
+	      _react2.default.createElement(
+	        'div',
+	        { className: _Demo2.default.canvas },
+	        _react2.default.createElement(Component, this.selectedPresetProps())
+	      )
+	    );
+	  };
+
 	  Demo.prototype.selectedPresetProps = function selectedPresetProps() {
-	    var preset = this.props.presets[this.state.selectedPreset];
-	    return preset.props;
+	    var _props$presets$state$ = this.props.presets[this.state.selectedPreset],
+	        props = _props$presets$state$.props,
+	        htmlProps = _props$presets$state$.htmlProps;
+
+
+	    Object.keys(htmlProps || {}).forEach(function (key) {
+	      var html = htmlProps[key];
+	      props[key] = _react2.default.createElement(_HtmlString2.default, { html: html });
+	    });
+
+	    return props;
 	  };
 
 	  Demo.prototype.renderSelectList = function renderSelectList() {
@@ -4443,26 +4475,19 @@
 
 
 	    return _react2.default.createElement(
-	      'select',
-	      { onChange: this.onSelectPreset, value: selectedPreset },
-	      presets.map(function (preset, index) {
-	        return _react2.default.createElement(
-	          'option',
-	          { key: index, value: index },
-	          preset.name
-	        );
-	      })
-	    );
-	  };
-
-	  Demo.prototype.render = function render() {
-	    var Component = (0, _reactMount.getRegisteredComponentType)(this.props.component);
-
-	    return _react2.default.createElement(
 	      'div',
-	      null,
-	      this.renderSelectList(),
-	      _react2.default.createElement(Component, this.selectedPresetProps())
+	      { className: _Demo2.default.selectPreset },
+	      _react2.default.createElement(
+	        'select',
+	        { onChange: this.onSelectPreset, value: selectedPreset },
+	        presets.map(function (preset, index) {
+	          return _react2.default.createElement(
+	            'option',
+	            { key: index, value: index },
+	            preset.name
+	          );
+	        })
+	      )
 	    );
 	  };
 
@@ -21981,6 +22006,35 @@
 
 /***/ }),
 /* 190 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	exports.default = HtmlString;
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function HtmlString(_ref) {
+	  var html = _ref.html;
+
+	  return _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: html } });
+	}
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"root":"Demo__root--2X_aE","canvas":"Demo__canvas--22k_r","selectPreset":"Demo__selectPreset--1_4kS"};
+
+/***/ }),
+/* 192 */,
+/* 193 */
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
