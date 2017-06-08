@@ -1,0 +1,6 @@
+@import "~cultureamp-style-guide/styles/color";
+@import "checkerboard";
+
+.root {
+  @include checkerboard(12px, add-tint($ca-palette-ink, 95%));
+}

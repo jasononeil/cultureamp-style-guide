@@ -1,0 +1,57 @@
+@mixin checkerboard($size, $foregroundColor: #000, $backgroundColor: transparent) {
+
+  // Uses four cropped background gradients to create triangles arranged to look
+  // like two diagonally-adjacent squares.
+  //
+  // The first two gradients both look like this when cropped:
+  //  --------
+  // |        |
+  // |        |
+  // |        |
+  // |        |
+  // |*       |
+  // |**      |
+  // |***     |
+  // |****    |
+  //  --------
+  //
+  // The second is then shifted with background-position:
+  //  --------
+  // |    2   |
+  // |    22  |
+  // |    222 |
+  // |    2222|
+  // |1       |
+  // |11      |
+  // |111     |
+  // |1111    |
+  //  --------
+  //
+  // These are combined with two more gradients with stop points at 75% instead
+  // of 25% to produce the full checkerboard:
+  //  --------
+  // |    2333|
+  // |    2233|
+  // |    2223|
+  // |    2222|
+  // |1444    |
+  // |1144    |
+  // |1114    |
+  // |1111    |
+  //  --------
+  //
+  // NOTE: The same effect should be achievable with just two gradients (each
+  // with stop points at both 25% and 75%), but this generated seams between the
+  // diagonal edges in Chrome 58 Mac.
+
+  background-color: $backgroundColor;
+  background-image:
+    linear-gradient(45deg, $foregroundColor 25%, transparent 25%),
+    linear-gradient(45deg, $foregroundColor 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, $foregroundColor 75%),
+    linear-gradient(45deg, transparent 75%, $foregroundColor 75%);
+  // The size of the background image is two times the size of one square in each dimension.
+  background-size: $size * 2 $size * 2;
+  // Offset the two gradients from each other.
+  background-position: 0 0, $size $size;
+}

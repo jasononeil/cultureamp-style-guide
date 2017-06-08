@@ -1,11 +1,23 @@
 import React from 'react';
 import { getRegisteredComponentType } from './react-mount';
 import HtmlString from './HtmlString';
+import styles from './Demo.scss';
 
 export default class Demo extends React.Component {
   constructor(props) {
     super(props);
     this.state = { selectedPreset: 0 };
+  }
+
+  render() {
+    const Component = getRegisteredComponentType(this.props.component);
+
+    return (
+      <div className={styles.root}>
+        {this.renderSelectList()}
+        <Component {...this.selectedPresetProps()} />
+      </div>
+    );
   }
 
   selectedPresetProps() {
@@ -18,11 +30,6 @@ export default class Demo extends React.Component {
 
     return props;
   }
-
-  onSelectPreset = e => {
-    const selectedPreset = parseInt(e.target.value);
-    this.setState({ ...this.state, selectedPreset });
-  };
 
   renderSelectList() {
     const { presets } = this.props;
@@ -39,14 +46,8 @@ export default class Demo extends React.Component {
     );
   }
 
-  render() {
-    const Component = getRegisteredComponentType(this.props.component);
-
-    return (
-      <div>
-        {this.renderSelectList()}
-        <Component {...this.selectedPresetProps()} />
-      </div>
-    );
-  }
+  onSelectPreset = e => {
+    const selectedPreset = parseInt(e.target.value);
+    this.setState({ ...this.state, selectedPreset });
+  };
 }
