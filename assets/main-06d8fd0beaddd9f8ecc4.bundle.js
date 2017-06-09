@@ -4425,6 +4425,12 @@
 
 	var MIN_CANVAS_WIDTH = 240;
 
+	var SMALL = Symbol('small');
+	var MEDIUM = Symbol('medium');
+	var LARGE = Symbol('large');
+	var RANDOM = Symbol('random');
+	var FULL = Symbol('full');
+
 	var Demo = function (_React$Component) {
 	  _inherits(Demo, _React$Component);
 
@@ -4439,60 +4445,54 @@
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
 	      selectedPreset: 0,
-	      canvasWidth: null
+	      assignedCanvasWidth: null,
+	      actualCanvasDimensions: {
+	        width: null,
+	        height: null
+	      }
 	    }, _this.onSelectPreset = function (e) {
 	      var selectedPreset = parseInt(e.target.value);
 	      _this.setState(_extends({}, _this.state, { selectedPreset: selectedPreset }));
+	    }, _this.onResize = function () {
+	      if (_this.resizing) return;
+
+	      _this.resizing = true;
+	      window.requestAnimationFrame(_this.onResizeFrame);
+	    }, _this.onResizeFrame = function () {
+	      if (_this.isResizeComplete()) {
+	        _this.resizing = false;
+	        return;
+	      }
+
+	      var _this$canvas = _this.canvas,
+	          clientWidth = _this$canvas.clientWidth,
+	          clientHeight = _this$canvas.clientHeight;
+
+	      _this.setState(_extends({}, _this.state, {
+	        actualCanvasDimensions: {
+	          width: clientWidth,
+	          height: clientHeight
+	        }
+	      }));
+
+	      window.requestAnimationFrame(_this.onResizeFrame);
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  Demo.prototype.render = function render() {
-	    var _this2 = this;
-
-	    var Component = (0, _reactMount.getRegisteredComponentType)(this.props.component);
-
 	    return _react2.default.createElement(
 	      'div',
 	      { className: _Demo2.default.root },
 	      this.renderPresetList(),
-	      _react2.default.createElement(
-	        'div',
-	        {
-	          className: _Demo2.default.frame,
-	          ref: function ref(div) {
-	            _this2.frame = div;
-	          }
-	        },
-	        _react2.default.createElement(
-	          'div',
-	          {
-	            className: _Demo2.default.canvas,
-	            style: { width: this.state.canvasWidth }
-	          },
-	          _react2.default.createElement(Component, this.selectedPresetProps())
-	        )
-	      ),
+	      this.renderCanvas(),
 	      _react2.default.createElement(
 	        'div',
 	        { className: _Demo2.default.controls },
 	        this.renderSizePresets(),
-	        this.renderCanvasSize()
+	        this.renderCanvasDimensions(),
+	        this.renderComponentTypes()
 	      )
 	    );
-	  };
-
-	  Demo.prototype.selectedPresetProps = function selectedPresetProps() {
-	    var _props$presets$state$ = this.props.presets[this.state.selectedPreset],
-	        props = _props$presets$state$.props,
-	        htmlProps = _props$presets$state$.htmlProps;
-
-
-	    Object.keys(htmlProps || {}).forEach(function (key) {
-	      var html = htmlProps[key];
-	      props[key] = _react2.default.createElement(_HtmlString2.default, { html: html });
-	    });
-
-	    return props;
 	  };
 
 	  Demo.prototype.renderPresetList = function renderPresetList() {
@@ -4517,36 +4517,121 @@
 	    );
 	  };
 
+	  Demo.prototype.renderCanvas = function renderCanvas() {
+	    var _this2 = this;
+
+	    var Component = (0, _reactMount.getRegisteredComponentType)(this.props.component);
+
+	    return _react2.default.createElement(
+	      'div',
+	      { className: _Demo2.default.frame, ref: function ref(div) {
+	          return _this2.frame = div;
+	        } },
+	      _react2.default.createElement(
+	        'div',
+	        {
+	          className: _Demo2.default.canvas,
+	          style: { width: this.state.assignedCanvasWidth },
+	          ref: function ref(div) {
+	            return _this2.canvas = div;
+	          }
+	        },
+	        _react2.default.createElement(Component, this.selectedPresetProps())
+	      )
+	    );
+	  };
+
+	  Demo.prototype.selectedPresetProps = function selectedPresetProps() {
+	    var _props$presets$state$ = this.props.presets[this.state.selectedPreset],
+	        props = _props$presets$state$.props,
+	        htmlProps = _props$presets$state$.htmlProps;
+
+
+	    Object.keys(htmlProps || {}).forEach(function (key) {
+	      var html = htmlProps[key];
+	      props[key] = _react2.default.createElement(_HtmlString2.default, { html: html });
+	    });
+
+	    return props;
+	  };
+
 	  Demo.prototype.renderSizePresets = function renderSizePresets() {
 	    return _react2.default.createElement(
 	      'div',
 	      { className: _Demo2.default.sizePresets },
 	      _react2.default.createElement(
 	        'button',
-	        { onClick: this.onClickResizeTo('full') },
+	        { onClick: this.onClickResizeTo(FULL) },
 	        'Full'
 	      ),
 	      _react2.default.createElement(
 	        'button',
-	        { onClick: this.onClickResizeTo('random') },
+	        { onClick: this.onClickResizeTo(RANDOM) },
 	        'Random'
 	      ),
 	      _react2.default.createElement(
 	        'button',
-	        { onClick: this.onClickResizeTo('large') },
+	        { onClick: this.onClickResizeTo(LARGE) },
 	        'Large'
 	      ),
 	      _react2.default.createElement(
 	        'button',
-	        { onClick: this.onClickResizeTo('medium') },
+	        { onClick: this.onClickResizeTo(MEDIUM) },
 	        'Medium'
 	      ),
 	      _react2.default.createElement(
 	        'button',
-	        { onClick: this.onClickResizeTo('small') },
+	        { onClick: this.onClickResizeTo(SMALL) },
 	        'Small'
 	      )
 	    );
+	  };
+
+	  Demo.prototype.renderCanvasDimensions = function renderCanvasDimensions() {
+	    var _state$actualCanvasDi = this.state.actualCanvasDimensions,
+	        width = _state$actualCanvasDi.width,
+	        height = _state$actualCanvasDi.height;
+
+
+	    return width && height && _react2.default.createElement(
+	      'div',
+	      { className: _Demo2.default.canvasDimensions },
+	      _react2.default.createElement(
+	        'span',
+	        { className: _Demo2.default.dimension },
+	        width,
+	        'px'
+	      ),
+	      ' × ',
+	      _react2.default.createElement(
+	        'span',
+	        { className: _Demo2.default.dimension },
+	        height,
+	        'px'
+	      ),
+	      ' viewport'
+	    );
+	  };
+
+	  Demo.prototype.renderComponentTypes = function renderComponentTypes() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: _Demo2.default.componentTypes },
+	      _react2.default.createElement(
+	        'button',
+	        null,
+	        'React'
+	      )
+	    );
+	  };
+
+	  Demo.prototype.componentDidMount = function componentDidMount() {
+	    window.addEventListener('resize', this.onResize);
+	    this.onResize();
+	  };
+
+	  Demo.prototype.componentWillUnmount = function componentWillUnmount() {
+	    window.removeEventListener('resize', this.onResize);
 	  };
 
 	  Demo.prototype.onClickResizeTo = function onClickResizeTo(size) {
@@ -4558,20 +4643,20 @@
 	  };
 
 	  Demo.prototype.resizeToSize = function resizeToSize(size) {
-	    switch (Symbol.for(size)) {
-	      case Symbol.for('full'):
+	    switch (size) {
+	      case FULL:
 	        this.resizeTo();
 	        break;
-	      case Symbol.for('random'):
+	      case RANDOM:
 	        this.resizeTo(randomBetween(MIN_CANVAS_WIDTH, this.maxCanvasWidth()));
 	        break;
-	      case Symbol.for('large'):
+	      case LARGE:
 	        this.resizeTo(randomBetween(800, 1200));
 	        break;
-	      case Symbol.for('medium'):
+	      case MEDIUM:
 	        this.resizeTo(randomBetween(500, 800));
 	        break;
-	      case Symbol.for('small'):
+	      case SMALL:
 	        this.resizeTo(randomBetween(MIN_CANVAS_WIDTH, 500));
 	        break;
 	    }
@@ -4580,27 +4665,42 @@
 	  Demo.prototype.resizeTo = function resizeTo() {
 	    var _this4 = this;
 
-	    var canvasWidth = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+	    var assignedCanvasWidth = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
-	    if (canvasWidth) {
-	      canvasWidth = Math.min(canvasWidth, this.maxCanvasWidth());
+	    assignedCanvasWidth = assignedCanvasWidth && Math.min(assignedCanvasWidth, this.maxCanvasWidth());
+
+	    if (this.state.assignedCanvasWidth === null && assignedCanvasWidth) {
+	      // prepare for CSS transition from width: auto
+	      this.setAssignedCanvasWidth(this.maxCanvasWidth());
 	    }
 
-	    if (this.state.canvasWidth === null && canvasWidth) {
-	      this.setState(_extends({}, this.state, { canvasWidth: this.maxCanvasWidth() }));
-	      setTimeout(function () {
-	        _this4.setState(_extends({}, _this4.state, { canvasWidth: canvasWidth }));
-	      });
-	    } else {
-	      this.setState(_extends({}, this.state, { canvasWidth: canvasWidth }));
-	    }
+	    window.requestAnimationFrame(function () {
+	      _this4.setAssignedCanvasWidth(assignedCanvasWidth);
+	    });
+	  };
+
+	  Demo.prototype.setAssignedCanvasWidth = function setAssignedCanvasWidth(assignedCanvasWidth) {
+	    this.setState(_extends({}, this.state, { assignedCanvasWidth: assignedCanvasWidth }));
+	    this.onResize();
 	  };
 
 	  Demo.prototype.maxCanvasWidth = function maxCanvasWidth() {
 	    return this.frame.clientWidth;
 	  };
 
-	  Demo.prototype.renderCanvasSize = function renderCanvasSize() {};
+	  Demo.prototype.isResizeComplete = function isResizeComplete() {
+	    var _canvas = this.canvas,
+	        clientWidth = _canvas.clientWidth,
+	        clientHeight = _canvas.clientHeight;
+	    var _state = this.state,
+	        assignedCanvasWidth = _state.assignedCanvasWidth,
+	        _state$actualCanvasDi2 = _state.actualCanvasDimensions,
+	        canvasWidth = _state$actualCanvasDi2.width,
+	        canvasHeight = _state$actualCanvasDi2.height;
+
+
+	    return clientWidth == canvasWidth && clientHeight == canvasHeight && (!assignedCanvasWidth || clientWidth == assignedCanvasWidth);
+	  };
 
 	  return Demo;
 	}(_react2.default.Component);
@@ -22146,7 +22246,7 @@
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"root":"Demo__root--2X_aE","frame":"Demo__frame--SESv6","canvas":"Demo__canvas--22k_r","selectPreset":"Demo__selectPreset--1_4kS"};
+	module.exports = {"root":"Demo__root--2X_aE","frame":"Demo__frame--SESv6","canvas":"Demo__canvas--22k_r","selectPreset":"Demo__selectPreset--1_4kS","controls":"Demo__controls--1V5Vf","dimension":"Demo__dimension--2g7Gq"};
 
 /***/ }),
 /* 192 */,
