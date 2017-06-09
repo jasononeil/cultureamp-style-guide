@@ -17,7 +17,7 @@
     "gh-pages:build:site": "npm run build:site --cultureamp-style-guide:baseurl=\"/cultureamp-style-guide\"",
     "gh-pages:deploy": "scripts/gh-pages-deploy.js",
     "start": "concurrently --kill-others \"npm run start-assets\" \"npm run start-site\"",
-    "start-assets": "NODE_ENV=development webpack-dev-server --config guide/webpack.config.js",
+    "start-assets": "NODE_ENV=development webpack-dev-server -d --config guide/webpack.config.js",
     "start-site": "cd guide && bundle exec jekyll serve --watch"
   },
   "browserslist": [

@@ -74,13 +74,15 @@ function applyPostcssLoaderPluginPack(config, pluginPackName) {
 }
 
 function addPostcssPackToLoaderString(loaderString, pluginPackName) {
-  return (
-    loaderString
-      // with existing query string
-      .replace(/(postcss(-loader)?\?)/, `$1pack=${pluginPackName}&`)
-      // without existing query string
-      .replace(/(postcss(-loader)?(?!\?))/, `$1?pack=${pluginPackName}`)
-  );
+  return loaderString
+    .replace(
+      /(postcss(-loader)?\?)/, // with existing query string
+      `$1pack=${pluginPackName}&`
+    )
+    .replace(
+      /(postcss(-loader)?(?!(-loader)?\?))/, // without existing query string
+      `$1?pack=${pluginPackName}`
+    );
 }
 
 function addStyleGuideLoaders(config, options) {

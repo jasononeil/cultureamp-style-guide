@@ -40,13 +40,20 @@ module.exports = decorateWithStyleGuide(
                   modules: true,
                   importLoaders: 2,
                   localIdentName: '[name]__[local]--[hash:base64:5]',
+                  sourceMap: true,
                 },
               },
               {
                 loader: 'postcss-loader',
+                query: {
+                  sourceMap: true,
+                },
               },
               {
                 loader: 'sass-loader',
+                query: {
+                  sourceMap: true,
+                },
               },
             ])
           ),
