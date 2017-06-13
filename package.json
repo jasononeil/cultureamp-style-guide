@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:cultureamp/cultureamp-style-guide.git",
   "author": "Kevin Yank <kevin@cultureamp.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "npm run build:assets && npm run build:site",
     "build:assets": "webpack --config guide/webpack.config.js",
