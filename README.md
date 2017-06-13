@@ -64,6 +64,33 @@ module.exports = decorateWithStyleGuide(config, {
 });
 ```
 
+### Importing React Components
+
+React components may be imported from the cultureamp-style-guide module, and
+then used in other React components. Their stylesheets will be imported
+automatically thanks to the Webpack configuration decorator above.
+
+```js
+import React from 'react';
+import Button from 'cultureamp-style-guide/components/Button/Button.js';
+
+export default function MyComponent(props) {
+  return <div><Button/></div>;
+}
+```
+
+**Warning:** You might be tempted to try importing multiple components like this:
+
+```js
+import { Button, Card } from 'cultureamp-style-guide/components';
+```
+
+The Culture Amp Style Guide does not support this (the components directory does
+not contain an index.js) because Webpack does not support eliminating the unused
+components from this type of import. See
+[webpack/webpack#2867](https://github.com/webpack/webpack/issues/2867) for
+many examples of people struggling with this.
+
 ---
 
 <small><sup id="ruby">[1](#fn1)</sup>You should use a Ruby version manager such as [rbenv][rbenv] to install and use automatically the version of Ruby specified in `guide/.ruby-version`.</small>
