@@ -1,3 +1,1 @@
-throw new Error(
-  'This package has no default exports. Are you looking for "ca-ui/components"?'
-);
+throw new Error('cultureamp-style-guide has no default exports.');
