@@ -6,12 +6,18 @@ presets:
     props:
       children: Button text
       primary: true
-    htmlProps:
-      example: <em>Apply&trade;</em>
   - name: Primary disabled
     props:
       children: Button text
       disabled: true
+  - name: Primary fixed
+    props:
+      children: Button text
+      fixed: true
+  - name: Primary mid
+    props:
+      children: Button text
+      size: mid
   - name: Destructive
     props:
       children: Button text
@@ -25,6 +31,16 @@ presets:
       children: Button text
       primary: false
       disabled: true
+  - name: Secondary mid
+    props:
+      children: Button text
+      size: mid
+      primary: false
+  - name: Secondary small
+    props:
+      children: Button
+      size: small
+      primary: false
   - name: Inverted
     props:
       children: Button text

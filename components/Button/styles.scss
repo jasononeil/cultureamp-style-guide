@@ -6,9 +6,9 @@
   display: inline-block;
   background: add-tint($ca-palette-ink, 80%);
   color: rgba($ca-palette-ink, 0.3);
-  padding: 14px 21px;
-  height: 47px;
+  padding: 0 20px;
   font-weight: $ca-weight-semibold;
+  height: 50px;
   font-size: 14px;
   font-family: $ca-default-font-family;
   border-radius: 3px;
@@ -76,6 +76,23 @@
 
 
 // Modifiers
+
+
+%ca-button---fixed {
+  width: 220px;
+}
+
+%ca-button---mid {
+  height: 40px;
+  padding: 0 12px;
+}
+
+%ca-button---small {
+  font-size: 10px;
+  height: 25px;
+  padding: 0 12px;
+  text-transform: uppercase;
+}
 
 %ca-button---secondary {
   background: #fff;

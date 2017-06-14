@@ -16,6 +16,14 @@
   @extend %ca-button---inverted;
 }
 
-// .icon {
-//   @extend %ca-button---positive;
-// }
+.fixed {
+  @extend %ca-button---fixed;
+}
+
+.mid {
+  @extend %ca-button---mid;
+}
+
+.small {
+  @extend %ca-button---small;
+}

@@ -2,7 +2,17 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './Button.scss';
 
-export default function Button({disabled = false, primary = true, destructive = false, darkBackground = false, icon = false, children}) {
+export default function Button({
+  disabled = false,
+  primary = true,
+  destructive = false,
+  darkBackground = false,
+  // icon = false,
+  // directional = false,
+  fixed = false,
+  size = 'large',
+  children,
+}) {
 
   const className = classnames({
     // [this.mainClass(args)]: !(icon || otherType || thirdType),
@@ -10,7 +20,9 @@ export default function Button({disabled = false, primary = true, destructive = 
     [styles.primary]: primary && !destructive && !darkBackground,
     [styles.secondary]: !destructive && !primary,
     [styles.inverted]: darkBackground,
-    // [styles.icon]: icon,
+    [styles.fixed]: fixed,
+    [styles.mid]: size === 'mid',
+    [styles.small]: size === 'small',
   })
 
   return (
