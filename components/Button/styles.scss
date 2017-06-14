@@ -13,8 +13,10 @@
   font-family: $ca-default-font-family;
   border-radius: 3px;
   transition: none;
+  box-shadow: 0 1px 3px $ca-box-shadow;
   border: 0;
   outline: none;
+  box-sizing: border-box;
 
   svg {
     position: absolute;
@@ -34,14 +36,13 @@
     color: #fff;
     cursor: pointer;
 
-    &:hover,
-    &:focus {
-      background: add-shade($ca-palette-coral, 5%);
+    &:hover {
+      background: add-shade($ca-palette-coral, 10%);
       text-decoration: none;
-      color: #fff;
     }
 
     &:active {
+      background: add-shade($ca-palette-coral, 15%);
       position: relative;
       top: 1px;
     }
@@ -73,18 +74,53 @@
   }
 }
 
+
 // Modifiers
 
+%ca-button---secondary {
+  background: #fff;
+  border: 1px solid add-tint($ca-palette-ink, 80%);
+  color: add-tint($ca-palette-ink, 80%);
+
+  &:not(:disabled) {
+    background: #fff;
+    color: $ca-palette-ink;
+
+    &:hover {
+      background: add-tint($ca-palette-paper, 80%);
+    }
+
+    &:active {
+      background: add-tint($ca-palette-paper, 60%);
+    }
+  }
+}
+
+%ca-button---inverted {
+  background: transparent;
+  color: add-alpha(#fff, 40%);
+  border: 1px solid add-alpha(#fff, 50%);
+
+  &:not(:disabled) {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+
+    &:hover {
+      background: add-alpha(#fff, 10%);
+    }
+
+    &:active {
+      background: add-alpha(#fff, 30%);
+    }
+  }
+}
+
 %ca-button---positive {
-  // We can't just used :enabled here, because we want to be able to apply these
-  // styles to non-form elements, such as hyperlinks. :not(:disabled) is
-  // equivalent on form elements, but also allows these styles to be applied to
-  // elements that have no enabled/disabled states.
   &:not(:disabled) {
     background: add-tint($ca-palette-seedling, 20%);
 
-    &:hover,
-    &:focus {
+    &:hover {
       background: $ca-palette-seedling;
     }
 

@@ -3,3 +3,19 @@
 .button {
   @extend %ca-button;
 }
+
+.primary {
+  @extend %ca-button---positive;
+}
+
+.secondary {
+  @extend %ca-button---secondary;
+}
+
+.inverted {
+  @extend %ca-button---inverted;
+}
+
+// .icon {
+//   @extend %ca-button---positive;
+// }
