@@ -1,7 +1,7 @@
 const path = require('path');
-const chalk = require('chalk');
 const combineLoaders = require('webpack-combine-loaders');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const error = require('../util/error').default;
 
 module.exports = decorateConfig;
 
@@ -94,7 +94,7 @@ function addStyleGuideLoaders(config, options) {
 }
 
 function styleGuideLoaders(options) {
-  return [jsLoader(options), cssLoader(options)];
+  return [jsLoader(options), cssLoader(options), svgLoader(options)];
 }
 
 function jsLoader() {
@@ -161,6 +161,23 @@ function cssLoaderDeliveryDecorator(options) {
     : loaderString => `${require.resolve('style-loader')}!${loaderString}`;
 }
 
+function svgLoader(options) {
+  const svgSpriteConfig = 'symboldId=icon-[name]';
+  const svgSpriteLoader = require.resolve('svg-sprite-loader');
+
+  const svgoConfig = JSON.stringify(require('./svgo.config.js'));
+  const svgoLoader = require.resolve('svgo-loader');
+
+  return {
+    test: /\.svg$/,
+    include: styleGuidePaths(),
+    loaders: [
+      `${svgSpriteLoader}?${svgSpriteConfig}`,
+      `${svgoLoader}?${svgoConfig}`,
+    ],
+  };
+}
+
 function addStyleGuideAlias(config, options) {
   const styleGuideAliases = {
     'cultureamp-style-guide': path.resolve(__dirname, '..'),
@@ -194,14 +211,4 @@ function styleGuidePaths() {
   ];
 
   return module._styleGuidePaths;
-}
-
-function error(message) {
-  throw new Error(
-    chalk.red(`\nCULTUREAMP STYLE GUIDE ERROR:\n${singleLine(message)}\n`)
-  );
-}
-
-function singleLine(string) {
-  return string.replace(/^ +/gm, ' ').replace(/\n|\r/gm, '').trim();
 }
