@@ -15,6 +15,14 @@ export default function Demo(props) {
       svgIcon = undefined;
   }
 
+  if (otherProps.inheritSize) {
+    return (
+      <div style={{ width: '100px', height: '100px' }}>
+        <Icon icon={svgIcon} {...otherProps} />
+      </div>
+    );
+  }
+
   return <Icon icon={svgIcon} {...otherProps} />;
 }
 
