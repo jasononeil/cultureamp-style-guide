@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from './Icon.js';
-import accentsWarning from './accents-warning.svg';
+import accentsWarning from 'cultureamp-style-guide/icons/accents-warning.svg';
 
 export default function Demo(props) {
   const { icon, ...otherProps } = props;
