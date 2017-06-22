@@ -18,4 +18,5 @@ presets:
       role: presentation
 ---
 
-An icon!
+An icon! To control its color, set `color` on a parent element, and it will be
+inherited.
