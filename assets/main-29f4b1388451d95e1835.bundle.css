@@ -30,6 +30,17 @@
     .Button__button--2VOdS:not(:disabled):active {
       position: relative;
       top: 1px; }
+svg [fill='#000000'],
+svg [fill='#000'] {
+  fill: currentColor; }
+
+.Icon__icon--1SIxy {
+  width: 20px;
+  height: 20px; }
+
+.Icon__inheritSize--c38gc {
+  width: inherit;
+  height: inherit; }
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -201,7 +212,7 @@ template {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
-  min-height: 100px;
+  height: 100px;
   -webkit-transition: width 500ms;
   transition: width 500ms; }
 
