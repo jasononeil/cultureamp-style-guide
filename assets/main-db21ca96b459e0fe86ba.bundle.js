@@ -50,7 +50,7 @@
 
 	var _Button2 = _interopRequireDefault(_Button);
 
-	var _Demo = __webpack_require__(42);
+	var _Demo = __webpack_require__(43);
 
 	var _Demo2 = _interopRequireDefault(_Demo);
 
@@ -85,23 +85,55 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Button = __webpack_require__(37);
+	var _classnames2 = __webpack_require__(37);
+
+	var _classnames3 = _interopRequireDefault(_classnames2);
+
+	var _Button = __webpack_require__(38);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 	function Button(_ref) {
-	  var children = _ref.children,
-	      disabled = _ref.disabled;
+	  var _classnames;
+
+	  var _ref$disabled = _ref.disabled,
+	      disabled = _ref$disabled === undefined ? false : _ref$disabled,
+	      _ref$primary = _ref.primary,
+	      primary = _ref$primary === undefined ? true : _ref$primary,
+	      _ref$destructive = _ref.destructive,
+	      destructive = _ref$destructive === undefined ? false : _ref$destructive,
+	      _ref$darkBackground = _ref.darkBackground,
+	      darkBackground = _ref$darkBackground === undefined ? false : _ref$darkBackground,
+	      _ref$fixed = _ref.fixed,
+	      fixed = _ref$fixed === undefined ? false : _ref$fixed,
+	      _ref$size = _ref.size,
+	      size = _ref$size === undefined ? 'large' : _ref$size,
+	      children = _ref.children;
+
+
+	  var className = (0, _classnames3.default)((_classnames = {}, _defineProperty(_classnames, _Button2.default.button, true), _defineProperty(_classnames, _Button2.default.primary, primary && !destructive && !darkBackground), _defineProperty(_classnames, _Button2.default.secondary, !destructive && !primary), _defineProperty(_classnames, _Button2.default.inverted, darkBackground), _defineProperty(_classnames, _Button2.default.fixed, fixed), _defineProperty(_classnames, _Button2.default.mid, size === 'mid'), _defineProperty(_classnames, _Button2.default.small, size === 'small'), _classnames));
 
 	  return _react2.default.createElement(
 	    'button',
-	    { disabled: disabled, className: _Button2.default.button },
+	    {
+	      disabled: disabled,
+	      className: className
+	    },
 	    children
 	  );
 	}
+
 	Button.displayName = 'Button';
+	Button.propTypes = {
+	  disabled: _react2.default.PropTypes.bool,
+	  primary: _react2.default.PropTypes.bool,
+	  destructive: _react2.default.PropTypes.bool,
+	  icon: _react2.default.PropTypes.bool
+	};
 
 /***/ }),
 /* 2 */
@@ -4421,17 +4453,71 @@
 
 /***/ }),
 /* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ }),
+/* 38 */
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"button":"Button__button--2VOdS"};
+	module.exports = {"button":"Button__button--2VOdS","fixed":"Button__fixed--2kVay","mid":"Button__mid--sAuoS","small":"Button__small--3gQn0","secondary":"Button__secondary--3ybyE","inverted":"Button__inverted--2z-TJ","primary":"Button__primary--1UoHl"};
 
 /***/ }),
-/* 38 */,
 /* 39 */,
 /* 40 */,
 /* 41 */,
-/* 42 */
+/* 42 */,
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4448,11 +4534,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _propTypes = __webpack_require__(43);
+	var _propTypes = __webpack_require__(44);
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _Icon = __webpack_require__(45);
+	var _Icon = __webpack_require__(46);
 
 	var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -4495,7 +4581,7 @@
 	});
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -4526,13 +4612,13 @@
 	} else {
 	  // By explicitly using `prop-types` you are opting into new production behavior.
 	  // http://fb.me/prop-types-in-prod
-	  module.exports = __webpack_require__(44)();
+	  module.exports = __webpack_require__(45)();
 	}
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
@@ -4597,7 +4683,7 @@
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4614,11 +4700,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _propTypes = __webpack_require__(43);
+	var _propTypes = __webpack_require__(44);
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _classnames = __webpack_require__(46);
+	var _classnames = __webpack_require__(37);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -4748,60 +4834,6 @@
 	};
 	Icon.displayName = 'Icon';
 	exports.default = Icon;
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = [];
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				}
-			}
-
-			return classes.join(' ');
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
 
 /***/ }),
 /* 47 */

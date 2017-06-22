@@ -2,16 +2,20 @@
   display: inline-block;
   background: #d8dad9;
   color: rgba(62, 69, 67, 0.3);
-  padding: 14px 21px;
-  height: 47px;
-  font-weight: 500;
+  padding: 0 20px;
+  font-weight: 600;
+  height: 50px;
   font-size: 14px;
   font-family: "Open Sans";
   border-radius: 3px;
   -webkit-transition: none;
   transition: none;
+  -webkit-box-shadow: 0 1px 3px 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px 0 1px 2px rgba(0, 0, 0, 0.1);
   border: 0;
-  outline: none; }
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
   .Button__button--2VOdS svg {
     position: absolute;
     top: 7px;
@@ -23,13 +27,58 @@
     background: #f04c5d;
     color: #fff;
     cursor: pointer; }
-    .Button__button--2VOdS:not(:disabled):hover, .Button__button--2VOdS:not(:disabled):focus {
-      background: #e44858;
-      text-decoration: none;
-      color: #fff; }
+    .Button__button--2VOdS:not(:disabled):hover {
+      background: #d84454;
+      text-decoration: none; }
     .Button__button--2VOdS:not(:disabled):active {
+      background: #cc414f;
       position: relative;
       top: 1px; }
+
+.Button__fixed--2kVay {
+  width: 220px; }
+
+.Button__mid--sAuoS {
+  height: 40px;
+  padding: 0 12px; }
+
+.Button__small--3gQn0 {
+  font-size: 10px;
+  height: 25px;
+  padding: 0 12px;
+  text-transform: uppercase; }
+
+.Button__secondary--3ybyE {
+  background: #fff;
+  border: 1px solid #d8dad9;
+  color: #d8dad9; }
+  .Button__secondary--3ybyE:not(:disabled) {
+    background: #fff;
+    color: #3e4543; }
+    .Button__secondary--3ybyE:not(:disabled):hover {
+      background: #fcfbf8; }
+    .Button__secondary--3ybyE:not(:disabled):active {
+      background: #faf8f2; }
+
+.Button__inverted--2z-TJ {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5); }
+  .Button__inverted--2z-TJ:not(:disabled) {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff; }
+    .Button__inverted--2z-TJ:not(:disabled):hover {
+      background: rgba(255, 255, 255, 0.1); }
+    .Button__inverted--2z-TJ:not(:disabled):active {
+      background: rgba(255, 255, 255, 0.3); }
+
+.Button__primary--1UoHl:not(:disabled) {
+  background: #6abda5; }
+  .Button__primary--1UoHl:not(:disabled):hover {
+    background: #45ad8f; }
+  .Button__primary--1UoHl:not(:disabled):active {
+    background: #42a488; }
 svg [fill='#000000'],
 svg [fill='#000'] {
   fill: currentColor; }
