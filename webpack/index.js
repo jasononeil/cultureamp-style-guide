@@ -209,6 +209,7 @@ function styleGuidePaths() {
     path.resolve(__dirname, '../components'),
     path.resolve(__dirname, '../styles'),
     path.resolve(__dirname, '../icons'),
+    path.resolve(__dirname, '../util'),
   ];
 
   return module._styleGuidePaths;
