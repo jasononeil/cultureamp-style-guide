@@ -1,0 +1,16 @@
+svg {
+  [fill='#000000'],
+  [fill='#000'] {
+    fill: currentColor;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.inheritSize {
+  width: inherit;
+  height: inherit;
+}
