@@ -8,9 +8,11 @@ svg {
 .icon {
   width: 20px;
   height: 20px;
+  display: inline-block;
 }
 
 .inheritSize {
   width: inherit;
   height: inherit;
+  display: block;
 }
