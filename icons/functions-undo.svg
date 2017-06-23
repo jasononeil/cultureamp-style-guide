@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="10px" viewBox="0 0 20 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>functions-undo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Style" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Style/Icons" transform="translate(-726.000000, -925.000000)">
+            <g id="Functions" transform="translate(61.000000, 882.000000)">
+                <g id="Icons/Functions/icon_undo" transform="translate(663.000000, 35.750000)">
+                    <g id="icon_undo">
+                        <rect id="Rectangle-2" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M12.264,8.5777777 C9.67777773,8.5777777 7.32133323,9.54088884 5.52222208,11.12 L1.99733312,7.5999999 L1.99733312,16.4000001 L10.7973333,16.4000001 L7.26266656,12.8653334 C8.61688882,11.7262222 10.3524444,11.0222222 12.264,11.0222222 C15.7302223,11.0222222 18.6635557,13.276 19.6902224,16.4000001 L22.0026669,15.6373334 C20.6582224,11.5404444 16.8106668,8.5777777 12.264,8.5777777" fill="#000000"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
