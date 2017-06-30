@@ -72,7 +72,7 @@ automatically thanks to the Webpack configuration decorator above.
 
 ```js
 import React from 'react';
-import Button from 'cultureamp-style-guide/components/Button/Button.js';
+import Button from 'cultureamp-style-guide/components/Button/Button';
 
 export default function MyComponent(props) {
   return <div><Button/></div>;
