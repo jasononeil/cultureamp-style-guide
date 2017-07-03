@@ -1,5 +1,4 @@
 const path = require('path');
-const combineLoaders = require('webpack-combine-loaders');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const error = require('../util/error').default;
 
@@ -7,8 +6,7 @@ module.exports = decorateConfig;
 
 function decorateConfig(config, options) {
   return [
-    excludeStyleGuideFromLoaders,
-    addPostCssPlugins,
+    excludeStyleGuideFromModules,
     addStyleGuideLoaders,
     addStyleGuideAlias,
   ].reduce((decoratedConfig, decorator) => {
@@ -16,79 +14,25 @@ function decorateConfig(config, options) {
   }, config);
 }
 
-function excludeStyleGuideFromLoaders(config, options) {
-  return Object.assign({}, config, {
+function excludeStyleGuideFromModules(config, options) {
+  const rule = Object.assign({}, config, {
     module: Object.assign({}, config.module, {
-      loaders: config.module.loaders.map(excludeStyleGuideFromLoader),
+      rules: config.module.rules.map(excludeStyleGuideFromRule),
     }),
   });
+  return rule;
 }
 
-function excludeStyleGuideFromLoader(loaderConfig) {
-  return Object.assign({}, loaderConfig, {
-    exclude: styleGuidePaths().concat(loaderConfig.exclude || []),
+function excludeStyleGuideFromRule(rule) {
+  return Object.assign({}, rule, {
+    exclude: styleGuidePaths().concat(rule.exclude || []),
   });
-}
-
-function addPostCssPlugins(config, options) {
-  const styleGuidePlugins = [require('autoprefixer')()];
-
-  const postcssPlugins = {
-    [POSTCSS_STYLE_GUIDE_PACK]: styleGuidePlugins,
-  };
-
-  if (config.postcss) {
-    postcssPlugins[POSTCSS_HOST_PROJECT_PACK] = typeof config.postcss ===
-      'function'
-      ? config.postcss()
-      : config.postcss;
-
-    config = applyPostcssLoaderPluginPack(config, POSTCSS_HOST_PROJECT_PACK);
-  }
-
-  return Object.assign({}, config, {
-    postcss: () => postcssPlugins,
-  });
-}
-
-const POSTCSS_STYLE_GUIDE_PACK = 'cultureamp-style-guide';
-const POSTCSS_HOST_PROJECT_PACK = 'default';
-
-function applyPostcssLoaderPluginPack(config, pluginPackName) {
-  return Object.assign({}, config, {
-    module: Object.assign({}, config.module, {
-      loaders: config.module.loaders.map(loaderEntry => {
-        if (typeof loaderEntry.loader === 'string') {
-          loaderEntry = Object.assign({}, loaderEntry, {
-            loader: addPostcssPackToLoaderString(
-              loaderEntry.loader,
-              pluginPackName
-            ),
-          });
-        }
-
-        return loaderEntry;
-      }),
-    }),
-  });
-}
-
-function addPostcssPackToLoaderString(loaderString, pluginPackName) {
-  return loaderString
-    .replace(
-      /(postcss(-loader)?\?)/, // with existing query string
-      `$1pack=${pluginPackName}&`
-    )
-    .replace(
-      /(postcss(-loader)?(?!(-loader)?\?))/, // without existing query string
-      `$1?pack=${pluginPackName}`
-    );
 }
 
 function addStyleGuideLoaders(config, options) {
   return Object.assign({}, config, {
     module: Object.assign({}, config.module, {
-      loaders: styleGuideLoaders(options).concat(config.module.loaders),
+      rules: styleGuideLoaders(options).concat(config.module.rules),
     }),
   });
 }
@@ -102,7 +46,7 @@ function jsLoader() {
     test: /\.js$/,
     include: styleGuidePaths(),
     loader: require.resolve('babel-loader'),
-    query: require('./babel.config.js'),
+    options: require('./babel.config.js'),
   };
 }
 
@@ -110,33 +54,30 @@ function cssLoader(options) {
   return {
     test: /\.scss$/,
     include: styleGuidePaths(),
-    // combineLoaders required to pass single loader string to ExtractTextPlugin
-    loader: cssLoaderDeliveryDecorator(options)(
-      combineLoaders([
-        {
-          loader: require.resolve('css-loader'),
-          query: {
-            modules: true,
-            importLoaders: 2, // number of subsequent loaders to apply on `composes ... from`
-            localIdentName: '[name]__[local]--[hash:base64:5]',
-            sourceMap: true,
-          },
+    loader: cssLoaderDeliveryDecorator(options)([
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          modules: true,
+          importLoaders: 2, // number of subsequent loaders to apply on `composes ... from`
+          localIdentName: '[name]__[local]--[hash:base64:5]',
+          sourceMap: true,
         },
-        {
-          loader: require.resolve('postcss-loader'),
-          query: {
-            pack: POSTCSS_STYLE_GUIDE_PACK,
-            sourceMap: true,
-          },
+      },
+      {
+        loader: require.resolve('postcss-loader'),
+        options: {
+          plugins: () => [require('autoprefixer')()],
+          sourceMap: true,
         },
-        {
-          loader: require.resolve('sass-loader'),
-          query: {
-            sourceMap: true,
-          },
+      },
+      {
+        loader: require.resolve('sass-loader'),
+        options: {
+          sourceMap: true,
         },
-      ])
-    ),
+      },
+    ]),
   };
 }
 
@@ -157,23 +98,27 @@ function cssLoaderDeliveryDecorator(options) {
   }
 
   return extractTextPlugin
-    ? extractTextPlugin.extract.bind(extractTextPlugin, 'style-loader')
-    : loaderString => `${require.resolve('style-loader')}!${loaderString}`;
+    ? loaders =>
+        extractTextPlugin.extract({
+          fallback: require.resolve('style-loader'),
+          use: loaders,
+        })
+    : loaders => [require.resolve('style-loader'), ...loaders];
 }
 
 function svgLoader(options) {
-  const svgSpriteConfig = 'symboldId=icon-[name]';
-  const svgSpriteLoader = require.resolve('svg-sprite-loader');
-
-  const svgoConfig = JSON.stringify(require('./svgo.config.js'));
-  const svgoLoader = require.resolve('svgo-loader');
-
   return {
     test: /\.svg$/,
     include: styleGuidePaths(),
-    loaders: [
-      `${svgSpriteLoader}?${svgSpriteConfig}`,
-      `${svgoLoader}?${svgoConfig}`,
+    use: [
+      {
+        loader: require.resolve('svg-sprite-loader'),
+        options: require('./svgo.config.js'),
+      },
+      {
+        loader: require.resolve('svgo-loader'),
+        options: 'symbolId=icon-[name]',
+      },
     ],
   };
 }
