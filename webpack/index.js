@@ -117,7 +117,7 @@ function svgLoader(options) {
       },
       {
         loader: require.resolve('svgo-loader'),
-        options: 'symbolId=icon-[name]',
+        options: 'symbolId=ca-icon-[name]',
       },
     ],
   };
