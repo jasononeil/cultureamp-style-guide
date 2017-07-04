@@ -16,9 +16,9 @@
     "gh-pages:build:assets": "npm run build:assets",
     "gh-pages:build:site": "npm run build:site --cultureamp-style-guide:baseurl=\"/cultureamp-style-guide\"",
     "gh-pages:deploy": "scripts/gh-pages-deploy.js",
-    "start": "concurrently --kill-others \"npm run start-assets\" \"npm run start-site\"",
-    "start-assets": "NODE_ENV=development webpack-dev-server -d --config guide/webpack.config.js",
-    "start-site": "cd guide && bundle exec jekyll serve --watch"
+    "start": "concurrently --kill-others \"npm run start:assets\" \"npm run start:site\"",
+    "start:assets": "NODE_ENV=development webpack-dev-server -d --config guide/webpack.config.js",
+    "start:site": "cd guide && bundle exec jekyll serve --watch"
   },
   "browserslist": [
     "> 1%",
@@ -31,22 +31,22 @@
     "Android >= 4"
   ],
   "devDependencies": {
-    "babel-loader": "^6.4.1",
+    "babel-loader": "^7.1.1",
     "classnames": "^2.2.5",
     "concurrently": "^3.4.0",
-    "css-loader": "^0.28.1",
-    "extract-text-webpack-plugin": "<2",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
     "gh-pages": "^1.0.0",
-    "node-sass": "^4.5.2",
-    "postcss-loader": "<2",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
     "postcss-normalize": "^3.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "sass-loader": "^4.1.1",
-    "style-loader": "^0.17.0",
-    "webpack": "<2",
-    "webpack-dev-server": "<2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.5.0",
     "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
@@ -62,14 +62,13 @@
     "react-html-id": "^0.1.0",
     "svg-sprite-loader": "^3.0.5",
     "svgo": "^0.7.2",
-    "svgo-loader": "^1.2.1",
-    "webpack-combine-loaders": "^2.0.3"
+    "svgo-loader": "^1.2.1"
   },
   "peerDependencies": {
     "babel-polyfill": "^6.23.0",
-    "extract-text-webpack-plugin": "<2",
+    "extract-text-webpack-plugin": "^2.1.2",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "webpack": "<2"
+    "webpack": "^2.6.1"
   }
 }

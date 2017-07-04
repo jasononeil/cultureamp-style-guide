@@ -1,9 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const combineLoaders = require('webpack-combine-loaders');
-const autoprefixer = require('autoprefixer');
-const normalize = require('postcss-normalize');
 const decorateWithStyleGuide = require('../webpack');
 
 module.exports = decorateWithStyleGuide(
@@ -19,24 +16,28 @@ module.exports = decorateWithStyleGuide(
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
-          query: {
-            presets: [['es2015', { loose: true }], 'react', 'stage-2'],
+          options: {
+            presets: [
+              ['es2015', { modules: false, loose: true }],
+              'react',
+              'stage-2',
+            ],
           },
         },
         {
           test: /\.scss$/,
           exclude: /node_modules/,
-          loader: extractTextPlugin().extract(
-            'style-loader',
-            combineLoaders([
+          use: extractTextPlugin().extract({
+            fallback: 'style-loader',
+            use: [
               {
                 loader: 'css-loader',
-                query: {
+                options: {
                   modules: true,
                   importLoaders: 2,
                   localIdentName: '[name]__[local]--[hash:base64:5]',
@@ -45,23 +46,26 @@ module.exports = decorateWithStyleGuide(
               },
               {
                 loader: 'postcss-loader',
-                query: {
+                options: {
                   sourceMap: true,
+                  plugins: () => [
+                    require('autoprefixer')(),
+                    require('postcss-normalize')(),
+                  ],
                 },
               },
               {
                 loader: 'sass-loader',
-                query: {
+                options: {
                   sourceMap: true,
                 },
               },
-            ])
-          ),
+            ],
+          }),
         },
       ],
     },
     plugins: [extractTextPlugin(), new ManifestPlugin()],
-    postcss: () => [autoprefixer, normalize],
   },
   { extractTextPlugin: extractTextPlugin() }
 );
@@ -69,7 +73,8 @@ module.exports = decorateWithStyleGuide(
 function extractTextPlugin() {
   return (arguments.callee.memoizedValue =
     arguments.callee.memoizedValue ||
-    new ExtractTextPlugin('[name]-[hash].bundle.css', {
+    new ExtractTextPlugin({
+      filename: '[name]-[hash].bundle.css',
       disable: isDevelopment(),
     }));
 }
