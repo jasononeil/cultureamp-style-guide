@@ -113,11 +113,11 @@ function svgLoader(options) {
     use: [
       {
         loader: require.resolve('svg-sprite-loader'),
-        options: require('./svgo.config.js'),
+        options: 'symbolId=ca-icon-[name]',
       },
       {
         loader: require.resolve('svgo-loader'),
-        options: 'symbolId=ca-icon-[name]',
+        options: require('./svgo.config.js'),
       },
     ],
   };
