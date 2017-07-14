@@ -41,11 +41,11 @@ presets:
       children: Button
       size: small
       primary: false
-  - name: Inverted
+  - name: Ghost
     props:
       children: Button text
       darkBackground: true
-  - name: Inverted disabled
+  - name: Ghost disabled
     props:
       children: Button text
       disabled: true

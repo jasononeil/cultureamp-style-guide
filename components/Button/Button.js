@@ -19,7 +19,7 @@ export default function Button({
     [styles.button]: true,
     [styles.primary]: primary && !destructive && !darkBackground,
     [styles.secondary]: !destructive && !primary,
-    [styles.inverted]: darkBackground,
+    [styles.ghost]: darkBackground,
     [styles.fixed]: fixed,
     [styles.mid]: size === 'mid',
     [styles.small]: size === 'small',

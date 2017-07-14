@@ -4,8 +4,8 @@
 
 %ca-button {
   display: inline-block;
-  background: add-tint($ca-palette-ink, 80%);
-  color: rgba($ca-palette-ink, 0.3);
+  background: add-tint($ca-palette-ink, 90%);
+  color: add-alpha($ca-palette-ink, 30%);
   padding: 0 20px;
   font-weight: $ca-weight-semibold;
   height: 50px;
@@ -23,7 +23,8 @@
     top: 7px;
     width: 34px;
     height: 34px;
-    color: inherit;
+    // color: inherit;
+    color: add-alpha($ca-palette-ink, 20%);
     line-height: 23px;
   }
 
@@ -36,6 +37,10 @@
     color: #fff;
     cursor: pointer;
 
+    svg {
+      color: inherit;
+    }
+
     &:hover {
       background: add-shade($ca-palette-coral, 10%);
       text-decoration: none;
@@ -46,6 +51,11 @@
       position: relative;
       top: 1px;
     }
+
+    // &:focus {
+    //   outline: 2px solid $ca-palette-ocean;
+    //   outline-offset: -2px;
+    // }
   }
 }
 
@@ -92,30 +102,41 @@
   height: 25px;
   padding: 0 12px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 %ca-button---secondary {
   background: #fff;
   border: 1px solid add-tint($ca-palette-ink, 80%);
-  color: add-tint($ca-palette-ink, 80%);
+  color: add-alpha($ca-palette-ink, 30%);
+
+  svg {
+    color: add-alpha($ca-palette-ink, 20%);
+  }
 
   &:not(:disabled) {
     background: #fff;
     color: $ca-palette-ink;
 
+    svg {
+      color: inherit;
+    }
+
     &:hover {
-      background: add-tint($ca-palette-paper, 80%);
+      background: add-tint($ca-palette-ink, 95%);
+      border-color: add-tint($ca-palette-ink, 60%);
     }
 
     &:active {
-      background: add-tint($ca-palette-paper, 60%);
+      background: add-tint($ca-palette-ink, 90%);
+      border-color: add-tint($ca-palette-ink, 40%);
     }
   }
 }
 
-%ca-button---inverted {
+%ca-button---ghost {
   background: transparent;
-  color: add-alpha(#fff, 40%);
+  color: add-alpha(#fff, 30%);
   border: 1px solid add-alpha(#fff, 50%);
 
   &:not(:disabled) {
@@ -135,14 +156,14 @@
 
 %ca-button---positive {
   &:not(:disabled) {
-    background: add-tint($ca-palette-seedling, 20%);
+    background: add-tint($ca-palette-seedling, 10%);
 
     &:hover {
       background: $ca-palette-seedling;
     }
 
     &:active {
-      background: add-shade($ca-palette-seedling, 5%);
+      background: add-shade($ca-palette-seedling, 10%);
     }
   }
 }
