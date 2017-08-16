@@ -1,6 +1,7 @@
 guide/assets
 guide/dist
 node_modules
+elm-stuff
 .jekyll-metadata
 .sass-cache
 npm-debug.log

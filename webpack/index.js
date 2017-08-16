@@ -7,7 +7,8 @@ module.exports = decorateConfig;
 function decorateConfig(config, options) {
   return [
     excludeStyleGuideFromModules,
-    addStyleGuideLoaders,
+    decorateRules,
+    addStyleGuideRules,
     addStyleGuideAlias,
   ].reduce((decoratedConfig, decorator) => {
     return decorator(decoratedConfig, options);
@@ -29,19 +30,59 @@ function excludeStyleGuideFromRule(rule) {
   });
 }
 
-function addStyleGuideLoaders(config, options) {
+function decorateRules(config, options) {
   return Object.assign({}, config, {
     module: Object.assign({}, config.module, {
-      rules: styleGuideLoaders(options).concat(config.module.rules),
+      rules: decorateElmRules(config.module.rules),
     }),
   });
 }
 
-function styleGuideLoaders(options) {
-  return [jsLoader(options), cssLoader(options), svgLoader(options)];
+function decorateElmRules(rules) {
+  return rules.map(rule => {
+    const injectAtIndex = elmLoaderIndex(rule);
+    if (injectAtIndex < 0) return rule;
+
+    return Object.assign({}, rule, {
+      use: [
+        ...rule.use.slice(0, injectAtIndex),
+        {
+          loader: require.resolve('./elmSvgAssetLoader'),
+        },
+        ...rule.use.slice(injectAtIndex),
+      ],
+    });
+  });
 }
 
-function jsLoader() {
+function elmLoaderIndex(rule) {
+  return (
+    (rule.use &&
+      rule.use.findIndex(
+        loaderEntry => loaderEntry.loader === 'elm-webpack-loader'
+      )) ||
+    -1
+  );
+}
+
+function addStyleGuideRules(config, options) {
+  return Object.assign({}, config, {
+    module: Object.assign({}, config.module, {
+      rules: styleGuideRules(options).concat(config.module.rules),
+    }),
+  });
+}
+
+function styleGuideRules(options) {
+  return [
+    jsRule(options),
+    elmRule(options),
+    cssRule(options),
+    svgRule(options),
+  ];
+}
+
+function jsRule() {
   return {
     test: /\.js$/,
     include: styleGuidePaths(),
@@ -50,7 +91,31 @@ function jsLoader() {
   };
 }
 
-function cssLoader(options) {
+function elmRule() {
+  return {
+    test: /\.elm$/,
+    include: styleGuidePaths(),
+    use: [
+      {
+        loader: require.resolve('./elmSvgAssetLoader'),
+      },
+      {
+        loader: 'elm-css-modules-loader',
+      },
+      {
+        loader: 'elm-webpack-loader',
+        options: {
+          debug: false,
+          forceWatch:
+            path.basename(require.main.filename) === 'webpack-dev-server.js',
+          maxInstances: 1,
+        },
+      },
+    ],
+  };
+}
+
+function cssRule(options) {
   return {
     test: /\.scss$/,
     include: styleGuidePaths(),
@@ -106,7 +171,7 @@ function cssLoaderDeliveryDecorator(options) {
     : loaders => [require.resolve('style-loader'), ...loaders];
 }
 
-function svgLoader(options) {
+function svgRule(options) {
   return {
     test: /\.svg$/,
     include: styleGuidePaths(),
