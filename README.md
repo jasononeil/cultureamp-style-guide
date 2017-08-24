@@ -75,6 +75,41 @@ module.exports = decorateWithStyleGuide(webpackConfig, {
 });
 ```
 
+### Importing Elm Components
+
+We do not yet publish Kaizen as an Elm package. Instead, the Elm components may
+be imported from the cultureamp-style-guide NPM module.
+
+To do this, your host project's elm-package.json file must include
+node_modules/cultureamp-style-guide/components in its `"source-directories"`
+list:
+
+```json
+{
+    "version": "1.0.0",
+    "summary": "helpful summary of your project, less than 80 characters",
+    "repository": "https://github.com/user/project.git",
+    "license": "BSD3",
+    "source-directories": [
+        ⋮
+        "node_modules/cultureamp-style-guide/components"
+    ],
+```
+
+The component modules may then be imported directly in any of your project's Elm
+modules:
+
+```elm
+import Html
+import Icon.Icon as Icon
+
+view =
+    Html.div []
+        [ Icon.view
+            -- arguments
+        ]
+```
+
 ### Importing React Components
 
 React components may be imported from the cultureamp-style-guide module, and
