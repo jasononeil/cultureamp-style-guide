@@ -16,3 +16,15 @@ svg {
   height: inherit;
   display: block;
 }
+
+%kaizenIcon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+%kaizenIconInheritSize {
+  width: inherit;
+  height: inherit;
+  display: block;
+}
