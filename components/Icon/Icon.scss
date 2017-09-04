@@ -1,3 +1,5 @@
+@import 'styles';
+
 svg {
   [fill='#000000'],
   [fill='#000'] {
@@ -6,25 +8,9 @@ svg {
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
+  @extend %caIcon;
 }
 
 .inheritSize {
-  width: inherit;
-  height: inherit;
-  display: block;
-}
-
-%kaizenIcon {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-}
-
-%kaizenIconInheritSize {
-  width: inherit;
-  height: inherit;
-  display: block;
+  @extend %caIconInheritSize;
 }
