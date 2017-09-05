@@ -5,6 +5,13 @@ svg {
   [fill='#000'] {
     fill: currentColor;
   }
+
+  [fill='#ffffff'],
+  [fill='#fff'],
+  [fill='#FFFFFF'],
+  [fill='#FFF'] {
+    fill: inherit;
+  }
 }
 
 .icon {
