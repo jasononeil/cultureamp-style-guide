@@ -2,14 +2,16 @@
 
 svg {
   [fill='#000000'],
-  [fill='#000'] {
+  [fill='#000'],
+  [fill='black'] {
     fill: currentColor;
   }
 
   [fill='#ffffff'],
   [fill='#fff'],
   [fill='#FFFFFF'],
-  [fill='#FFF'] {
+  [fill='#FFF'],
+  [fill='white'] {
     fill: inherit;
   }
 }
