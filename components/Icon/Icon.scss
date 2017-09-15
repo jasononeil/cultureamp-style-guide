@@ -1,17 +1,25 @@
 @import 'styles';
 
 svg {
-  [fill='#000000'],
-  [fill='#000'],
-  [fill='black'] {
-    fill: currentColor;
+  // preserve mask colors, since they control opacity
+  :not(mask) {
+    &[fill='#ffffff'],
+    &[fill='#fff'],
+    &[fill='#FFFFFF'],
+    &[fill='#FFF'],
+    &[fill='white'] {
+      fill: inherit;
+    }
+
+    &[fill='#000000'],
+    &[fill='#000'],
+    &[fill='black'] {
+      fill: currentColor;
+    }
   }
 
-  [fill='#ffffff'],
-  [fill='#fff'],
-  [fill='#FFFFFF'],
-  [fill='#FFF'],
-  [fill='white'] {
+  // Sketch wraps every exported SVG in a <g> with fill="none"
+  > g[fill='none'] {
     fill: inherit;
   }
 }
