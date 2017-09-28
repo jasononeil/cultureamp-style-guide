@@ -1,16 +1,3 @@
-// the SVG spritesheet injected by svg-sprite-loader
-body > svg:first-of-type {
-  // preserve mask colors, since they control opacity
-  :not(mask) {
-    &[fill='#000000'],
-    &[fill='#000'],
-    &[fill='black'] {
-      // instances of SVG symbols will adopt color of their parent
-      fill: currentColor;
-    }
-  }
-}
-
 %caIcon {
   width: 20px;
   height: 20px;
