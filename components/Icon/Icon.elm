@@ -153,5 +153,5 @@ type alias ImgAlt =
 main : Html Never
 main =
     view presentation
-        (svgAsset "cultureamp-style-guide/icons/informational/exclamation.svg")
+        (svgAsset "cultureamp-style-guide/icons/exclamation.svg")
         "elm-icon-demo"
