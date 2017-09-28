@@ -4,15 +4,14 @@
     <title>subtract</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <path d="M10,2 C5.58,2 2,5.58 2,10 C2,14.42 5.58,18 10,18 C14.42,18 18,14.42 18,10 C18,5.58 14.42,2 10,2 L10,2 Z" id="path-1"></path>
+        <path d="M10,2 C14.42,2 18,5.58 18,10 C18,14.42 14.42,18 10,18 C5.58,18 2,14.42 2,10 C2,5.58 5.58,2 10,2 Z M14,10.8 L14,9.2 L6,9.2 L6,10.8 L14,10.8 Z" id="path-1"></path>
     </defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="subtract">
             <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
             </mask>
-            <use id="Icons/Actions/minus" fill="#000000" xlink:href="#path-1"></use>
-            <polygon id="Path" fill="#FFFFFF" points="14 10.8 6 10.8 6 9.2 14 9.2"></polygon>
+            <use id="Combined-Shape" fill="#000000" xlink:href="#path-1"></use>
         </g>
     </g>
 </svg>
