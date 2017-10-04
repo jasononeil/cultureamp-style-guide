@@ -4,7 +4,7 @@
     <title>comment</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <path d="M16.4,2 C17.284,2 18,2.716 18,3.6 L18,13.2 C18,14.084 17.284,14.8 16.4,14.8 L5.2,14.8 L2,18 L2.008,3.6 C2.008,2.716 2.716,2 3.6,2 L16.4,2 Z M12.4,9.2 L14,9.2 L14,7.6 L12.4,7.6 L12.4,9.2 Z M9.2,9.2 L10.8,9.2 L10.8,7.6 L9.2,7.6 L9.2,9.2 Z M6,9.2 L7.6,9.2 L7.6,7.6 L6,7.6 L6,9.2 Z" id="path-1"></path>
+        <path d="M16.4,2 L3.6,2 C2.716,2 2.008,2.716 2.008,3.6 L2,18 L5.2,14.8 L16.4,14.8 C17.284,14.8 18,14.084 18,13.2 L18,3.6 C18,2.716 17.284,2 16.4,2 L16.4,2 Z" id="path-1"></path>
     </defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="comment">
@@ -12,6 +12,9 @@
                 <use xlink:href="#path-1"></use>
             </mask>
             <use id="Icons/Actions/comment" fill="#000000" xlink:href="#path-1"></use>
+            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="12.4 9.2 14 9.2 14 7.6 12.4 7.6"></polygon>
+            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="9.2 9.2 10.8 9.2 10.8 7.6 9.2 7.6"></polygon>
+            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="6 9.2 7.6 9.2 7.6 7.6 6 7.6"></polygon>
         </g>
     </g>
 </svg>
