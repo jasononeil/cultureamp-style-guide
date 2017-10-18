@@ -178,7 +178,10 @@ function svgRule(options) {
     use: [
       {
         loader: require.resolve('svg-sprite-loader'),
-        options: 'symbolId=ca-icon-[name]',
+        options: {
+          symbolId: 'ca-icon-[name]',
+          spriteModule: path.resolve(__dirname, '../util/svg-sprite.js'),
+        },
       },
       {
         loader: require.resolve('svgo-loader'),
