@@ -3,7 +3,7 @@
 // See https://github.com/kisenka/svg-sprite-loader/issues/200 for an issue that
 // may lead to a cleaner way of customising this.
 
-import BrowserSprite from 'svg-baker-runtime/src/browser-sprite';
+import BrowserSprite from 'svg-baker-runtime/browser-sprite';
 import domready from 'domready';
 
 const spriteNodeId = '__SVG_SPRITE_NODE__';
