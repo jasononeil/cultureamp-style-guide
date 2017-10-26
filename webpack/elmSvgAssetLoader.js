@@ -1,98 +1,53 @@
 const loaderUtils = require('loader-utils');
-const babel = require('babel-core');
-const { default: generate } = require('babel-generator');
 
-const loader = function(source, inputSourceMap) {
+/**
+ * A webpack loader to transform SVG assets in Elm to Webpack require() calls.
+ *
+ * Searching for elm code:
+ *  svgAsset "cultureamp-style-guide/icons/exclamation.svg"
+ *
+ * Which is compiled as JS code:
+ *   _user$project$Icon_SvgAsset$svgAsset('cultureamp-style-guide/icons/exclamation.svg')
+ *
+ * We replace this with:
+ *   require('cultureamp-style-guide/icons/exclamation.svg').default
+ */
+function loader(source, inputSourceMap) {
   const config = loaderUtils.getOptions(this) || {};
-
   config.module = config['module'] || 'Icon.SvgAsset';
   config.tagger = config['tagger'] || 'svgAsset';
 
-  const packageName = config['package'] || 'user/project';
-  const taggerName =
-    '_' +
-    [
-      packageName.replace(/-/g, '_').replace(/\//g, '$'),
-      config.module.replace(/\./g, '_'),
-      config.tagger,
-    ].join('$');
+  const packageName = config['package'] || 'user/project',
+    taggerName =
+      '_' +
+      [
+        packageName.replace(/-/g, '_').replace(/\//g, '$'),
+        config.module.replace(/\./g, '_'),
+        config.tagger,
+      ].join('$'),
+    escapedTaggerName = taggerName.replace(/\$/g, '\\$'),
+    moduleNameCapture = "'([a-zA-Z-./]+)'",
+    regexp = regexpForFunctionCall(escapedTaggerName, [moduleNameCapture]);
 
-  const transformerOptions = {
-    taggerName: taggerName,
-    localPath: config.localPath,
-  };
-
-  const webpackRemainingChain = loaderUtils
-    .getRemainingRequest(this)
-    .split('!');
-  const filename = webpackRemainingChain[webpackRemainingChain.length - 1];
-  const babelOptions = {
-    inputSourceMap: inputSourceMap,
-    sourceRoot: process.cwd(),
-    filename: filename,
-    compact: false,
-    babelrc: false,
-  };
-
-  const result = transform(source, this, transformerOptions, babelOptions);
-
-  this.callback(null, result.code, result.map);
-};
-
-function transform(source, loaderContext, transformerOptions, babelOptions) {
-  babelOptions.plugins = [
-    svgAssetTransformer(loaderContext, transformerOptions),
-  ];
-
-  const { code, map } = babel.transform(source, babelOptions);
-
-  if (map && (!map.sourcesContent || !map.sourcesContent.length)) {
-    map.sourcesContent = [source];
-  }
-
-  return { code, map };
+  return source.replace(regexp, "require('$1').default");
 }
 
-function svgAssetTransformer(loaderContext, options) {
-  return function plugin({ types: t }) {
-    return {
-      visitor: {
-        CallExpression: callExpressionVisitor(t, loaderContext, options),
-      },
-    };
-  };
-}
-
-const REPLACED_NODE = Symbol('elmSvgAssetLoaderReplaced');
-
-function callExpressionVisitor(t, loaderContext, options) {
-  return function visitor(path) {
-    // avoid infinite recursion
-    if (path.node[REPLACED_NODE]) {
-      return;
-    }
-
-    // look for:
-    //
-    //     <taggerName>("icon.svg");
-    if (
-      !(
-        t.isIdentifier(path.node.callee) &&
-        path.node.callee.name === options.taggerName
-      )
-    )
-      return;
-
-    // replace with require("icon.svg").default
-    const replacement = t.memberExpression(
-      t.callExpression(t.Identifier('require'), [path.node.arguments[0]]),
-      t.Identifier('default')
-    );
-
-    replacement[REPLACED_NODE] = true;
-
-    path.replaceWith(replacement);
-  };
+/**
+ * Create a regular expression to match a function call.
+ *
+ * @param fnName The name of the function being called. Can include
+ *  property access (eg `console.log`)
+ * @param args An array of arguments we expect to find. Each of these
+ *  can be a regular expression to match the expected type of argument, and can
+ *  include capture groups.
+ */
+function regexpForFunctionCall(fnName, args) {
+  const optionalWhitespace = '\\s*';
+  const argumentParts = args.map(
+    arg => optionalWhitespace + arg + optionalWhitespace
+  );
+  let parts = [fnName, '\\(', argumentParts.join(','), '\\)'];
+  return new RegExp(parts.join(''), 'g');
 }
 
 module.exports = loader;
