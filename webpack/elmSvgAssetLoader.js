@@ -43,16 +43,10 @@ function loader(source, inputSourceMap) {
  */
 function regexpForFunctionCall(fnName, args) {
   const optionalWhitespace = '\\s*';
-  const argumentParts = [];
-  for (let i = 0; i < args.length; i++) {
-    argumentParts.push(optionalWhitespace);
-    argumentParts.push(args[i]);
-    if (i < args.length - 1) {
-      argumentParts.push(',');
-    }
-    argumentParts.push(optionalWhitespace);
-  }
-  let parts = [fnName, '\\(', ...argumentParts, '\\)'];
+  const argumentParts = args.map(
+    arg => optionalWhitespace + arg + optionalWhitespace
+  );
+  let parts = [fnName, '\\(', argumentParts.join(','), '\\)'];
   return new RegExp(parts.join(''), 'g');
 }
 
