@@ -2,6 +2,10 @@
 
 ## 4.x
 
+### 4.1.4
+
+- 👍 Rename user icons so that they're more consistent with other icons.
+
 ### 4.1.3
 
 - 👍 Change `elmSvgAssetLoader` to use a regular expression rather than Babel, as
