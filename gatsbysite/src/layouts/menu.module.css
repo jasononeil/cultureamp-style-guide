@@ -1,0 +1,16 @@
+.menu {
+  list-style: none;
+  margin: 0;
+}
+.item {
+  float: left;
+}
+.item::after {
+  content: '|';
+  padding: 0 10px;
+  color: white;
+}
+.item a {
+  color: white;
+  text-decoration: none;
+}

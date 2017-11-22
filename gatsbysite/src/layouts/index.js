@@ -4,6 +4,16 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
 import './index.css'
+import menuStyles from './menu.module.css'
+
+const pages = [
+  'Atoms',
+  'Molecules',
+  'Organisms',
+  'Pages',
+  'Templates',
+  'Visuals',
+]
 
 const Header = () => (
   <div
@@ -30,6 +40,13 @@ const Header = () => (
           Gatsby
         </Link>
       </h1>
+      <ul className={menuStyles.menu}>
+        {pages.map(page => (
+          <li className={menuStyles.item}>
+            <Link to={'/' + page.toLowerCase()}>{page}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 )
