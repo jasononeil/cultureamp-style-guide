@@ -7,12 +7,12 @@ import './index.css'
 import menuStyles from './menu.module.css'
 
 const pages = [
+  'Visuals',
   'Atoms',
   'Molecules',
   'Organisms',
-  'Pages',
   'Templates',
-  'Visuals',
+  'Pages',
 ]
 
 const Header = () => (
@@ -37,9 +37,10 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Kaizen
         </Link>
       </h1>
+      <h2 style={{ color: 'white' }}>Culture Amp's Living Style Guide</h2>
       <ul className={menuStyles.menu}>
         {pages.map(page => (
           <li className={menuStyles.item}>
@@ -54,10 +55,16 @@ const Header = () => (
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Kaizen"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        {
+          name: 'description',
+          content: "The style guide for Culture Amp's design system, Kaizen",
+        },
+        {
+          name: 'keywords',
+          content: 'Culture Amp, design, system, style guide',
+        },
       ]}
     />
     <Header />

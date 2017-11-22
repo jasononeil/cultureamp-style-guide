@@ -5,7 +5,7 @@
 .item {
   float: left;
 }
-.item::after {
+.item + .item:before {
   content: '|';
   padding: 0 10px;
   color: white;
