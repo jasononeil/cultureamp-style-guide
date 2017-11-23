@@ -1,6 +1,6 @@
-import React from 'react';
-import classnames from 'classnames';
-import styles from './Button.scss';
+import React from 'react'
+import classnames from 'classnames'
+import styles from './Button.module.scss'
 
 export default function Button({
   disabled = false,
@@ -13,7 +13,6 @@ export default function Button({
   size = 'large',
   children,
 }) {
-
   const className = classnames({
     // [this.mainClass(args)]: !(icon || otherType || thirdType),
     [styles.button]: true,
@@ -26,11 +25,10 @@ export default function Button({
   })
 
   return (
-    <button
-      disabled={disabled}
-      className={className}
-    >{children}</button>
-  );
+    <button disabled={disabled} className={className}>
+      {children}
+    </button>
+  )
 }
 
 Button.propTypes = {
