@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
-import './index.css'
-import menuStyles from './menu.module.css'
+import './index.css';
+import menuStyles from './menu.module.css';
 
 const pages = [
   'Visuals',
@@ -13,7 +13,7 @@ const pages = [
   'Organisms',
   'Templates',
   'Pages',
-]
+];
 
 const Header = () => (
   <div
@@ -50,23 +50,27 @@ const Header = () => (
       </ul>
     </div>
   </div>
-)
+);
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet
-      title="Kaizen"
-      meta={[
-        {
-          name: 'description',
-          content: "The style guide for Culture Amp's design system, Kaizen",
-        },
-        {
-          name: 'keywords',
-          content: 'Culture Amp, design, system, style guide',
-        },
-      ]}
-    />
+    <Helmet>
+      <title>Kaizen</title>
+      <meta
+        name="description"
+        content="The style guide for Culture Amp's design system, Kaizen"
+      />
+      <meta
+        name="keywords"
+        content="Culture Amp, design, system, style guide"
+      />
+      <meta name="referrer" content="origin" />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cloud.typography.com/6384974/791628/css/fonts.css"
+      />
+    </Helmet>
     <Header />
     <div
       style={{
@@ -79,10 +83,10 @@ const TemplateWrapper = ({ children }) => (
       {children()}
     </div>
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
-}
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
