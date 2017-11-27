@@ -18,37 +18,22 @@ const pages = [
 const Header = () => (
   <div
     style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
+      margin: '0 auto',
+      maxWidth: 1360,
+      padding: '1.45rem 1.0875rem',
     }}
   >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Kaizen
-        </Link>
-      </h1>
-      <h2 style={{ color: 'white' }}>Culture Amp's Living Style Guide</h2>
-      <ul className={menuStyles.menu}>
-        {pages.map(page => (
-          <li className={menuStyles.item}>
-            <Link to={'/' + page.toLowerCase()}>{page}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <h1 style={{ margin: 0 }}>
+      <Link to="/">Kaizen</Link>
+    </h1>
+    <h2>Culture Amp's Living Style Guide</h2>
+    <ul className={menuStyles.menu}>
+      {pages.map(page => (
+        <li className={menuStyles.item}>
+          <Link to={'/' + page.toLowerCase()}>{page}</Link>
+        </li>
+      ))}
+    </ul>
   </div>
 );
 
@@ -69,7 +54,7 @@ const TemplateWrapper = ({ children }) => (
     <div
       style={{
         margin: '0 auto',
-        maxWidth: 960,
+        maxWidth: 1360,
         padding: '0px 1.0875rem 1.45rem',
         paddingTop: 0,
       }}
