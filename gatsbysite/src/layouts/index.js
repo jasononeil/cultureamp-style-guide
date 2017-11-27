@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
-import './index.css';
+import './index.scss';
 import menuStyles from './menu.module.css';
 
 const pages = [
@@ -63,12 +63,6 @@ const TemplateWrapper = ({ children }) => (
       <meta
         name="keywords"
         content="Culture Amp, design, system, style guide"
-      />
-      <meta name="referrer" content="origin" />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cloud.typography.com/6384974/791628/css/fonts.css"
       />
     </Helmet>
     <Header />

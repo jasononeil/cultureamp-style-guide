@@ -1,0 +1,39 @@
+@import '~cultureamp-style-guide/styles/type';
+@import '~cultureamp-style-guide/styles/color';
+
+html {
+  background: $ca-palette-stone;
+  color: $ca-palette-ink;
+  font-family: $ca-ideal-sans;
+  font-weight: $ca-weight-light;
+  font-size: $ca-default-font-size;
+}
+
+body {
+  font-size: $ca-body-font-size;
+  line-height: $ca-body-line-height;
+  font-weight: $ca-body-font-weight;
+}
+
+h1 {
+  $ca-heading-font: 500 18px $ca-ideal-sans;
+}
+
+h2 {
+  font-size: $ca-heading-2-font-size;
+  line-height: $ca-heading-2-line-height;
+  font-weight: $ca-heading-2-font-weight;
+}
+
+h3 {
+  font-size: $ca-heading-3-font-size;
+  line-height: $ca-heading-3-line-height;
+  font-weight: $ca-heading-3-font-weight;
+}
+
+a[href] {
+  $ca-link-text-color: $ca-palette-ocean;
+  &:hover {
+    $ca-link-hover-text-color: $ca-palette-ocean;
+  }
+}

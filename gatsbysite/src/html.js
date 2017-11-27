@@ -24,6 +24,10 @@ module.exports = class HTML extends React.Component {
       <html {...this.props.htmlAttributes}>
         <head>
           <meta name="referrer" content="origin" />
+          <link
+            rel="stylesheet"
+            href="https://cloud.typography.com/6384974/791628/css/fonts.css"
+          />
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta
