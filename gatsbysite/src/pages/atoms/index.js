@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import BradFrostQuote from '../../components/BradFrostQuote'
+import React from 'react';
+import Link from 'gatsby-link';
+import BradFrostQuote from '../../components/BradFrostQuote';
 
 const Page = () => (
   <div>
@@ -15,9 +15,12 @@ const Page = () => (
       <li>
         <Link to="atoms/icon">Icon</Link>
       </li>
+      <li>
+        <Link to="atoms/colors">Colors</Link>
+      </li>
     </ul>
     <Link to="/">Go back to the homepage</Link>
   </div>
-)
+);
 
-export default Page
+export default Page;
