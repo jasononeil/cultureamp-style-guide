@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import ColorCard from './colorCard.js';
 import styles from './index.module.scss';
+import colorCardStyles from './colorCard.module.scss';
 
 const Page = () => (
   <div>
@@ -30,5 +30,18 @@ const Page = () => (
     <Link to="/">Go back to the homepage</Link>
   </div>
 );
+
+const ColorCard = ({ name }) => {
+  var colorClassName = colorCardStyles[name.toLowerCase()];
+  return (
+    <div className={colorCardStyles.colorCard}>
+      <h3>{name}</h3>
+      <h4 className={colorCardStyles.subHeader}>Tint &amp; Shade</h4>
+      <div className={`${colorCardStyles.colorBlock} ${colorClassName}`}>
+        Color
+      </div>
+    </div>
+  );
+};
 
 export default Page;

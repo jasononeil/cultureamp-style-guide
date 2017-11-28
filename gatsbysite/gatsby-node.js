@@ -4,9 +4,9 @@ const path = require('path');
 function modifyWebpackConfig(_ref, options) {
   var config = _ref.config,
     stage = _ref.stage;
+  addSrcResolveRoot(config);
   if (stage === 'build-javascript' || stage === 'develop') {
     addSvgLoaders(config);
-    addSrcResolveRoot(config);
   }
   return config;
 }
