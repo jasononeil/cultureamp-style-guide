@@ -3,4 +3,5 @@ module.exports = {
     title: `Kaizen - Culture Amp's Design System`,
   },
   plugins: [`gatsby-plugin-react-helmet`, `gatsby-plugin-sass`],
-}
+  pathPrefix: '/cultureamp-style-guide/',
+};

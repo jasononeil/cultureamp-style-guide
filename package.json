@@ -7,18 +7,11 @@
   "author": "Kevin Yank <kevin@cultureamp.com>",
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:assets && npm run build:site",
-    "build:assets": "webpack --config guide/webpack.config.js",
-    "build:site": "cd guide && JEKYLL_ENV=production bundle exec jekyll build --baseurl \"$npm_package_config_baseurl\"",
-    "clean": "rm -rf guide/assets/* guide/dist/*",
-    "gh-pages": "npm run clean && npm run gh-pages:build && npm run gh-pages:deploy",
-    "gh-pages:build": "npm run gh-pages:build:assets && npm run gh-pages:build:site",
-    "gh-pages:build:assets": "npm run build:assets",
-    "gh-pages:build:site": "npm run build:site --cultureamp-style-guide:baseurl=\"/cultureamp-style-guide\"",
-    "gh-pages:deploy": "scripts/gh-pages-deploy.js",
-    "start": "concurrently --kill-others \"npm run start:assets\" \"npm run start:site\"",
-    "start:assets": "NODE_ENV=development webpack-dev-server -d --config guide/webpack.config.js",
-    "start:site": "cd guide && bundle exec jekyll serve --watch"
+    "clean": "rm -rf guide/public/*",
+    "start": "cd guide && gatsby develop",
+    "build": "cd guide && gatsby build --prefix-paths",
+    "deploy": "yarn run clean && yarn run build && yarn run deploy:ghpages",
+    "deploy:ghpages": "gh-pages -d guide/public"
   },
   "browserslist": [
     "> 1%",
