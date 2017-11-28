@@ -1,6 +1,6 @@
-import React from 'react'
-import classnames from 'classnames'
-import styles from './Button.module.scss'
+import React from 'react';
+import classnames from 'classnames';
+import styles from './Button.module.scss';
 
 export default function Button({
   disabled = false,
@@ -22,13 +22,13 @@ export default function Button({
     [styles.fixed]: fixed,
     [styles.mid]: size === 'mid',
     [styles.small]: size === 'small',
-  })
+  });
 
   return (
     <button disabled={disabled} className={className}>
       {children}
     </button>
-  )
+  );
 }
 
 Button.propTypes = {
@@ -36,4 +36,4 @@ Button.propTypes = {
   primary: React.PropTypes.bool,
   destructive: React.PropTypes.bool,
   icon: React.PropTypes.bool,
-}
+};
