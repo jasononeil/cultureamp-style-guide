@@ -23,7 +23,7 @@ module.exports = class HTML extends React.Component {
     return (
       <html {...this.props.htmlAttributes}>
         <head>
-          <meta name="referrer" content="origin" />
+          <meta name="referrer" content="never" />
           <link
             rel="stylesheet"
             type="text/css"
