@@ -10,13 +10,13 @@ const Page = () => (
     </BradFrostQuote>
     <ul>
       <li>
-        <Link to="atoms/button">Button</Link>
+        <Link to="/atoms/button">Button</Link>
       </li>
       <li>
-        <Link to="atoms/icon">Icon</Link>
+        <Link to="/atoms/icon">Icon</Link>
       </li>
       <li>
-        <Link to="atoms/colors">Colors</Link>
+        <Link to="/atoms/colors">Colors</Link>
       </li>
     </ul>
     <Link to="/">Go back to the homepage</Link>
