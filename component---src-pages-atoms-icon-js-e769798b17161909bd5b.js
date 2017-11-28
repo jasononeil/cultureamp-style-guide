@@ -1,6 +1,6 @@
 webpackJsonp([103700555733728],{
 
-/***/ 181:
+/***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9,7 +9,7 @@ webpackJsonp([103700555733728],{
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
@@ -17,17 +17,17 @@ webpackJsonp([103700555733728],{
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _classnames = __webpack_require__(72);
+	var _classnames = __webpack_require__(71);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _IconModule = __webpack_require__(289);
+	var _IconModule = __webpack_require__(288);
 	
 	var _IconModule2 = _interopRequireDefault(_IconModule);
 	
-	var _error = __webpack_require__(201);
+	var _error = __webpack_require__(200);
 	
-	var _reactHtmlId = __webpack_require__(420);
+	var _reactHtmlId = __webpack_require__(419);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -141,7 +141,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 289:
+/***/ 288:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -149,7 +149,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 115:
+/***/ 114:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -160,11 +160,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 179:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
-	const colorConvert = __webpack_require__(213);
+	const colorConvert = __webpack_require__(212);
 	
 	const wrapAnsi16 = (fn, offset) => function () {
 		const code = fn.apply(colorConvert, arguments);
@@ -316,19 +316,19 @@ webpackJsonp([103700555733728],{
 		get: assembleStyles
 	});
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(459)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(458)(module)))
 
 /***/ }),
 
-/***/ 212:
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
-	var escapeStringRegexp = __webpack_require__(285);
-	var ansiStyles = __webpack_require__(179);
-	var stripAnsi = __webpack_require__(453);
-	var hasAnsi = __webpack_require__(332);
-	var supportsColor = __webpack_require__(454);
+	var escapeStringRegexp = __webpack_require__(284);
+	var ansiStyles = __webpack_require__(178);
+	var stripAnsi = __webpack_require__(452);
+	var hasAnsi = __webpack_require__(331);
+	var supportsColor = __webpack_require__(453);
 	var defineProps = Object.defineProperties;
 	var isSimpleWindowsTerm = process.platform === 'win32' && !/^xterm/i.test(({"NODE_ENV":"production","PUBLIC_DIR":"/Users/jason.oneil/workspace/cultureamp/cultureamp-style-guide/guide/public"}).TERM);
 	
@@ -444,7 +444,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 72:
+/***/ 71:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -499,11 +499,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 118:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* MIT license */
-	var cssKeywords = __webpack_require__(215);
+	var cssKeywords = __webpack_require__(214);
 	
 	// NOTE: conversions should only return primitive values (i.e. arrays, or
 	//       values that give correct `typeof` results).
@@ -1367,11 +1367,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 213:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var conversions = __webpack_require__(118);
-	var route = __webpack_require__(214);
+	var conversions = __webpack_require__(117);
+	var route = __webpack_require__(213);
 	
 	var convert = {};
 	
@@ -1452,10 +1452,10 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 214:
+/***/ 213:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var conversions = __webpack_require__(118);
+	var conversions = __webpack_require__(117);
 	
 	/*
 		this function routes a model to all other models.
@@ -1556,7 +1556,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 215:
+/***/ 214:
 /***/ (function(module, exports) {
 
 	'use strict'
@@ -1715,7 +1715,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 90:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*!
@@ -1752,7 +1752,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 285:
+/***/ 284:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1770,11 +1770,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 332:
+/***/ 331:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(115);
+	var ansiRegex = __webpack_require__(114);
 	var re = new RegExp(ansiRegex().source); // remove the `g` flag
 	module.exports = re.test.bind(re);
 
@@ -1972,7 +1972,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 420:
+/***/ 419:
 /***/ (function(module, exports) {
 
 	/* Copyright (c) 2017 Hampus Joakim Nilsson
@@ -2033,11 +2033,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 453:
+/***/ 452:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(115)();
+	var ansiRegex = __webpack_require__(114)();
 	
 	module.exports = function (str) {
 		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -2046,7 +2046,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 454:
+/***/ 453:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2055,7 +2055,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 455:
+/***/ 454:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -2997,7 +2997,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 456:
+/***/ 455:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -3275,7 +3275,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 459:
+/***/ 458:
 /***/ (function(module, exports) {
 
 	module.exports = function(module) {
@@ -3301,15 +3301,11 @@ webpackJsonp([103700555733728],{
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _HtmlString = __webpack_require__(69);
-	
-	var _HtmlString2 = _interopRequireDefault(_HtmlString);
-	
-	var _DemoModule = __webpack_require__(91);
+	var _DemoModule = __webpack_require__(90);
 	
 	var _DemoModule2 = _interopRequireDefault(_DemoModule);
 	
@@ -3440,17 +3436,7 @@ webpackJsonp([103700555733728],{
 	  };
 	
 	  Demo.prototype.selectedPresetProps = function selectedPresetProps() {
-	    var _props$presets$state$ = this.props.presets[this.state.selectedPreset],
-	        props = _props$presets$state$.props,
-	        htmlProps = _props$presets$state$.htmlProps;
-	
-	
-	    Object.keys(htmlProps || {}).forEach(function (key) {
-	      var html = htmlProps[key];
-	      props[key] = _react2.default.createElement(_HtmlString2.default, { html: html });
-	    });
-	
-	    return props;
+	    return this.props.presets[this.state.selectedPreset].props;
 	  };
 	
 	  Demo.prototype.renderSizePresets = function renderSizePresets() {
@@ -3613,7 +3599,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 91:
+/***/ 90:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -3621,37 +3607,14 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 69:
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	exports.__esModule = true;
-	exports.default = HtmlString;
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function HtmlString(_ref) {
-	  var html = _ref.html;
-	
-	  return _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: html } });
-	}
-	module.exports = exports['default'];
-
-/***/ }),
-
-/***/ 193:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
@@ -3663,11 +3626,11 @@ webpackJsonp([103700555733728],{
 	
 	var _Demo2 = _interopRequireDefault(_Demo);
 	
-	var _Icon = __webpack_require__(181);
+	var _Icon = __webpack_require__(180);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _configure = __webpack_require__(457);
+	var _configure = __webpack_require__(456);
 	
 	var _configure2 = _interopRequireDefault(_configure);
 	
@@ -3712,11 +3675,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 457:
+/***/ 456:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var SpriteSymbol = __webpack_require__(456);
-	var sprite = __webpack_require__(202);
+	var SpriteSymbol = __webpack_require__(455);
+	var sprite = __webpack_require__(201);
 	var symbol = new SpriteSymbol({
 	  "id": "ca-icon-configure",
 	  "use": "ca-icon-configure-usage",
@@ -3728,12 +3691,12 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 201:
+/***/ 200:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var chalk = __webpack_require__(212);
+	var chalk = __webpack_require__(211);
 	
 	function error(message) {
 	  throw new Error(chalk.red('\nCULTUREAMP STYLE GUIDE ERROR:\n' + singleLine(message) + '\n'));
@@ -3755,18 +3718,18 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 202:
+/***/ 201:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _browserSprite = __webpack_require__(455);
+	var _browserSprite = __webpack_require__(454);
 	
 	var _browserSprite2 = _interopRequireDefault(_browserSprite);
 	
-	var _domready = __webpack_require__(90);
+	var _domready = __webpack_require__(89);
 	
 	var _domready2 = _interopRequireDefault(_domready);
 	
@@ -3823,4 +3786,4 @@ webpackJsonp([103700555733728],{
 /***/ })
 
 });
-//# sourceMappingURL=component---src-pages-atoms-icon-js-24f65168f924bd1d8c6e.js.map
+//# sourceMappingURL=component---src-pages-atoms-icon-js-e769798b17161909bd5b.js.map
