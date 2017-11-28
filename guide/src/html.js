@@ -26,7 +26,8 @@ module.exports = class HTML extends React.Component {
           <meta name="referrer" content="origin" />
           <link
             rel="stylesheet"
-            href="https://cloud.typography.com/6384974/791628/css/fonts.css"
+            type="text/css"
+            href="https://cloud.typography.com/6384974/640188/css/fonts.css"
           />
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
