@@ -1,12 +1,15 @@
 const styleGuideDecorator = require('cultureamp-style-guide/webpack');
 const path = require('path');
 
-exports.modifyWebpackConfig = function(_ref, options) {
+function modifyWebpackConfig(_ref, options) {
   var config = _ref.config,
     stage = _ref.stage;
-  addSvgLoaders(config);
+  if (stage === 'build-javascript' || stage === 'develop') {
+    addSvgLoaders(config);
+    addSrcResolveRoot(config);
+  }
   return config;
-};
+}
 
 function addSvgLoaders(config) {
   var svgoConf = require('cultureamp-style-guide/webpack/svgo.config.js');
@@ -23,3 +26,13 @@ function addSvgLoaders(config) {
     ],
   });
 }
+
+function addSrcResolveRoot(config) {
+  config.merge({
+    resolve: {
+      root: [path.resolve('node_modules'), path.resolve('src')],
+    },
+  });
+}
+
+exports.modifyWebpackConfig = modifyWebpackConfig;

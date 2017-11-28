@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Demo from '../../components/Demo'
-import Button from '../../../../components/Button/Button.js'
+import React from 'react';
+import Link from 'gatsby-link';
+import Demo from 'components/Demo';
+import Button from '../../../../components/Button/Button.js';
 
 const buttonPresets = [
   { name: 'Primary', props: { children: 'Button text', primary: true } },
@@ -49,7 +49,7 @@ const buttonPresets = [
       darkBackground: true,
     },
   },
-]
+];
 
 const Page = () => (
   <div>
@@ -62,6 +62,6 @@ const Page = () => (
     <Demo component={Button} presets={buttonPresets} />
     <Link to="/">Go back to the homepage</Link>
   </div>
-)
+);
 
-export default Page
+export default Page;

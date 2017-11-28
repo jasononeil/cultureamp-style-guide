@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Demo from '../../components/Demo';
+import Demo from 'components/Demo';
 import Icon from '../../../../components/Icon/Icon.js';
 import configureIcon from 'cultureamp-style-guide/icons/configure.svg';
 

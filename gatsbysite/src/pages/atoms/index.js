@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import BradFrostQuote from '../../components/BradFrostQuote';
+import BradFrostQuote from 'components/BradFrostQuote';
 
 const Page = () => (
   <div>
