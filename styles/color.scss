@@ -1,9 +1,3 @@
-/******************************************************************************
- *
- * PALETTE - https://cultureamp.atlassian.net/wiki/display/MARK/Palette
- *
- *****************************************************************************/
-
 // Primary colours
 $ca-palette-ink: #3e4543;
 $ca-palette-paper: #f2edde;
@@ -38,5 +32,3 @@ $ca-palette-tan: #f4f0ef;
   $inverse: 1 - $decimal;
   @return transparentize($color, $inverse);
 }
-
-// Derived colours
