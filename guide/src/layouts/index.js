@@ -41,14 +41,8 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet>
       <title>Kaizen</title>
-      <meta
-        name="description"
-        content="The style guide for Culture Amp's design system, Kaizen"
-      />
-      <meta
-        name="keywords"
-        content="Culture Amp, design, system, style guide"
-      />
+      <meta name="description" content="Kaizen - Culture Amp's Style Guide" />
+      <meta name="keywords" content="Culture Amp, design system, style guide" />
     </Helmet>
     <Header />
     <div
