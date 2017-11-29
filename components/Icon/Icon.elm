@@ -16,7 +16,7 @@ view config svgAsset id =
             config
 
         { toString } =
-            css "cultureamp-style-guide/components/Icon/Icon.scss"
+            css "cultureamp-style-guide/components/Icon/Icon.module.scss"
                 { icon = ""
                 , inheritSize = ""
                 }
