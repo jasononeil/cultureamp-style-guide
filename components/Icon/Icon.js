@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './Icon.scss';
+import styles from './Icon.module.scss';
 import { warn } from '../../util/error';
 import { enableUniqueIds } from 'react-html-id';
 
@@ -75,7 +75,9 @@ export default class Icon extends React.Component {
 
         Assistive technologies that enable vision-impaired users to read web pages
         can treat images (including icons) as either decorative or meaningful. Only
-        images with a role of "${IMG}" (meaningful) will be read aloud to the user.
+        images with a role of "${
+          IMG
+        }" (meaningful) will be read aloud to the user.
         These images must therefore have a title attribute to provide the text that
         will be read aloud.
 

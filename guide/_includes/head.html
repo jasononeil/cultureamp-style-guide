@@ -1,7 +1,0 @@
-<head>
-  <meta charset="utf-8">
-  <title>Kaizen :: {{ include.title | default: "Culture Amp’s Living Style Guide" }}</title>
-  {% capture main_css %}{% webpack_asset main.css %}{% endcapture %}
-  {% unless main_css == '' %}<link rel="stylesheet" href="{{ main_css }}">{% endunless %}
-  <script src="{% webpack_asset main.js %}"></script>
-</head>

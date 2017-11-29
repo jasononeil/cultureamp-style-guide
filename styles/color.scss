@@ -11,6 +11,11 @@ $ca-palette-lapis: #253c64;
 $ca-palette-peach: #f3786d;
 $ca-palette-yuzu: #ffce1e;
 
+// Tertiary colours
+$ca-palette-stone: add-tint($ca-palette-ink, 97%);
+$ca-palette-positive-delta: #43e699;
+$ca-palette-negative-delta: #ff4757;
+
 // Original page background color
 $ca-palette-tan: #f4f0ef;
 

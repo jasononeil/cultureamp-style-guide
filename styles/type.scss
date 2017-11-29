@@ -1,9 +1,50 @@
-$ca-weight-semibold: 600;
+@import 'color';
+
+$ca-weight-light: 300;
+$ca-weight-semibold: 500;
 $ca-weight-normal: 400;
-
-$ca-default-font-family: 'Open Sans';
-$ca-heading-font: 600 18px $ca-default-font-family;
-
+$ca-default-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+$ca-ideal-sans: 'Ideal Sans A', 'Ideal Sans B', $ca-default-font-family;
+$ca-default-font-size: 14px;
 $ca-base-text-color: $ca-palette-ink;
-$ca-link-text-color: add-tint($ca-palette-ocean, 20%);
+$ca-link-text-color: $ca-palette-ocean;
 $ca-link-hover-text-color: $ca-palette-ocean;
+
+// Heading 1
+$ca-heading-font: 500 22px $ca-ideal-sans;
+
+// Heading 2
+$ca-heading-2-font-size: 18px;
+$ca-heading-2-line-height: 24px;
+$ca-heading-2-font-weight: 500;
+
+// Heading 3
+$ca-heading-3-font-size: 16px;
+$ca-heading-3-line-height: 24px;
+$ca-heading-3-font-weight: 500;
+
+// Intro Para
+$ca-intro-para-font-size: 16px;
+$ca-intro-para-line-height: 24px;
+$ca-intro-para-font-weight: 400;
+
+// Body
+$ca-body-font-size: 14px;
+$ca-body-line-height: 24px;
+$ca-body-font-weight: 400;
+
+// Control Action
+$ca-control-action-font-size: 14px;
+$ca-control-action-line-height: 24px;
+$ca-control-action-font-weight: 500;
+
+// Body Small
+$ca-body-small-font-size: 12px;
+$ca-body-small-line-height: 24px;
+$ca-body-small-font-weight: 400;
+
+// Labels & Legends
+$ca-labels-and-legends-font-size: 12px;
+$ca-labels-and-legends-line-height: 24px;
+$ca-labels-and-legends-font-weight: 500;
+$ca-labels-and-legends-letter-spacing: 0.55px;
