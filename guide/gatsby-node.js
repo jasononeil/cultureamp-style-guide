@@ -7,8 +7,17 @@ function modifyWebpackConfig(_ref, options) {
   addSrcResolveRoot(config);
   if (stage === 'build-javascript' || stage === 'develop') {
     addSvgLoaders(config);
+    addElmLoader(config);
   }
   return config;
+}
+
+function addElmLoader(config) {
+  config.loader('elm-webpack-loader', {
+    test: /\.elm$/,
+    exclude: [/elm-stuff/, /node_modules/],
+    loaders: ['elm-css-modules-loader', 'elm-webpack-loader'],
+  });
 }
 
 function addSvgLoaders(config) {
