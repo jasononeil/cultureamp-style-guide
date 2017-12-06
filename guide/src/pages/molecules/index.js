@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'components/Elements';
 import BradFrostQuote from 'components/BradFrostQuote';
 
 const Page = () => (

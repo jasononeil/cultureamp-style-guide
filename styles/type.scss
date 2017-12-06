@@ -1,8 +1,12 @@
 @import 'color';
 
+$ca-weight-extra-light: 200;
 $ca-weight-light: 300;
-$ca-weight-semibold: 500;
-$ca-weight-normal: 400;
+$ca-weight-book: 400;
+$ca-weight-medium: 500;
+$ca-weight-semibold: 500; // Note: in Sketch, semibold is 600. But murmur has an existing value of semibold=500 that is heavily used.
+$ca-weight-normal: $ca-weight-book;
+
 $ca-default-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 $ca-ideal-sans: 'Ideal Sans A', 'Ideal Sans B', $ca-default-font-family;
 $ca-default-font-size: 14px;

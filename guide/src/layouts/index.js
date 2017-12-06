@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link, Heading1, Heading2 } from 'components/Elements';
 import Helmet from 'react-helmet';
-
 import './index.scss';
 import menuStyles from './menu.module.css';
 
@@ -23,10 +22,10 @@ const Header = () => (
       padding: '1.45rem 1.0875rem',
     }}
   >
-    <h1 style={{ margin: 0 }}>
+    <Heading1>
       <Link to="/">Kaizen</Link>
-    </h1>
-    <h2>Culture Amp's Living Style Guide</h2>
+    </Heading1>
+    <Heading2>Culture Amp's Living Style Guide</Heading2>
     <ul className={menuStyles.menu}>
       {pages.map(page => (
         <li className={menuStyles.item}>

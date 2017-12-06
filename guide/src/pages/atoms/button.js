@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'components/Elements';
 import Demo from 'components/Demo';
 import Button from '../../../../components/Button/Button.js';
 

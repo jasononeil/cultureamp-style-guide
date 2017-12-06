@@ -1,0 +1,29 @@
+@import '~cultureamp-style-guide/styles/type';
+@import '~cultureamp-style-guide/styles/color';
+
+.h1 {
+  font: $ca-heading-font;
+}
+
+.h2 {
+  font: $ca-heading-font;
+  font-size: $ca-heading-2-font-size;
+  line-height: $ca-heading-2-line-height;
+  font-weight: $ca-heading-2-font-weight;
+}
+
+.h3 {
+  font: $ca-heading-font;
+  font-size: $ca-heading-3-font-size;
+  line-height: $ca-heading-3-line-height;
+  font-weight: $ca-heading-3-font-weight;
+}
+
+.link {
+  color: $ca-link-text-color;
+  text-decoration: none;
+  &:hover,
+  &:visited {
+    color: $ca-link-hover-text-color;
+  }
+}

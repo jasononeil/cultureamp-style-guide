@@ -1,8 +1,10 @@
+@import '~cultureamp-style-guide/styles/type';
+
 @mixin setupColumns($numColumns) {
   .cardContainer {
     display: grid;
     grid-gap: 1rem;
-    justify-content: space-around;
+    justify-content: space-between;
     grid-template-columns: repeat($numColumns, minmax(280px, 360px));
   }
 
@@ -22,4 +24,10 @@
 
 @media screen and (max-width: 767px) {
   @include setupColumns(1);
+}
+
+.intro {
+  font-size: $ca-intro-para-font-size;
+  line-height: $ca-intro-para-line-height;
+  font-weight: $ca-weight-extra-light;
 }

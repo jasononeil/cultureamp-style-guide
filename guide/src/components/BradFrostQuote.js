@@ -1,13 +1,14 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import { ExternalLink } from 'components/Elements';
+import styles from './BradFrostQuote.module.scss';
 
 const BradFrostQuote = ({ children, link }) => (
-  <blockquote>
+  <blockquote className={styles.quote}>
     {children}
     <cite>
-      - Brad Frost, <Link to={link}>Atomic Design</Link>
+      - Brad Frost, <ExternalLink to={link}>Atomic Design</ExternalLink>
     </cite>
   </blockquote>
-)
+);
 
-export default BradFrostQuote
+export default BradFrostQuote;
