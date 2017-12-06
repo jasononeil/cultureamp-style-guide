@@ -9,11 +9,13 @@ const Page = () => (
     <Heading1>Colors</Heading1>
     <p className={styles.intro}>
       Our color palette is built with our core principles and guidelines as its
-      foundation. We are committed to complying with{' '}
+      foundation.
+      <br />We are committed to complying with{' '}
       <ExternalLink to="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast">
         AA standard contrast ratios
       </ExternalLink>.
     </p>
+    <hr className={styles.hr} />
     <div className={styles.cardContainer}>
       <Heading2 className={styles.gridHeader}>Primary Colors</Heading2>
       <ColorCard name="Coral" />
