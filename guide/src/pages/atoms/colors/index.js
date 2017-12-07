@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link, ExternalLink, Heading1, Heading2 } from 'components/Elements';
+import Kebab from 'components/kebab/Kebab';
 import joinClassNames from 'util/joinClassNames.js';
 import styles from './index.module.scss';
 import colorCardStyles from './colorCard.module.scss';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon.js';
 import chevronUp from 'cultureamp-style-guide/icons/chevron-up.svg';
 import chevronDown from 'cultureamp-style-guide/icons/chevron-down.svg';
+import ellipsis from 'cultureamp-style-guide/icons/ellipsis.svg';
+import duplicate from 'cultureamp-style-guide/icons/duplicate.svg';
 
 const Page = () => (
   <div>
@@ -99,12 +102,14 @@ class ColorCard extends React.Component {
   renderBlock(color, amount) {
     let colorClassName = color.toLowerCase(),
       isHalfBlock = false,
-      label = `$ca-palette-${colorClassName}`,
+      label = '100%',
+      sassVar = `$ca-palette-${colorClassName}`,
       shouldUseWhite = this.shouldUseWhiteText(color, amount || 0);
     if (amount) {
       let shift = amount > 0 ? 'tint' : 'shade',
         absAmount = Math.abs(amount);
-      label = `add-${shift}($ca-palette-${color.toLowerCase()}, ${absAmount}%)`;
+      sassVar = `add-${shift}($ca-palette-${colorClassName}, ${absAmount}%)`;
+      label = amount > 0 ? `+${absAmount}% White` : `+${absAmount}% Black`;
       colorClassName = `${colorClassName}-${shift}-${absAmount}`;
       isHalfBlock = true;
     }
@@ -116,7 +121,23 @@ class ColorCard extends React.Component {
       shouldUseWhite && colorCardStyles['whiteText'],
     ]);
 
-    return <div className={classes}>{label}</div>;
+    return (
+      <div className={classes}>
+        <span className={colorCardStyles.colorBlockLabel}>{label}</span>
+        <span className={colorCardStyles.kebabContainer}>
+          <Kebab
+            links={[]}
+            actions={[
+              { text: `SASS ${sassVar}`, action: () => {}, icon: duplicate },
+              { text: 'HEX', action: () => {}, icon: duplicate },
+              { text: 'RGB', action: () => {}, icon: duplicate },
+              { text: 'CMYK', action: () => {}, icon: duplicate },
+            ]}
+            title="Copy To Clipboard"
+          />
+        </span>
+      </div>
+    );
   }
 
   shouldUseWhiteText(color, amount) {

@@ -1,0 +1,19 @@
+@import '~cultureamp-style-guide/styles/color';
+
+.fieldKebabIconInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kebabIcon {
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
