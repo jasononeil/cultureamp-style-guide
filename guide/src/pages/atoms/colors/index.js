@@ -32,7 +32,7 @@ const Page = () => (
       <ColorCard name="Peach" />
       <ColorCard name="Yuzu" />
       <Heading2 className={styles.gridHeader}>Tertiary Colors</Heading2>
-      <ColorCard name="Postive-Delta" />
+      <ColorCard name="Positive-Delta" />
       <ColorCard name="Negative-Delta" />
       <ColorCard name="Stone" />
     </div>
