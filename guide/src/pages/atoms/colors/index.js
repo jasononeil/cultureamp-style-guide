@@ -3,6 +3,9 @@ import { Link, ExternalLink, Heading1, Heading2 } from 'components/Elements';
 import joinClassNames from 'util/joinClassNames.js';
 import styles from './index.module.scss';
 import colorCardStyles from './colorCard.module.scss';
+import Icon from 'cultureamp-style-guide/components/Icon/Icon.js';
+import chevronUp from 'cultureamp-style-guide/icons/chevron-up.svg';
+import chevronDown from 'cultureamp-style-guide/icons/chevron-down.svg';
 
 const Page = () => (
   <div>
@@ -39,18 +42,35 @@ const Page = () => (
 );
 
 class ColorCard extends React.Component {
+  state = {
+    expanded: false,
+  };
+
   render() {
-    const { name } = this.props;
-    var colorClassName = colorCardStyles[name.toLowerCase()];
+    const { name } = this.props,
+      colorClassName = colorCardStyles[name.toLowerCase()],
+      toggleIcon = this.state.expanded ? chevronUp : chevronDown,
+      toggleTitle = this.state.expanded ? 'Collapse Color' : 'Expand Color';
     return (
       <div>
         <div className={colorCardStyles.colorCard}>
-          <h3>{name}</h3>
+          <h3>
+            <a onClick={() => this.toggleOpen()}>
+              {name}
+              <span className={colorCardStyles.toggleIconWrapper}>
+                <Icon icon={toggleIcon} role="img" title={toggleTitle} />
+              </span>
+            </a>
+          </h3>
           <h4>Tint &amp; Shade</h4>
-          {this.renderColorBlocks(true)}
+          {this.renderColorBlocks(this.state.expanded)}
         </div>
       </div>
     );
+  }
+
+  toggleOpen() {
+    this.setState({ expanded: !this.state.expanded });
   }
 
   renderColorBlocks(showVariations) {
@@ -68,7 +88,8 @@ class ColorCard extends React.Component {
   renderBlock(color, amount) {
     let colorClassName = color.toLowerCase(),
       isHalfBlock = false,
-      label = `$ca-palette-${colorClassName}`;
+      label = `$ca-palette-${colorClassName}`,
+      shouldUseWhite = this.shouldUseWhiteText(color, amount || 0);
     if (amount) {
       let shift = amount > 0 ? 'tint' : 'shade',
         absAmount = Math.abs(amount);
@@ -81,7 +102,7 @@ class ColorCard extends React.Component {
       colorCardStyles['colorBlock'],
       colorCardStyles[colorClassName],
       isHalfBlock && colorCardStyles['colorBlockHalf'],
-      this.shouldUseWhiteText(color, amount) && colorCardStyles['whiteText'],
+      shouldUseWhite && colorCardStyles['whiteText'],
     ]);
 
     return <div className={classes}>{label}</div>;

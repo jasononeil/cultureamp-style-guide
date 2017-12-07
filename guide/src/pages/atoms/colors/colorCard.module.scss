@@ -23,6 +23,20 @@
   line-height: $ca-heading-3-font-size;
 }
 
+.colorCard h3 a {
+  color: $ca-palette-ink;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.toggleIconWrapper {
+  color: add-tint($ca-palette-ink, 80);
+  position: relative;
+  top: 6px;
+  left: 2px;
+}
+
 .colorCard h4 {
   text-transform: uppercase;
   color: add-tint($ca-palette-ink, 50%);
