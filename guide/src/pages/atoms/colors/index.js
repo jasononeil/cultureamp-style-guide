@@ -143,16 +143,16 @@ class ColorCard extends React.Component {
   shouldUseWhiteText(color, amount) {
     const lastWhite = {
       coral: 10,
-      paper: -30,
+      paper: -40,
       ink: 30,
       seedling: -10,
       ocean: 10,
       lapis: 30,
       wisteria: 10,
       peach: -10,
-      yuzu: -20,
-      'positive-delta': -20,
-      'negative-delta': 0,
+      yuzu: -30,
+      'positive-delta': -30,
+      'negative-delta': 10,
     };
     return amount <= lastWhite[color.toLowerCase()];
   }
