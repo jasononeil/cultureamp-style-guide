@@ -28,7 +28,7 @@ const Header = () => (
     <Heading2>Culture Amp's Living Style Guide</Heading2>
     <ul className={menuStyles.menu}>
       {pages.map(page => (
-        <li className={menuStyles.item}>
+        <li key={page} className={menuStyles.item}>
           <Link to={'/' + page.toLowerCase()}>{page}</Link>
         </li>
       ))}
