@@ -17,7 +17,7 @@ const pages = [
 const Header = () => (
   <div
     style={{
-      margin: '0 auto',
+      margin: '10px auto',
       maxWidth: 1360,
       padding: '1.45rem 1.0875rem',
     }}
