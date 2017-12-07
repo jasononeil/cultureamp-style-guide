@@ -48,20 +48,11 @@ class ColorCard extends React.Component {
 
   render() {
     const { name } = this.props,
-      colorClassName = colorCardStyles[name.toLowerCase()],
-      toggleIcon = this.state.expanded ? chevronUp : chevronDown,
-      toggleTitle = this.state.expanded ? 'Collapse Color' : 'Expand Color';
+      colorClassName = colorCardStyles[name.toLowerCase()];
     return (
       <div>
         <div className={colorCardStyles.colorCard}>
-          <h3>
-            <a onClick={() => this.toggleOpen()}>
-              {name}
-              <span className={colorCardStyles.toggleIconWrapper}>
-                <Icon icon={toggleIcon} role="img" title={toggleTitle} />
-              </span>
-            </a>
-          </h3>
+          <h3>{this.renderColorTitleAndToggle()}</h3>
           <h4>Tint &amp; Shade</h4>
           {this.renderColorBlocks(this.state.expanded)}
         </div>
@@ -73,10 +64,30 @@ class ColorCard extends React.Component {
     this.setState({ expanded: !this.state.expanded });
   }
 
+  renderColorTitleAndToggle() {
+    if (!this.isExpandable()) {
+      return <span>{this.props.name}</span>;
+    }
+    const toggleIcon = this.state.expanded ? chevronUp : chevronDown,
+      toggleTitle = this.state.expanded ? 'Collapse Color' : 'Expand Color';
+    return (
+      <a onClick={() => this.toggleOpen()}>
+        {this.props.name}
+        <span className={colorCardStyles.toggleIconWrapper}>
+          <Icon icon={toggleIcon} role="img" title={toggleTitle} />
+        </span>
+      </a>
+    );
+  }
+
+  isExpandable() {
+    return this.props.name !== 'Stone';
+  }
+
   renderColorBlocks(showVariations) {
     const colorName = this.props.name;
     const mainBlock = this.renderBlock(colorName);
-    if (!showVariations || colorName === 'Stone') {
+    if (!showVariations || !this.isExpandable()) {
       return mainBlock;
     }
     const variations = showVariations
