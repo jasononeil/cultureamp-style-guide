@@ -3,13 +3,16 @@
 
 .h1 {
   font: $ca-heading-font;
+  font-weight: $ca-weight-book;
+  margin-bottom: $ca-grid;
 }
 
 .h2 {
   font: $ca-heading-font;
   font-size: $ca-heading-2-font-size;
   line-height: $ca-heading-2-line-height;
-  font-weight: $ca-heading-2-font-weight;
+  // Note, we're not using $ca-heading-2-font-weight as the styleguide uses a lighter weight than murmur.
+  font-weight: $ca-weight-book;
 }
 
 .h3 {

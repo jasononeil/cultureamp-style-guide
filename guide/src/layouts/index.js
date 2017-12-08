@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, Heading1, Heading2 } from 'components/Elements';
 import Helmet from 'react-helmet';
 import './index.scss';
-import menuStyles from './menu.module.css';
+import menuStyles from './menu.module.scss';
 
 const pages = [
   'Visuals',

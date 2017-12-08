@@ -35,6 +35,6 @@
 .hr {
   border: none;
   border-bottom: 1px solid add-alpha($ca-palette-ink, 10%);
-  margin-top: 0;
-  margin-bottom: 56px;
+  margin-top: $ca-grid;
+  margin-bottom: $ca-grid * 2;
 }

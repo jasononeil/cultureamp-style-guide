@@ -1,7 +1,11 @@
+@import '~cultureamp-style-guide/styles/type';
+
 .menu {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  line-height: $ca-grid;
+  margin-bottom: $ca-grid;
 }
 .item {
   float: left;
