@@ -64,7 +64,7 @@ $side-padding: 18px;
   @extend %menuItem;
 }
 
-.menuItem__title {
+.hoverIcon .menuItem__icon .menuItem__title {
   flex: 4;
 }
 
@@ -72,6 +72,13 @@ $side-padding: 18px;
   flex: 1;
   text-align: right;
   color: add-tint($ca-palette-ink, 80%);
+
+  .hoverIcon & {
+    opacity: 0;
+  }
+  .hoverIcon:hover & {
+    opacity: 1;
+  }
 }
 
 .separator {

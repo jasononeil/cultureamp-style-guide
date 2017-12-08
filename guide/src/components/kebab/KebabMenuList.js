@@ -17,6 +17,7 @@ export default class KebabMenuList extends React.Component {
           text={item.text}
           action={item.action}
           icon={item.icon}
+          hoverIcon={item.hoverIcon}
           key={index}
           hideKebabMenu={this.props.hideKebabMenu}
         />

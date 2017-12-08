@@ -215,6 +215,7 @@ class ColorCard extends React.Component {
         }
       },
       icon: duplicate,
+      hoverIcon: true,
     };
   }
 }

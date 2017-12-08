@@ -21,8 +21,13 @@ export const MenuItemAction = props => {
     props.action(event);
   };
 
+  let className = styles.menuItemAction;
+  if (props.hoverIcon) {
+    className += ' ' + styles.hoverIcon;
+  }
+
   return (
-    <div className={styles.menuItemAction} onClick={handleOnClick}>
+    <div className={className} onClick={handleOnClick}>
       <a>
         <span className={styles.menuItem__title}>{props.text}</span>
         <span className={styles.menuItem__icon}>
@@ -42,5 +47,6 @@ MenuItemAction.propTypes = {
   action: PropTypes.func.isRequired,
   text: PropTypes.node.isRequired,
   icon: PropTypes.object,
+  hoverIcon: PropTypes.bool,
   hideKebabMenu: PropTypes.func,
 };
