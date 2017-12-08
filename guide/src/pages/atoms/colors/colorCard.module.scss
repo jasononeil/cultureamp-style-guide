@@ -50,7 +50,7 @@
 
 .colorBlock {
   box-sizing: border-box;
-  background: $ca-palette-ocean;
+  background: black;
   height: 91px;
   line-height: 71px;
   vertical-align: middle;
@@ -81,39 +81,4 @@
 
 .colorBlockHalf .kebabContainer {
   line-height: 27px;
-}
-
-// Create a class for every shad of every color
-// .yuzu, .yuzuShade10, .yuzuTint10 etc.
-
-$palette: (
-  ink: $ca-palette-ink,
-  paper: $ca-palette-paper,
-  coral: $ca-palette-coral,
-  seedling: $ca-palette-seedling,
-  ocean: $ca-palette-ocean,
-  wisteria: $ca-palette-wisteria,
-  lapis: $ca-palette-lapis,
-  peach: $ca-palette-peach,
-  yuzu: $ca-palette-yuzu,
-  stone: $ca-palette-stone,
-  positive-delta: $ca-palette-positive-delta,
-  negative-delta: $ca-palette-negative-delta
-);
-
-$interval: 10;
-$level: $interval;
-@while $level < 100 {
-  @each $color, $value in $palette {
-    .#{$color} {
-      background: $value;
-    }
-    .#{$color}-tint-#{$level} {
-      background: add-tint($value, $level);
-    }
-    .#{$color}-shade-#{$level} {
-      background: add-shade($value, $level);
-    }
-  }
-  $level: $level + $interval;
 }

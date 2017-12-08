@@ -9,6 +9,30 @@ import chevronUp from 'cultureamp-style-guide/icons/chevron-up.svg';
 import chevronDown from 'cultureamp-style-guide/icons/chevron-down.svg';
 import ellipsis from 'cultureamp-style-guide/icons/ellipsis.svg';
 import duplicate from 'cultureamp-style-guide/icons/duplicate.svg';
+import Color from 'color';
+
+const Palette = {
+  ink: Color('#3e4543'),
+  paper: Color('#f2edde'),
+  coral: Color('#f04c5d'),
+  seedling: Color('#45ad8f'),
+  ocean: Color('#1b7688'),
+  wisteria: Color('#727193'),
+  lapis: Color('#253c64'),
+  peach: Color('#f3786d'),
+  yuzu: Color('#ffce1e'),
+  stone: Color('#f2f2f2'),
+  'positive-delta': Color('#43e699'),
+  'negative-delta': Color('#ff4757'),
+};
+
+function addTint(color, percentage) {
+  return color.mix(Color('#ffffff'), percentage / 100);
+}
+
+function addShade(color, percentage) {
+  return color.mix(Color('#000000'), percentage / 100);
+}
 
 const Page = () => (
   <div>
@@ -100,38 +124,42 @@ class ColorCard extends React.Component {
   }
 
   renderBlock(color, amount) {
-    let colorClassName = color.toLowerCase(),
-      isHalfBlock = false,
+    let isHalfBlock = false,
       label = '100%',
-      sassVar = `$ca-palette-${colorClassName}`,
-      shouldUseWhite = this.shouldUseWhiteText(color, amount || 0);
+      sassVar = `$ca-palette-${color.toLowerCase()}`,
+      shouldUseWhite = this.shouldUseWhiteText(color, amount || 0),
+      bgColor = Palette[color.toLowerCase()];
     if (amount) {
       let shift = amount > 0 ? 'tint' : 'shade',
         absAmount = Math.abs(amount);
-      sassVar = `add-${shift}($ca-palette-${colorClassName}, ${absAmount}%)`;
+      sassVar = `add-${shift}(${sassVar}, ${absAmount}%)`;
       label = amount > 0 ? `+${absAmount}% White` : `+${absAmount}% Black`;
-      colorClassName = `${colorClassName}-${shift}-${absAmount}`;
+      bgColor =
+        amount > 0 ? addTint(bgColor, absAmount) : addShade(bgColor, absAmount);
       isHalfBlock = true;
     }
 
     const classes = joinClassNames([
       colorCardStyles['colorBlock'],
-      colorCardStyles[colorClassName],
       isHalfBlock && colorCardStyles['colorBlockHalf'],
       shouldUseWhite && colorCardStyles['whiteText'],
     ]);
 
     return (
-      <div className={classes}>
+      <div
+        key={bgColor.rgb().string()}
+        className={classes}
+        style={{ background: bgColor.rgb().string() }}
+      >
         <span className={colorCardStyles.colorBlockLabel}>{label}</span>
         <span className={colorCardStyles.kebabContainer}>
           <Kebab
             links={[]}
             actions={[
-              { text: `SASS ${sassVar}`, action: () => {}, icon: duplicate },
-              { text: 'HEX', action: () => {}, icon: duplicate },
-              { text: 'RGB', action: () => {}, icon: duplicate },
-              { text: 'CMYK', action: () => {}, icon: duplicate },
+              this.colorDropdownItem('SASS', sassVar),
+              this.colorDropdownItem('HEX', bgColor.hex()),
+              this.colorDropdownItem('RGB', bgColor.rgb().string()),
+              this.colorDropdownItem('CMYK', bgColor.cmyk().string()),
             ]}
             title="Copy To Clipboard"
           />
@@ -155,6 +183,14 @@ class ColorCard extends React.Component {
       'negative-delta': 10,
     };
     return amount <= lastWhite[color.toLowerCase()];
+  }
+
+  colorDropdownItem(type, value) {
+    return {
+      text: [<strong>{type}</strong>, ' ', <small>{value}</small>],
+      action: () => {},
+      icon: duplicate,
+    };
   }
 }
 
