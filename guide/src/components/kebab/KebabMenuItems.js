@@ -35,12 +35,12 @@ export const MenuItemAction = props => {
 
 MenuItemLink.propTypes = {
   link: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.node,
 };
 
 MenuItemAction.propTypes = {
   action: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.node.isRequired,
   icon: PropTypes.object,
   hideKebabMenu: PropTypes.func,
 };
