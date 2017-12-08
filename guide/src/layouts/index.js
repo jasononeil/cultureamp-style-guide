@@ -23,9 +23,8 @@ const Header = () => (
     }}
   >
     <Heading1>
-      <Link to="/">Kaizen</Link>
+      <Link to="/">Kaizen</Link> - Culture Amp's Living Style Guide
     </Heading1>
-    <Heading2>Culture Amp's Living Style Guide</Heading2>
     <ul className={menuStyles.menu}>
       {pages.map(page => (
         <li key={page} className={menuStyles.item}>
