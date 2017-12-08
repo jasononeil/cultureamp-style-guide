@@ -158,8 +158,22 @@ class ColorCard extends React.Component {
             actions={[
               this.colorDropdownItem('SASS', sassVar),
               this.colorDropdownItem('HEX', bgColor.hex()),
-              this.colorDropdownItem('RGB', bgColor.rgb().string()),
-              this.colorDropdownItem('CMYK', bgColor.cmyk().string()),
+              this.colorDropdownItem(
+                'RGB',
+                bgColor
+                  .rgb()
+                  .array()
+                  .map(Math.round)
+                  .join(', ')
+              ),
+              this.colorDropdownItem(
+                'CMYK',
+                bgColor
+                  .cmyk()
+                  .array()
+                  .map(Math.round)
+                  .join(', ')
+              ),
             ]}
             title="Copy To Clipboard"
           />
@@ -186,9 +200,20 @@ class ColorCard extends React.Component {
   }
 
   colorDropdownItem(type, value) {
+    let input;
     return {
-      text: [<strong>{type}</strong>, ' ', <small>{value}</small>],
-      action: () => {},
+      text: (
+        <div className={colorCardStyles.dropdownItem}>
+          <strong>{type}</strong> <small>{value}</small>
+          <input type="text" defaultValue={value} ref={i => (input = i)} />
+        </div>
+      ),
+      action: () => {
+        if (input) {
+          input.select();
+          document.execCommand('copy');
+        }
+      },
       icon: duplicate,
     };
   }

@@ -1,7 +1,8 @@
 @import '~cultureamp-style-guide/styles/color';
 @import '~cultureamp-style-guide/styles/border';
+@import '~cultureamp-style-guide/styles/layers';
 
-$width: 190px;
+$width: 248px;
 $side-padding: 18px;
 
 .container {
@@ -11,6 +12,7 @@ $side-padding: 18px;
   border: 1px solid add-tint($ca-palette-ink, 80%);
   box-shadow: $ca-box-shadow;
   line-height: 40px;
+  z-index: $ca-z-index-dropdown;
 }
 
 %menuItem {
