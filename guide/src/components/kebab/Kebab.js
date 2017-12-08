@@ -46,10 +46,6 @@ export default class Kebab extends React.Component {
     );
   }
 
-  renderNothing() {
-    return <div />;
-  }
-
   render() {
     return (
       <div className={styles.fieldKebabIconInner}>
@@ -58,7 +54,7 @@ export default class Kebab extends React.Component {
           onClick={this.toggleKebabMenu}
           ref={this.kebabRef}
         >
-          <div className={styles.kebabIconWrapper}>
+          <div className={this.state.isKebabMenuVisible ? styles.isOpen : ''}>
             <Icon icon={kebabIcon} role="img" title={this.props.title} />
           </div>
         </div>

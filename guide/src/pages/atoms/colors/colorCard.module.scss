@@ -75,6 +75,13 @@
   line-height: 80px;
 }
 
+.kebabContainer svg {
+  opacity: 0;
+  .colorBlock:hover & {
+    opacity: 1;
+  }
+}
+
 .colorBlockLabel {
   flex: 1;
 }
@@ -86,6 +93,7 @@
 .dropdownItem {
   display: flex;
   flex-direction: row;
+  line-height: 20px;
 }
 
 .dropdownItem strong {
