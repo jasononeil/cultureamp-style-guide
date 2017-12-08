@@ -1,6 +1,6 @@
-webpackJsonp([103700555733728],{
+webpackJsonp([274576253422262],{
 
-/***/ 180:
+/***/ 42:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9,25 +9,25 @@ webpackJsonp([103700555733728],{
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _react = __webpack_require__(2);
+	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _propTypes = __webpack_require__(8);
+	var _propTypes = __webpack_require__(7);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _classnames = __webpack_require__(71);
+	var _classnames = __webpack_require__(44);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _IconModule = __webpack_require__(288);
+	var _IconModule = __webpack_require__(102);
 	
 	var _IconModule2 = _interopRequireDefault(_IconModule);
 	
-	var _error = __webpack_require__(200);
+	var _error = __webpack_require__(79);
 	
-	var _reactHtmlId = __webpack_require__(419);
+	var _reactHtmlId = __webpack_require__(126);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -141,7 +141,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 288:
+/***/ 102:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -149,7 +149,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 114:
+/***/ 41:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -160,11 +160,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 178:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
-	const colorConvert = __webpack_require__(212);
+	const colorConvert = __webpack_require__(59);
 	
 	const wrapAnsi16 = (fn, offset) => function () {
 		const code = fn.apply(colorConvert, arguments);
@@ -316,19 +316,19 @@ webpackJsonp([103700555733728],{
 		get: assembleStyles
 	});
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(458)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(133)(module)))
 
 /***/ }),
 
-/***/ 211:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
-	var escapeStringRegexp = __webpack_require__(284);
-	var ansiStyles = __webpack_require__(178);
-	var stripAnsi = __webpack_require__(452);
-	var hasAnsi = __webpack_require__(331);
-	var supportsColor = __webpack_require__(453);
+	var escapeStringRegexp = __webpack_require__(101);
+	var ansiStyles = __webpack_require__(76);
+	var stripAnsi = __webpack_require__(130);
+	var hasAnsi = __webpack_require__(106);
+	var supportsColor = __webpack_require__(131);
 	var defineProps = Object.defineProperties;
 	var isSimpleWindowsTerm = process.platform === 'win32' && !/^xterm/i.test(({"NODE_ENV":"production","PUBLIC_DIR":"/Users/jason.oneil/workspace/cultureamp/cultureamp-style-guide/guide/public"}).TERM);
 	
@@ -440,11 +440,11 @@ webpackJsonp([103700555733728],{
 	module.exports.stripColor = stripAnsi;
 	module.exports.supportsColor = supportsColor;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)))
 
 /***/ }),
 
-/***/ 71:
+/***/ 44:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -499,11 +499,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 117:
+/***/ 45:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* MIT license */
-	var cssKeywords = __webpack_require__(214);
+	var cssKeywords = __webpack_require__(60);
 	
 	// NOTE: conversions should only return primitive values (i.e. arrays, or
 	//       values that give correct `typeof` results).
@@ -1367,11 +1367,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 212:
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var conversions = __webpack_require__(117);
-	var route = __webpack_require__(213);
+	var conversions = __webpack_require__(45);
+	var route = __webpack_require__(83);
 	
 	var convert = {};
 	
@@ -1452,10 +1452,10 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 213:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var conversions = __webpack_require__(117);
+	var conversions = __webpack_require__(45);
 	
 	/*
 		this function routes a model to all other models.
@@ -1556,7 +1556,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 214:
+/***/ 60:
 /***/ (function(module, exports) {
 
 	'use strict'
@@ -1715,7 +1715,733 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 89:
+/***/ 231:
+/***/ (function(module, exports, __webpack_require__) {
+
+	/* MIT license */
+	var colorNames = __webpack_require__(60);
+	var swizzle = __webpack_require__(471);
+	
+	var reverseNames = {};
+	
+	// create a list of reverse color names
+	for (var name in colorNames) {
+		if (colorNames.hasOwnProperty(name)) {
+			reverseNames[colorNames[name]] = name;
+		}
+	}
+	
+	var cs = module.exports = {
+		to: {}
+	};
+	
+	cs.get = function (string) {
+		var prefix = string.substring(0, 3).toLowerCase();
+		var val;
+		var model;
+		switch (prefix) {
+			case 'hsl':
+				val = cs.get.hsl(string);
+				model = 'hsl';
+				break;
+			case 'hwb':
+				val = cs.get.hwb(string);
+				model = 'hwb';
+				break;
+			default:
+				val = cs.get.rgb(string);
+				model = 'rgb';
+				break;
+		}
+	
+		if (!val) {
+			return null;
+		}
+	
+		return {model: model, value: val};
+	};
+	
+	cs.get.rgb = function (string) {
+		if (!string) {
+			return null;
+		}
+	
+		var abbr = /^#([a-f0-9]{3,4})$/i;
+		var hex = /^#([a-f0-9]{6})([a-f0-9]{2})?$/i;
+		var rgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+		var per = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+		var keyword = /(\D+)/;
+	
+		var rgb = [0, 0, 0, 1];
+		var match;
+		var i;
+		var hexAlpha;
+	
+		if (match = string.match(hex)) {
+			hexAlpha = match[2];
+			match = match[1];
+	
+			for (i = 0; i < 3; i++) {
+				// https://jsperf.com/slice-vs-substr-vs-substring-methods-long-string/19
+				var i2 = i * 2;
+				rgb[i] = parseInt(match.slice(i2, i2 + 2), 16);
+			}
+	
+			if (hexAlpha) {
+				rgb[3] = Math.round((parseInt(hexAlpha, 16) / 255) * 100) / 100;
+			}
+		} else if (match = string.match(abbr)) {
+			match = match[1];
+			hexAlpha = match[3];
+	
+			for (i = 0; i < 3; i++) {
+				rgb[i] = parseInt(match[i] + match[i], 16);
+			}
+	
+			if (hexAlpha) {
+				rgb[3] = Math.round((parseInt(hexAlpha + hexAlpha, 16) / 255) * 100) / 100;
+			}
+		} else if (match = string.match(rgba)) {
+			for (i = 0; i < 3; i++) {
+				rgb[i] = parseInt(match[i + 1], 0);
+			}
+	
+			if (match[4]) {
+				rgb[3] = parseFloat(match[4]);
+			}
+		} else if (match = string.match(per)) {
+			for (i = 0; i < 3; i++) {
+				rgb[i] = Math.round(parseFloat(match[i + 1]) * 2.55);
+			}
+	
+			if (match[4]) {
+				rgb[3] = parseFloat(match[4]);
+			}
+		} else if (match = string.match(keyword)) {
+			if (match[1] === 'transparent') {
+				return [0, 0, 0, 0];
+			}
+	
+			rgb = colorNames[match[1]];
+	
+			if (!rgb) {
+				return null;
+			}
+	
+			rgb[3] = 1;
+	
+			return rgb;
+		} else {
+			return null;
+		}
+	
+		for (i = 0; i < 3; i++) {
+			rgb[i] = clamp(rgb[i], 0, 255);
+		}
+		rgb[3] = clamp(rgb[3], 0, 1);
+	
+		return rgb;
+	};
+	
+	cs.get.hsl = function (string) {
+		if (!string) {
+			return null;
+		}
+	
+		var hsl = /^hsla?\(\s*([+-]?\d*[\.]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+		var match = string.match(hsl);
+	
+		if (match) {
+			var alpha = parseFloat(match[4]);
+			var h = ((parseFloat(match[1]) % 360) + 360) % 360;
+			var s = clamp(parseFloat(match[2]), 0, 100);
+			var l = clamp(parseFloat(match[3]), 0, 100);
+			var a = clamp(isNaN(alpha) ? 1 : alpha, 0, 1);
+	
+			return [h, s, l, a];
+		}
+	
+		return null;
+	};
+	
+	cs.get.hwb = function (string) {
+		if (!string) {
+			return null;
+		}
+	
+		var hwb = /^hwb\(\s*([+-]?\d*[\.]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+		var match = string.match(hwb);
+	
+		if (match) {
+			var alpha = parseFloat(match[4]);
+			var h = ((parseFloat(match[1]) % 360) + 360) % 360;
+			var w = clamp(parseFloat(match[2]), 0, 100);
+			var b = clamp(parseFloat(match[3]), 0, 100);
+			var a = clamp(isNaN(alpha) ? 1 : alpha, 0, 1);
+			return [h, w, b, a];
+		}
+	
+		return null;
+	};
+	
+	cs.to.hex = function () {
+		var rgba = swizzle(arguments);
+	
+		return (
+			'#' +
+			hexDouble(rgba[0]) +
+			hexDouble(rgba[1]) +
+			hexDouble(rgba[2]) +
+			(rgba[3] < 1
+				? (hexDouble(Math.round(rgba[3] * 255)))
+				: '')
+		);
+	};
+	
+	cs.to.rgb = function () {
+		var rgba = swizzle(arguments);
+	
+		return rgba.length < 4 || rgba[3] === 1
+			? 'rgb(' + Math.round(rgba[0]) + ', ' + Math.round(rgba[1]) + ', ' + Math.round(rgba[2]) + ')'
+			: 'rgba(' + Math.round(rgba[0]) + ', ' + Math.round(rgba[1]) + ', ' + Math.round(rgba[2]) + ', ' + rgba[3] + ')';
+	};
+	
+	cs.to.rgb.percent = function () {
+		var rgba = swizzle(arguments);
+	
+		var r = Math.round(rgba[0] / 255 * 100);
+		var g = Math.round(rgba[1] / 255 * 100);
+		var b = Math.round(rgba[2] / 255 * 100);
+	
+		return rgba.length < 4 || rgba[3] === 1
+			? 'rgb(' + r + '%, ' + g + '%, ' + b + '%)'
+			: 'rgba(' + r + '%, ' + g + '%, ' + b + '%, ' + rgba[3] + ')';
+	};
+	
+	cs.to.hsl = function () {
+		var hsla = swizzle(arguments);
+		return hsla.length < 4 || hsla[3] === 1
+			? 'hsl(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%)'
+			: 'hsla(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%, ' + hsla[3] + ')';
+	};
+	
+	// hwb is a bit different than rgb(a) & hsl(a) since there is no alpha specific syntax
+	// (hwb have alpha optional & 1 is default value)
+	cs.to.hwb = function () {
+		var hwba = swizzle(arguments);
+	
+		var a = '';
+		if (hwba.length >= 4 && hwba[3] !== 1) {
+			a = ', ' + hwba[3];
+		}
+	
+		return 'hwb(' + hwba[0] + ', ' + hwba[1] + '%, ' + hwba[2] + '%' + a + ')';
+	};
+	
+	cs.to.keyword = function (rgb) {
+		return reverseNames[rgb.slice(0, 3)];
+	};
+	
+	// helpers
+	function clamp(num, min, max) {
+		return Math.min(Math.max(min, num), max);
+	}
+	
+	function hexDouble(num) {
+		var str = num.toString(16).toUpperCase();
+		return (str.length < 2) ? '0' + str : str;
+	}
+
+
+/***/ }),
+
+/***/ 232:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var colorString = __webpack_require__(231);
+	var convert = __webpack_require__(59);
+	
+	var _slice = [].slice;
+	
+	var skippedModels = [
+		// to be honest, I don't really feel like keyword belongs in color convert, but eh.
+		'keyword',
+	
+		// gray conflicts with some method names, and has its own method defined.
+		'gray',
+	
+		// shouldn't really be in color-convert either...
+		'hex'
+	];
+	
+	var hashedModelKeys = {};
+	Object.keys(convert).forEach(function (model) {
+		hashedModelKeys[_slice.call(convert[model].labels).sort().join('')] = model;
+	});
+	
+	var limiters = {};
+	
+	function Color(obj, model) {
+		if (!(this instanceof Color)) {
+			return new Color(obj, model);
+		}
+	
+		if (model && model in skippedModels) {
+			model = null;
+		}
+	
+		if (model && !(model in convert)) {
+			throw new Error('Unknown model: ' + model);
+		}
+	
+		var i;
+		var channels;
+	
+		if (!obj) {
+			this.model = 'rgb';
+			this.color = [0, 0, 0];
+			this.valpha = 1;
+		} else if (obj instanceof Color) {
+			this.model = obj.model;
+			this.color = obj.color.slice();
+			this.valpha = obj.valpha;
+		} else if (typeof obj === 'string') {
+			var result = colorString.get(obj);
+			if (result === null) {
+				throw new Error('Unable to parse color from string: ' + obj);
+			}
+	
+			this.model = result.model;
+			channels = convert[this.model].channels;
+			this.color = result.value.slice(0, channels);
+			this.valpha = typeof result.value[channels] === 'number' ? result.value[channels] : 1;
+		} else if (obj.length) {
+			this.model = model || 'rgb';
+			channels = convert[this.model].channels;
+			var newArr = _slice.call(obj, 0, channels);
+			this.color = zeroArray(newArr, channels);
+			this.valpha = typeof obj[channels] === 'number' ? obj[channels] : 1;
+		} else if (typeof obj === 'number') {
+			// this is always RGB - can be converted later on.
+			obj &= 0xFFFFFF;
+			this.model = 'rgb';
+			this.color = [
+				(obj >> 16) & 0xFF,
+				(obj >> 8) & 0xFF,
+				obj & 0xFF
+			];
+			this.valpha = 1;
+		} else {
+			this.valpha = 1;
+	
+			var keys = Object.keys(obj);
+			if ('alpha' in obj) {
+				keys.splice(keys.indexOf('alpha'), 1);
+				this.valpha = typeof obj.alpha === 'number' ? obj.alpha : 0;
+			}
+	
+			var hashedKeys = keys.sort().join('');
+			if (!(hashedKeys in hashedModelKeys)) {
+				throw new Error('Unable to parse color from object: ' + JSON.stringify(obj));
+			}
+	
+			this.model = hashedModelKeys[hashedKeys];
+	
+			var labels = convert[this.model].labels;
+			var color = [];
+			for (i = 0; i < labels.length; i++) {
+				color.push(obj[labels[i]]);
+			}
+	
+			this.color = zeroArray(color);
+		}
+	
+		// perform limitations (clamping, etc.)
+		if (limiters[this.model]) {
+			channels = convert[this.model].channels;
+			for (i = 0; i < channels; i++) {
+				var limit = limiters[this.model][i];
+				if (limit) {
+					this.color[i] = limit(this.color[i]);
+				}
+			}
+		}
+	
+		this.valpha = Math.max(0, Math.min(1, this.valpha));
+	
+		if (Object.freeze) {
+			Object.freeze(this);
+		}
+	}
+	
+	Color.prototype = {
+		toString: function () {
+			return this.string();
+		},
+	
+		toJSON: function () {
+			return this[this.model]();
+		},
+	
+		string: function (places) {
+			var self = this.model in colorString.to ? this : this.rgb();
+			self = self.round(typeof places === 'number' ? places : 1);
+			var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);
+			return colorString.to[self.model](args);
+		},
+	
+		percentString: function (places) {
+			var self = this.rgb().round(typeof places === 'number' ? places : 1);
+			var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);
+			return colorString.to.rgb.percent(args);
+		},
+	
+		array: function () {
+			return this.valpha === 1 ? this.color.slice() : this.color.concat(this.valpha);
+		},
+	
+		object: function () {
+			var result = {};
+			var channels = convert[this.model].channels;
+			var labels = convert[this.model].labels;
+	
+			for (var i = 0; i < channels; i++) {
+				result[labels[i]] = this.color[i];
+			}
+	
+			if (this.valpha !== 1) {
+				result.alpha = this.valpha;
+			}
+	
+			return result;
+		},
+	
+		unitArray: function () {
+			var rgb = this.rgb().color;
+			rgb[0] /= 255;
+			rgb[1] /= 255;
+			rgb[2] /= 255;
+	
+			if (this.valpha !== 1) {
+				rgb.push(this.valpha);
+			}
+	
+			return rgb;
+		},
+	
+		unitObject: function () {
+			var rgb = this.rgb().object();
+			rgb.r /= 255;
+			rgb.g /= 255;
+			rgb.b /= 255;
+	
+			if (this.valpha !== 1) {
+				rgb.alpha = this.valpha;
+			}
+	
+			return rgb;
+		},
+	
+		round: function (places) {
+			places = Math.max(places || 0, 0);
+			return new Color(this.color.map(roundToPlace(places)).concat(this.valpha), this.model);
+		},
+	
+		alpha: function (val) {
+			if (arguments.length) {
+				return new Color(this.color.concat(Math.max(0, Math.min(1, val))), this.model);
+			}
+	
+			return this.valpha;
+		},
+	
+		// rgb
+		red: getset('rgb', 0, maxfn(255)),
+		green: getset('rgb', 1, maxfn(255)),
+		blue: getset('rgb', 2, maxfn(255)),
+	
+		hue: getset(['hsl', 'hsv', 'hsl', 'hwb', 'hcg'], 0, function (val) { return ((val % 360) + 360) % 360; }), // eslint-disable-line brace-style
+	
+		saturationl: getset('hsl', 1, maxfn(100)),
+		lightness: getset('hsl', 2, maxfn(100)),
+	
+		saturationv: getset('hsv', 1, maxfn(100)),
+		value: getset('hsv', 2, maxfn(100)),
+	
+		chroma: getset('hcg', 1, maxfn(100)),
+		gray: getset('hcg', 2, maxfn(100)),
+	
+		white: getset('hwb', 1, maxfn(100)),
+		wblack: getset('hwb', 2, maxfn(100)),
+	
+		cyan: getset('cmyk', 0, maxfn(100)),
+		magenta: getset('cmyk', 1, maxfn(100)),
+		yellow: getset('cmyk', 2, maxfn(100)),
+		black: getset('cmyk', 3, maxfn(100)),
+	
+		x: getset('xyz', 0, maxfn(100)),
+		y: getset('xyz', 1, maxfn(100)),
+		z: getset('xyz', 2, maxfn(100)),
+	
+		l: getset('lab', 0, maxfn(100)),
+		a: getset('lab', 1),
+		b: getset('lab', 2),
+	
+		keyword: function (val) {
+			if (arguments.length) {
+				return new Color(val);
+			}
+	
+			return convert[this.model].keyword(this.color);
+		},
+	
+		hex: function (val) {
+			if (arguments.length) {
+				return new Color(val);
+			}
+	
+			return colorString.to.hex(this.rgb().round().color);
+		},
+	
+		rgbNumber: function () {
+			var rgb = this.rgb().color;
+			return ((rgb[0] & 0xFF) << 16) | ((rgb[1] & 0xFF) << 8) | (rgb[2] & 0xFF);
+		},
+	
+		luminosity: function () {
+			// http://www.w3.org/TR/WCAG20/#relativeluminancedef
+			var rgb = this.rgb().color;
+	
+			var lum = [];
+			for (var i = 0; i < rgb.length; i++) {
+				var chan = rgb[i] / 255;
+				lum[i] = (chan <= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055), 2.4);
+			}
+	
+			return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
+		},
+	
+		contrast: function (color2) {
+			// http://www.w3.org/TR/WCAG20/#contrast-ratiodef
+			var lum1 = this.luminosity();
+			var lum2 = color2.luminosity();
+	
+			if (lum1 > lum2) {
+				return (lum1 + 0.05) / (lum2 + 0.05);
+			}
+	
+			return (lum2 + 0.05) / (lum1 + 0.05);
+		},
+	
+		level: function (color2) {
+			var contrastRatio = this.contrast(color2);
+			if (contrastRatio >= 7.1) {
+				return 'AAA';
+			}
+	
+			return (contrastRatio >= 4.5) ? 'AA' : '';
+		},
+	
+		dark: function () {
+			// YIQ equation from http://24ways.org/2010/calculating-color-contrast
+			var rgb = this.rgb().color;
+			var yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+			return yiq < 128;
+		},
+	
+		light: function () {
+			return !this.dark();
+		},
+	
+		negate: function () {
+			var rgb = this.rgb();
+			for (var i = 0; i < 3; i++) {
+				rgb.color[i] = 255 - rgb.color[i];
+			}
+			return rgb;
+		},
+	
+		lighten: function (ratio) {
+			var hsl = this.hsl();
+			hsl.color[2] += hsl.color[2] * ratio;
+			return hsl;
+		},
+	
+		darken: function (ratio) {
+			var hsl = this.hsl();
+			hsl.color[2] -= hsl.color[2] * ratio;
+			return hsl;
+		},
+	
+		saturate: function (ratio) {
+			var hsl = this.hsl();
+			hsl.color[1] += hsl.color[1] * ratio;
+			return hsl;
+		},
+	
+		desaturate: function (ratio) {
+			var hsl = this.hsl();
+			hsl.color[1] -= hsl.color[1] * ratio;
+			return hsl;
+		},
+	
+		whiten: function (ratio) {
+			var hwb = this.hwb();
+			hwb.color[1] += hwb.color[1] * ratio;
+			return hwb;
+		},
+	
+		blacken: function (ratio) {
+			var hwb = this.hwb();
+			hwb.color[2] += hwb.color[2] * ratio;
+			return hwb;
+		},
+	
+		grayscale: function () {
+			// http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
+			var rgb = this.rgb().color;
+			var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;
+			return Color.rgb(val, val, val);
+		},
+	
+		fade: function (ratio) {
+			return this.alpha(this.valpha - (this.valpha * ratio));
+		},
+	
+		opaquer: function (ratio) {
+			return this.alpha(this.valpha + (this.valpha * ratio));
+		},
+	
+		rotate: function (degrees) {
+			var hsl = this.hsl();
+			var hue = hsl.color[0];
+			hue = (hue + degrees) % 360;
+			hue = hue < 0 ? 360 + hue : hue;
+			hsl.color[0] = hue;
+			return hsl;
+		},
+	
+		mix: function (mixinColor, weight) {
+			// ported from sass implementation in C
+			// https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
+			var color1 = mixinColor.rgb();
+			var color2 = this.rgb();
+			var p = weight === undefined ? 0.5 : weight;
+	
+			var w = 2 * p - 1;
+			var a = color1.alpha() - color2.alpha();
+	
+			var w1 = (((w * a === -1) ? w : (w + a) / (1 + w * a)) + 1) / 2.0;
+			var w2 = 1 - w1;
+	
+			return Color.rgb(
+					w1 * color1.red() + w2 * color2.red(),
+					w1 * color1.green() + w2 * color2.green(),
+					w1 * color1.blue() + w2 * color2.blue(),
+					color1.alpha() * p + color2.alpha() * (1 - p));
+		}
+	};
+	
+	// model conversion methods and static constructors
+	Object.keys(convert).forEach(function (model) {
+		if (skippedModels.indexOf(model) !== -1) {
+			return;
+		}
+	
+		var channels = convert[model].channels;
+	
+		// conversion methods
+		Color.prototype[model] = function () {
+			if (this.model === model) {
+				return new Color(this);
+			}
+	
+			if (arguments.length) {
+				return new Color(arguments, model);
+			}
+	
+			var newAlpha = typeof arguments[channels] === 'number' ? channels : this.valpha;
+			return new Color(assertArray(convert[this.model][model].raw(this.color)).concat(newAlpha), model);
+		};
+	
+		// 'static' construction methods
+		Color[model] = function (color) {
+			if (typeof color === 'number') {
+				color = zeroArray(_slice.call(arguments), channels);
+			}
+			return new Color(color, model);
+		};
+	});
+	
+	function roundTo(num, places) {
+		return Number(num.toFixed(places));
+	}
+	
+	function roundToPlace(places) {
+		return function (num) {
+			return roundTo(num, places);
+		};
+	}
+	
+	function getset(model, channel, modifier) {
+		model = Array.isArray(model) ? model : [model];
+	
+		model.forEach(function (m) {
+			(limiters[m] || (limiters[m] = []))[channel] = modifier;
+		});
+	
+		model = model[0];
+	
+		return function (val) {
+			var result;
+	
+			if (arguments.length) {
+				if (modifier) {
+					val = modifier(val);
+				}
+	
+				result = this[model]();
+				result.color[channel] = val;
+				return result;
+			}
+	
+			result = this[model]().color[channel];
+			if (modifier) {
+				result = modifier(result);
+			}
+	
+			return result;
+		};
+	}
+	
+	function maxfn(max) {
+		return function (v) {
+			return Math.max(0, Math.min(max, v));
+		};
+	}
+	
+	function assertArray(val) {
+		return Array.isArray(val) ? val : [val];
+	}
+	
+	function zeroArray(arr, length) {
+		for (var i = 0; i < length; i++) {
+			if (typeof arr[i] !== 'number') {
+				arr[i] = 0;
+			}
+		}
+	
+		return arr;
+	}
+	
+	module.exports = Color;
+
+
+/***/ }),
+
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*!
@@ -1752,7 +2478,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 284:
+/***/ 101:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1770,18 +2496,36 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 331:
+/***/ 106:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(114);
+	var ansiRegex = __webpack_require__(41);
 	var re = new RegExp(ansiRegex().source); // remove the `g` flag
 	module.exports = re.test.bind(re);
 
 
 /***/ }),
 
-/***/ 44:
+/***/ 353:
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function isArrayish(obj) {
+		if (!obj || typeof obj === 'string') {
+			return false;
+		}
+	
+		return obj instanceof Array || Array.isArray(obj) ||
+			(obj.length >= 0 && (obj.splice instanceof Function ||
+				(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));
+	};
+
+
+/***/ }),
+
+/***/ 24:
 /***/ (function(module, exports) {
 
 	// shim for using process in browser
@@ -1972,7 +2716,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 419:
+/***/ 126:
 /***/ (function(module, exports) {
 
 	/* Copyright (c) 2017 Hampus Joakim Nilsson
@@ -2033,11 +2777,47 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 452:
+/***/ 471:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(114)();
+	
+	var isArrayish = __webpack_require__(353);
+	
+	var concat = Array.prototype.concat;
+	var slice = Array.prototype.slice;
+	
+	var swizzle = module.exports = function swizzle(args) {
+		var results = [];
+	
+		for (var i = 0, len = args.length; i < len; i++) {
+			var arg = args[i];
+	
+			if (isArrayish(arg)) {
+				// http://jsperf.com/javascript-array-concat-vs-push/98
+				results = concat.call(results, slice.call(arg));
+			} else {
+				results.push(arg);
+			}
+		}
+	
+		return results;
+	};
+	
+	swizzle.wrap = function (fn) {
+		return function () {
+			return fn(swizzle(arguments));
+		};
+	};
+
+
+/***/ }),
+
+/***/ 130:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var ansiRegex = __webpack_require__(41)();
 	
 	module.exports = function (str) {
 		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -2046,7 +2826,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 453:
+/***/ 131:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2055,7 +2835,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 454:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -2997,7 +3777,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 455:
+/***/ 40:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -3275,7 +4055,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 458:
+/***/ 133:
 /***/ (function(module, exports) {
 
 	module.exports = function(module) {
@@ -3292,22 +4072,36 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 68:
+/***/ 206:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	var _propTypes = __webpack_require__(7);
 	
-	var _react = __webpack_require__(2);
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _DemoModule = __webpack_require__(90);
+	var _KebabModule = __webpack_require__(306);
 	
-	var _DemoModule2 = _interopRequireDefault(_DemoModule);
+	var _KebabModule2 = _interopRequireDefault(_KebabModule);
+	
+	var _Icon = __webpack_require__(42);
+	
+	var _Icon2 = _interopRequireDefault(_Icon);
+	
+	var _ellipsis = __webpack_require__(197);
+	
+	var _ellipsis2 = _interopRequireDefault(_ellipsis);
+	
+	var _KebabMenu = __webpack_require__(207);
+	
+	var _KebabMenu2 = _interopRequireDefault(_KebabMenu);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -3317,386 +4111,886 @@ webpackJsonp([103700555733728],{
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var MIN_CANVAS_WIDTH = 240;
+	var Kebab = function (_React$Component) {
+	  _inherits(Kebab, _React$Component);
 	
-	var SMALL = Symbol('small');
-	var MEDIUM = Symbol('medium');
-	var LARGE = Symbol('large');
-	var RANDOM = Symbol('random');
-	var FULL = Symbol('full');
-	
-	var Demo = function (_React$Component) {
-	  _inherits(Demo, _React$Component);
-	
-	  function Demo() {
+	  function Kebab() {
 	    var _temp, _this, _ret;
 	
-	    _classCallCheck(this, Demo);
+	    _classCallCheck(this, Kebab);
 	
 	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 	      args[_key] = arguments[_key];
 	    }
 	
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
-	      selectedPreset: 0,
-	      assignedCanvasWidth: null,
-	      actualCanvasDimensions: {
-	        width: null,
-	        height: null
-	      }
-	    }, _this.onSelectPreset = function (e) {
-	      var selectedPreset = parseInt(e.target.value);
-	      _this.setState(_extends({}, _this.state, { selectedPreset: selectedPreset }));
-	    }, _this.onResize = function () {
-	      if (_this.resizing) return;
-	
-	      _this.resizing = true;
-	      window.requestAnimationFrame(_this.onResizeFrame);
-	    }, _this.onResizeFrame = function () {
-	      if (_this.isResizeComplete()) {
-	        _this.resizing = false;
-	        return;
-	      }
-	
-	      var _this$canvas = _this.canvas,
-	          clientWidth = _this$canvas.clientWidth,
-	          clientHeight = _this$canvas.clientHeight;
-	
-	      _this.setState(_extends({}, _this.state, {
-	        actualCanvasDimensions: {
-	          width: clientWidth,
-	          height: clientHeight
-	        }
-	      }));
-	
-	      window.requestAnimationFrame(_this.onResizeFrame);
+	      isKebabMenuVisible: Boolean(_this.props.menuVisible)
+	    }, _this.toggleKebabMenu = function (e) {
+	      e.stopPropagation();
+	      var currentState = _this.state.isKebabMenuVisible;
+	      _this.setState({
+	        isKebabMenuVisible: !currentState
+	      });
+	    }, _this.hideKebabMenu = function () {
+	      _this.setState({
+	        isKebabMenuVisible: false
+	      });
+	    }, _this.kebabRef = function (c) {
+	      _this.kebab = c;
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	
-	  Demo.prototype.render = function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: _DemoModule2.default.root },
-	      this.renderPresetList(),
-	      this.renderCanvas(),
-	      _react2.default.createElement(
-	        'div',
-	        { className: _DemoModule2.default.controls },
-	        this.renderSizePresets(),
-	        this.renderCanvasDimensions(),
-	        this.renderComponentTypes()
-	      )
-	    );
+	  Kebab.prototype.getPosition = function getPosition() {
+	    return this.kebab ? this.kebab.getBoundingClientRect() : null;
 	  };
 	
-	  Demo.prototype.renderPresetList = function renderPresetList() {
-	    var presets = this.props.presets;
-	    var selectedPreset = this.state.selectedPreset;
-	
-	
-	    return _react2.default.createElement(
-	      'div',
-	      { className: _DemoModule2.default.selectPreset },
-	      _react2.default.createElement(
-	        'select',
-	        { onChange: this.onSelectPreset, value: selectedPreset },
-	        presets.map(function (preset, index) {
-	          return _react2.default.createElement(
-	            'option',
-	            { key: index, value: index },
-	            preset.name
-	          );
-	        })
-	      )
-	    );
-	  };
-	
-	  Demo.prototype.renderCanvas = function renderCanvas() {
-	    var _this2 = this;
-	
-	    var Component = this.props.component;
-	
-	    return _react2.default.createElement(
-	      'div',
-	      { className: _DemoModule2.default.frame, ref: function ref(div) {
-	          return _this2.frame = div;
-	        } },
-	      _react2.default.createElement(
-	        'div',
-	        {
-	          className: _DemoModule2.default.canvas,
-	          style: { width: this.state.assignedCanvasWidth },
-	          ref: function ref(div) {
-	            return _this2.canvas = div;
-	          }
-	        },
-	        _react2.default.createElement(Component, this.selectedPresetProps())
-	      )
-	    );
-	  };
-	
-	  Demo.prototype.selectedPresetProps = function selectedPresetProps() {
-	    return this.props.presets[this.state.selectedPreset].props;
-	  };
-	
-	  Demo.prototype.renderSizePresets = function renderSizePresets() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: _DemoModule2.default.sizePresets },
-	      _react2.default.createElement(
-	        'button',
-	        { onClick: this.onClickResizeTo(FULL) },
-	        'Full'
-	      ),
-	      _react2.default.createElement(
-	        'button',
-	        { onClick: this.onClickResizeTo(RANDOM) },
-	        'Random'
-	      ),
-	      _react2.default.createElement(
-	        'button',
-	        { onClick: this.onClickResizeTo(LARGE) },
-	        'Large'
-	      ),
-	      _react2.default.createElement(
-	        'button',
-	        { onClick: this.onClickResizeTo(MEDIUM) },
-	        'Medium'
-	      ),
-	      _react2.default.createElement(
-	        'button',
-	        { onClick: this.onClickResizeTo(SMALL) },
-	        'Small'
-	      )
-	    );
-	  };
-	
-	  Demo.prototype.renderCanvasDimensions = function renderCanvasDimensions() {
-	    var _state$actualCanvasDi = this.state.actualCanvasDimensions,
-	        width = _state$actualCanvasDi.width,
-	        height = _state$actualCanvasDi.height;
-	
-	
-	    return width && height && _react2.default.createElement(
-	      'div',
-	      { className: _DemoModule2.default.canvasDimensions },
-	      _react2.default.createElement(
-	        'span',
-	        { className: _DemoModule2.default.dimension },
-	        width,
-	        'px'
-	      ),
-	      ' × ',
-	      _react2.default.createElement(
-	        'span',
-	        { className: _DemoModule2.default.dimension },
-	        height,
-	        'px'
-	      ),
-	      ' viewport'
-	    );
-	  };
-	
-	  Demo.prototype.renderComponentTypes = function renderComponentTypes() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: _DemoModule2.default.componentTypes },
-	      _react2.default.createElement(
-	        'button',
-	        null,
-	        'React'
-	      )
-	    );
-	  };
-	
-	  Demo.prototype.componentDidMount = function componentDidMount() {
-	    window.addEventListener('resize', this.onResize);
-	    this.onResize();
-	  };
-	
-	  Demo.prototype.componentWillUnmount = function componentWillUnmount() {
-	    window.removeEventListener('resize', this.onResize);
-	  };
-	
-	  Demo.prototype.onClickResizeTo = function onClickResizeTo(size) {
-	    var _this3 = this;
-	
-	    return function (e) {
-	      return _this3.resizeToSize(size);
-	    };
-	  };
-	
-	  Demo.prototype.resizeToSize = function resizeToSize(size) {
-	    switch (size) {
-	      case FULL:
-	        this.resizeTo();
-	        break;
-	      case RANDOM:
-	        this.resizeTo(randomBetween(MIN_CANVAS_WIDTH, this.maxCanvasWidth()));
-	        break;
-	      case LARGE:
-	        this.resizeTo(randomBetween(800, 1200));
-	        break;
-	      case MEDIUM:
-	        this.resizeTo(randomBetween(500, 800));
-	        break;
-	      case SMALL:
-	        this.resizeTo(randomBetween(MIN_CANVAS_WIDTH, 500));
-	        break;
-	    }
-	  };
-	
-	  Demo.prototype.resizeTo = function resizeTo() {
-	    var _this4 = this;
-	
-	    var assignedCanvasWidth = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-	
-	    assignedCanvasWidth = assignedCanvasWidth && Math.min(assignedCanvasWidth, this.maxCanvasWidth());
-	
-	    if (this.state.assignedCanvasWidth === null && assignedCanvasWidth) {
-	      // prepare for CSS transition from width: auto
-	      this.setAssignedCanvasWidth(this.maxCanvasWidth());
-	    }
-	
-	    window.requestAnimationFrame(function () {
-	      _this4.setAssignedCanvasWidth(assignedCanvasWidth);
+	  Kebab.prototype.renderKebabMenu = function renderKebabMenu() {
+	    return _react2.default.createElement(_KebabMenu2.default, {
+	      headerTitle: this.props.title,
+	      headerInfo: this.props.headerInfo,
+	      headerClass: this.props.headerClass,
+	      links: this.props.links,
+	      actions: this.props.actions,
+	      hideKebabMenu: this.hideKebabMenu,
+	      position: this.getPosition()
 	    });
 	  };
 	
-	  Demo.prototype.setAssignedCanvasWidth = function setAssignedCanvasWidth(assignedCanvasWidth) {
-	    this.setState(_extends({}, this.state, { assignedCanvasWidth: assignedCanvasWidth }));
-	    this.onResize();
+	  Kebab.prototype.render = function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: _KebabModule2.default.fieldKebabIconInner },
+	      _react2.default.createElement(
+	        'div',
+	        {
+	          className: _KebabModule2.default.kebabIcon,
+	          onClick: this.toggleKebabMenu,
+	          ref: this.kebabRef
+	        },
+	        _react2.default.createElement(
+	          'div',
+	          { className: this.state.isKebabMenuVisible ? _KebabModule2.default.isOpen : '' },
+	          _react2.default.createElement(_Icon2.default, { icon: _ellipsis2.default, role: 'img', title: this.props.title })
+	        )
+	      ),
+	      this.state.isKebabMenuVisible && this.renderKebabMenu()
+	    );
 	  };
 	
-	  Demo.prototype.maxCanvasWidth = function maxCanvasWidth() {
-	    return this.frame.clientWidth;
-	  };
-	
-	  Demo.prototype.isResizeComplete = function isResizeComplete() {
-	    var _canvas = this.canvas,
-	        clientWidth = _canvas.clientWidth,
-	        clientHeight = _canvas.clientHeight;
-	    var _state = this.state,
-	        assignedCanvasWidth = _state.assignedCanvasWidth,
-	        _state$actualCanvasDi2 = _state.actualCanvasDimensions,
-	        canvasWidth = _state$actualCanvasDi2.width,
-	        canvasHeight = _state$actualCanvasDi2.height;
-	
-	
-	    return clientWidth == canvasWidth && clientHeight == canvasHeight && (!assignedCanvasWidth || clientWidth == assignedCanvasWidth);
-	  };
-	
-	  return Demo;
+	  return Kebab;
 	}(_react2.default.Component);
 	
-	exports.default = Demo;
+	exports.default = Kebab;
 	
 	
-	function randomBetween(min, max) {
-	  return Math.floor(Math.random() * (max - min) + min);
-	}
+	Kebab.propTypes = {
+	  title: _propTypes2.default.string.isRequired,
+	  headerInfo: _propTypes2.default.string,
+	  headerClass: _propTypes2.default.string,
+	  links: _propTypes2.default.array.isRequired,
+	  actions: _propTypes2.default.array.isRequired,
+	  menuVisible: _propTypes2.default.bool
+	};
 	module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 90:
+/***/ 306:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"root":"src-components----Demo-module---root---3wwTo","frame":"src-components----Demo-module---frame---3OdyG","canvas":"src-components----Demo-module---canvas---KNZxY","selectPreset":"src-components----Demo-module---selectPreset---HqP0Z","controls":"src-components----Demo-module---controls---2Soui","dimension":"src-components----Demo-module---dimension---15b1z"};
+	module.exports = {"fieldKebabIconInner":"src-components-kebab----Kebab-module---fieldKebabIconInner---2YfnA","kebabIcon":"src-components-kebab----Kebab-module---kebabIcon---2fMMH","isOpen":"src-components-kebab----Kebab-module---isOpen---2Q4Iv"};
 
 /***/ }),
 
-/***/ 192:
+/***/ 207:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _react = __webpack_require__(2);
+	var _propTypes = __webpack_require__(7);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _gatsbyLink = __webpack_require__(12);
+	var _KebabMenuModule = __webpack_require__(104);
 	
-	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
+	var _KebabMenuModule2 = _interopRequireDefault(_KebabMenuModule);
 	
-	var _Demo = __webpack_require__(68);
+	var _KebabMenuList = __webpack_require__(209);
 	
-	var _Demo2 = _interopRequireDefault(_Demo);
-	
-	var _Icon = __webpack_require__(180);
-	
-	var _Icon2 = _interopRequireDefault(_Icon);
-	
-	var _configure = __webpack_require__(456);
-	
-	var _configure2 = _interopRequireDefault(_configure);
+	var _KebabMenuList2 = _interopRequireDefault(_KebabMenuList);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var iconPresets = [{
-	  name: 'Meaningful',
-	  props: { icon: _configure2.default, role: 'img', title: 'Warning' }
-	}, {
-	  name: 'Presentational',
-	  props: { icon: _configure2.default, role: 'presentation' }
-	}, {
-	  name: 'Inherit size',
-	  props: { icon: _configure2.default, inheritSize: true, role: 'presentation' }
-	}];
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var KebabMenu = function (_React$Component) {
+	  _inherits(KebabMenu, _React$Component);
+	
+	  function KebabMenu() {
+	    var _temp, _this, _ret;
+	
+	    _classCallCheck(this, KebabMenu);
+	
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+	
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.menuRef = function (c) {
+	      _this.menu = c;
+	    }, _this.handleDocumentClick = function (e) {
+	      if (_this.menu && !_this.menu.contains(e.target)) {
+	        _this.props.hideKebabMenu();
+	      }
+	    }, _this.handleDocumentResize = function () {
+	      _this.props.hideKebabMenu();
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+	
+	  KebabMenu.prototype.componentDidMount = function componentDidMount() {
+	    document.addEventListener('click', this.handleDocumentClick, false);
+	    window.addEventListener('resize', this.handleDocumentResize, false);
+	    this.positionMenu();
+	  };
+	
+	  KebabMenu.prototype.componentWillUnmount = function componentWillUnmount() {
+	    document.removeEventListener('click', this.handleDocumentClick, false);
+	    window.removeEventListener('resize', this.handleDocumentResize, false);
+	  };
+	
+	  KebabMenu.prototype.positionMenu = function positionMenu() {
+	    if (!this.props.position) {
+	      return;
+	    }
+	    var pos = this.props.position;
+	    var heightBetweenTopOfRowAndKebabIcon = (pos.bottom - pos.top) / 2;
+	    var _window = window,
+	        innerHeight = _window.innerHeight;
+	
+	    var rect = this.menu.getBoundingClientRect();
+	    this.menu.style.left = this.calculateLeftOffset(window.scrollX, pos.right, rect.width);
+	    this.menu.style.top = this.calculateTopOffset(window.scrollY, pos.top, heightBetweenTopOfRowAndKebabIcon);
+	    if (pos.bottom > innerHeight - rect.height) {
+	      this.menu.style.top = this.calculateShiftedUpTopOffset(window.scrollY, pos.top, rect.height - heightBetweenTopOfRowAndKebabIcon + 12);
+	    }
+	  };
+	
+	  KebabMenu.prototype.convertToPx = function convertToPx(pixel) {
+	    return pixel + 'px';
+	  };
+	
+	  KebabMenu.prototype.calculateLeftOffset = function calculateLeftOffset(scrollDistanceFromLeft, rightOfRow, rectWidth) {
+	    return this.convertToPx(scrollDistanceFromLeft + rightOfRow - rectWidth);
+	  };
+	
+	  KebabMenu.prototype.calculateTopOffset = function calculateTopOffset(scrollDistanceFromTop, topOfRow, yOffset) {
+	    return this.convertToPx(scrollDistanceFromTop + (topOfRow + yOffset));
+	  };
+	
+	  KebabMenu.prototype.calculateShiftedUpTopOffset = function calculateShiftedUpTopOffset(scrollDistanceFromTop, topOfRow, yOffset) {
+	    return this.convertToPx(scrollDistanceFromTop + (topOfRow - yOffset));
+	  };
+	
+	  KebabMenu.prototype.render = function render() {
+	    var props = this.props;
+	    return _react2.default.createElement(
+	      'div',
+	      { className: _KebabMenuModule2.default.container, ref: this.menuRef },
+	      _react2.default.createElement(_KebabMenuList2.default, {
+	        headerTitle: props.headerTitle,
+	        headerInfo: props.headerInfo,
+	        headerClass: props.headerClass,
+	        links: props.links,
+	        actions: props.actions,
+	        hideKebabMenu: props.hideKebabMenu
+	      })
+	    );
+	  };
+	
+	  return KebabMenu;
+	}(_react2.default.Component);
+	
+	exports.default = KebabMenu;
+	
+	
+	KebabMenu.propTypes = {
+	  headerTitle: _propTypes2.default.string.isRequired,
+	  headerInfo: _propTypes2.default.string,
+	  headerClass: _propTypes2.default.string,
+	  links: _propTypes2.default.array.isRequired,
+	  actions: _propTypes2.default.array.isRequired,
+	  hideKebabMenu: _propTypes2.default.func.isRequired,
+	  position: _propTypes2.default.shape({
+	    top: _propTypes2.default.number,
+	    bottom: _propTypes2.default.number,
+	    left: _propTypes2.default.number,
+	    right: _propTypes2.default.number
+	  })
+	};
+	module.exports = exports['default'];
+
+/***/ }),
+
+/***/ 104:
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"src-components-kebab----KebabMenu-module---container---3rHaf","menuItemLink":"src-components-kebab----KebabMenu-module---menuItemLink---8Wa4m","menuItemAction":"src-components-kebab----KebabMenu-module---menuItemAction---1G1Q6","menuItem__icon":"src-components-kebab----KebabMenu-module---menuItem__icon---1CcFr","headerContainer":"src-components-kebab----KebabMenu-module---headerContainer---34hEB","headerTitle":"src-components-kebab----KebabMenu-module---headerTitle---xX0xZ","headerContent":"src-components-kebab----KebabMenu-module---headerContent---Eyc2L","hoverIcon":"src-components-kebab----KebabMenu-module---hoverIcon---EglVi","menuItem__title":"src-components-kebab----KebabMenu-module---menuItem__title---2Kmco","separator":"src-components-kebab----KebabMenu-module---separator---hfChw"};
+
+/***/ }),
+
+/***/ 208:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	exports.__esModule = true;
+	exports.MenuItemAction = exports.MenuItemLink = undefined;
+	
+	var _propTypes = __webpack_require__(7);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _KebabMenuModule = __webpack_require__(104);
+	
+	var _KebabMenuModule2 = _interopRequireDefault(_KebabMenuModule);
+	
+	var _Icon = __webpack_require__(42);
+	
+	var _Icon2 = _interopRequireDefault(_Icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var MenuItemLink = exports.MenuItemLink = function MenuItemLink(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: _KebabMenuModule2.default.menuItemLink },
+	    _react2.default.createElement(
+	      'a',
+	      { href: props.link },
+	      _react2.default.createElement(
+	        'span',
+	        { className: _KebabMenuModule2.default.menuItem__title },
+	        props.text
+	      )
+	    )
+	  );
+	};
+	
+	var MenuItemAction = exports.MenuItemAction = function MenuItemAction(props) {
+	  var handleOnClick = function handleOnClick(event) {
+	    if (props.hideKebabMenu) {
+	      props.hideKebabMenu();
+	    }
+	    props.action(event);
+	  };
+	
+	  var className = _KebabMenuModule2.default.menuItemAction;
+	  if (props.hoverIcon) {
+	    className += ' ' + _KebabMenuModule2.default.hoverIcon;
+	  }
+	
+	  return _react2.default.createElement(
+	    'div',
+	    { className: className, onClick: handleOnClick },
+	    _react2.default.createElement(
+	      'a',
+	      null,
+	      _react2.default.createElement(
+	        'span',
+	        { className: _KebabMenuModule2.default.menuItem__title },
+	        props.text
+	      ),
+	      _react2.default.createElement(
+	        'span',
+	        { className: _KebabMenuModule2.default.menuItem__icon },
+	        _react2.default.createElement(_Icon2.default, { icon: props.icon, role: 'presentation' })
+	      )
+	    )
+	  );
+	};
+	
+	MenuItemLink.propTypes = {
+	  link: _propTypes2.default.string,
+	  text: _propTypes2.default.node
+	};
+	
+	MenuItemAction.propTypes = {
+	  action: _propTypes2.default.func.isRequired,
+	  text: _propTypes2.default.node.isRequired,
+	  icon: _propTypes2.default.object,
+	  hoverIcon: _propTypes2.default.bool,
+	  hideKebabMenu: _propTypes2.default.func
+	};
+
+/***/ }),
+
+/***/ 209:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	exports.__esModule = true;
+	
+	var _propTypes = __webpack_require__(7);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _KebabMenuModule = __webpack_require__(104);
+	
+	var _KebabMenuModule2 = _interopRequireDefault(_KebabMenuModule);
+	
+	var _KebabMenuItems = __webpack_require__(208);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var KebabMenuList = function (_React$Component) {
+	  _inherits(KebabMenuList, _React$Component);
+	
+	  function KebabMenuList() {
+	    _classCallCheck(this, KebabMenuList);
+	
+	    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+	  }
+	
+	  KebabMenuList.prototype.renderLinks = function renderLinks(links) {
+	    return links.map(function (item, index) {
+	      return _react2.default.createElement(_KebabMenuItems.MenuItemLink, { text: item.text, link: item.link, key: index });
+	    });
+	  };
+	
+	  KebabMenuList.prototype.renderActions = function renderActions(actions) {
+	    var _this2 = this;
+	
+	    return actions.map(function (item, index) {
+	      return _react2.default.createElement(_KebabMenuItems.MenuItemAction, {
+	        text: item.text,
+	        action: item.action,
+	        icon: item.icon,
+	        hoverIcon: item.hoverIcon,
+	        key: index,
+	        hideKebabMenu: _this2.props.hideKebabMenu
+	      });
+	    });
+	  };
+	
+	  KebabMenuList.prototype.renderLinksContainer = function renderLinksContainer(links) {
+	    if (links.length > 0) {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: _KebabMenuModule2.default.linksContainer },
+	        this.renderLinks(links)
+	      );
+	    }
+	  };
+	
+	  KebabMenuList.prototype.renderActionsContainer = function renderActionsContainer(actions) {
+	    if (actions.length > 0) {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: _KebabMenuModule2.default.actionsContainer },
+	        this.renderActions(actions)
+	      );
+	    }
+	  };
+	
+	  KebabMenuList.prototype.renderSeparator = function renderSeparator(props) {
+	    return props.links.length > 0 && props.actions.length > 0 ? _react2.default.createElement('hr', { className: _KebabMenuModule2.default.separator }) : '';
+	  };
+	
+	  KebabMenuList.prototype.render = function render() {
+	    var props = this.props;
+	    var headerClass = _KebabMenuModule2.default.headerContainer;
+	    if (props.headerClass) {
+	      headerClass += ' ' + _KebabMenuModule2.default[props.headerClass];
+	    }
+	
+	    return _react2.default.createElement(
+	      'div',
+	      { className: _KebabMenuModule2.default.menuContainer },
+	      _react2.default.createElement(
+	        'div',
+	        { className: headerClass },
+	        _react2.default.createElement(
+	          'span',
+	          { className: _KebabMenuModule2.default.headerTitle },
+	          props.headerTitle
+	        ),
+	        _react2.default.createElement(
+	          'span',
+	          { className: _KebabMenuModule2.default.headerContent },
+	          props.headerInfo
+	        )
+	      ),
+	      this.renderLinksContainer(props.links),
+	      this.renderSeparator(props),
+	      this.renderActionsContainer(props.actions)
+	    );
+	  };
+	
+	  return KebabMenuList;
+	}(_react2.default.Component);
+	
+	exports.default = KebabMenuList;
+	
+	
+	KebabMenuList.propTypes = {
+	  headerTitle: _propTypes2.default.string.isRequired,
+	  headerInfo: _propTypes2.default.string,
+	  headerClass: _propTypes2.default.string,
+	  links: _propTypes2.default.array.isRequired,
+	  actions: _propTypes2.default.array.isRequired,
+	  hideKebabMenu: _propTypes2.default.func
+	};
+	module.exports = exports['default'];
+
+/***/ }),
+
+/***/ 308:
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"card":"src-pages-atoms-colors----colorCard-module---card---2t7cC","colorCard":"src-pages-atoms-colors----colorCard-module---colorCard---3tX3E src-pages-atoms-colors----colorCard-module---card---2t7cC","toggleIconWrapper":"src-pages-atoms-colors----colorCard-module---toggleIconWrapper---1ar1H","colorBlock":"src-pages-atoms-colors----colorCard-module---colorBlock---KomMb","colorBlockHalf":"src-pages-atoms-colors----colorCard-module---colorBlockHalf---2VovW","whiteText":"src-pages-atoms-colors----colorCard-module---whiteText---3k1SN","kebabContainer":"src-pages-atoms-colors----colorCard-module---kebabContainer---18xfh","colorBlockLabel":"src-pages-atoms-colors----colorCard-module---colorBlockLabel---ctoYu","dropdownItem":"src-pages-atoms-colors----colorCard-module---dropdownItem---w4uhQ"};
+
+/***/ }),
+
+/***/ 213:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	exports.__esModule = true;
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Elements = __webpack_require__(11);
+	
+	var _Kebab = __webpack_require__(206);
+	
+	var _Kebab2 = _interopRequireDefault(_Kebab);
+	
+	var _joinClassNames = __webpack_require__(135);
+	
+	var _joinClassNames2 = _interopRequireDefault(_joinClassNames);
+	
+	var _indexModule = __webpack_require__(309);
+	
+	var _indexModule2 = _interopRequireDefault(_indexModule);
+	
+	var _colorCardModule = __webpack_require__(308);
+	
+	var _colorCardModule2 = _interopRequireDefault(_colorCardModule);
+	
+	var _Icon = __webpack_require__(42);
+	
+	var _Icon2 = _interopRequireDefault(_Icon);
+	
+	var _chevronUp = __webpack_require__(473);
+	
+	var _chevronUp2 = _interopRequireDefault(_chevronUp);
+	
+	var _chevronDown = __webpack_require__(472);
+	
+	var _chevronDown2 = _interopRequireDefault(_chevronDown);
+	
+	var _ellipsis = __webpack_require__(197);
+	
+	var _ellipsis2 = _interopRequireDefault(_ellipsis);
+	
+	var _duplicate = __webpack_require__(475);
+	
+	var _duplicate2 = _interopRequireDefault(_duplicate);
+	
+	var _color = __webpack_require__(232);
+	
+	var _color2 = _interopRequireDefault(_color);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Palette = {
+	  ink: (0, _color2.default)('#3e4543'),
+	  paper: (0, _color2.default)('#f2edde'),
+	  coral: (0, _color2.default)('#f04c5d'),
+	  seedling: (0, _color2.default)('#45ad8f'),
+	  ocean: (0, _color2.default)('#1b7688'),
+	  wisteria: (0, _color2.default)('#727193'),
+	  lapis: (0, _color2.default)('#253c64'),
+	  peach: (0, _color2.default)('#f3786d'),
+	  yuzu: (0, _color2.default)('#ffce1e'),
+	  stone: (0, _color2.default)('#f2f2f2'),
+	  'positive-delta': (0, _color2.default)('#43e699'),
+	  'negative-delta': (0, _color2.default)('#ff4757')
+	};
+	
+	function addTint(color, percentage) {
+	  return color.mix((0, _color2.default)('#ffffff'), percentage / 100);
+	}
+	
+	function addShade(color, percentage) {
+	  return color.mix((0, _color2.default)('#000000'), percentage / 100);
+	}
 	
 	var Page = function Page() {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
 	    _react2.default.createElement(
-	      'h1',
+	      _Elements.Heading1,
 	      null,
-	      'Icons'
+	      'Colors'
 	    ),
 	    _react2.default.createElement(
 	      'p',
-	      null,
-	      'An icon! To control its color, set color on a parent element, and it will be inherited.'
+	      { className: _indexModule2.default.intro },
+	      'Our color palette is built with our core principles and guidelines as its foundation.',
+	      _react2.default.createElement('br', null),
+	      'We are committed to complying with',
+	      ' ',
+	      _react2.default.createElement(
+	        _Elements.ExternalLink,
+	        { to: 'https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast' },
+	        'AA standard contrast ratios'
+	      ),
+	      '.'
 	    ),
-	    _react2.default.createElement(_Demo2.default, { component: _Icon2.default, presets: iconPresets }),
+	    _react2.default.createElement('hr', { className: _indexModule2.default.hr }),
 	    _react2.default.createElement(
-	      _gatsbyLink2.default,
+	      'div',
+	      { className: _indexModule2.default.cardContainer },
+	      _react2.default.createElement(
+	        _Elements.Heading2,
+	        { className: _indexModule2.default.gridHeader },
+	        'Primary Colors'
+	      ),
+	      _react2.default.createElement(ColorCard, { name: 'Coral' }),
+	      _react2.default.createElement(ColorCard, { name: 'Paper' }),
+	      _react2.default.createElement(ColorCard, { name: 'Ink' }),
+	      _react2.default.createElement(
+	        _Elements.Heading2,
+	        { className: _indexModule2.default.gridHeader },
+	        'Secondary Colors'
+	      ),
+	      _react2.default.createElement(ColorCard, { name: 'Seedling' }),
+	      _react2.default.createElement(ColorCard, { name: 'Ocean' }),
+	      _react2.default.createElement(ColorCard, { name: 'Lapis' }),
+	      _react2.default.createElement(ColorCard, { name: 'Wisteria' }),
+	      _react2.default.createElement(ColorCard, { name: 'Peach' }),
+	      _react2.default.createElement(ColorCard, { name: 'Yuzu' }),
+	      _react2.default.createElement(
+	        _Elements.Heading2,
+	        { className: _indexModule2.default.gridHeader },
+	        'Tertiary Colors'
+	      ),
+	      _react2.default.createElement(ColorCard, { name: 'Positive-Delta' }),
+	      _react2.default.createElement(ColorCard, { name: 'Negative-Delta' }),
+	      _react2.default.createElement(ColorCard, { name: 'Stone' })
+	    ),
+	    _react2.default.createElement(
+	      _Elements.Link,
 	      { to: '/' },
 	      'Go back to the homepage'
 	    )
 	  );
 	};
 	
+	var ColorCard = function (_React$Component) {
+	  _inherits(ColorCard, _React$Component);
+	
+	  function ColorCard() {
+	    var _temp, _this, _ret;
+	
+	    _classCallCheck(this, ColorCard);
+	
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+	
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
+	      expanded: false
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+	
+	  ColorCard.prototype.render = function render() {
+	    var name = this.props.name,
+	        colorClassName = _colorCardModule2.default[name.toLowerCase()];
+	
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        { className: _colorCardModule2.default.colorCard },
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          this.renderColorTitleAndToggle()
+	        ),
+	        _react2.default.createElement(
+	          'h4',
+	          null,
+	          'Tint & Shade'
+	        ),
+	        this.renderColorBlocks(this.state.expanded)
+	      )
+	    );
+	  };
+	
+	  ColorCard.prototype.toggleOpen = function toggleOpen() {
+	    this.setState({ expanded: !this.state.expanded });
+	  };
+	
+	  ColorCard.prototype.renderColorTitleAndToggle = function renderColorTitleAndToggle() {
+	    var _this2 = this;
+	
+	    if (!this.isExpandable()) {
+	      return _react2.default.createElement(
+	        'span',
+	        null,
+	        this.props.name
+	      );
+	    }
+	    var toggleIcon = this.state.expanded ? _chevronUp2.default : _chevronDown2.default,
+	        toggleTitle = this.state.expanded ? 'Collapse Color' : 'Expand Color';
+	    return _react2.default.createElement(
+	      'a',
+	      { onClick: function onClick() {
+	          return _this2.toggleOpen();
+	        } },
+	      this.props.name,
+	      _react2.default.createElement(
+	        'span',
+	        { className: _colorCardModule2.default.toggleIconWrapper },
+	        _react2.default.createElement(_Icon2.default, { icon: toggleIcon, role: 'img', title: toggleTitle })
+	      )
+	    );
+	  };
+	
+	  ColorCard.prototype.isExpandable = function isExpandable() {
+	    return this.props.name !== 'Stone';
+	  };
+	
+	  ColorCard.prototype.renderColorBlocks = function renderColorBlocks(showVariations) {
+	    var _this3 = this;
+	
+	    var colorName = this.props.name;
+	    var mainBlock = this.renderBlock(colorName);
+	    if (!showVariations || !this.isExpandable()) {
+	      return mainBlock;
+	    }
+	    var variations = showVariations ? [90, 70, 50, 30, 10, 0, -10, -20, -30, -40, -50] : [0];
+	    return variations.map(function (amount) {
+	      return _this3.renderBlock(colorName, amount);
+	    });
+	  };
+	
+	  ColorCard.prototype.renderBlock = function renderBlock(color, amount) {
+	    var isHalfBlock = false,
+	        label = '100%',
+	        sassVar = '$ca-palette-' + color.toLowerCase(),
+	        shouldUseWhite = this.shouldUseWhiteText(color, amount || 0),
+	        bgColor = Palette[color.toLowerCase()];
+	    if (amount) {
+	      var shift = amount > 0 ? 'tint' : 'shade',
+	          absAmount = Math.abs(amount);
+	      sassVar = 'add-' + shift + '(' + sassVar + ', ' + absAmount + '%)';
+	      label = amount > 0 ? '+' + absAmount + '% White' : '+' + absAmount + '% Black';
+	      bgColor = amount > 0 ? addTint(bgColor, absAmount) : addShade(bgColor, absAmount);
+	      isHalfBlock = true;
+	    }
+	
+	    var classes = (0, _joinClassNames2.default)([_colorCardModule2.default['colorBlock'], isHalfBlock && _colorCardModule2.default['colorBlockHalf'], shouldUseWhite && _colorCardModule2.default['whiteText']]);
+	
+	    return _react2.default.createElement(
+	      'div',
+	      {
+	        key: bgColor.rgb().string(),
+	        className: classes,
+	        style: { background: bgColor.rgb().string() }
+	      },
+	      _react2.default.createElement(
+	        'span',
+	        { className: _colorCardModule2.default.colorBlockLabel },
+	        label
+	      ),
+	      _react2.default.createElement(
+	        'span',
+	        { className: _colorCardModule2.default.kebabContainer },
+	        _react2.default.createElement(_Kebab2.default, {
+	          links: [],
+	          actions: [this.colorDropdownItem('SASS', sassVar), this.colorDropdownItem('HEX', bgColor.hex()), this.colorDropdownItem('RGB', bgColor.rgb().array().map(Math.round).join(', ')), this.colorDropdownItem('CMYK', bgColor.cmyk().array().map(Math.round).join(', '))],
+	          title: 'Copy To Clipboard'
+	        })
+	      )
+	    );
+	  };
+	
+	  ColorCard.prototype.shouldUseWhiteText = function shouldUseWhiteText(color, amount) {
+	    var lastWhite = {
+	      coral: 10,
+	      paper: -40,
+	      ink: 30,
+	      seedling: -10,
+	      ocean: 10,
+	      lapis: 30,
+	      wisteria: 10,
+	      peach: -10,
+	      yuzu: -30,
+	      'positive-delta': -30,
+	      'negative-delta': 10
+	    };
+	    return amount <= lastWhite[color.toLowerCase()];
+	  };
+	
+	  ColorCard.prototype.colorDropdownItem = function colorDropdownItem(type, value) {
+	    var input = void 0;
+	    return {
+	      text: _react2.default.createElement(
+	        'div',
+	        { className: _colorCardModule2.default.dropdownItem },
+	        _react2.default.createElement(
+	          'strong',
+	          null,
+	          type
+	        ),
+	        ' ',
+	        _react2.default.createElement(
+	          'small',
+	          null,
+	          value
+	        ),
+	        _react2.default.createElement('input', { type: 'text', defaultValue: value, ref: function ref(i) {
+	            return input = i;
+	          } })
+	      ),
+	      action: function action() {
+	        if (input) {
+	          input.select();
+	          document.execCommand('copy');
+	        }
+	      },
+	      icon: _duplicate2.default,
+	      hoverIcon: true
+	    };
+	  };
+	
+	  return ColorCard;
+	}(_react2.default.Component);
+	
 	exports.default = Page;
 	module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 456:
+/***/ 309:
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"cardContainer":"src-pages-atoms-colors----index-module---cardContainer---K7vSj","gridHeader":"src-pages-atoms-colors----index-module---gridHeader---LFLqa","intro":"src-pages-atoms-colors----index-module---intro---JUrzf","hr":"src-pages-atoms-colors----index-module---hr---1uzXC"};
+
+/***/ }),
+
+/***/ 472:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var SpriteSymbol = __webpack_require__(455);
-	var sprite = __webpack_require__(201);
+	var SpriteSymbol = __webpack_require__(40);
+	var sprite = __webpack_require__(26);
 	var symbol = new SpriteSymbol({
-	  "id": "ca-icon-configure",
-	  "use": "ca-icon-configure-usage",
+	  "id": "ca-icon-chevron-down",
+	  "use": "ca-icon-chevron-down-usage",
 	  "viewBox": "0 0 20 20",
-	  "content": "<symbol viewBox=\"0 0 20 20\" id=\"ca-icon-configure\"><defs><path d=\"M17.537 4.683L14.37 7.85l-2.22-2.22 3.167-3.165c-1.747-.837-3.93-.546-5.385.909a4.71 4.71 0 0 0-1.055 5.021l-6.658 6.66c-.292.29-.292.763 0 1.018l1.71 1.71c.255.29.728.29 1.018 0l6.659-6.659a4.71 4.71 0 0 0 5.021-1.055c1.454-1.455 1.746-3.638.91-5.385\" id=\"ca-icon-configure_a\" /></defs><use fill=\"currentColor\" xlink:href=\"#ca-icon-configure_a\" fill-rule=\"evenodd\" /></symbol>"
+	  "content": "<symbol viewBox=\"0 0 20 20\" id=\"ca-icon-chevron-down\"><defs><path id=\"ca-icon-chevron-down_a\" d=\"M6.18 6.845L10 10.747l3.82-3.902L15 8.049l-5 5.106-5-5.106z\" /></defs><use fill=\"currentColor\" xlink:href=\"#ca-icon-chevron-down_a\" fill-rule=\"evenodd\" /></symbol>"
 	});
 	var result = sprite.add(symbol);
 	module.exports = symbol
 
 /***/ }),
 
-/***/ 200:
+/***/ 473:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var SpriteSymbol = __webpack_require__(40);
+	var sprite = __webpack_require__(26);
+	var symbol = new SpriteSymbol({
+	  "id": "ca-icon-chevron-up",
+	  "use": "ca-icon-chevron-up-usage",
+	  "viewBox": "0 0 20 20",
+	  "content": "<symbol viewBox=\"0 0 20 20\" id=\"ca-icon-chevron-up\"><defs><path id=\"ca-icon-chevron-up_a\" d=\"M6.179 13.155L10 9.253l3.821 3.902 1.18-1.204L10 6.845l-5 5.106z\" /></defs><use fill=\"currentColor\" xlink:href=\"#ca-icon-chevron-up_a\" fill-rule=\"evenodd\" /></symbol>"
+	});
+	var result = sprite.add(symbol);
+	module.exports = symbol
+
+/***/ }),
+
+/***/ 475:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var SpriteSymbol = __webpack_require__(40);
+	var sprite = __webpack_require__(26);
+	var symbol = new SpriteSymbol({
+	  "id": "ca-icon-duplicate",
+	  "use": "ca-icon-duplicate-usage",
+	  "viewBox": "0 0 20 20",
+	  "content": "<symbol viewBox=\"0 0 20 20\" id=\"ca-icon-duplicate\"><defs><path d=\"M13.273 2H4.545c-.803 0-1.454.65-1.454 1.455v10.181h1.454V3.455h8.728V2zm2.182 2.91h-8C6.65 4.91 6 5.56 6 6.363v10.181C6 17.35 6.65 18 7.455 18h8c.803 0 1.454-.65 1.454-1.455V6.364c0-.804-.65-1.455-1.454-1.455z\" id=\"ca-icon-duplicate_a\" /></defs><use fill=\"currentColor\" xlink:href=\"#ca-icon-duplicate_a\" fill-rule=\"evenodd\" /></symbol>"
+	});
+	var result = sprite.add(symbol);
+	module.exports = symbol
+
+/***/ }),
+
+/***/ 197:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var SpriteSymbol = __webpack_require__(40);
+	var sprite = __webpack_require__(26);
+	var symbol = new SpriteSymbol({
+	  "id": "ca-icon-ellipsis",
+	  "use": "ca-icon-ellipsis-usage",
+	  "viewBox": "0 0 20 20",
+	  "content": "<symbol viewBox=\"0 0 20 20\" id=\"ca-icon-ellipsis\"><defs><path d=\"M4 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z\" id=\"ca-icon-ellipsis_a\" /></defs><use fill=\"currentColor\" xlink:href=\"#ca-icon-ellipsis_a\" fill-rule=\"evenodd\" /></symbol>"
+	});
+	var result = sprite.add(symbol);
+	module.exports = symbol
+
+/***/ }),
+
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var chalk = __webpack_require__(211);
+	var chalk = __webpack_require__(82);
 	
 	function error(message) {
 	  throw new Error(chalk.red('\nCULTUREAMP STYLE GUIDE ERROR:\n' + singleLine(message) + '\n'));
@@ -3718,18 +5012,18 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 201:
+/***/ 26:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _browserSprite = __webpack_require__(454);
+	var _browserSprite = __webpack_require__(132);
 	
 	var _browserSprite2 = _interopRequireDefault(_browserSprite);
 	
-	var _domready = __webpack_require__(89);
+	var _domready = __webpack_require__(51);
 	
 	var _domready2 = _interopRequireDefault(_domready);
 	
@@ -3786,4 +5080,4 @@ webpackJsonp([103700555733728],{
 /***/ })
 
 });
-//# sourceMappingURL=component---src-pages-atoms-icon-js-e769798b17161909bd5b.js.map
+//# sourceMappingURL=component---src-pages-atoms-colors-index-js-e9c58f96978e490962d2.js.map

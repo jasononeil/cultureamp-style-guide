@@ -1,0 +1,2 @@
+webpackJsonp([35783957827783],{216:function(e,t,l){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0;var n=l(1),a=u(n),o=l(11),r=function(){return a.default.createElement("div",null,a.default.createElement("h1",null,"Hi people"),a.default.createElement("p",null,"Welcome to your new Gatsby site."),a.default.createElement("p",null,"Now go build something great."),a.default.createElement(o.Link,{to:"/atoms/"},"Go to atoms page"))};t.default=r,e.exports=t.default}});
+//# sourceMappingURL=component---src-pages-index-js-74c93190ec4c4e1aa247.js.map
