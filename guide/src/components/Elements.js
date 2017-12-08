@@ -1,7 +1,7 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import styles from './Elements.module.scss';
-import joinClassNames from 'util/joinClassNames.js';
+import joinClassNames from 'guide-util/joinClassNames.js';
 
 export const Heading1 = props => (
   <h1 {...props} className={joinClassNames([styles.h1, props.className])} />
