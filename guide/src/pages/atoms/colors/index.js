@@ -42,43 +42,71 @@ function contrastIsLevelAA(background, foreground, fontSize) {
     .WCAG_AA;
 }
 
-const Page = () => (
-  <div>
-    <Heading1>Colors</Heading1>
-    <p className={styles.intro}>
-      Our color palette is built with our core principles and guidelines as its
-      foundation.
-      <br />We are committed to complying with{' '}
-      <ExternalLink to="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast">
-        AA standard contrast ratios
-      </ExternalLink>.
-    </p>
-    <hr className={styles.hr} />
-    <div className={styles.cardContainer}>
-      {renderColorSection('Primary Colors', ['Coral', 'Paper', 'Ink'])}
-      {renderColorSection('Secondary Colors', [
-        'Seedling',
-        'Ocean',
-        'Lapis',
-        'Wisteria',
-        'Peach',
-        'Yuzu',
-      ])}
-      {renderColorSection('Tertiary Colors', [
-        'Positive-Delta',
-        'Negative-Delta',
-        'Stone',
-      ])}
-    </div>
+class Page extends React.Component {
+  state = {
+    showAccessibility: {},
+  };
 
-    <Link to="/">Go back to the homepage</Link>
-  </div>
-);
+  render() {
+    return (
+      <div>
+        <Heading1>Colors</Heading1>
+        <p className={styles.intro}>
+          Our color palette is built with our core principles and guidelines as
+          its foundation.
+          <br />We are committed to complying with{' '}
+          <ExternalLink to="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast">
+            AA standard contrast ratios
+          </ExternalLink>.
+        </p>
+        <hr className={styles.hr} />
+        <div className={styles.cardContainer}>
+          {this.renderColorSection('Primary Colors', ['Coral', 'Paper', 'Ink'])}
+          {this.renderColorSection('Secondary Colors', [
+            'Seedling',
+            'Ocean',
+            'Lapis',
+            'Wisteria',
+            'Peach',
+            'Yuzu',
+          ])}
+          {this.renderColorSection('Tertiary Colors', [
+            'Positive-Delta',
+            'Negative-Delta',
+            'Stone',
+          ])}
+        </div>
 
-const renderColorSection = (title, colors) => [
-  <Heading2 className={styles.gridHeader}>{title}</Heading2>,
-  colors.map(color => <ColorCard name={color} showAccessibility={true} />),
-];
+        <Link to="/">Go back to the homepage</Link>
+      </div>
+    );
+  }
+
+  renderColorSection(title, colors) {
+    const showAccessibility = this.state.showAccessibility[title];
+    return [
+      <Heading2
+        className={styles.gridHeader}
+        onClick={() => this.toggleAccessibility(title)}
+      >
+        {title}
+      </Heading2>,
+      colors.map(color => (
+        <ColorCard name={color} showAccessibility={showAccessibility} />
+      )),
+    ];
+  }
+
+  toggleAccessibility(section) {
+    let currentValue = this.state.showAccessibility[section];
+    this.setState({
+      showAccessibility: {
+        ...this.state.showAccessibility,
+        [section]: !currentValue,
+      },
+    });
+  }
+}
 
 class ColorCard extends React.Component {
   state = {
@@ -125,7 +153,11 @@ class ColorCard extends React.Component {
 
   renderSubtitle() {
     if (!this.props.showAccessibility) {
-      return <h4>Tint &amp; Shade</h4>;
+      return (
+        <div className={colorCardStyles.subheader}>
+          <h4>Tint &amp; Shade</h4>
+        </div>
+      );
     }
     const combination = (style, size) => {
       return {
@@ -146,7 +178,7 @@ class ColorCard extends React.Component {
       combination('dark', 'large'),
     ];
     return (
-      <div className={colorCardStyles.accessibilityHeader}>
+      <div className={colorCardStyles.subheader}>
         <h4>WCAG 2.0 AA</h4>
         {combinations.map(c => (
           <div>
