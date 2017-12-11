@@ -47,26 +47,30 @@ const Page = () => (
     </p>
     <hr className={styles.hr} />
     <div className={styles.cardContainer}>
-      <Heading2 className={styles.gridHeader}>Primary Colors</Heading2>
-      <ColorCard name="Coral" />
-      <ColorCard name="Paper" />
-      <ColorCard name="Ink" />
-      <Heading2 className={styles.gridHeader}>Secondary Colors</Heading2>
-      <ColorCard name="Seedling" />
-      <ColorCard name="Ocean" />
-      <ColorCard name="Lapis" />
-      <ColorCard name="Wisteria" />
-      <ColorCard name="Peach" />
-      <ColorCard name="Yuzu" />
-      <Heading2 className={styles.gridHeader}>Tertiary Colors</Heading2>
-      <ColorCard name="Positive-Delta" />
-      <ColorCard name="Negative-Delta" />
-      <ColorCard name="Stone" />
+      {renderColorSection('Primary Colors', ['Coral', 'Paper', 'Ink'])}
+      {renderColorSection('Secondary Colors', [
+        'Seedling',
+        'Ocean',
+        'Lapis',
+        'Wisteria',
+        'Peach',
+        'Yuzu',
+      ])}
+      {renderColorSection('Tertiary Colors', [
+        'Positive-Delta',
+        'Negative-Delta',
+        'Stone',
+      ])}
     </div>
 
     <Link to="/">Go back to the homepage</Link>
   </div>
 );
+
+const renderColorSection = (title, colors) => [
+  <Heading2 className={styles.gridHeader}>{title}</Heading2>,
+  colors.map(color => <ColorCard name={color} showAccessibility={true} />),
+];
 
 class ColorCard extends React.Component {
   state = {
@@ -80,7 +84,7 @@ class ColorCard extends React.Component {
       <div>
         <div className={colorCardStyles.colorCard}>
           <h3>{this.renderColorTitleAndToggle()}</h3>
-          <h4>Tint &amp; Shade</h4>
+          {this.renderSubtitle()}
           {this.renderColorBlocks(this.state.expanded)}
         </div>
       </div>
@@ -109,6 +113,42 @@ class ColorCard extends React.Component {
 
   isExpandable() {
     return this.props.name !== 'Stone';
+  }
+
+  renderSubtitle() {
+    if (!this.props.showAccessibility) {
+      return <h4>Tint &amp; Shade</h4>;
+    }
+    const combination = (style, size) => {
+      return {
+        bgColor:
+          style == 'light' && Palette[this.props.name.toLowerCase()].hex(),
+        className: classNames({
+          [colorCardStyles.tile]: true,
+          [colorCardStyles.small]: size === 'small',
+          [colorCardStyles.large]: size === 'large',
+          [colorCardStyles.whiteText]: style === 'light',
+        }),
+      };
+    };
+    const combinations = [
+      combination('light', 'small'),
+      combination('light', 'large'),
+      combination('dark', 'small'),
+      combination('dark', 'large'),
+    ];
+    return (
+      <div className={colorCardStyles.accessibilityHeader}>
+        <h4>WCAG 2.0 AA</h4>
+        {combinations.map(c => (
+          <div>
+            <span className={c.className} style={{ background: c.bgColor }}>
+              A
+            </span>
+          </div>
+        ))}
+      </div>
+    );
   }
 
   renderColorBlocks(showVariations) {

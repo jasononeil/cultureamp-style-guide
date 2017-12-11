@@ -48,6 +48,39 @@
   margin-bottom: 8px;
 }
 
+$accessibilityTileWidth: 46px;
+
+.accessibilityHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  h4 {
+    flex: 1;
+  }
+  div {
+    flex: 0 0 $accessibilityTileWidth;
+  }
+  .tile {
+    display: block;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    margin: 0 auto 7px;
+    display: block;
+    font-family: sans-serif;
+    text-align: center;
+    &.small {
+      font-size: 10px;
+      line-height: 18px;
+    }
+    &.large {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
+
 .colorBlock {
   box-sizing: border-box;
   background: black;
