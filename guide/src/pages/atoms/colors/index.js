@@ -1,7 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 import wcag from 'wcag-contrast-verifier/lib/wcag';
-import { Link, ExternalLink, Heading1, Heading2 } from 'components/Elements';
+import {
+  Link,
+  ExternalLink,
+  ActionLink,
+  Heading1,
+  Heading2,
+} from 'components/Elements';
 import Kebab from 'components/kebab/Kebab';
 import styles from './index.module.scss';
 import colorCardStyles from './colorCard.module.scss';
@@ -85,12 +91,14 @@ class Page extends React.Component {
   renderColorSection(title, colors) {
     const showAccessibility = this.state.showAccessibility[title];
     return [
-      <Heading2
-        className={styles.gridHeader}
-        onClick={() => this.toggleAccessibility(title)}
-      >
-        {title}
-      </Heading2>,
+      <div className={styles.gridHeader}>
+        <Heading2>{title}</Heading2>
+        <ActionLink action={() => this.toggleAccessibility(title)}>
+          {showAccessibility
+            ? 'Hide Contrast Checker'
+            : 'Show Contrast Checker'}
+        </ActionLink>
+      </div>,
       colors.map(color => (
         <ColorCard name={color} showAccessibility={showAccessibility} />
       )),

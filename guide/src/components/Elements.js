@@ -26,3 +26,12 @@ export const ExternalLink = props => (
     className={classNames(styles.link, props.className)}
   />
 );
+
+export const ActionLink = props => (
+  <a
+    {...props}
+    href="javascript:void(0)"
+    onClick={props.action}
+    className={classNames(styles.link, props.className)}
+  />
+);

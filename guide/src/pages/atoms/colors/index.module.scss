@@ -26,6 +26,15 @@
   @include setupColumns(1);
 }
 
+.gridHeader {
+  h2 {
+    float: left;
+  }
+  a {
+    float: right;
+  }
+}
+
 .intro {
   font-size: $ca-intro-para-font-size;
   line-height: $ca-intro-para-line-height;
