@@ -168,6 +168,12 @@ class ColorCard extends React.Component {
       );
     }
     const combination = (style, size) => {
+      const titlePt1 = style == 'light' ? 'White text ' : 'Ink text',
+        titlePt2 =
+          size == 'large'
+            ? '18pt (24px) or larger'
+            : 'smaller than 18pt (24px)',
+        title = titlePt1 + titlePt2;
       return {
         bgColor:
           style == 'light' && Palette[this.props.name.toLowerCase()].hex(),
@@ -177,6 +183,7 @@ class ColorCard extends React.Component {
           [colorCardStyles.large]: size === 'large',
           [colorCardStyles.whiteText]: style === 'light',
         }),
+        title: title,
       };
     };
     const combinations = [
@@ -190,7 +197,11 @@ class ColorCard extends React.Component {
         <h4>WCAG 2.0 AA</h4>
         {combinations.map(c => (
           <div>
-            <span className={c.className} style={{ background: c.bgColor }}>
+            <span
+              className={c.className}
+              style={{ background: c.bgColor }}
+              title={c.title}
+            >
               A
             </span>
           </div>
@@ -266,7 +277,7 @@ class ColorCard extends React.Component {
         isValid = contrastIsLevelAA(color, textColor, fontSize),
         title = `${textColorName} text on '${
           name
-        }' with a font size of at least ${fontSize}px is level AA contrast.`;
+        }' with a font size of at least ${fontSize}pt is level AA contrast.`;
       return (
         <div
           className={colorCardStyles.accessibilityIcon}
@@ -277,10 +288,10 @@ class ColorCard extends React.Component {
       );
     }
     return [
-      renderIcon('White', 10),
-      renderIcon('White', 20),
-      renderIcon('Ink', 10),
-      renderIcon('Ink', 20),
+      renderIcon('White', 12),
+      renderIcon('White', 18),
+      renderIcon('Ink', 12),
+      renderIcon('Ink', 18),
     ];
   }
 
