@@ -8461,6 +8461,10 @@ watchpack@^0.2.1:
     chokidar "^1.0.0"
     graceful-fs "^4.1.2"
 
+wcag-contrast-verifier@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/wcag-contrast-verifier/-/wcag-contrast-verifier-1.1.0.tgz#e19ae0b708b24f62518b524e073c4a1f1c3ec062"
+
 webpack-configurator@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/webpack-configurator/-/webpack-configurator-0.3.1.tgz#d16802afa674101a0cbfa6fc344d415c9649540b"

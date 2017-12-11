@@ -88,7 +88,7 @@ $accessibilityTileWidth: 46px;
   line-height: 71px;
   vertical-align: middle;
   margin-bottom: 4px;
-  padding: 10px;
+  padding: 10px 0;
   font-weight: $ca-weight-light;
   color: $ca-palette-ink;
   display: flex;
@@ -104,8 +104,14 @@ $accessibilityTileWidth: 46px;
   color: white;
 }
 
+.accessibilityIcon {
+  flex: 0 0 $accessibilityTileWidth;
+  text-align: center;
+}
+
 .kebabContainer {
   line-height: 80px;
+  margin-right: 10px;
 }
 
 .kebabContainer svg {
@@ -117,6 +123,7 @@ $accessibilityTileWidth: 46px;
 
 .colorBlockLabel {
   flex: 1;
+  margin-left: 10px;
 }
 
 .colorBlockHalf .kebabContainer {

@@ -1,7 +1,8 @@
 import React from 'react';
+import classNames from 'classnames';
+import wcag from 'wcag-contrast-verifier/lib/wcag';
 import { Link, ExternalLink, Heading1, Heading2 } from 'components/Elements';
 import Kebab from 'components/kebab/Kebab';
-import classNames from 'classnames';
 import styles from './index.module.scss';
 import colorCardStyles from './colorCard.module.scss';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon.js';
@@ -9,9 +10,11 @@ import chevronUp from 'cultureamp-style-guide/icons/chevron-up.svg';
 import chevronDown from 'cultureamp-style-guide/icons/chevron-down.svg';
 import ellipsis from 'cultureamp-style-guide/icons/ellipsis.svg';
 import duplicate from 'cultureamp-style-guide/icons/duplicate.svg';
+import successWhite from 'cultureamp-style-guide/icons/success.svg';
 import Color from 'color';
 
 const Palette = {
+  white: Color('#ffffff'),
   ink: Color('#3e4543'),
   paper: Color('#f2edde'),
   coral: Color('#f04c5d'),
@@ -32,6 +35,11 @@ function addTint(color, percentage) {
 
 function addShade(color, percentage) {
   return color.mix(Color('#000000'), percentage / 100);
+}
+
+function contrastIsLevelAA(background, foreground, fontSize) {
+  return wcag.verifyContrastRatio(background.hex(), foreground.hex(), fontSize)
+    .WCAG_AA;
 }
 
 const Page = () => (
@@ -165,19 +173,26 @@ class ColorCard extends React.Component {
 
   renderBlock(color, amount) {
     let isHalfBlock = false,
+      showAccessibility = this.props.showAccessibility,
       label = '100%',
       sassVar = `$ca-palette-${color.toLowerCase()}`,
-      shouldUseWhite = this.shouldUseWhiteText(color, amount || 0),
       bgColor = Palette[color.toLowerCase()];
+
     if (amount) {
-      let shift = amount > 0 ? 'tint' : 'shade',
-        absAmount = Math.abs(amount);
-      sassVar = `add-${shift}(${sassVar}, ${absAmount}%)`;
-      label = amount > 0 ? `+${absAmount}% White` : `+${absAmount}% Black`;
-      bgColor =
-        amount > 0 ? addTint(bgColor, absAmount) : addShade(bgColor, absAmount);
+      const absAmount = Math.abs(amount);
+      if (amount > 0) {
+        sassVar = `add-tint(${sassVar}, ${absAmount}%)`;
+        label = `+${absAmount}% White`;
+        bgColor = addTint(bgColor, absAmount);
+      } else {
+        sassVar = `add-shade(${sassVar}, ${absAmount}%)`;
+        label = `+${absAmount}% Black`;
+        bgColor = addShade(bgColor, absAmount);
+      }
       isHalfBlock = true;
     }
+
+    let shouldUseWhite = this.shouldUseWhiteText(bgColor);
 
     const classes = classNames(
       colorCardStyles['colorBlock'],
@@ -192,51 +207,72 @@ class ColorCard extends React.Component {
         style={{ background: bgColor.rgb().string() }}
       >
         <span className={colorCardStyles.colorBlockLabel}>{label}</span>
-        <span className={colorCardStyles.kebabContainer}>
-          <Kebab
-            links={[]}
-            actions={[
-              this.colorDropdownItem('SASS', sassVar),
-              this.colorDropdownItem('HEX', bgColor.hex()),
-              this.colorDropdownItem(
-                'RGB',
-                bgColor
-                  .rgb()
-                  .array()
-                  .map(Math.round)
-                  .join(', ')
-              ),
-              this.colorDropdownItem(
-                'CMYK',
-                bgColor
-                  .cmyk()
-                  .array()
-                  .map(Math.round)
-                  .join(', ')
-              ),
-            ]}
-            title="Copy To Clipboard"
-          />
-        </span>
+        {showAccessibility
+          ? this.renderColorAccessibilityIcons(bgColor, `${color} ${label}`)
+          : this.renderColorBarKebab(bgColor, sassVar)}
       </div>
     );
   }
 
-  shouldUseWhiteText(color, amount) {
-    const lastWhite = {
-      coral: 10,
-      paper: -40,
-      ink: 30,
-      seedling: -10,
-      ocean: 10,
-      lapis: 30,
-      wisteria: 10,
-      peach: -10,
-      yuzu: -30,
-      'positive-delta': -30,
-      'negative-delta': 10,
-    };
-    return amount <= lastWhite[color.toLowerCase()];
+  shouldUseWhiteText(color) {
+    const whiteContrast = wcag.getContrastRatio(color.hex(), '#ffffff'),
+      blackContrast = wcag.getContrastRatio(color.hex(), Palette.ink.hex());
+    return whiteContrast > blackContrast;
+  }
+
+  renderColorAccessibilityIcons(color, name) {
+    function renderIcon(textColorName, fontSize) {
+      const textColor = Palette[textColorName.toLowerCase()],
+        isValid = contrastIsLevelAA(color, textColor, fontSize),
+        title = `${textColorName} text on '${
+          name
+        }' with a font size of at least ${fontSize}px is level AA contrast.`;
+      return (
+        <div
+          className={colorCardStyles.accessibilityIcon}
+          style={{ color: textColor.rgb() }}
+        >
+          {isValid && <Icon icon={successWhite} role="img" title={title} />}
+        </div>
+      );
+    }
+    return [
+      renderIcon('White', 10),
+      renderIcon('White', 20),
+      renderIcon('Ink', 10),
+      renderIcon('Ink', 20),
+    ];
+  }
+
+  renderColorBarKebab(bgColor, sassVar) {
+    return (
+      <span className={colorCardStyles.kebabContainer}>
+        <Kebab
+          links={[]}
+          actions={[
+            this.colorDropdownItem('SASS', sassVar),
+            this.colorDropdownItem('HEX', bgColor.hex()),
+            this.colorDropdownItem(
+              'RGB',
+              bgColor
+                .rgb()
+                .array()
+                .map(Math.round)
+                .join(', ')
+            ),
+            this.colorDropdownItem(
+              'CMYK',
+              bgColor
+                .cmyk()
+                .array()
+                .map(Math.round)
+                .join(', ')
+            ),
+          ]}
+          title="Copy To Clipboard"
+        />
+      </span>
+    );
   }
 
   colorDropdownItem(type, value) {
