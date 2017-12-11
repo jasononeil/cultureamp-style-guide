@@ -8,7 +8,7 @@ import {
   Heading1,
   Heading2,
 } from 'components/Elements';
-import Kebab from 'components/kebab/Kebab';
+import Kebab from 'components/kebab';
 import styles from './index.module.scss';
 import colorCardStyles from './colorCard.module.scss';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon.js';
