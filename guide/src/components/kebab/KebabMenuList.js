@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import classNames from 'classnames';
 import styles from './KebabMenu.module.scss';
 import { MenuItemLink, MenuItemAction } from './KebabMenuItems';
 
@@ -53,14 +54,14 @@ export default class KebabMenuList extends React.Component {
 
   render() {
     const props = this.props;
-    let headerClass = styles.headerContainer;
-    if (props.headerClass) {
-      headerClass += ' ' + styles[props.headerClass];
-    }
+    const headerClasses = classNames({
+      [styles.headerContainer]: true,
+      [styles[props.headerClass]]: props.headerClass,
+    });
 
     return (
       <div className={styles.menuContainer}>
-        <div className={headerClass}>
+        <div className={headerClasses}>
           <span className={styles.headerTitle}>{props.headerTitle}</span>
           <span className={styles.headerContent}>{props.headerInfo}</span>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, ExternalLink, Heading1, Heading2 } from 'components/Elements';
 import Kebab from 'components/kebab/Kebab';
-import joinClassNames from 'guide-util/joinClassNames.js';
+import classNames from 'classnames';
 import styles from './index.module.scss';
 import colorCardStyles from './colorCard.module.scss';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon.js';
@@ -139,11 +139,11 @@ class ColorCard extends React.Component {
       isHalfBlock = true;
     }
 
-    const classes = joinClassNames([
+    const classes = classNames(
       colorCardStyles['colorBlock'],
       isHalfBlock && colorCardStyles['colorBlockHalf'],
-      shouldUseWhite && colorCardStyles['whiteText'],
-    ]);
+      shouldUseWhite && colorCardStyles['whiteText']
+    );
 
     return (
       <div
