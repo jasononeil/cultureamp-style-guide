@@ -16,7 +16,7 @@ const Card = ({ title, icon, iconColor, children }) => {
             [styles[iconColor]]: iconColor,
           })}
         >
-          <Icon icon={icon} />
+          <Icon icon={icon} role="presentation" />
         </span>
       )}
       {title}
