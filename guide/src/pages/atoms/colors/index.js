@@ -188,7 +188,7 @@ class ColorCard extends React.Component {
       );
     }
     const combination = (style, size) => {
-      const titlePt1 = style == 'light' ? 'White text ' : 'Ink text',
+      const titlePt1 = style == 'light' ? 'White text ' : 'Ink text ',
         titlePt2 =
           size == 'large'
             ? '18pt (24px) or larger'
