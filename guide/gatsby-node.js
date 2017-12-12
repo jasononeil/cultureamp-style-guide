@@ -8,8 +8,8 @@ function modifyWebpackConfig(_ref, options) {
   if (stage === 'build-javascript' || stage === 'develop') {
     addSvgLoaders(config);
     addElmLoader(config);
-    addMarkdownLoader(config);
   }
+  addRawLoader(config);
   return config;
 }
 
