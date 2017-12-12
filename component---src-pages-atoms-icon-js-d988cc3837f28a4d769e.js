@@ -3296,7 +3296,7 @@ webpackJsonp([103700555733728],{
 	      if (_this.resizing) return;
 	
 	      _this.resizing = true;
-	      // window.requestAnimationFrame(this.onResizeFrame);
+	      window.requestAnimationFrame(_this.onResizeFrame);
 	    }, _this.onResizeFrame = function () {
 	      if (_this.isResizeComplete()) {
 	        _this.resizing = false;
@@ -3314,7 +3314,7 @@ webpackJsonp([103700555733728],{
 	        }
 	      }));
 	
-	      // window.requestAnimationFrame(this.onResizeFrame);
+	      window.requestAnimationFrame(_this.onResizeFrame);
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	
@@ -3454,14 +3454,14 @@ webpackJsonp([103700555733728],{
 	    );
 	  };
 	
-	  // componentDidMount() {
-	  //   window.addEventListener('resize', this.onResize);
-	  //   this.onResize();
-	  // }
+	  Demo.prototype.componentDidMount = function componentDidMount() {
+	    window.addEventListener('resize', this.onResize);
+	    this.onResize();
+	  };
 	
-	  // componentWillUnmount() {
-	  //   window.removeEventListener('resize', this.onResize);
-	  // }
+	  Demo.prototype.componentWillUnmount = function componentWillUnmount() {
+	    window.removeEventListener('resize', this.onResize);
+	  };
 	
 	  Demo.prototype.onClickResizeTo = function onClickResizeTo(size) {
 	    var _this3 = this;
@@ -3492,6 +3492,8 @@ webpackJsonp([103700555733728],{
 	  };
 	
 	  Demo.prototype.resizeTo = function resizeTo() {
+	    var _this4 = this;
+	
 	    var assignedCanvasWidth = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 	
 	    assignedCanvasWidth = assignedCanvasWidth && Math.min(assignedCanvasWidth, this.maxCanvasWidth());
@@ -3501,9 +3503,9 @@ webpackJsonp([103700555733728],{
 	      this.setAssignedCanvasWidth(this.maxCanvasWidth());
 	    }
 	
-	    // window.requestAnimationFrame(() => {
-	    //   this.setAssignedCanvasWidth(assignedCanvasWidth);
-	    // });
+	    window.requestAnimationFrame(function () {
+	      _this4.setAssignedCanvasWidth(assignedCanvasWidth);
+	    });
 	  };
 	
 	  Demo.prototype.setAssignedCanvasWidth = function setAssignedCanvasWidth(assignedCanvasWidth) {
@@ -3727,4 +3729,4 @@ webpackJsonp([103700555733728],{
 /***/ })
 
 });
-//# sourceMappingURL=component---src-pages-atoms-icon-js-2fc1a36ba1e552365f7d.js.map
+//# sourceMappingURL=component---src-pages-atoms-icon-js-d988cc3837f28a4d769e.js.map

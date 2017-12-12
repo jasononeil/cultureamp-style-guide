@@ -5626,42 +5626,33 @@ webpackJsonp([274576253422262],[
 	      _this.props.hideKebabMenu();
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
-	  // componentDidMount() {
-	  //   document.addEventListener('click', this.handleDocumentClick, false);
-	  //   window.addEventListener('resize', this.handleDocumentResize, false);
-	  //   this.positionMenu();
-	  // }
 	
-	  // componentWillUnmount() {
-	  //   document.removeEventListener('click', this.handleDocumentClick, false);
-	  //   window.removeEventListener('resize', this.handleDocumentResize, false);
-	  // }
+	  KebabMenu.prototype.componentDidMount = function componentDidMount() {
+	    document.addEventListener('click', this.handleDocumentClick, false);
+	    window.addEventListener('resize', this.handleDocumentResize, false);
+	    this.positionMenu();
+	  };
+	
+	  KebabMenu.prototype.componentWillUnmount = function componentWillUnmount() {
+	    document.removeEventListener('click', this.handleDocumentClick, false);
+	    window.removeEventListener('resize', this.handleDocumentResize, false);
+	  };
 	
 	  KebabMenu.prototype.positionMenu = function positionMenu() {
-	    // if (!this.props.position) {
-	    //   return;
-	    // }
-	    // const pos = this.props.position;
-	    // const heightBetweenTopOfRowAndKebabIcon = (pos.bottom - pos.top) / 2;
-	    // const { innerHeight } = window;
-	    // const rect = this.menu.getBoundingClientRect();
-	    // this.menu.style.left = this.calculateLeftOffset(
-	    //   window.scrollX,
-	    //   pos.right,
-	    //   rect.width
-	    // );
-	    // this.menu.style.top = this.calculateTopOffset(
-	    //   window.scrollY,
-	    //   pos.top,
-	    //   heightBetweenTopOfRowAndKebabIcon
-	    // );
-	    // if (pos.bottom > innerHeight - rect.height) {
-	    //   this.menu.style.top = this.calculateShiftedUpTopOffset(
-	    //     window.scrollY,
-	    //     pos.top,
-	    //     rect.height - heightBetweenTopOfRowAndKebabIcon + 12
-	    //   );
-	    // }
+	    if (!this.props.position) {
+	      return;
+	    }
+	    var pos = this.props.position;
+	    var heightBetweenTopOfRowAndKebabIcon = (pos.bottom - pos.top) / 2;
+	    var _window = window,
+	        innerHeight = _window.innerHeight;
+	
+	    var rect = this.menu.getBoundingClientRect();
+	    this.menu.style.left = this.calculateLeftOffset(window.scrollX, pos.right, rect.width);
+	    this.menu.style.top = this.calculateTopOffset(window.scrollY, pos.top, heightBetweenTopOfRowAndKebabIcon);
+	    if (pos.bottom > innerHeight - rect.height) {
+	      this.menu.style.top = this.calculateShiftedUpTopOffset(window.scrollY, pos.top, rect.height - heightBetweenTopOfRowAndKebabIcon + 12);
+	    }
 	  };
 	
 	  KebabMenu.prototype.convertToPx = function convertToPx(pixel) {
@@ -7284,13 +7275,13 @@ webpackJsonp([274576253422262],[
 /* 417 */
 /***/ (function(module, exports) {
 
-	module.exports = "module.exports = \"* Be pretty\\n* Be sufficient contrast\\n\""
+	module.exports = "* Be pretty\n* Be sufficient contrast\n"
 
 /***/ }),
 /* 418 */
 /***/ (function(module, exports) {
 
-	module.exports = "module.exports = \"* Be ugly\\n* By low contrast\\n\""
+	module.exports = "* Be ugly\n* By low contrast\n"
 
 /***/ }),
 /* 419 */,
@@ -14382,4 +14373,4 @@ webpackJsonp([274576253422262],[
 
 /***/ })
 ]);
-//# sourceMappingURL=component---src-pages-atoms-colors-index-js-6bc73c2f33ef38de61d8.js.map
+//# sourceMappingURL=component---src-pages-atoms-colors-index-js-3052c26f1224ea0ff94f.js.map
