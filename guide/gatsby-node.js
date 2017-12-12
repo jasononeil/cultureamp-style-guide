@@ -8,6 +8,7 @@ function modifyWebpackConfig(_ref, options) {
   if (stage === 'build-javascript' || stage === 'develop') {
     addSvgLoaders(config);
     addElmLoader(config);
+    addMarkdownLoader(config);
   }
   return config;
 }
@@ -33,6 +34,13 @@ function addSvgLoaders(config) {
       'svg-sprite-loader?' + JSON.stringify(spriteLoaderConf),
       'svgo-loader?' + JSON.stringify(svgoConf),
     ],
+  });
+}
+
+function addRawLoader(config) {
+  config.loader('raw-loader', {
+    test: /\.md$/,
+    loaders: ['raw-loader'],
   });
 }
 

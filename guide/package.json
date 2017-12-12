@@ -12,6 +12,8 @@
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^1.0.13",
+    "raw-loader": "^0.5.1",
+    "react-markdown": "^3.1.1",
     "wcag-contrast-verifier": "^1.1.0"
   },
   "keywords": [

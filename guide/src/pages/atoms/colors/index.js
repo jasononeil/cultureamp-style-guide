@@ -6,11 +6,11 @@ import {
   Heading1,
   Heading2,
 } from 'components/Elements';
-import Card from 'components/card';
+import TipCard from 'components/tip-card';
 import styles from './index.module.scss';
-import successWhite from 'cultureamp-style-guide/icons/success.svg';
-import exclamation from 'cultureamp-style-guide/icons/exclamation.svg';
 import ColorCard from './_ColorCard.js';
+import TipText from './_ColorsShould.md';
+import WarningText from './_ColorsShouldNot.md';
 
 class Page extends React.Component {
   state = {
@@ -49,20 +49,12 @@ class Page extends React.Component {
 
         <Heading2>Best Practices</Heading2>
         <div className={styles.tipsContainer}>
-          <Card
-            title="Colors should..."
-            icon={successWhite}
-            iconColor="seedling"
-          >
-            Do!!!
-          </Card>
-          <Card
+          <TipCard title="Colors should..." type="tip" content={TipText} />
+          <TipCard
             title="Colors should not..."
-            icon={exclamation}
-            iconColor="coral"
-          >
-            Don't!!!
-          </Card>
+            type="warning"
+            content={WarningText}
+          />
         </div>
 
         <Link to="/">Go back to the homepage</Link>
