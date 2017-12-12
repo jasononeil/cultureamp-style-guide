@@ -21,16 +21,16 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "component---src-pages-atoms-button-js": [
-      "component---src-pages-atoms-button-js-c80edef234225dc4fd84.js",
-      "component---src-pages-atoms-button-js-c80edef234225dc4fd84.js.map"
+      "component---src-pages-atoms-button-js-0f26b6bd6ebed41fdd1c.js",
+      "component---src-pages-atoms-button-js-0f26b6bd6ebed41fdd1c.js.map"
     ],
     "component---src-pages-organisms-index-js": [
       "component---src-pages-organisms-index-js-aa0d41b7fe81979f30a2.js",
       "component---src-pages-organisms-index-js-aa0d41b7fe81979f30a2.js.map"
     ],
     "component---src-pages-atoms-icon-js": [
-      "component---src-pages-atoms-icon-js-a11862f7a1aae3ce613b.js",
-      "component---src-pages-atoms-icon-js-a11862f7a1aae3ce613b.js.map"
+      "component---src-pages-atoms-icon-js-2fc1a36ba1e552365f7d.js",
+      "component---src-pages-atoms-icon-js-2fc1a36ba1e552365f7d.js.map"
     ],
     "path---molecules": [
       "path---molecules-a0e39f21c11f6a62c5ab.js",
@@ -41,8 +41,8 @@
       "path---atoms-button-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-ed5042ab0ac177e07660.js",
-      "component---src-layouts-index-js-ed5042ab0ac177e07660.js.map"
+      "component---src-layouts-index-js-d14d8a50e8c9e09edf00.js",
+      "component---src-layouts-index-js-d14d8a50e8c9e09edf00.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
@@ -69,9 +69,9 @@
       "path---visuals-a0e39f21c11f6a62c5ab.js.map"
     ],
     "commons": [
-      "commons-5f0b6f41bc5b0285c577.js",
+      "commons-c879c024d6d98dce0406.js",
       "build-js-styles.css",
-      "commons-5f0b6f41bc5b0285c577.js.map",
+      "commons-c879c024d6d98dce0406.js.map",
       "build-js-styles.css.map"
     ],
     "path---404-html": [
@@ -109,8 +109,8 @@
       "component---src-pages-molecules-index-js-d2a730e2e25dd6ca63f7.js.map"
     ],
     "component---src-pages-atoms-colors-index-js": [
-      "component---src-pages-atoms-colors-index-js-e9c58f96978e490962d2.js",
-      "component---src-pages-atoms-colors-index-js-e9c58f96978e490962d2.js.map"
+      "component---src-pages-atoms-colors-index-js-6bc73c2f33ef38de61d8.js",
+      "component---src-pages-atoms-colors-index-js-6bc73c2f33ef38de61d8.js.map"
     ]
   }
 }
