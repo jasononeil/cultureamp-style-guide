@@ -15,13 +15,7 @@ const pages = [
 ];
 
 const Header = () => (
-  <div
-    style={{
-      margin: '10px auto',
-      maxWidth: 1360,
-      padding: '1.45rem 1.0875rem',
-    }}
-  >
+  <div className="page-container">
     <Heading1>
       <Link to="/">Kaizen</Link> - Culture Amp's Living Style Guide
     </Heading1>
@@ -43,16 +37,7 @@ const TemplateWrapper = ({ children }) => (
       <meta name="keywords" content="Culture Amp, design system, style guide" />
     </Helmet>
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 1360,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
+    <div className="page-container">{children()}</div>
   </div>
 );
 

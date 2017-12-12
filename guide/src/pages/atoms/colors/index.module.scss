@@ -1,32 +1,34 @@
 @import '~cultureamp-style-guide/styles/type';
 
-@mixin setupColumns($numColumns) {
+@mixin setColumnSizes($numColumns, $min, $max) {
   .cardContainer {
-    display: grid;
-    grid-gap: 1rem;
-    justify-content: space-between;
-    grid-template-columns: repeat($numColumns, minmax(280px, 360px));
+    grid-template-columns: repeat($numColumns, minmax($min, $max));
   }
 
   .gridHeader {
-    grid-column-start: 1;
     grid-column-end: span $numColumns;
   }
 }
 
-@media screen and (min-width: 1160px) {
-  @include setupColumns(3);
-}
+// expand or center on phone view
+@include setColumnSizes(1, 280px, 1fr);
 
 @media screen and (min-width: 768px) and (max-width: 1159px) {
-  @include setupColumns(2);
+  @include setColumnSizes(2, 280px, 1fr);
 }
 
-@media screen and (max-width: 767px) {
-  @include setupColumns(1);
+@media screen and (min-width: 960px) {
+  @include setColumnSizes(3, 280px, 360px);
+}
+
+.cardContainer {
+  display: grid;
+  grid-gap: 1rem;
+  justify-content: space-between;
 }
 
 .gridHeader {
+  grid-column-start: 1;
   h2 {
     float: left;
   }

@@ -16,9 +16,8 @@ body {
   font-weight: $ca-body-font-weight;
 }
 
-.intro,
-blockquote {
-  font-size: $ca-intro-para-font-size;
-  line-height: $ca-intro-para-line-height;
-  font-weight: 200;
+.page-container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
 }

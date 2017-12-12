@@ -3,7 +3,6 @@
 
 .colorCard {
   composes: card from 'components/card/Card.module.scss';
-  max-width: 360px;
 }
 
 .colorCard h3 {
