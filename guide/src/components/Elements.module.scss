@@ -13,6 +13,7 @@
   line-height: $ca-heading-2-line-height;
   // Note, we're not using $ca-heading-2-font-weight as the styleguide uses a lighter weight than murmur.
   font-weight: $ca-weight-book;
+  margin-bottom: $ca-grid;
 }
 
 .h3 {
@@ -20,6 +21,7 @@
   font-size: $ca-heading-3-font-size;
   line-height: $ca-heading-3-line-height;
   font-weight: $ca-heading-3-font-weight;
+  margin-bottom: $ca-grid;
 }
 
 .link {
