@@ -68,6 +68,7 @@ class ColorCard extends React.Component {
         : [0];
     return variations.map(amount => (
       <ColorBlock
+        key={amount}
         colorName={colorName}
         amount={amount}
         showContrast={this.props.showAccessibility}

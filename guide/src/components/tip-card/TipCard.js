@@ -8,8 +8,8 @@ import styles from './TextContent.module.scss';
 const TipCard = ({ title, type, content }) => (
   <Card
     title={title}
-    icon={type == 'tip' ? successWhite : exclamation}
-    iconColor={type == 'tip' ? 'seedling' : 'coral'}
+    icon={type === 'tip' ? successWhite : exclamation}
+    iconColor={type === 'tip' ? 'seedling' : 'coral'}
   >
     <div className={styles.textContent}>
       <ReactMarkdown source={content} />
