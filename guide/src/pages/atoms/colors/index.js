@@ -9,6 +9,7 @@ import {
   Heading2,
 } from 'components/Elements';
 import Kebab from 'components/kebab';
+import Card from 'components/card';
 import styles from './index.module.scss';
 import colorCardStyles from './colorCard.module.scss';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon.js';
@@ -17,6 +18,7 @@ import chevronDown from 'cultureamp-style-guide/icons/chevron-down.svg';
 import ellipsis from 'cultureamp-style-guide/icons/ellipsis.svg';
 import duplicate from 'cultureamp-style-guide/icons/duplicate.svg';
 import successWhite from 'cultureamp-style-guide/icons/success.svg';
+import exclamation from 'cultureamp-style-guide/icons/exclamation.svg';
 import Color from 'color';
 
 const Palette = {
@@ -81,6 +83,24 @@ class Page extends React.Component {
             'Negative-Delta',
             'Stone',
           ])}
+        </div>
+
+        <Heading2>Best Practices</Heading2>
+        <div className={styles.tipsContainer}>
+          <Card
+            title="Colors should..."
+            icon={successWhite}
+            iconColor="seedling"
+          >
+            Do!!!
+          </Card>
+          <Card
+            title="Colors should not..."
+            icon={exclamation}
+            iconColor="coral"
+          >
+            Don't!!!
+          </Card>
         </div>
 
         <Link to="/">Go back to the homepage</Link>

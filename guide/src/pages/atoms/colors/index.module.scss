@@ -35,6 +35,16 @@
   }
 }
 
+.tipsContainer {
+  display: grid;
+  grid-gap: 1rem;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .intro {
   font-size: $ca-intro-para-font-size;
   line-height: $ca-intro-para-line-height;

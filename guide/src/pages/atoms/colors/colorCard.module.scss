@@ -1,18 +1,9 @@
 @import '~cultureamp-style-guide/styles/color';
 @import '~cultureamp-style-guide/styles/type';
 
-.card {
-  border-radius: 3px;
-  min-width: 280px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  margin-bottom: 20px;
-}
-
 .colorCard {
-  composes: card;
+  composes: card from 'components/card/Card.module.scss';
   max-width: 360px;
-  padding: 18px;
 }
 
 .colorCard h3 {

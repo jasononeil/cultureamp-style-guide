@@ -1,0 +1,43 @@
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+
+$cardPadding: $ca-grid / 2;
+
+.card {
+  border-radius: 3px;
+  min-width: 280px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  margin-bottom: 20px;
+  padding: $cardPadding;
+}
+
+.cardWithHeader {
+  composes: card;
+  padding: 0;
+}
+
+.cardHeader {
+  background: add-alpha(add-tint($ca-palette-ink, 70%), 30%);
+  padding: $cardPadding;
+  font-weight: $ca-heading-3-font-weight;
+  font-size: $ca-heading-3-font-size;
+  line-height: $ca-heading-3-line-height;
+}
+
+.cardBody {
+  padding: $cardPadding;
+}
+
+.iconWrapper {
+  margin-right: $ca-grid / 3;
+  position: relative;
+  top: 3px;
+}
+
+.coral {
+  color: $ca-palette-coral;
+}
+.seedling {
+  color: $ca-palette-coral;
+}
