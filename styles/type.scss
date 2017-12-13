@@ -12,6 +12,7 @@ $ca-weight-normal: $ca-weight-book;
 $ca-default-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 $ca-ideal-sans: 'Ideal Sans A', 'Ideal Sans B', $ca-default-font-family;
 $ca-default-font-size: 14px;
+$ca-default-line-height: $ca-grid / $ca-default-font-size;
 $ca-base-text-color: $ca-palette-ink;
 $ca-link-text-color: $ca-palette-ocean;
 $ca-link-hover-text-color: $ca-palette-ocean;
@@ -21,36 +22,36 @@ $ca-heading-font: $ca-weight-medium 22px $ca-ideal-sans;
 
 // Heading 2
 $ca-heading-2-font-size: 18px;
-$ca-heading-2-line-height: $ca-grid;
+$ca-heading-2-line-height: $ca-grid / $ca-heading-2-font-size;
 $ca-heading-2-font-weight: $ca-weight-medium;
 
 // Heading 3
 $ca-heading-3-font-size: $ca-grid * 2/3;
-$ca-heading-3-line-height: $ca-grid;
+$ca-heading-3-line-height: $ca-grid / $ca-heading-3-font-size;
 $ca-heading-3-font-weight: $ca-weight-medium;
 
 // Intro Para
 $ca-intro-para-font-size: $ca-grid * 2/3;
-$ca-intro-para-line-height: $ca-grid;
+$ca-intro-para-line-height: $ca-grid / $ca-intro-para-font-size;
 $ca-intro-para-font-weight: $ca-weight-book;
 
 // Body
 $ca-body-font-size: 14px;
-$ca-body-line-height: $ca-grid;
+$ca-body-line-height: $ca-grid / $ca-body-font-size;
 $ca-body-font-weight: $ca-weight-book;
 
 // Control Action
 $ca-control-action-font-size: 14px;
-$ca-control-action-line-height: 24px;
+$ca-control-action-line-height: $ca-grid / $ca-control-action-font-size;
 $ca-control-action-font-weight: $ca-weight-medium;
 
 // Body Small
 $ca-body-small-font-size: $ca-grid / 2;
-$ca-body-small-line-height: $ca-grid;
+$ca-body-small-line-height: $ca-grid / $ca-body-small-font-size;
 $ca-body-small-font-weight: $ca-weight-book;
 
 // Labels & Legends
 $ca-labels-and-legends-font-size: $ca-grid / 2;
-$ca-labels-and-legends-line-height: $ca-grid;
+$ca-labels-and-legends-line-height: $ca-grid / $ca-labels-and-legends-font-size;
 $ca-labels-and-legends-font-weight: $ca-weight-medium;
 $ca-labels-and-legends-letter-spacing: 0.55px;
