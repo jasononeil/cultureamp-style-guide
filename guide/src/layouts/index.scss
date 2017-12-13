@@ -8,11 +8,7 @@ html {
   font-family: $ca-ideal-sans;
   font-weight: $ca-weight-light;
   font-size: $ca-default-font-size;
-}
-
-body {
-  font-size: $ca-body-font-size;
-  line-height: $ca-body-line-height;
+  line-height: $ca-default-line-height;
   font-weight: $ca-body-font-weight;
 }
 
