@@ -1,6 +1,6 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~cultureamp-style-guide/styles/color';
-@import 'reset';
+@import '~normalize.css';
 
 html {
   background: $ca-palette-stone;
