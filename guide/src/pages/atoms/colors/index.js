@@ -9,8 +9,8 @@ import {
 import TipCard from 'components/tip-card';
 import styles from './index.module.scss';
 import ColorCard from './_ColorCard.js';
-import TipText from './_ColorsShould.md';
-import WarningText from './_ColorsShouldNot.md';
+import ColorsShould from './_ColorsShould.md';
+import ColorsShouldNot from './_ColorsShouldNot.md';
 
 class Page extends React.Component {
   state = {
@@ -49,11 +49,11 @@ class Page extends React.Component {
 
         <Heading2>Best Practices</Heading2>
         <div className={styles.tipsContainer}>
-          <TipCard title="Colors should..." type="tip" content={TipText} />
+          <TipCard title="Colors should..." type="tip" content={ColorsShould} />
           <TipCard
             title="Colors should not..."
             type="warning"
-            content={WarningText}
+            content={ColorsShouldNot}
           />
         </div>
 
