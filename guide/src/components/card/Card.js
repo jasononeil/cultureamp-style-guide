@@ -24,7 +24,7 @@ const Card = ({ title, icon, iconColor, children }) => {
   );
   return (
     <div className={styles.cardWithHeader}>
-      {title && header}
+      {header}
       <div className={styles.cardBody}>{children}</div>
     </div>
   );
