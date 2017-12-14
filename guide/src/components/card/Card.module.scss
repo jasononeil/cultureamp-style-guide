@@ -11,33 +11,3 @@ $cardPadding: $ca-grid / 2;
   margin-bottom: 20px;
   padding: $cardPadding;
 }
-
-.cardWithHeader {
-  composes: card;
-  padding: 0;
-}
-
-.cardHeader {
-  background: add-alpha(add-tint($ca-palette-ink, 70%), 30%);
-  padding: $cardPadding;
-  font-weight: $ca-heading-3-font-weight;
-  font-size: $ca-heading-3-font-size;
-  line-height: $ca-heading-3-line-height;
-}
-
-.cardBody {
-  padding: $cardPadding;
-}
-
-.iconWrapper {
-  margin-right: $ca-grid / 3;
-  position: relative;
-  top: 3px;
-}
-
-.coral {
-  color: $ca-palette-coral;
-}
-.seedling {
-  color: $ca-palette-seedling;
-}
