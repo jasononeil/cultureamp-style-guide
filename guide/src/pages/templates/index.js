@@ -1,16 +1,7 @@
 import React from 'react';
-import { Link } from 'components/Elements';
-import BradFrostQuote from 'components/BradFrostQuote';
+import MarkdownContent from 'components/MarkdownContent.js';
+import Templates from './_Templates.md';
 
-const Page = () => (
-  <div>
-    <h1>Templates</h1>
-    <BradFrostQuote link="http://atomicdesign.bradfrost.com/chapter-2/#templates">
-      page-level objects that place components into a layout and articulate the
-      design’s underlying content structure
-    </BradFrostQuote>
-    <Link to="/">Go back to the homepage</Link>
-  </div>
-);
+const Page = () => <MarkdownContent content={Templates} />;
 
 export default Page;

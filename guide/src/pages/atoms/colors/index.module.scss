@@ -21,6 +21,10 @@
   @include setColumnSizes(3, 280px, 360px);
 }
 
+.title {
+  composes: h1 from 'components/HtmlContent.module.scss';
+}
+
 .cardContainer {
   display: grid;
   grid-gap: 1rem;
@@ -35,6 +39,10 @@
   a {
     float: right;
   }
+}
+
+.sectionTitle {
+  composes: h2 from 'components/HtmlContent.module.scss';
 }
 
 .tipsContainer {

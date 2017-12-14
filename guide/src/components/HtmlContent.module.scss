@@ -1,13 +1,21 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~cultureamp-style-guide/styles/color';
 
-.h1 {
+.htmlContent {
+  font-size: $ca-body-font-size;
+  line-height: $ca-body-line-height;
+  font-weight: $ca-body-font-weight;
+}
+
+.h1,
+.htmlContent h1 {
   font: $ca-heading-font;
   font-weight: $ca-weight-book;
   margin-bottom: $ca-grid;
 }
 
-.h2 {
+.h2,
+.htmlContent h2 {
   font: $ca-heading-font;
   font-size: $ca-heading-2-font-size;
   line-height: $ca-heading-2-line-height;
@@ -16,7 +24,8 @@
   margin-bottom: $ca-grid;
 }
 
-.h3 {
+.h3,
+.htmlContent h3 {
   font: $ca-heading-font;
   font-size: $ca-heading-3-font-size;
   line-height: $ca-heading-3-line-height;
@@ -24,7 +33,8 @@
   margin-bottom: $ca-grid;
 }
 
-.link {
+.link,
+.htmlContent a[href] {
   color: $ca-link-text-color;
   text-decoration: none;
   &:hover,

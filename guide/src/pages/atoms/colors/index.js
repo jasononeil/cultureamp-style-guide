@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-  Link,
-  ExternalLink,
-  ActionLink,
-  Heading1,
-  Heading2,
-} from 'components/Elements';
+import Link, { ActionLink } from 'components/Link';
 import TipCard from 'components/tip-card';
+import MarkdownContent from 'components/MarkdownContent.js';
 import styles from './index.module.scss';
 import ColorCard from './_ColorCard.js';
+import ColorsIntro from './_ColorsIntro.md';
 import ColorsShould from './_ColorsShould.md';
 import ColorsShouldNot from './_ColorsShouldNot.md';
 
@@ -20,15 +16,7 @@ class Page extends React.Component {
   render() {
     return (
       <div>
-        <Heading1>Colors</Heading1>
-        <p className={styles.intro}>
-          Our color palette is built with our core principles and guidelines as
-          its foundation.
-          <br />We are committed to complying with{' '}
-          <ExternalLink to="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast">
-            AA standard contrast ratios
-          </ExternalLink>.
-        </p>
+        <MarkdownContent content={ColorsIntro} />
         <hr className={styles.hr} />
         <div className={styles.cardContainer}>
           {this.renderColorSection('Primary Colors', ['Coral', 'Paper', 'Ink'])}
@@ -47,7 +35,7 @@ class Page extends React.Component {
           ])}
         </div>
 
-        <Heading2>Best Practices</Heading2>
+        <h2 className={styles.sectionTitle}>Best Practices</h2>
         <div className={styles.tipsContainer}>
           <TipCard title="Colors should..." type="tip" content={ColorsShould} />
           <TipCard
@@ -66,7 +54,7 @@ class Page extends React.Component {
     const showAccessibility = this.state.showAccessibility[title];
     return [
       <div className={styles.gridHeader} key={title}>
-        <Heading2>{title}</Heading2>
+        <h2 className={styles.sectionTitle}>{title}</h2>
         <ActionLink action={() => this.toggleAccessibility(title)}>
           {showAccessibility
             ? 'Hide Contrast Checker'

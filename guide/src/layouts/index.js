@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Heading1, Heading2 } from 'components/Elements';
+import Link from 'components/Link';
 import Helmet from 'react-helmet';
 import './index.scss';
-import menuStyles from './menu.module.scss';
+import styles from './layout.module.scss';
 
 const pages = [
   'Visuals',
@@ -15,13 +15,13 @@ const pages = [
 ];
 
 const Header = () => (
-  <div className="page-container">
-    <Heading1>
+  <div className={styles.pageContainer}>
+    <h1 className={styles.title}>
       <Link to="/">Kaizen</Link> - Culture Amp's Living Style Guide
-    </Heading1>
-    <ul className={menuStyles.menu}>
+    </h1>
+    <ul className={styles.menu}>
       {pages.map(page => (
-        <li key={page} className={menuStyles.item}>
+        <li key={page} className={styles.item}>
           <Link to={'/' + page.toLowerCase()}>{page}</Link>
         </li>
       ))}
@@ -37,7 +37,7 @@ const TemplateWrapper = ({ children }) => (
       <meta name="keywords" content="Culture Amp, design system, style guide" />
     </Helmet>
     <Header />
-    <div className="page-container">{children()}</div>
+    <div className={styles.pageContainer}>{children()}</div>
   </div>
 );
 

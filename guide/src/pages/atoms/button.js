@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'components/Elements';
+import Link from 'components/Link';
 import Demo from 'components/Demo';
 import Button from '../../../../components/Button/Button.js';
 
