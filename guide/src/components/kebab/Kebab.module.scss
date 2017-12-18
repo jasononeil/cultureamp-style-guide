@@ -1,4 +1,8 @@
 @import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/border';
+@import '~cultureamp-style-guide/styles/layers';
+
+$width: 248px;
 
 .fieldKebabIconInner {
   width: 100%;
@@ -20,4 +24,10 @@
 
 .kebabIcon .isOpen svg {
   opacity: 1;
+}
+
+.menuContainer {
+  position: absolute;
+  width: $width;
+  z-index: $ca-z-index-dropdown;
 }

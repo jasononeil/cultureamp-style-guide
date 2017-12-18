@@ -2,6 +2,7 @@ import React from 'react';
 import Kebab from 'components/kebab';
 import styles from './ColorCard.module.scss';
 import duplicate from 'cultureamp-style-guide/icons/duplicate.svg';
+import { MenuList, MenuHeader, MenuItem } from '../../../components/menu-list';
 
 const ColorBlockKebab = ({ bgColor, sassVar }) => {
   const hex = bgColor.hex(),
@@ -17,16 +18,15 @@ const ColorBlockKebab = ({ bgColor, sassVar }) => {
       .join(', ');
   return (
     <span className={styles.kebabContainer}>
-      <Kebab
-        links={[]}
-        actions={[
-          getColorDropdownItem('SASS', sassVar),
-          getColorDropdownItem('HEX', hex),
-          getColorDropdownItem('RGB', rgb),
-          getColorDropdownItem('CMYK', cmyk),
-        ]}
-        title="Copy To Clipboard"
-      />
+      <Kebab>
+        <MenuList>
+          <MenuHeader title="Copy to clipboard" />
+          <MenuItem {...getColorDropdownItem('SASS', sassVar)} />
+          <MenuItem {...getColorDropdownItem('HEX', hex)} />
+          <MenuItem {...getColorDropdownItem('RGB', rgb)} />
+          <MenuItem {...getColorDropdownItem('CMYK', cmyk)} />
+        </MenuList>
+      </Kebab>
     </span>
   );
 };
@@ -34,7 +34,7 @@ const ColorBlockKebab = ({ bgColor, sassVar }) => {
 const getColorDropdownItem = (type, value) => {
   let input;
   return {
-    text: (
+    children: (
       <div className={styles.dropdownItem}>
         <strong>{type}</strong> <small>{value}</small>
         <input type="text" defaultValue={value} ref={i => (input = i)} />

@@ -1,2 +1,2 @@
-const Kebab = require('./Kebab.js');
-module.exports = Kebab;
+import Kebab from './Kebab.js';
+export default Kebab;

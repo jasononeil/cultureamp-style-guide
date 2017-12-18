@@ -2,45 +2,16 @@
 @import '~cultureamp-style-guide/styles/border';
 @import '~cultureamp-style-guide/styles/layers';
 
-$width: 248px;
 $side-padding: 18px;
 
-.container {
-  position: absolute;
+.menuList {
   background: #fff;
-  width: $width;
   border: 1px solid add-tint($ca-palette-ink, 80%);
   box-shadow: $ca-box-shadow;
   line-height: 40px;
-  z-index: $ca-z-index-dropdown;
 }
 
-%menuItem {
-  background: transparent;
-  font-size: 14px;
-  line-height: 20px;
-  color: $ca-palette-ink;
-  cursor: pointer;
-  text-align: left;
-
-  a {
-    padding: 10px $side-padding;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex: 0 0 100%;
-  }
-
-  &:hover {
-    background: $ca-palette-stone;
-
-    .menuItem__icon {
-      color: add-tint($ca-palette-ink, 60%);
-    }
-  }
-}
-
-.headerContainer {
+.header {
   padding: 10px $side-padding;
   font-size: 11px;
   line-height: 14px;
@@ -49,27 +20,43 @@ $side-padding: 18px;
   border-bottom: $ca-border-color 1px solid;
 }
 
-.headerTitle,
-.headerContent {
+.header__title,
+.header__subtitle {
   display: block;
 }
 
-.headerTitle {
+.header__title {
   font-weight: 500;
   text-transform: uppercase;
 }
 
-.menuItemLink,
-.menuItemAction {
-  @extend %menuItem;
+.menuItem {
+  background: transparent;
+  font-size: 14px;
+  line-height: 20px;
+  color: $ca-palette-ink;
+  cursor: pointer;
+  text-align: left;
+
+  padding: 10px $side-padding;
+  text-decoration: none;
+  display: flex;
+  flex: 0 0 100%;
+
+  &:hover {
+    background: $ca-palette-stone;
+
+    .menuItem__Icon {
+      color: add-tint($ca-palette-ink, 60%);
+    }
+  }
 }
 
-.hoverIcon .menuItem__icon .menuItem__title {
-  flex: 4;
-}
-
-.menuItem__icon {
+.menuItem__Label {
   flex: 1;
+}
+
+.menuItem__Icon {
   text-align: right;
   color: add-tint($ca-palette-ink, 80%);
 

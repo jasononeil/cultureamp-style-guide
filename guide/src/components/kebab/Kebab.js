@@ -35,14 +35,11 @@ export default class Kebab extends React.Component {
   renderKebabMenu() {
     return (
       <KebabMenu
-        headerTitle={this.props.title}
-        headerInfo={this.props.headerInfo}
-        headerClass={this.props.headerClass}
-        links={this.props.links}
-        actions={this.props.actions}
         hideKebabMenu={this.hideKebabMenu}
         position={this.getPosition()}
-      />
+      >
+        {this.props.children}
+      </KebabMenu>
     );
   }
 
@@ -65,10 +62,6 @@ export default class Kebab extends React.Component {
 }
 
 Kebab.propTypes = {
-  title: PropTypes.string.isRequired,
-  headerInfo: PropTypes.string,
-  headerClass: PropTypes.string,
-  links: PropTypes.array.isRequired,
-  actions: PropTypes.array.isRequired,
+  children: PropTypes.node.isRequired,
   menuVisible: PropTypes.bool,
 };

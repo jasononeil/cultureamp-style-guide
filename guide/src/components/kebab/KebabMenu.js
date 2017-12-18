@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './KebabMenu.module.scss';
-import KebabMenuList from './KebabMenuList';
+import styles from './Kebab.module.scss';
 
 export default class KebabMenu extends React.Component {
   componentDidMount() {
@@ -75,26 +74,19 @@ export default class KebabMenu extends React.Component {
   render() {
     const props = this.props;
     return (
-      <div className={styles.container} ref={this.menuRef}>
-        <KebabMenuList
-          headerTitle={props.headerTitle}
-          headerInfo={props.headerInfo}
-          headerClass={props.headerClass}
-          links={props.links}
-          actions={props.actions}
-          hideKebabMenu={props.hideKebabMenu}
-        />
+      <div
+        className={styles.menuContainer}
+        ref={this.menuRef}
+        onClick={() => props.hideKebabMenu()}
+      >
+        {props.children}
       </div>
     );
   }
 }
 
 KebabMenu.propTypes = {
-  headerTitle: PropTypes.string.isRequired,
-  headerInfo: PropTypes.string,
-  headerClass: PropTypes.string,
-  links: PropTypes.array.isRequired,
-  actions: PropTypes.array.isRequired,
+  children: PropTypes.node.isRequired,
   hideKebabMenu: PropTypes.func.isRequired,
   position: PropTypes.shape({
     top: PropTypes.number,
