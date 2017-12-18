@@ -7,7 +7,6 @@
 
 Menu:
 
-* [Colors](/atoms/colors)
 * [Button](/atoms/button)
 * [Icon](/atoms/icon)
 
