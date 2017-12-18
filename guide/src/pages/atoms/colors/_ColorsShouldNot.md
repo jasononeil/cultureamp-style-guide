@@ -1,2 +1,2 @@
 * Be ugly
-* By low contrast
+* Be low contrast
