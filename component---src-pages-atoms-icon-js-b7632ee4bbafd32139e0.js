@@ -21,13 +21,13 @@ webpackJsonp([103700555733728],{
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _IconModule = __webpack_require__(111);
+	var _IconModule = __webpack_require__(109);
 	
 	var _IconModule2 = _interopRequireDefault(_IconModule);
 	
-	var _error = __webpack_require__(88);
+	var _error = __webpack_require__(86);
 	
-	var _reactHtmlId = __webpack_require__(135);
+	var _reactHtmlId = __webpack_require__(133);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -141,7 +141,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 111:
+/***/ 109:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -149,7 +149,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 48:
+/***/ 46:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -160,11 +160,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 85:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
-	const colorConvert = __webpack_require__(64);
+	const colorConvert = __webpack_require__(62);
 	
 	const wrapAnsi16 = (fn, offset) => function () {
 		const code = fn.apply(colorConvert, arguments);
@@ -316,19 +316,19 @@ webpackJsonp([103700555733728],{
 		get: assembleStyles
 	});
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(146)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(144)(module)))
 
 /***/ }),
 
-/***/ 91:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
-	var escapeStringRegexp = __webpack_require__(110);
-	var ansiStyles = __webpack_require__(85);
-	var stripAnsi = __webpack_require__(142);
-	var hasAnsi = __webpack_require__(114);
-	var supportsColor = __webpack_require__(143);
+	var escapeStringRegexp = __webpack_require__(108);
+	var ansiStyles = __webpack_require__(83);
+	var stripAnsi = __webpack_require__(140);
+	var hasAnsi = __webpack_require__(112);
+	var supportsColor = __webpack_require__(141);
 	var defineProps = Object.defineProperties;
 	var isSimpleWindowsTerm = process.platform === 'win32' && !/^xterm/i.test(({"NODE_ENV":"production","PUBLIC_DIR":"/Users/jason.oneil/workspace/cultureamp/cultureamp-style-guide/guide/public"}).TERM);
 	
@@ -444,11 +444,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 49:
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* MIT license */
-	var cssKeywords = __webpack_require__(65);
+	var cssKeywords = __webpack_require__(63);
 	
 	// NOTE: conversions should only return primitive values (i.e. arrays, or
 	//       values that give correct `typeof` results).
@@ -1312,11 +1312,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 64:
+/***/ 62:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var conversions = __webpack_require__(49);
-	var route = __webpack_require__(92);
+	var conversions = __webpack_require__(48);
+	var route = __webpack_require__(90);
 	
 	var convert = {};
 	
@@ -1397,10 +1397,10 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 92:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var conversions = __webpack_require__(49);
+	var conversions = __webpack_require__(48);
 	
 	/*
 		this function routes a model to all other models.
@@ -1501,7 +1501,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 65:
+/***/ 63:
 /***/ (function(module, exports) {
 
 	'use strict'
@@ -1660,7 +1660,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 55:
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*!
@@ -1697,7 +1697,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 110:
+/***/ 108:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1715,18 +1715,18 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 114:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(48);
+	var ansiRegex = __webpack_require__(46);
 	var re = new RegExp(ansiRegex().source); // remove the `g` flag
 	module.exports = re.test.bind(re);
 
 
 /***/ }),
 
-/***/ 135:
+/***/ 133:
 /***/ (function(module, exports) {
 
 	/* Copyright (c) 2017 Hampus Joakim Nilsson
@@ -1787,11 +1787,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 142:
+/***/ 140:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(48)();
+	var ansiRegex = __webpack_require__(46)();
 	
 	module.exports = function (str) {
 		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -1800,7 +1800,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 143:
+/***/ 141:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1809,7 +1809,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 144:
+/***/ 142:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -3029,7 +3029,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 146:
+/***/ 144:
 /***/ (function(module, exports) {
 
 	module.exports = function(module) {
@@ -3046,7 +3046,7 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 87:
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3059,7 +3059,7 @@ webpackJsonp([103700555733728],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _DemoModule = __webpack_require__(112);
+	var _DemoModule = __webpack_require__(110);
 	
 	var _DemoModule2 = _interopRequireDefault(_DemoModule);
 	
@@ -3353,55 +3353,11 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 112:
+/***/ 110:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"root":"src-components----Demo-module---root---3wwTo","frame":"src-components----Demo-module---frame---3OdyG","canvas":"src-components----Demo-module---canvas---KNZxY","selectPreset":"src-components----Demo-module---selectPreset---HqP0Z","controls":"src-components----Demo-module---controls---2Soui","dimension":"src-components----Demo-module---dimension---15b1z"};
-
-/***/ }),
-
-/***/ 30:
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	exports.__esModule = true;
-	exports.ActionLink = exports.ExternalLink = exports.Link = undefined;
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _gatsbyLink = __webpack_require__(40);
-	
-	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
-	
-	var _HtmlContentModule = __webpack_require__(56);
-	
-	var _HtmlContentModule2 = _interopRequireDefault(_HtmlContentModule);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Link = exports.Link = function Link(props) {
-	  return _react2.default.createElement(_gatsbyLink2.default, _extends({}, props, { className: _HtmlContentModule2.default.link }));
-	};
-	
-	var ExternalLink = exports.ExternalLink = function ExternalLink(props) {
-	  return _react2.default.createElement('a', _extends({}, props, { href: props.to, className: _HtmlContentModule2.default.link }));
-	};
-	
-	var ActionLink = exports.ActionLink = function ActionLink(props) {
-	  return _react2.default.createElement('a', _extends({}, props, {
-	    href: 'javascript:void(0)',
-	    onClick: props.action,
-	    className: _HtmlContentModule2.default.link
-	  }));
-	};
-	
-	exports.default = Link;
 
 /***/ }),
 
@@ -3416,11 +3372,11 @@ webpackJsonp([103700555733728],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Link = __webpack_require__(30);
+	var _Link = __webpack_require__(47);
 	
 	var _Link2 = _interopRequireDefault(_Link);
 	
-	var _Demo = __webpack_require__(87);
+	var _Demo = __webpack_require__(85);
 	
 	var _Demo2 = _interopRequireDefault(_Demo);
 	
@@ -3489,12 +3445,12 @@ webpackJsonp([103700555733728],{
 
 /***/ }),
 
-/***/ 88:
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var chalk = __webpack_require__(91);
+	var chalk = __webpack_require__(89);
 	
 	function error(message) {
 	  throw new Error(chalk.red('\nCULTUREAMP STYLE GUIDE ERROR:\n' + singleLine(message) + '\n'));
@@ -3523,11 +3479,11 @@ webpackJsonp([103700555733728],{
 	
 	exports.__esModule = true;
 	
-	var _browserSprite = __webpack_require__(144);
+	var _browserSprite = __webpack_require__(142);
 	
 	var _browserSprite2 = _interopRequireDefault(_browserSprite);
 	
-	var _domready = __webpack_require__(55);
+	var _domready = __webpack_require__(54);
 	
 	var _domready2 = _interopRequireDefault(_domready);
 	
@@ -3584,4 +3540,4 @@ webpackJsonp([103700555733728],{
 /***/ })
 
 });
-//# sourceMappingURL=component---src-pages-atoms-icon-js-1d4a1d0f88ea6a6753c7.js.map
+//# sourceMappingURL=component---src-pages-atoms-icon-js-b7632ee4bbafd32139e0.js.map
