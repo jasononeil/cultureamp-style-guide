@@ -1,5 +1,5 @@
 # Colors
 
-Our color palette is build with our core principles and guidelines as its
+Our color palette is built with our core principles and guidelines as its
 foundation. We are committed to complying with
-[AA standard contrast ratios](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast).
+[WCAG AA standard contrast ratios](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast).
