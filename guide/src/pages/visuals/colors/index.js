@@ -37,9 +37,9 @@ class Page extends React.Component {
 
         <h2 className={styles.sectionTitle}>Best Practices</h2>
         <div className={styles.tipsContainer}>
-          <TipCard title="Colors should..." type="tip" content={ColorsShould} />
+          <TipCard title="Colors should…" type="tip" content={ColorsShould} />
           <TipCard
-            title="Colors should not..."
+            title="Colors should not…"
             type="warning"
             content={ColorsShouldNot}
           />
