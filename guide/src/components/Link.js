@@ -2,19 +2,22 @@ import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import styles from './HtmlContent.module.scss';
 
-export const Link = props => <GatsbyLink {...props} className={styles.link} />;
-
-export const ExternalLink = props => (
-  <a {...props} href={props.to} className={styles.link} />
+export const Link = ({ to, children }) => (
+  <GatsbyLink to={to} className={styles.link}>
+    {children}
+  </GatsbyLink>
 );
 
-export const ActionLink = props => (
-  <a
-    {...props}
-    href="javascript:void(0)"
-    onClick={props.action}
-    className={styles.link}
-  />
+export const ExternalLink = ({ to, children }) => (
+  <a href={to} className={styles.link}>
+    {children}
+  </a>
+);
+
+export const ActionLink = ({ action, children }) => (
+  <button onClick={action} className={styles.buttonLink}>
+    {children}
+  </button>
 );
 
 export default Link;

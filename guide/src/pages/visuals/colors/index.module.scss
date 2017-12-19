@@ -35,9 +35,12 @@
   grid-column-start: 1;
   h2 {
     float: left;
+    line-height: $ca-grid;
   }
-  a {
+  button {
     float: right;
+    line-height: $ca-grid;
+    margin-bottom: $ca-grid;
   }
 }
 
