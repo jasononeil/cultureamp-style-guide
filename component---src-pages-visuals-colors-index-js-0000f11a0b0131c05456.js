@@ -13,7 +13,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _propTypes = __webpack_require__(5);
+	var _propTypes = __webpack_require__(6);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
@@ -149,7 +149,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1660,12 +1660,12 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 268:
+/***/ 272:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* MIT license */
 	var colorNames = __webpack_require__(63);
-	var swizzle = __webpack_require__(572);
+	var swizzle = __webpack_require__(583);
 	
 	var reverseNames = {};
 	
@@ -1900,12 +1900,12 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 149:
+/***/ 150:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var colorString = __webpack_require__(268);
+	var colorString = __webpack_require__(272);
 	var convert = __webpack_require__(62);
 	
 	var _slice = [].slice;
@@ -2445,14 +2445,14 @@ webpackJsonp([15837510573885],{
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(46);
+	var ansiRegex = __webpack_require__(47);
 	var re = new RegExp(ansiRegex().source); // remove the `g` flag
 	module.exports = re.test.bind(re);
 
 
 /***/ }),
 
-/***/ 388:
+/***/ 396:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2531,12 +2531,12 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 572:
+/***/ 583:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var isArrayish = __webpack_require__(388);
+	var isArrayish = __webpack_require__(396);
 	
 	var concat = Array.prototype.concat;
 	var slice = Array.prototype.slice;
@@ -2571,7 +2571,7 @@ webpackJsonp([15837510573885],{
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(46)();
+	var ansiRegex = __webpack_require__(47)();
 	
 	module.exports = function (str) {
 		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -3809,7 +3809,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 591:
+/***/ 602:
 /***/ (function(module, exports) {
 
 	/*
@@ -3916,14 +3916,14 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 222:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	 * Methods to check wcag accessibility.
 	 */
 	
-	var color = __webpack_require__(591);
+	var color = __webpack_require__(602);
 	
 	var WCAG_REQ_RATIO_AA_LG = 3.0,
 	    WCAG_REQ_RATIO_AA_SM = 4.5,
@@ -4005,14 +4005,14 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _propTypes = __webpack_require__(5);
+	var _propTypes = __webpack_require__(6);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
@@ -4020,7 +4020,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _KebabModule = __webpack_require__(172);
+	var _KebabModule = __webpack_require__(173);
 	
 	var _KebabModule2 = _interopRequireDefault(_KebabModule);
 	
@@ -4028,11 +4028,11 @@ webpackJsonp([15837510573885],{
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _ellipsis = __webpack_require__(578);
+	var _ellipsis = __webpack_require__(589);
 	
 	var _ellipsis2 = _interopRequireDefault(_ellipsis);
 	
-	var _KebabMenu = __webpack_require__(233);
+	var _KebabMenu = __webpack_require__(234);
 	
 	var _KebabMenu2 = _interopRequireDefault(_KebabMenu);
 	
@@ -4123,7 +4123,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 172:
+/***/ 173:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -4131,14 +4131,14 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _propTypes = __webpack_require__(5);
+	var _propTypes = __webpack_require__(6);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
@@ -4146,7 +4146,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _KebabModule = __webpack_require__(172);
+	var _KebabModule = __webpack_require__(173);
 	
 	var _KebabModule2 = _interopRequireDefault(_KebabModule);
 	
@@ -4260,14 +4260,14 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _Kebab = __webpack_require__(232);
+	var _Kebab = __webpack_require__(233);
 	
 	var _Kebab2 = _interopRequireDefault(_Kebab);
 
@@ -4286,7 +4286,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4297,7 +4297,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _propTypes = __webpack_require__(5);
+	var _propTypes = __webpack_require__(6);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
@@ -4336,7 +4336,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4347,7 +4347,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _propTypes = __webpack_require__(5);
+	var _propTypes = __webpack_require__(6);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
@@ -4407,7 +4407,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4418,7 +4418,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _propTypes = __webpack_require__(5);
+	var _propTypes = __webpack_require__(6);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
@@ -4446,7 +4446,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4457,7 +4457,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _propTypes = __webpack_require__(5);
+	var _propTypes = __webpack_require__(6);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
@@ -4476,7 +4476,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4484,19 +4484,19 @@ webpackJsonp([15837510573885],{
 	exports.__esModule = true;
 	exports.MenuSeperator = exports.MenuItem = exports.MenuHeader = exports.MenuList = undefined;
 	
-	var _MenuList = __webpack_require__(237);
+	var _MenuList = __webpack_require__(238);
 	
 	var _MenuList2 = _interopRequireDefault(_MenuList);
 	
-	var _MenuHeader = __webpack_require__(235);
+	var _MenuHeader = __webpack_require__(236);
 	
 	var _MenuHeader2 = _interopRequireDefault(_MenuHeader);
 	
-	var _MenuItem = __webpack_require__(236);
+	var _MenuItem = __webpack_require__(237);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
-	var _MenuSeperator = __webpack_require__(238);
+	var _MenuSeperator = __webpack_require__(239);
 	
 	var _MenuSeperator2 = _interopRequireDefault(_MenuSeperator);
 	
@@ -4510,7 +4510,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4521,7 +4521,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactMarkdown = __webpack_require__(207);
+	var _reactMarkdown = __webpack_require__(209);
 	
 	var _reactMarkdown2 = _interopRequireDefault(_reactMarkdown);
 	
@@ -4533,19 +4533,19 @@ webpackJsonp([15837510573885],{
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _success = __webpack_require__(221);
+	var _success = __webpack_require__(223);
 	
 	var _success2 = _interopRequireDefault(_success);
 	
-	var _exclamation = __webpack_require__(579);
+	var _exclamation = __webpack_require__(590);
 	
 	var _exclamation2 = _interopRequireDefault(_exclamation);
 	
-	var _MarkdownContent = __webpack_require__(21);
+	var _MarkdownContent = __webpack_require__(18);
 	
 	var _MarkdownContent2 = _interopRequireDefault(_MarkdownContent);
 	
-	var _TipCardModule = __webpack_require__(341);
+	var _TipCardModule = __webpack_require__(345);
 	
 	var _TipCardModule2 = _interopRequireDefault(_TipCardModule);
 	
@@ -4584,7 +4584,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 341:
+/***/ 345:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -4592,12 +4592,12 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var TipCard = __webpack_require__(240);
+	var TipCard = __webpack_require__(241);
 	module.exports = TipCard;
 
 /***/ }),
@@ -4610,7 +4610,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 252:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4621,7 +4621,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _color = __webpack_require__(149);
+	var _color = __webpack_require__(150);
 	
 	var _color2 = _interopRequireDefault(_color);
 	
@@ -4629,15 +4629,15 @@ webpackJsonp([15837510573885],{
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _wcag = __webpack_require__(222);
+	var _wcag = __webpack_require__(224);
 	
 	var _wcag2 = _interopRequireDefault(_wcag);
 	
-	var _ColorBlockKebab = __webpack_require__(253);
+	var _ColorBlockKebab = __webpack_require__(255);
 	
 	var _ColorBlockKebab2 = _interopRequireDefault(_ColorBlockKebab);
 	
-	var _ContrastIcon = __webpack_require__(146);
+	var _ContrastIcon = __webpack_require__(147);
 	
 	var _ContrastIcon2 = _interopRequireDefault(_ContrastIcon);
 	
@@ -4645,7 +4645,7 @@ webpackJsonp([15837510573885],{
 	
 	var _ColorCardModule2 = _interopRequireDefault(_ColorCardModule);
 	
-	var _Palette = __webpack_require__(147);
+	var _Palette = __webpack_require__(148);
 	
 	var _Palette2 = _interopRequireDefault(_Palette);
 	
@@ -4716,7 +4716,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 253:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4727,7 +4727,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _kebab = __webpack_require__(234);
+	var _kebab = __webpack_require__(235);
 	
 	var _kebab2 = _interopRequireDefault(_kebab);
 	
@@ -4735,11 +4735,11 @@ webpackJsonp([15837510573885],{
 	
 	var _ColorCardModule2 = _interopRequireDefault(_ColorCardModule);
 	
-	var _duplicate = __webpack_require__(577);
+	var _duplicate = __webpack_require__(588);
 	
 	var _duplicate2 = _interopRequireDefault(_duplicate);
 	
-	var _menuList = __webpack_require__(239);
+	var _menuList = __webpack_require__(240);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -4806,7 +4806,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 254:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4821,11 +4821,11 @@ webpackJsonp([15837510573885],{
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _chevronUp = __webpack_require__(575);
+	var _chevronUp = __webpack_require__(586);
 	
 	var _chevronUp2 = _interopRequireDefault(_chevronUp);
 	
-	var _chevronDown = __webpack_require__(574);
+	var _chevronDown = __webpack_require__(585);
 	
 	var _chevronDown2 = _interopRequireDefault(_chevronDown);
 	
@@ -4833,11 +4833,11 @@ webpackJsonp([15837510573885],{
 	
 	var _ColorCardModule2 = _interopRequireDefault(_ColorCardModule);
 	
-	var _ColorBlock = __webpack_require__(252);
+	var _ColorBlock = __webpack_require__(254);
 	
 	var _ColorBlock2 = _interopRequireDefault(_ColorBlock);
 	
-	var _ContrastIcon = __webpack_require__(146);
+	var _ContrastIcon = __webpack_require__(147);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -4956,28 +4956,28 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 424:
+/***/ 435:
 /***/ (function(module, exports) {
 
 	module.exports = "# Colors\n\nOur color palette is built with our core principles and guidelines as its\nfoundation. We are committed to complying with\n[WCAG AA standard contrast ratios](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast).\n"
 
 /***/ }),
 
-/***/ 425:
+/***/ 436:
 /***/ (function(module, exports) {
 
 	module.exports = "* Be pretty\n* Be sufficient contrast\n"
 
 /***/ }),
 
-/***/ 426:
+/***/ 437:
 /***/ (function(module, exports) {
 
 	module.exports = "* Be ugly\n* Be low contrast\n"
 
 /***/ }),
 
-/***/ 146:
+/***/ 147:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4989,7 +4989,7 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _wcag = __webpack_require__(222);
+	var _wcag = __webpack_require__(224);
 	
 	var _wcag2 = _interopRequireDefault(_wcag);
 	
@@ -5001,11 +5001,11 @@ webpackJsonp([15837510573885],{
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _success = __webpack_require__(221);
+	var _success = __webpack_require__(223);
 	
 	var _success2 = _interopRequireDefault(_success);
 	
-	var _Palette = __webpack_require__(147);
+	var _Palette = __webpack_require__(148);
 	
 	var _Palette2 = _interopRequireDefault(_Palette);
 	
@@ -5072,14 +5072,14 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 147:
+/***/ 148:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _color = __webpack_require__(149);
+	var _color = __webpack_require__(150);
 	
 	var _color2 = _interopRequireDefault(_color);
 	
@@ -5106,7 +5106,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 255:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5119,35 +5119,35 @@ webpackJsonp([15837510573885],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Link = __webpack_require__(47);
+	var _Link = __webpack_require__(30);
 	
 	var _Link2 = _interopRequireDefault(_Link);
 	
-	var _tipCard = __webpack_require__(241);
+	var _tipCard = __webpack_require__(242);
 	
 	var _tipCard2 = _interopRequireDefault(_tipCard);
 	
-	var _MarkdownContent = __webpack_require__(21);
+	var _MarkdownContent = __webpack_require__(18);
 	
 	var _MarkdownContent2 = _interopRequireDefault(_MarkdownContent);
 	
-	var _indexModule = __webpack_require__(343);
+	var _indexModule = __webpack_require__(347);
 	
 	var _indexModule2 = _interopRequireDefault(_indexModule);
 	
-	var _ColorCard = __webpack_require__(254);
+	var _ColorCard = __webpack_require__(256);
 	
 	var _ColorCard2 = _interopRequireDefault(_ColorCard);
 	
-	var _ColorsIntro = __webpack_require__(424);
+	var _ColorsIntro = __webpack_require__(435);
 	
 	var _ColorsIntro2 = _interopRequireDefault(_ColorsIntro);
 	
-	var _ColorsShould = __webpack_require__(425);
+	var _ColorsShould = __webpack_require__(436);
 	
 	var _ColorsShould2 = _interopRequireDefault(_ColorsShould);
 	
-	var _ColorsShouldNot = __webpack_require__(426);
+	var _ColorsShouldNot = __webpack_require__(437);
 	
 	var _ColorsShouldNot2 = _interopRequireDefault(_ColorsShouldNot);
 	
@@ -5257,7 +5257,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 343:
+/***/ 347:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -5265,7 +5265,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 574:
+/***/ 585:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SpriteSymbol = __webpack_require__(27);
@@ -5281,7 +5281,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 575:
+/***/ 586:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SpriteSymbol = __webpack_require__(27);
@@ -5297,7 +5297,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 577:
+/***/ 588:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SpriteSymbol = __webpack_require__(27);
@@ -5313,7 +5313,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 578:
+/***/ 589:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SpriteSymbol = __webpack_require__(27);
@@ -5329,7 +5329,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 579:
+/***/ 590:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SpriteSymbol = __webpack_require__(27);
@@ -5345,7 +5345,7 @@ webpackJsonp([15837510573885],{
 
 /***/ }),
 
-/***/ 221:
+/***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SpriteSymbol = __webpack_require__(27);
