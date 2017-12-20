@@ -1,0 +1,33 @@
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/border';
+@import '~cultureamp-style-guide/styles/layers';
+
+$width: 248px;
+
+.fieldKebabIconInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kebabIcon {
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.kebabIcon .isOpen svg {
+  opacity: 1;
+}
+
+.menuContainer {
+  position: absolute;
+  width: $width;
+  z-index: $ca-z-index-dropdown;
+}

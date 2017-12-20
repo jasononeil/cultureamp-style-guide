@@ -1,5 +1,6 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~cultureamp-style-guide/styles/color';
+@import '~normalize.css';
 
 html {
   background: $ca-palette-stone;
@@ -7,41 +8,6 @@ html {
   font-family: $ca-ideal-sans;
   font-weight: $ca-weight-light;
   font-size: $ca-default-font-size;
-}
-
-body {
-  font-size: $ca-body-font-size;
-  line-height: $ca-body-line-height;
+  line-height: $ca-default-line-height;
   font-weight: $ca-body-font-weight;
-}
-
-h1 {
-  font: $ca-heading-font;
-}
-
-h2 {
-  font-size: $ca-heading-2-font-size;
-  line-height: $ca-heading-2-line-height;
-  font-weight: $ca-heading-2-font-weight;
-}
-
-h3 {
-  font-size: $ca-heading-3-font-size;
-  line-height: $ca-heading-3-line-height;
-  font-weight: $ca-heading-3-font-weight;
-}
-
-.intro,
-blockquote {
-  font-size: $ca-intro-para-font-size;
-  line-height: $ca-intro-para-line-height;
-  font-weight: 200;
-}
-
-a[href] {
-  color: $ca-link-text-color;
-  &:hover,
-  &:visited {
-    color: $ca-link-hover-text-color;
-  }
 }

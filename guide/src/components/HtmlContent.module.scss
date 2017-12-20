@@ -1,0 +1,56 @@
+@import '~cultureamp-style-guide/styles/type';
+@import '~cultureamp-style-guide/styles/color';
+
+.htmlContent {
+  font-size: $ca-body-font-size;
+  line-height: $ca-body-line-height;
+  font-weight: $ca-body-font-weight;
+}
+
+.h1,
+.htmlContent h1 {
+  font: $ca-heading-font;
+  font-weight: $ca-weight-book;
+  margin-top: 0;
+  margin-bottom: $ca-grid;
+}
+
+.h2,
+.htmlContent h2 {
+  font: $ca-heading-font;
+  font-size: $ca-heading-2-font-size;
+  line-height: $ca-heading-2-line-height;
+  // Note, we're not using $ca-heading-2-font-weight as the styleguide uses a lighter weight than murmur.
+  font-weight: $ca-weight-book;
+  margin-top: 0;
+  margin-bottom: $ca-grid;
+}
+
+.h3,
+.htmlContent h3 {
+  font: $ca-heading-font;
+  font-size: $ca-heading-3-font-size;
+  line-height: $ca-heading-3-line-height;
+  font-weight: $ca-heading-3-font-weight;
+  margin-top: 0;
+  margin-bottom: $ca-grid;
+}
+
+.link,
+.htmlContent a[href] {
+  color: $ca-link-text-color;
+  text-decoration: none;
+  &:hover,
+  &:visited {
+    color: $ca-link-hover-text-color;
+  }
+}
+
+.buttonLink {
+  composes: link;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}

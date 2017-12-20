@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import Link from 'components/Link';
 import Helmet from 'react-helmet';
-
 import './index.scss';
-import menuStyles from './menu.module.css';
+import styles from './layout.module.scss';
 
 const pages = [
   'Visuals',
@@ -16,20 +15,13 @@ const pages = [
 ];
 
 const Header = () => (
-  <div
-    style={{
-      margin: '0 auto',
-      maxWidth: 1360,
-      padding: '1.45rem 1.0875rem',
-    }}
-  >
-    <h1 style={{ margin: 0 }}>
-      <Link to="/">Kaizen</Link>
+  <div className={styles.pageContainer}>
+    <h1 className={styles.title}>
+      <Link to="/">Kaizen</Link> - Culture Amp's Living Style Guide
     </h1>
-    <h2>Culture Amp's Living Style Guide</h2>
-    <ul className={menuStyles.menu}>
+    <ul className={styles.menu}>
       {pages.map(page => (
-        <li className={menuStyles.item}>
+        <li key={page} className={styles.item}>
           <Link to={'/' + page.toLowerCase()}>{page}</Link>
         </li>
       ))}
@@ -45,16 +37,7 @@ const TemplateWrapper = ({ children }) => (
       <meta name="keywords" content="Culture Amp, design system, style guide" />
     </Helmet>
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 1360,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
+    <div className={styles.pageContainer}>{children()}</div>
   </div>
 );
 

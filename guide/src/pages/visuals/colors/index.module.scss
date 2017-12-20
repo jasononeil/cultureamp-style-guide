@@ -1,0 +1,72 @@
+@import '~cultureamp-style-guide/styles/type';
+
+@mixin setColumnSizes($numColumns, $min, $max) {
+  .cardContainer {
+    grid-template-columns: repeat($numColumns, minmax($min, $max));
+  }
+
+  .gridHeader {
+    grid-column-end: span $numColumns;
+  }
+}
+
+// expand or center on phone view
+@include setColumnSizes(1, 280px, 1fr);
+
+@media screen and (min-width: 768px) and (max-width: 1159px) {
+  @include setColumnSizes(2, 280px, 1fr);
+}
+
+@media screen and (min-width: 960px) {
+  @include setColumnSizes(3, 280px, 360px);
+}
+
+.title {
+  composes: h1 from 'components/HtmlContent.module.scss';
+}
+
+.cardContainer {
+  display: grid;
+  grid-gap: 1rem;
+  justify-content: space-between;
+}
+
+.gridHeader {
+  grid-column-start: 1;
+  h2 {
+    float: left;
+    line-height: $ca-grid;
+  }
+  button {
+    float: right;
+    line-height: $ca-grid;
+    margin-bottom: $ca-grid;
+  }
+}
+
+.sectionTitle {
+  composes: h2 from 'components/HtmlContent.module.scss';
+}
+
+.tipsContainer {
+  display: grid;
+  grid-gap: 1rem;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.intro {
+  font-size: $ca-intro-para-font-size;
+  line-height: $ca-intro-para-line-height;
+  font-weight: $ca-weight-extra-light;
+}
+
+.hr {
+  border: none;
+  border-bottom: 1px solid add-alpha($ca-palette-ink, 10%);
+  margin-top: $ca-grid;
+  margin-bottom: $ca-grid * 2;
+}

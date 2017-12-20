@@ -1,0 +1,13 @@
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+
+$cardPadding: $ca-grid / 2;
+
+.card {
+  border-radius: 3px;
+  min-width: 280px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  margin-bottom: 20px;
+  padding: $cardPadding;
+}

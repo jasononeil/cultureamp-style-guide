@@ -1,50 +1,57 @@
 @import 'color';
 
+$ca-grid: 24px;
+
+$ca-weight-extra-light: 200;
 $ca-weight-light: 300;
-$ca-weight-semibold: 500;
-$ca-weight-normal: 400;
+$ca-weight-book: 400;
+$ca-weight-medium: 500;
+$ca-weight-semibold: 500; // Note: in Sketch, semibold is 600. But murmur has an existing value of semibold=500 that is heavily used.
+$ca-weight-normal: $ca-weight-book;
+
 $ca-default-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 $ca-ideal-sans: 'Ideal Sans A', 'Ideal Sans B', $ca-default-font-family;
 $ca-default-font-size: 14px;
+$ca-default-line-height: $ca-grid / $ca-default-font-size;
 $ca-base-text-color: $ca-palette-ink;
 $ca-link-text-color: $ca-palette-ocean;
 $ca-link-hover-text-color: $ca-palette-ocean;
 
 // Heading 1
-$ca-heading-font: 500 22px $ca-ideal-sans;
+$ca-heading-font: $ca-weight-medium 22px $ca-ideal-sans;
 
 // Heading 2
 $ca-heading-2-font-size: 18px;
-$ca-heading-2-line-height: 24px;
-$ca-heading-2-font-weight: 500;
+$ca-heading-2-line-height: $ca-grid / $ca-heading-2-font-size;
+$ca-heading-2-font-weight: $ca-weight-medium;
 
 // Heading 3
-$ca-heading-3-font-size: 16px;
-$ca-heading-3-line-height: 24px;
-$ca-heading-3-font-weight: 500;
+$ca-heading-3-font-size: $ca-grid * 2/3;
+$ca-heading-3-line-height: $ca-grid / $ca-heading-3-font-size;
+$ca-heading-3-font-weight: $ca-weight-medium;
 
 // Intro Para
-$ca-intro-para-font-size: 16px;
-$ca-intro-para-line-height: 24px;
-$ca-intro-para-font-weight: 400;
+$ca-intro-para-font-size: $ca-grid * 2/3;
+$ca-intro-para-line-height: $ca-grid / $ca-intro-para-font-size;
+$ca-intro-para-font-weight: $ca-weight-book;
 
 // Body
 $ca-body-font-size: 14px;
-$ca-body-line-height: 24px;
-$ca-body-font-weight: 400;
+$ca-body-line-height: $ca-grid / $ca-body-font-size;
+$ca-body-font-weight: $ca-weight-book;
 
 // Control Action
 $ca-control-action-font-size: 14px;
-$ca-control-action-line-height: 24px;
-$ca-control-action-font-weight: 500;
+$ca-control-action-line-height: $ca-grid / $ca-control-action-font-size;
+$ca-control-action-font-weight: $ca-weight-medium;
 
 // Body Small
-$ca-body-small-font-size: 12px;
-$ca-body-small-line-height: 24px;
-$ca-body-small-font-weight: 400;
+$ca-body-small-font-size: $ca-grid / 2;
+$ca-body-small-line-height: $ca-grid / $ca-body-small-font-size;
+$ca-body-small-font-weight: $ca-weight-book;
 
 // Labels & Legends
-$ca-labels-and-legends-font-size: 12px;
-$ca-labels-and-legends-line-height: 24px;
-$ca-labels-and-legends-font-weight: 500;
+$ca-labels-and-legends-font-size: $ca-grid / 2;
+$ca-labels-and-legends-line-height: $ca-grid / $ca-labels-and-legends-font-size;
+$ca-labels-and-legends-font-weight: $ca-weight-medium;
 $ca-labels-and-legends-letter-spacing: 0.55px;

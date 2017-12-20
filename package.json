@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf guide/public/*",
-    "start": "cd guide && gatsby develop",
-    "build": "cd guide && gatsby build --prefix-paths",
+    "start": "cd guide && yarn gatsby develop",
+    "build": "cd guide && yarn gatsby build --prefix-paths",
     "deploy": "yarn run clean && yarn run build && yarn run deploy:ghpages",
     "deploy:ghpages": "gh-pages -d guide/public"
   },
@@ -24,7 +24,6 @@
     "Android >= 4"
   ],
   "devDependencies": {
-    "concurrently": "^3.4.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "gh-pages": "^1.0.0",
     "postcss-normalize": "^3.0.0",
