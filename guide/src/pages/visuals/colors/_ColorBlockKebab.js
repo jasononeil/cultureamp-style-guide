@@ -36,8 +36,13 @@ const getColorDropdownItem = (type, value) => {
   return {
     children: (
       <div className={styles.dropdownItem}>
-        <strong>{type}</strong> <small>{value}</small>
-        <input type="text" defaultValue={value} ref={i => (input = i)} />
+        <strong>{type}</strong>
+        <input
+          type="text"
+          defaultValue={value}
+          value={value}
+          ref={i => (input = i)}
+        />
       </div>
     ),
     action: () => {
