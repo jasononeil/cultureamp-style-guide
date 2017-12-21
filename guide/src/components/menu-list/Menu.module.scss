@@ -43,7 +43,8 @@ $side-padding: 18px;
   display: flex;
   flex: 0 0 100%;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: $ca-palette-stone;
 
     .menuItem__Icon {
@@ -63,7 +64,8 @@ $side-padding: 18px;
   .hoverIcon & {
     opacity: 0;
   }
-  .hoverIcon:hover & {
+  .hoverIcon:hover &,
+  .hoverIcon:focus & {
     opacity: 1;
   }
 }
