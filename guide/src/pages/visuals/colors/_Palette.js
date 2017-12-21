@@ -11,7 +11,7 @@ const Palette = {
   lapis: Color('#253c64'),
   peach: Color('#f3786d'),
   yuzu: Color('#ffce1e'),
-  stone: Color('#f2f2f2'),
+  stone: Color('#f9f9f9'),
   'positive-delta': Color('#43e699'),
   'negative-delta': Color('#ff4757'),
 };
