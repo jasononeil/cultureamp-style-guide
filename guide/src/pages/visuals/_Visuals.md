@@ -4,6 +4,7 @@
 
 Menu:
 
+* [Typography](/visuals/typography)
 * [Colors](/visuals/colors)
 
 [Go back to the homepage](/)
