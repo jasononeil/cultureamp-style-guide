@@ -1,0 +1,2 @@
+webpackJsonp([0xe0262814ac22],{423:function(e,n){e.exports="# Visuals\n\n> Elements of visual design that we seek to use consistently.\n\nMenu:\n\n* [Colors](/visuals/colors)\n\n[Go back to the homepage](/)\n"},256:function(e,n,t){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}n.__esModule=!0;var s=t(1),u=o(s),a=t(21),l=o(a),c=t(423),f=o(c),r=function(){return u.default.createElement(l.default,{content:f.default})};n.default=r,e.exports=n.default}});
+//# sourceMappingURL=component---src-pages-visuals-index-js-d2e845e8f39044ec9223.js.map
