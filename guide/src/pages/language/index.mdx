@@ -108,7 +108,7 @@ If you want to use language to help build a “moment of delight”, check it wi
 Product Writer. Don’t rely solely on language to create a moment of delight,
 otherwise you risk jarring the user experience.
 
-![Screenshot of culture amp "Delete Survey" confirmation where the user must type "SMASH!" to confirm](img/smash.png)
+<img src={require('file-loader!./img/smash.png')} alt='Screenshot of culture amp "Delete Survey" confirmation where the user must type "SMASH!" to confirm' />
 
 Delight is usually best engendered through the combination of design,
 interaction and language used in a way that consistently reflects the brand and
@@ -179,7 +179,7 @@ errors and emails.
       this context, the word “currently” and the line “What we’re processing”
       seem unnecessary.
 
-   ![Analyze Imports](./img/analyze-imports.png)
+   <img src={require('file-loader!./img/analyze-imports.png')} alt="Analyze Imports" />
 
    With your answers to the three questions above, write down what the text
    _must_ communicate in fewer than 10 words (obviously for buttons and labels
@@ -242,7 +242,7 @@ errors and emails.
         “review” because we’re at the Review step in the import process, and the
         heading reflects this.
 
-        ![Screenshot of import modal](img/apply-review.png)
+        <img src={require('file-loader!./img/apply-review.png')} alt="Screenshot of import modal" />
 
       - Check that your text has the same grammatical structure as parallel text
         on the page (that is, text that serves the same purpose in the same
@@ -250,14 +250,14 @@ errors and emails.
         heading (and button text) should ideally reflect the verb-noun structure
         of the other two. It could read: Extract Survey Data.
 
-        ![Screenshot of survey admin](img/verb-noun.png)
+        <img src={require('file-loader!./img/verb-noun.png')} alt="Screenshot of survey admin" />
 
       - Remove any redundancy. For example, in the warning below, “no longer” is
         redundant in the context of a reference to the “future”. We could
         rephrase this to: If you delete a demographic, it won’t be available to
         use in future surveys, but it will stay in existing surveys.
 
-        ![Screenshot of Culture Amp warning](img/no-longer.png)
+        <img src={require('file-loader!./img/no-longer.png')} alt="Screenshot of Culture Amp warning" />
 
       - If, as you write, you need to associate particular concepts with a
         feature (e.g. working with/managing “batches” of 360° processes), choose
@@ -636,8 +636,8 @@ systems).
 * **Good:** Create survey
 * **Needs work:** New survey
 
-![Button saying "Restart import"](img/btn1.png)
-![Button saying "Review"](img/btn2.png)
+<img src={require('file-loader!./img/btn1.png')} alt="Restart import" />
+<img src={require('file-loader!./img/btn2.png')} alt="Review" />
 
 ### Notifications
 
@@ -686,7 +686,7 @@ Tooltips are used for two purposes:
 
 * To explain an element of the interface.
 
-  ![Tooltip saying "Feedback is complete"](img/tooltip1.png)
+  <img src={require('file-loader!./img/tooltip1.png')} alt="Tooltip saying 'Feedback is complete'" />
 
   Maximum length: 4 words.
 
@@ -694,7 +694,7 @@ Tooltips are used for two purposes:
 
 * To give guidance on concepts inherent in the product.
 
-  ![Tooltip with "Survey Administrator" heading and large paragraph"](img/tooltip2.png)
+  <img src={require('file-loader!./img/tooltip1.png')} alt="Tooltip with 'Survey Administrator' heading and large paragraph of text" />
 
   Maximum length: 35 words, including optional title.
 
@@ -776,7 +776,7 @@ that nothing precedes it. Common patterns we use for placeholder text are:
 * Dates: mmm, dd, yyyy
 * Generic: example label; example title, example description
 
-![Example input field showing placeholder which says "e.g. support@example.com"](img/placeholder.png)
+<img src={require('file-loader!./img/placeholder.png')} alt="Example input field showing placeholder which says 'e.g. support@example.com'" />
 
 ### Onboarding messages
 
@@ -972,7 +972,7 @@ If the list items are not grammatically complete sentences:
 Bulleted lists are a good way of making paragraph text scannable, as in this
 example:
 
-> Hi <name>, Good news. You can now manage 360 surveys in batches:
+> Hi `<name>`, Good news. You can now manage 360 surveys in batches:
 >
 > In one click, you can:
 >

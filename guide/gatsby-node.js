@@ -1,4 +1,3 @@
-const styleGuideDecorator = require('cultureamp-style-guide/webpack');
 const path = require('path');
 
 function modifyWebpackConfig(_ref, options) {
@@ -10,6 +9,7 @@ function modifyWebpackConfig(_ref, options) {
     addElmLoader(config);
   }
   addRawLoader(config);
+  addMarkdownLoader(config);
   return config;
 }
 
@@ -44,6 +44,19 @@ function addRawLoader(config) {
   });
 }
 
+function addMarkdownLoader(config) {
+  const babelConfig = {
+    presets: ['env', 'stage-0', 'react'],
+  };
+  config.loader('markdown-component-loader', {
+    test: /\.mdx$/i,
+    loaders: [
+      'babel-loader?' + JSON.stringify(babelConfig),
+      'markdown-component-loader',
+    ],
+  });
+}
+
 function addSrcResolveRoot(config) {
   config.merge({
     resolve: {
@@ -53,3 +66,7 @@ function addSrcResolveRoot(config) {
 }
 
 exports.modifyWebpackConfig = modifyWebpackConfig;
+
+exports.resolvableExtensions = function() {
+  return ['.mdx'];
+};
