@@ -126,7 +126,7 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
-argparse@^1.0.7, argparse@~1.0.3:
+argparse@^1.0.7:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.9.tgz#73d83bc263f86e97f8cc4f6bae1b0e90a7d22c86"
   dependencies:
@@ -4666,12 +4666,6 @@ linkify-it@^2.0.0:
   dependencies:
     uc.micro "^1.0.1"
 
-linkify-it@~1.2.0:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-1.2.4.tgz#0773526c317c8fd13bd534ee1d180ff88abf881a"
-  dependencies:
-    uc.micro "^1.0.1"
-
 literal-toast@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/literal-toast/-/literal-toast-1.0.0.tgz#7c79c30a32db5325ae4c680af1658240f4c9dbbe"
@@ -4941,9 +4935,9 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-markdown-component-loader@^1.0.0:
+markdown-component-loader@jasononeil/markdown-component-loader.git#myfork:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/markdown-component-loader/-/markdown-component-loader-1.0.0.tgz#4404d1f5e6cc80d82dbc37b5935a7ad700604776"
+  resolved "https://codeload.github.com/jasononeil/markdown-component-loader/tar.gz/5f40949e9b2e8e7963de911c7074da710b99b4d9"
   dependencies:
     any-base "^1.0.0"
     doc-chomp "1.1.0"
@@ -4966,12 +4960,6 @@ markdown-it-anchor@^4.0.0:
   dependencies:
     string "^3.3.3"
 
-markdown-it-multimd-table@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-multimd-table/-/markdown-it-multimd-table-3.0.0.tgz#fe38af43b4f5e7516efdd9f02d88a4cd54e1c7f8"
-  dependencies:
-    markdown-it "^5.0.3"
-
 markdown-it-table-of-contents@^0.3.3:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/markdown-it-table-of-contents/-/markdown-it-table-of-contents-0.3.3.tgz#b62e943c32de2c4a27d3e7c83cd63acbc2a9c4a2"
@@ -4979,15 +4967,9 @@ markdown-it-table-of-contents@^0.3.3:
     lodash.assign "~4.2.0"
     string "~3.3.3"
 
-markdown-it@^5.0.3:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-5.1.0.tgz#25286b8465bac496f3f1b77eed544643e9bd718d"
-  dependencies:
-    argparse "~1.0.3"
-    entities "~1.1.1"
-    linkify-it "~1.2.0"
-    mdurl "~1.0.1"
-    uc.micro "^1.0.0"
+markdown-it-table@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/markdown-it-table/-/markdown-it-table-1.0.3.tgz#794c4390d127c21c1b2cb5daf1aaa7b2ce6de0f1"
 
 markdown-it@^8.1.0:
   version "8.4.0"
@@ -5024,7 +5006,7 @@ md5@^2.0.0, md5@^2.2.1:
     crypt "~0.0.1"
     is-buffer "~1.1.1"
 
-mdurl@^1.0.1, mdurl@~1.0.1:
+mdurl@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
 
@@ -8460,7 +8442,7 @@ ua-parser-js@^0.7.9:
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
 
-uc.micro@^1.0.0, uc.micro@^1.0.1, uc.micro@^1.0.3:
+uc.micro@^1.0.1, uc.micro@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.3.tgz#7ed50d5e0f9a9fb0a573379259f2a77458d50192"
 

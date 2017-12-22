@@ -46,13 +46,30 @@ function addRawLoader(config) {
 
 function addMarkdownLoader(config) {
   const babelConfig = {
-    presets: ['env', 'stage-0', 'react'],
-  };
+      presets: ['env', 'stage-0', 'react'],
+    },
+    mdConfig = {
+      markdownItPlugins: [
+        [
+          require.resolve('markdown-it-anchor'),
+          {
+            permalink: true,
+            permalinkBefore: true,
+            permalinkSymbol: '🔗',
+          },
+        ],
+        require.resolve('markdown-it-table'),
+        [
+          require.resolve('markdown-it-table-of-contents'),
+          { includeLevel: [2, 3, 4] },
+        ],
+      ],
+    };
   config.loader('markdown-component-loader', {
     test: /\.mdx$/i,
     loaders: [
       'babel-loader?' + JSON.stringify(babelConfig),
-      'markdown-component-loader',
+      'markdown-component-loader?' + JSON.stringify(mdConfig),
     ],
   });
 }
