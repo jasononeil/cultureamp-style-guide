@@ -2,9 +2,7 @@
 imports:
   ColorShowcase: ./_ColorShowcase.js
   Link: components/Link.js
-  TipCard: components/tip-card
-  ColorsShould: ./_ColorsShould.md
-  ColorsShouldNot: ./_ColorsShouldNot.md
+  "{TipContainer,TipCard}": components/tip-card
   styles: ./index.module.scss
 ---
 
@@ -18,9 +16,17 @@ Our color palette is built with our core principles and guidelines as its founda
 
 ## Best Practices
 
-<div className={styles.tipsContainer}>
-    <TipCard title="Colors should…" type="tip" content={ColorsShould} />
-    <TipCard title="Colors should not…" type="warning" content={ColorsShouldNot} />
-</div>
+<TipContainer>
+<TipCard title="Colors should…" type="tip">
+
+- TODO
+
+</TipCard>
+<TipCard title="Colors should not…" type="warning">
+
+- TODO
+
+</TipCard>
+</TipContainer>
 
 <Link to="/">Go back to the homepage</Link>
