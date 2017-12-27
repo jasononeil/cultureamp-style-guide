@@ -70,3 +70,8 @@
   composes: link;
   padding: 0 2px;
 }
+
+.img,
+.htmlContent img {
+  max-width: 100%;
+}

@@ -49,6 +49,7 @@ function addMarkdownLoader(config) {
       presets: ['env', 'stage-0', 'react'],
     },
     mdConfig = {
+      passElementProps: true,
       markdownItPlugins: [
         [
           require.resolve('markdown-it-anchor'),
@@ -69,6 +70,7 @@ function addMarkdownLoader(config) {
     test: /\.mdx$/i,
     loaders: [
       'babel-loader?' + JSON.stringify(babelConfig),
+      require.resolve('./src/webpack-util/markdownWrapper.js'),
       'markdown-component-loader?' + JSON.stringify(mdConfig),
     ],
   });
