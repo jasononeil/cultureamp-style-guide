@@ -3,10 +3,22 @@
 @import '~cultureamp-style-guide/styles/border';
 
 .contentContainer {
-  max-width: 650px;
   font-size: $ca-body-font-size;
   line-height: $ca-body-line-height;
   font-weight: $ca-body-font-weight;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  blockquote {
+    max-width: 650px;
+  }
 }
 
 .htmlContent {
@@ -105,4 +117,11 @@
 .img,
 .htmlContent img {
   max-width: 100%;
+}
+
+.hr {
+  border: none;
+  border-bottom: 1px solid add-alpha($ca-palette-ink, 10%);
+  margin-top: $ca-grid;
+  margin-bottom: $ca-grid * 2;
 }

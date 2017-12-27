@@ -25,6 +25,7 @@ const loader = function(source) {
             h3: { className: htmlStyles.h3 },
             table: { className: htmlStyles.table },
             blockquote: { className: htmlStyles.blockquote },
+            hr: { className: htmlStyles.hr },
             img: { className: htmlStyles.img },
             a: { className: htmlStyles.link },
           }} />

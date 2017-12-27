@@ -21,10 +21,6 @@
   @include setColumnSizes(3, 280px, 360px);
 }
 
-.title {
-  composes: h1 from 'components/HtmlContent.module.scss';
-}
-
 .cardContainer {
   display: grid;
   grid-gap: 1rem;
@@ -44,10 +40,6 @@
   }
 }
 
-.sectionTitle {
-  composes: h2 from 'components/HtmlContent.module.scss';
-}
-
 .tipsContainer {
   display: grid;
   grid-gap: 1rem;
@@ -56,17 +48,4 @@
   @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
   }
-}
-
-.intro {
-  font-size: $ca-intro-para-font-size;
-  line-height: $ca-intro-para-line-height;
-  font-weight: $ca-weight-extra-light;
-}
-
-.hr {
-  border: none;
-  border-bottom: 1px solid add-alpha($ca-palette-ink, 10%);
-  margin-top: $ca-grid;
-  margin-bottom: $ca-grid * 2;
 }

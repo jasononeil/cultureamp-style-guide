@@ -1,0 +1,26 @@
+---
+imports:
+  ColorShowcase: ./_ColorShowcase.js
+  Link: components/Link.js
+  TipCard: components/tip-card
+  ColorsShould: ./_ColorsShould.md
+  ColorsShouldNot: ./_ColorsShouldNot.md
+  styles: ./index.module.scss
+---
+
+# Colors
+
+Our color palette is built with our core principles and guidelines as its foundation. We are committed to complying with [WCAG AA standard contrast ratios](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast).
+
+---
+
+<ColorShowcase />
+
+## Best Practices
+
+<div className={styles.tipsContainer}>
+    <TipCard title="Colors should…" type="tip" content={ColorsShould} />
+    <TipCard title="Colors should not…" type="warning" content={ColorsShouldNot} />
+</div>
+
+<Link to="/">Go back to the homepage</Link>
