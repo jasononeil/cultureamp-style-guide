@@ -1,10 +1,16 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/border';
 
-.htmlContent {
+.contentContainer {
+  max-width: 650px;
   font-size: $ca-body-font-size;
   line-height: $ca-body-line-height;
   font-weight: $ca-body-font-weight;
+}
+
+.htmlContent {
+  composes: contentContainer;
 }
 
 .h1,
@@ -34,6 +40,31 @@
   font-weight: $ca-heading-3-font-weight;
   margin-top: 0;
   margin-bottom: $ca-grid;
+}
+
+.table,
+.htmlContent table {
+  width: 100%;
+  th {
+    text-align: left;
+    border-bottom: 2px solid $ca-border-color;
+  }
+  td {
+    border-bottom: 1px solid $ca-border-color;
+  }
+  p:first-child {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.blockquote,
+.htmlContent blockquote {
+  border-left: 2px solid $ca-border-color;
+  margin-left: 20px;
+  padding-left: 18px;
 }
 
 .link,

@@ -51,14 +51,7 @@ function addMarkdownLoader(config) {
     mdConfig = {
       passElementProps: true,
       markdownItPlugins: [
-        [
-          require.resolve('markdown-it-anchor'),
-          {
-            permalink: true,
-            permalinkBefore: true,
-            permalinkSymbol: '🔗',
-          },
-        ],
+        require.resolve('markdown-it-anchor'),
         require.resolve('markdown-it-table'),
         [
           require.resolve('markdown-it-table-of-contents'),

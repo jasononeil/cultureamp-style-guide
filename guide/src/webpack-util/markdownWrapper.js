@@ -18,13 +18,17 @@ const loader = function(source) {
   source = source.replace(
     'export default MarkdownComponent;',
     `
-        const WrappedMarkdownComponent = () => (<MarkdownComponent elementProps={{
+        const WrappedMarkdownComponent = () => (<div className={htmlStyles.contentContainer}>
+          <MarkdownComponent elementProps={{
             h1: { className: htmlStyles.h1 },
             h2: { className: htmlStyles.h2 },
             h3: { className: htmlStyles.h3 },
+            table: { className: htmlStyles.table },
+            blockquote: { className: htmlStyles.blockquote },
             img: { className: htmlStyles.img },
             a: { className: htmlStyles.link },
-        }} />);
+          }} />
+        </div>);
         export default WrappedMarkdownComponent;
     `
   );
