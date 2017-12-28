@@ -1,0 +1,74 @@
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+
+.root {
+  composes: root from './Link.module.scss';
+}
+
+.button {
+  // reset button styles
+  appearance: none;
+  background: transparent;
+  border: none;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+
+  // fill parent
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.status {
+  composes: link from './Link.module.scss';
+
+  $status__margin: $ca-grid / 8;
+
+  margin: $status__margin;
+  width: calc(100% - #{2 * $status__margin});
+  height: calc(100% - #{2 * $status__margin});
+
+  border-radius: 50%;
+  font-weight: $ca-weight-semibold;
+
+  background-color: add-tint($ca-palette-ink, 60%);
+  color: add-tint($ca-palette-ink, 30%);
+
+  // focus is non-interactive; displays tooltip only
+  &:focus {
+    outline: none;
+  }
+}
+
+.masquerading {
+  composes: status;
+
+  background-color: add-tint($ca-palette-lapis, 60%);
+  color: add-tint($ca-palette-lapis, 30%);
+
+  animation: breathe cubic-bezier(0.42, 0, 0.79, 1) 2.5s infinite alternate;
+  @keyframes breathe {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.superuser {
+  composes: status;
+
+  background-color: add-tint($ca-palette-peach, 60%);
+  color: add-tint($ca-palette-peach, 30%);
+}
+
+.tooltip {
+  composes: tooltip from './Link.module.scss';
+
+  &.hidden {
+    left: -1000em;
+  }
+}

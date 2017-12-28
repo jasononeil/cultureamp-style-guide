@@ -1,0 +1,20 @@
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+
+$ca-navigation-bar__width: 2.5 * $ca-grid;
+
+%ca-navigation-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: $ca-palette-ink;
+
+  position: fixed;
+  height: 100%;
+  width: $ca-navigation-bar__width;
+
+  @media print {
+    display: none;
+  }
+}

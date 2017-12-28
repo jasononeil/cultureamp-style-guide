@@ -1,0 +1,43 @@
+@import '~cultureamp-style-guide/styles/border';
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  composes: tooltip from './Link.module.scss';
+
+  // override tooltip focus/hover style
+  &.menu {
+    // a bit closer to cover other tooltips' arrows
+    left: calc(100% + #{$ca-grid * 0.75});
+  }
+
+  > * {
+    align-self: flex-end;
+    padding: $ca-border-radius 0;
+  }
+}
+
+.menuItem {
+  display: block;
+  padding: ($ca-grid / 4) 2em;
+
+  font-size: $ca-body-font-size;
+  line-height: $ca-body-line-height;
+  font-weight: $ca-body-font-weight;
+
+  &,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: add-tint($ca-palette-ink, 10%);
+  }
+}

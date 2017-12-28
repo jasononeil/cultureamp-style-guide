@@ -1,0 +1,17 @@
+[ignore]
+.*node_modules/fbjs/.*
+.*node_modules/find-elm-dependencies/.*
+.*node_modules/relay-compiler/.*
+.*node_modules/relay-runtime/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='.*\.s?css$' -> 'css-module-flow'
+module.name_mapper.extension='svg' -> 'empty/object'
+
+[strict]
