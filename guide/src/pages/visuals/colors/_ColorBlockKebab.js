@@ -39,8 +39,8 @@ const getColorDropdownItem = (type, value) => {
         <strong>{type}</strong>
         <input
           type="text"
-          defaultValue={value}
           value={value}
+          readOnly={true}
           ref={i => (input = i)}
         />
       </div>
