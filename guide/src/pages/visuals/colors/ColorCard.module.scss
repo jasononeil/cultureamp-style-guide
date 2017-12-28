@@ -72,6 +72,7 @@ $accessibilityTileWidth: 46px;
 }
 
 .colorBlock {
+  composes: kebabHoverArea from 'components/kebab/Kebab.module.scss';
   box-sizing: border-box;
   background: black;
   height: 91px;
@@ -102,13 +103,6 @@ $accessibilityTileWidth: 46px;
 .kebabContainer {
   line-height: 80px;
   margin-right: 10px;
-}
-
-.kebabContainer svg {
-  opacity: 0;
-  .colorBlock:hover & {
-    opacity: 1;
-  }
 }
 
 .colorBlockLabel {

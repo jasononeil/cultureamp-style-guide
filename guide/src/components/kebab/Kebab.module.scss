@@ -24,9 +24,17 @@ $width: 248px;
   justify-content: center;
 }
 
-.kebabIcon.isOpen svg,
-.kebabIcon:focus svg {
-  opacity: 1;
+.kebabHoverArea {
+  .kebabIcon {
+    opacity: 0;
+    &.isOpen,
+    &:focus {
+      opacity: 1;
+    }
+  }
+  &:hover .kebabIcon {
+    opacity: 1;
+  }
 }
 
 .menuContainer {
