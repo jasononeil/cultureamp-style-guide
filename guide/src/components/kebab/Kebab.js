@@ -56,7 +56,7 @@ export default class Kebab extends React.Component {
           onClick={this.toggleKebabMenu}
           ref={this.kebabRef}
         >
-          <Icon icon={kebabIcon} role="img" title={this.props.title} />
+          <Icon icon={kebabIcon} role="img" title="Open menu" />
         </button>
         {this.state.isKebabMenuVisible && this.renderKebabMenu()}
       </div>
