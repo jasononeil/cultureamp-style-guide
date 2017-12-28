@@ -41,24 +41,23 @@ const ColorBlock = ({ colorName, amount, showContrast }) => {
     isHalfBlock = true;
   }
 
-  let shouldUseWhite = shouldUseWhiteText(bgColor);
-
-  const classes = classNames(
-      styles['colorBlock'],
-      isHalfBlock && styles['colorBlockHalf'],
-      shouldUseWhite && styles['whiteText']
-    ),
-    name = `${colorName} ${label}`;
-  const icons = showContrast ? (
-    [
-      <ContrastIcon color={bgColor} name={name} text="White" size={12} />,
-      <ContrastIcon color={bgColor} name={name} text="White" size={18} />,
-      <ContrastIcon color={bgColor} name={name} text="Ink" size={12} />,
-      <ContrastIcon color={bgColor} name={name} text="Ink" size={18} />,
-    ]
-  ) : (
-    <ColorBlockKebab bgColor={bgColor} sassVar={sassVar} />
-  );
+  const shouldUseWhite = shouldUseWhiteText(bgColor),
+    classes = classNames({
+      [styles.colorBlock]: true,
+      [styles.colorBlockHalf]: isHalfBlock,
+      [styles.whiteText]: shouldUseWhite,
+    }),
+    name = `${colorName} ${label}`,
+    icons = showContrast ? (
+      [
+        <ContrastIcon color={bgColor} name={name} text="White" size={12} />,
+        <ContrastIcon color={bgColor} name={name} text="White" size={18} />,
+        <ContrastIcon color={bgColor} name={name} text="Ink" size={12} />,
+        <ContrastIcon color={bgColor} name={name} text="Ink" size={18} />,
+      ]
+    ) : (
+      <ColorBlockKebab bgColor={bgColor} sassVar={sassVar} />
+    );
 
   return (
     <div
