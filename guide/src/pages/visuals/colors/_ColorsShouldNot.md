@@ -1,2 +1,1 @@
-* Be ugly
-* Be low contrast
+* TODO

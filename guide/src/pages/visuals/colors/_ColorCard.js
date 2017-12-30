@@ -32,12 +32,15 @@ class ColorCard extends React.Component {
     const toggleIcon = this.state.expanded ? chevronUp : chevronDown,
       toggleTitle = this.state.expanded ? 'Collapse Color' : 'Expand Color';
     return (
-      <a onClick={() => this.toggleOpen()}>
+      <button
+        className={styles.cardToggleButton}
+        onClick={() => this.toggleOpen()}
+      >
         {this.props.name}
         <span className={styles.toggleIconWrapper}>
           <Icon icon={toggleIcon} role="img" title={toggleTitle} />
         </span>
-      </a>
+      </button>
     );
   }
 

@@ -13,7 +13,8 @@
   height: $ca-heading-3-font-size;
 }
 
-.colorCard h3 a {
+.cardToggleButton {
+  composes: buttonReset from 'components/HtmlContent.module.scss';
   color: $ca-palette-ink;
   display: block;
   color: $ca-palette-ink;
@@ -71,6 +72,7 @@ $accessibilityTileWidth: 46px;
 }
 
 .colorBlock {
+  composes: kebabHoverArea from 'components/kebab/Kebab.module.scss';
   box-sizing: border-box;
   background: black;
   height: 91px;
@@ -103,13 +105,6 @@ $accessibilityTileWidth: 46px;
   margin-right: 10px;
 }
 
-.kebabContainer svg {
-  opacity: 0;
-  .colorBlock:hover & {
-    opacity: 1;
-  }
-}
-
 .colorBlockLabel {
   flex: 1;
   margin-left: 10px;
@@ -132,18 +127,20 @@ $accessibilityTileWidth: 46px;
   width: 4em;
 }
 
-.dropdownItem small {
+.dropdownItem input {
   opacity: 0.4;
   font-size: 10px;
   flex: 1;
-}
+  outline: none;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  text-overflow: ellipsis;
 
-a:hover .dropdownItem small {
-  opacity: 1;
-}
-
-.dropdownItem input {
-  opacity: 0;
-  height: 0px;
-  width: 0px;
+  a:hover & {
+    opacity: 1;
+  }
 }

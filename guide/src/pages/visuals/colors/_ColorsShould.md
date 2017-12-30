@@ -1,2 +1,1 @@
-* Be pretty
-* Be sufficient contrast
+* TODO

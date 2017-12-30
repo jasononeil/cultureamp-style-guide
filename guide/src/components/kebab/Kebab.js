@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import classNames from 'classnames';
 import styles from './Kebab.module.scss';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon';
 import kebabIcon from 'cultureamp-style-guide/icons/ellipsis.svg';
@@ -44,17 +45,19 @@ export default class Kebab extends React.Component {
   }
 
   render() {
+    const btnClass = classNames({
+      [styles.isOpen]: this.state.isKebabMenuVisible,
+      [styles.kebabIcon]: true,
+    });
     return (
       <div className={styles.fieldKebabIconInner}>
-        <div
-          className={styles.kebabIcon}
+        <button
+          className={btnClass}
           onClick={this.toggleKebabMenu}
           ref={this.kebabRef}
         >
-          <div className={this.state.isKebabMenuVisible ? styles.isOpen : ''}>
-            <Icon icon={kebabIcon} role="img" title={this.props.title} />
-          </div>
-        </div>
+          <Icon icon={kebabIcon} role="img" title="Open menu" />
+        </button>
         {this.state.isKebabMenuVisible && this.renderKebabMenu()}
       </div>
     );
