@@ -1,6 +1,6 @@
 webpackJsonp([77462191801791],{
 
-/***/ 27:
+/***/ 22:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17,17 +17,17 @@ webpackJsonp([77462191801791],{
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _classnames = __webpack_require__(19);
+	var _classnames = __webpack_require__(16);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _IconModule = __webpack_require__(104);
+	var _IconModule = __webpack_require__(58);
 	
 	var _IconModule2 = _interopRequireDefault(_IconModule);
 	
-	var _error = __webpack_require__(81);
+	var _error = __webpack_require__(49);
 	
-	var _reactHtmlId = __webpack_require__(127);
+	var _reactHtmlId = __webpack_require__(64);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -141,7 +141,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 104:
+/***/ 58:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -149,7 +149,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 44:
+/***/ 26:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -160,11 +160,11 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 78:
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
-	const colorConvert = __webpack_require__(59);
+	const colorConvert = __webpack_require__(32);
 	
 	const wrapAnsi16 = (fn, offset) => function () {
 		const code = fn.apply(colorConvert, arguments);
@@ -316,19 +316,19 @@ webpackJsonp([77462191801791],{
 		get: assembleStyles
 	});
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(134)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(69)(module)))
 
 /***/ }),
 
-/***/ 84:
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
-	var escapeStringRegexp = __webpack_require__(103);
-	var ansiStyles = __webpack_require__(78);
-	var stripAnsi = __webpack_require__(131);
-	var hasAnsi = __webpack_require__(107);
-	var supportsColor = __webpack_require__(132);
+	var escapeStringRegexp = __webpack_require__(57);
+	var ansiStyles = __webpack_require__(48);
+	var stripAnsi = __webpack_require__(66);
+	var hasAnsi = __webpack_require__(59);
+	var supportsColor = __webpack_require__(67);
 	var defineProps = Object.defineProperties;
 	var isSimpleWindowsTerm = process.platform === 'win32' && !/^xterm/i.test(({"NODE_ENV":"production","PUBLIC_DIR":"/Users/jason.oneil/workspace/cultureamp/cultureamp-style-guide/guide/public"}).TERM);
 	
@@ -440,15 +440,15 @@ webpackJsonp([77462191801791],{
 	module.exports.stripColor = stripAnsi;
 	module.exports.supportsColor = supportsColor;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(42)))
 
 /***/ }),
 
-/***/ 45:
+/***/ 27:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* MIT license */
-	var cssKeywords = __webpack_require__(60);
+	var cssKeywords = __webpack_require__(33);
 	
 	// NOTE: conversions should only return primitive values (i.e. arrays, or
 	//       values that give correct `typeof` results).
@@ -1312,11 +1312,11 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 59:
+/***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var conversions = __webpack_require__(45);
-	var route = __webpack_require__(85);
+	var conversions = __webpack_require__(27);
+	var route = __webpack_require__(51);
 	
 	var convert = {};
 	
@@ -1397,10 +1397,10 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 85:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var conversions = __webpack_require__(45);
+	var conversions = __webpack_require__(27);
 	
 	/*
 		this function routes a model to all other models.
@@ -1501,7 +1501,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 60:
+/***/ 33:
 /***/ (function(module, exports) {
 
 	'use strict'
@@ -1660,44 +1660,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 51:
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*!
-	  * domready (c) Dustin Diaz 2014 - License MIT
-	  */
-	!function (name, definition) {
-	
-	  if (true) module.exports = definition()
-	  else if (typeof define == 'function' && typeof define.amd == 'object') define(definition)
-	  else this[name] = definition()
-	
-	}('domready', function () {
-	
-	  var fns = [], listener
-	    , doc = document
-	    , hack = doc.documentElement.doScroll
-	    , domContentLoaded = 'DOMContentLoaded'
-	    , loaded = (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
-	
-	
-	  if (!loaded)
-	  doc.addEventListener(domContentLoaded, listener = function () {
-	    doc.removeEventListener(domContentLoaded, listener)
-	    loaded = 1
-	    while (listener = fns.shift()) listener()
-	  })
-	
-	  return function (fn) {
-	    loaded ? setTimeout(fn, 0) : fns.push(fn)
-	  }
-	
-	});
-
-
-/***/ }),
-
-/***/ 103:
+/***/ 57:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1715,209 +1678,18 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 107:
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(44);
+	var ansiRegex = __webpack_require__(26);
 	var re = new RegExp(ansiRegex().source); // remove the `g` flag
 	module.exports = re.test.bind(re);
 
 
 /***/ }),
 
-/***/ 29:
-/***/ (function(module, exports) {
-
-	// shim for using process in browser
-	var process = module.exports = {};
-	
-	// cached from whatever global is present so that test runners that stub it
-	// don't break things.  But we need to wrap it in a try catch in case it is
-	// wrapped in strict mode code which doesn't define any globals.  It's inside a
-	// function because try/catches deoptimize in certain engines.
-	
-	var cachedSetTimeout;
-	var cachedClearTimeout;
-	
-	function defaultSetTimout() {
-	    throw new Error('setTimeout has not been defined');
-	}
-	function defaultClearTimeout () {
-	    throw new Error('clearTimeout has not been defined');
-	}
-	(function () {
-	    try {
-	        if (typeof setTimeout === 'function') {
-	            cachedSetTimeout = setTimeout;
-	        } else {
-	            cachedSetTimeout = defaultSetTimout;
-	        }
-	    } catch (e) {
-	        cachedSetTimeout = defaultSetTimout;
-	    }
-	    try {
-	        if (typeof clearTimeout === 'function') {
-	            cachedClearTimeout = clearTimeout;
-	        } else {
-	            cachedClearTimeout = defaultClearTimeout;
-	        }
-	    } catch (e) {
-	        cachedClearTimeout = defaultClearTimeout;
-	    }
-	} ())
-	function runTimeout(fun) {
-	    if (cachedSetTimeout === setTimeout) {
-	        //normal enviroments in sane situations
-	        return setTimeout(fun, 0);
-	    }
-	    // if setTimeout wasn't available but was latter defined
-	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-	        cachedSetTimeout = setTimeout;
-	        return setTimeout(fun, 0);
-	    }
-	    try {
-	        // when when somebody has screwed with setTimeout but no I.E. maddness
-	        return cachedSetTimeout(fun, 0);
-	    } catch(e){
-	        try {
-	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-	            return cachedSetTimeout.call(null, fun, 0);
-	        } catch(e){
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-	            return cachedSetTimeout.call(this, fun, 0);
-	        }
-	    }
-	
-	
-	}
-	function runClearTimeout(marker) {
-	    if (cachedClearTimeout === clearTimeout) {
-	        //normal enviroments in sane situations
-	        return clearTimeout(marker);
-	    }
-	    // if clearTimeout wasn't available but was latter defined
-	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-	        cachedClearTimeout = clearTimeout;
-	        return clearTimeout(marker);
-	    }
-	    try {
-	        // when when somebody has screwed with setTimeout but no I.E. maddness
-	        return cachedClearTimeout(marker);
-	    } catch (e){
-	        try {
-	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-	            return cachedClearTimeout.call(null, marker);
-	        } catch (e){
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-	            return cachedClearTimeout.call(this, marker);
-	        }
-	    }
-	
-	
-	
-	}
-	var queue = [];
-	var draining = false;
-	var currentQueue;
-	var queueIndex = -1;
-	
-	function cleanUpNextTick() {
-	    if (!draining || !currentQueue) {
-	        return;
-	    }
-	    draining = false;
-	    if (currentQueue.length) {
-	        queue = currentQueue.concat(queue);
-	    } else {
-	        queueIndex = -1;
-	    }
-	    if (queue.length) {
-	        drainQueue();
-	    }
-	}
-	
-	function drainQueue() {
-	    if (draining) {
-	        return;
-	    }
-	    var timeout = runTimeout(cleanUpNextTick);
-	    draining = true;
-	
-	    var len = queue.length;
-	    while(len) {
-	        currentQueue = queue;
-	        queue = [];
-	        while (++queueIndex < len) {
-	            if (currentQueue) {
-	                currentQueue[queueIndex].run();
-	            }
-	        }
-	        queueIndex = -1;
-	        len = queue.length;
-	    }
-	    currentQueue = null;
-	    draining = false;
-	    runClearTimeout(timeout);
-	}
-	
-	process.nextTick = function (fun) {
-	    var args = new Array(arguments.length - 1);
-	    if (arguments.length > 1) {
-	        for (var i = 1; i < arguments.length; i++) {
-	            args[i - 1] = arguments[i];
-	        }
-	    }
-	    queue.push(new Item(fun, args));
-	    if (queue.length === 1 && !draining) {
-	        runTimeout(drainQueue);
-	    }
-	};
-	
-	// v8 likes predictible objects
-	function Item(fun, array) {
-	    this.fun = fun;
-	    this.array = array;
-	}
-	Item.prototype.run = function () {
-	    this.fun.apply(null, this.array);
-	};
-	process.title = 'browser';
-	process.browser = true;
-	process.env = {};
-	process.argv = [];
-	process.version = ''; // empty string to avoid regexp issues
-	process.versions = {};
-	
-	function noop() {}
-	
-	process.on = noop;
-	process.addListener = noop;
-	process.once = noop;
-	process.off = noop;
-	process.removeListener = noop;
-	process.removeAllListeners = noop;
-	process.emit = noop;
-	process.prependListener = noop;
-	process.prependOnceListener = noop;
-	
-	process.listeners = function (name) { return [] }
-	
-	process.binding = function (name) {
-	    throw new Error('process.binding is not supported');
-	};
-	
-	process.cwd = function () { return '/' };
-	process.chdir = function (dir) {
-	    throw new Error('process.chdir is not supported');
-	};
-	process.umask = function() { return 0; };
-
-
-/***/ }),
-
-/***/ 127:
+/***/ 64:
 /***/ (function(module, exports) {
 
 	/* Copyright (c) 2017 Hampus Joakim Nilsson
@@ -1978,11 +1750,11 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 131:
+/***/ 66:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(44)();
+	var ansiRegex = __webpack_require__(26)();
 	
 	module.exports = function (str) {
 		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -1991,7 +1763,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 132:
+/***/ 67:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2000,7 +1772,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 133:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -2942,7 +2714,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 26:
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -3220,7 +2992,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 134:
+/***/ 69:
 /***/ (function(module, exports) {
 
 	module.exports = function(module) {
@@ -3237,7 +3009,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 80:
+/***/ 92:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3250,7 +3022,7 @@ webpackJsonp([77462191801791],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _DemoModule = __webpack_require__(105);
+	var _DemoModule = __webpack_require__(112);
 	
 	var _DemoModule2 = _interopRequireDefault(_DemoModule);
 	
@@ -3544,7 +3316,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 105:
+/***/ 112:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -3552,14 +3324,14 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 231:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _configure = __webpack_require__(512);
+	var _configure = __webpack_require__(515);
 	
 	var _configure2 = _interopRequireDefault(_configure);
 	
@@ -3581,7 +3353,7 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 240:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3606,7 +3378,7 @@ webpackJsonp([77462191801791],{
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _Demo = __webpack_require__(80);
+	var _Demo = __webpack_require__(92);
 	
 	var _Demo2 = _interopRequireDefault(_Demo);
 	
@@ -3614,11 +3386,11 @@ webpackJsonp([77462191801791],{
 	
 	var _Link2 = _interopRequireDefault(_Link);
 	
-	var _Icon = __webpack_require__(27);
+	var _Icon = __webpack_require__(22);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _iconPresets = __webpack_require__(231);
+	var _iconPresets = __webpack_require__(233);
 	
 	var _iconPresets2 = _interopRequireDefault(_iconPresets);
 	
@@ -3682,11 +3454,11 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 512:
+/***/ 515:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var SpriteSymbol = __webpack_require__(26);
-	var sprite = __webpack_require__(23);
+	var SpriteSymbol = __webpack_require__(18);
+	var sprite = __webpack_require__(15);
 	var symbol = new SpriteSymbol({
 	  "id": "ca-icon-configure",
 	  "use": "ca-icon-configure-usage",
@@ -3698,12 +3470,12 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 81:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var chalk = __webpack_require__(84);
+	var chalk = __webpack_require__(50);
 	
 	function error(message) {
 	  throw new Error(chalk.red('\nCULTUREAMP STYLE GUIDE ERROR:\n' + singleLine(message) + '\n'));
@@ -3725,18 +3497,18 @@ webpackJsonp([77462191801791],{
 
 /***/ }),
 
-/***/ 23:
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _browserSprite = __webpack_require__(133);
+	var _browserSprite = __webpack_require__(68);
 	
 	var _browserSprite2 = _interopRequireDefault(_browserSprite);
 	
-	var _domready = __webpack_require__(51);
+	var _domready = __webpack_require__(79);
 	
 	var _domready2 = _interopRequireDefault(_domready);
 	
@@ -3793,4 +3565,4 @@ webpackJsonp([77462191801791],{
 /***/ })
 
 });
-//# sourceMappingURL=component---src-pages-atoms-icon-mdx-bce27d479d27b7371bd3.js.map
+//# sourceMappingURL=component---src-pages-atoms-icon-mdx-2c964b3fabd56c58423f.js.map
