@@ -38,6 +38,7 @@
     "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
+    "autoprefixer": "^7.2.3",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-add-react-displayname": "^0.0.4",
