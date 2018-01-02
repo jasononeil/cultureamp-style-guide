@@ -6,6 +6,7 @@ import './index.scss';
 import styles from './layout.module.scss';
 
 const pages = [
+  'Language',
   'Visuals',
   'Atoms',
   'Molecules',

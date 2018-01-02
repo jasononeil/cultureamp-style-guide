@@ -1,8 +1,3 @@
-import React from 'react';
-import Link from 'components/Link';
-import Demo from 'components/Demo';
-import Button from '../../../../components/Button/Button.js';
-
 const buttonPresets = [
   { name: 'Primary', props: { children: 'Button text', primary: true } },
   {
@@ -51,17 +46,4 @@ const buttonPresets = [
   },
 ];
 
-const Page = () => (
-  <div>
-    <h1>Buttons</h1>
-    <p>
-      Buttons make common actions immediately visible and easy to perform with
-      one click or tap. They can be used for any type of action, including
-      navigation.
-    </p>
-    <Demo component={Button} presets={buttonPresets} />
-    <Link to="/">Go back to the homepage</Link>
-  </div>
-);
-
-export default Page;
+export default buttonPresets;

@@ -1,13 +1,11 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import classNames from 'classnames';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon';
 import success from 'cultureamp-style-guide/icons/success.svg';
 import exclamation from 'cultureamp-style-guide/icons/exclamation.svg';
-import MarkdownContent from '../MarkdownContent';
 import styles from './TipCard.module.scss';
 
-const TipCard = ({ title, type, content }) => {
+const TipCard = ({ title, type, children }) => {
   const icon = type === 'tip' ? success : exclamation,
     iconColor = type === 'tip' ? 'tipIcon' : 'warningIcon';
   return (
@@ -20,9 +18,7 @@ const TipCard = ({ title, type, content }) => {
         )}
         {title}
       </div>
-      <div className={styles.cardBody}>
-        <MarkdownContent content={content} />
-      </div>
+      <div className={styles.cardBody}>{children}</div>
     </div>
   );
 };

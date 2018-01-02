@@ -1,0 +1,45 @@
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+@import '~cultureamp-style-guide/styles/border';
+@import '~components/card/Card.module.scss';
+
+$padding: $ca-grid / 2;
+
+.admonition {
+  border: 1px solid;
+  border-radius: $ca-border-radius;
+  display: flex;
+  flex-direction: row;
+
+  :first-child {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.iconWrapper {
+  padding: $padding;
+  width: $padding * 2;
+}
+
+.content {
+  padding: $padding;
+  padding-left: 0;
+  flex: 1;
+}
+
+.tip {
+  border-color: $ca-palette-seedling;
+  .iconWrapper {
+    color: $ca-palette-seedling;
+  }
+}
+
+.warning {
+  border-color: $ca-palette-coral;
+  .iconWrapper {
+    color: $ca-palette-coral;
+  }
+}
