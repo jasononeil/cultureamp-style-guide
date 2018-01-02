@@ -16,9 +16,7 @@ import Status from './components/Status.js';
 type Props = {|
   environment: string,
   loading: boolean,
-  children: React.ChildrenArray<
-    React.Element<typeof Link> | React.Element<any>
-  >,
+  children: React.ChildrenArray<React.Element<any> | false>,
 |};
 
 const NavigationBar = (props: Props) => {
@@ -54,32 +52,40 @@ const NavigationBar = (props: Props) => {
   function renderLinks() {
     return (
       <ul className={styles.linkList}>
-        {links.map(link => (
-          <li key={link.key} className={styles.child}>
-            <div>{link}</div>
-          </li>
-        ))}
+        {links.map(
+          link =>
+            // https://github.com/facebook/flow/issues/4790
+            typeof link !== 'boolean' && (
+              <li key={link.key} className={styles.child}>
+                <div>{link}</div>
+              </li>
+            )
+        )}
       </ul>
     );
   }
 
   function renderOtherChildren() {
-    return otherChildren.map(child => (
-      <div key={child.key} className={styles.child}>
-        <div>{child}</div>
-      </div>
-    ));
+    return otherChildren.map(
+      child =>
+        // https://github.com/facebook/flow/issues/4790
+        typeof child !== 'boolean' && (
+          <div key={child.key} className={styles.child}>
+            <div>{child}</div>
+          </div>
+        )
+    );
   }
+};
+
+NavigationBar.defaultProps = {
+  environment: 'production',
+  loading: false,
 };
 
 // child elements
 NavigationBar.Link = Link;
 NavigationBar.StatusMenu = StatusMenu;
 NavigationBar.Status = Status;
-
-NavigationBar.defaultProps = {
-  environment: 'production',
-  loading: false,
-};
 
 export default NavigationBar;

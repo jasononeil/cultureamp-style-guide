@@ -8,14 +8,14 @@ type Props = {|
   label: string,
   tooltip: string,
   hideTooltip: boolean,
-  style?: 'status' | 'masquerading' | 'superuser',
+  style: 'status' | 'masquerading' | 'superuser',
   onClick?: (event: SyntheticMouseEvent<>) => void,
 |};
 
 const Status = ({
   label,
   tooltip,
-  hideTooltip,
+  hideTooltip = false,
   style = 'status',
   onClick,
 }: Props) => {
@@ -50,6 +50,11 @@ const Status = ({
       </div>
     );
   }
+};
+
+Status.defaultProps = {
+  hideTooltip: false,
+  style: 'status',
 };
 
 export default Status;

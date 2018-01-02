@@ -10,8 +10,8 @@ type Props = {|
   href: string,
   active: boolean,
   tooltip: string,
-  id: string,
-  onClick: (event: SyntheticMouseEvent<>) => void,
+  id?: string,
+  onClick?: (event: SyntheticMouseEvent<>) => void,
 |};
 
 const Link = ({ icon, href, active, tooltip, id, onClick }: Props) => {
@@ -28,6 +28,10 @@ const Link = ({ icon, href, active, tooltip, id, onClick }: Props) => {
       </div>
     </div>
   );
+};
+
+Link.defaultProps = {
+  active: false,
 };
 
 export default Link;

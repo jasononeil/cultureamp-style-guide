@@ -18,6 +18,10 @@ type State = {
 export default class StatusMenu extends React.Component<Props, State> {
   root: ?HTMLElement;
 
+  static defaultProps = {
+    menuItems: [],
+  };
+
   state = { open: false };
 
   render() {
