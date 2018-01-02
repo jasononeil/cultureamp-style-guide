@@ -1,44 +1,44 @@
 {
   "assetsByChunkName": {
-    "component---src-pages-visuals-colors-index-js": [
-      "component---src-pages-visuals-colors-index-js-142f3987f78a00c27ba7.js",
-      "component---src-pages-visuals-colors-index-js-142f3987f78a00c27ba7.js.map"
-    ],
-    "component---src-pages-atoms-index-js": [
-      "component---src-pages-atoms-index-js-80389b8d4865011740c5.js",
-      "component---src-pages-atoms-index-js-80389b8d4865011740c5.js.map"
-    ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-ceda7ea7c13aa9ac84b2.js",
       "component---src-pages-index-js-ceda7ea7c13aa9ac84b2.js.map"
+    ],
+    "path---language": [
+      "path---language-a0e39f21c11f6a62c5ab.js",
+      "path---language-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---visuals-typography": [
+      "path---visuals-typography-a0e39f21c11f6a62c5ab.js",
+      "path---visuals-typography-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---templates": [
       "path---templates-a0e39f21c11f6a62c5ab.js",
       "path---templates-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "component---src-pages-templates-index-js": [
-      "component---src-pages-templates-index-js-5a3c0406c51b35ee8705.js",
-      "component---src-pages-templates-index-js-5a3c0406c51b35ee8705.js.map"
-    ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
-    "component---src-pages-atoms-button-js": [
-      "component---src-pages-atoms-button-js-9b7b5962a8750d65c2bb.js",
-      "component---src-pages-atoms-button-js-9b7b5962a8750d65c2bb.js.map"
+    "component---src-pages-templates-index-mdx": [
+      "component---src-pages-templates-index-mdx-3f6260ae901e3e07a1e4.js",
+      "component---src-pages-templates-index-mdx-3f6260ae901e3e07a1e4.js.map"
     ],
-    "component---src-pages-organisms-index-js": [
-      "component---src-pages-organisms-index-js-fa0c0f9c2fe203901f9b.js",
-      "component---src-pages-organisms-index-js-fa0c0f9c2fe203901f9b.js.map"
+    "component---src-pages-visuals-colors-index-mdx": [
+      "component---src-pages-visuals-colors-index-mdx-fa670fb7f258d5aa8d44.js",
+      "component---src-pages-visuals-colors-index-mdx-fa670fb7f258d5aa8d44.js.map"
+    ],
+    "component---src-pages-language-checklist-mdx": [
+      "component---src-pages-language-checklist-mdx-2ced7d1622462e1f99af.js",
+      "component---src-pages-language-checklist-mdx-2ced7d1622462e1f99af.js.map"
+    ],
+    "component---src-pages-atoms-icon-mdx": [
+      "component---src-pages-atoms-icon-mdx-bce27d479d27b7371bd3.js",
+      "component---src-pages-atoms-icon-mdx-bce27d479d27b7371bd3.js.map"
     ],
     "path---visuals-colors": [
       "path---visuals-colors-a0e39f21c11f6a62c5ab.js",
       "path---visuals-colors-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "component---src-pages-atoms-icon-js": [
-      "component---src-pages-atoms-icon-js-b7632ee4bbafd32139e0.js",
-      "component---src-pages-atoms-icon-js-b7632ee4bbafd32139e0.js.map"
     ],
     "path---molecules": [
       "path---molecules-a0e39f21c11f6a62c5ab.js",
@@ -49,12 +49,24 @@
       "path---atoms-button-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-ae2472d5b3b6f06041d8.js",
-      "component---src-layouts-index-js-ae2472d5b3b6f06041d8.js.map"
+      "component---src-layouts-index-js-b40842b34dac97dad31d.js",
+      "component---src-layouts-index-js-b40842b34dac97dad31d.js.map"
+    ],
+    "component---src-pages-visuals-typography-index-js": [
+      "component---src-pages-visuals-typography-index-js-f0bf1d6e7799430514f8.js",
+      "component---src-pages-visuals-typography-index-js-f0bf1d6e7799430514f8.js.map"
+    ],
+    "component---src-pages-visuals-index-mdx": [
+      "component---src-pages-visuals-index-mdx-007d9e4b1c28c7060013.js",
+      "component---src-pages-visuals-index-mdx-007d9e4b1c28c7060013.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---language-checklist": [
+      "path---language-checklist-a0e39f21c11f6a62c5ab.js",
+      "path---language-checklist-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---organisms": [
       "path---organisms-a0e39f21c11f6a62c5ab.js",
@@ -63,10 +75,6 @@
     "path---atoms": [
       "path---atoms-a0e39f21c11f6a62c5ab.js",
       "path---atoms-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "component---src-pages-pages-index-js": [
-      "component---src-pages-pages-index-js-511b75346dfa190a84f0.js",
-      "component---src-pages-pages-index-js-511b75346dfa190a84f0.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-f0bc864b1b920beccb1c.js",
@@ -77,28 +85,48 @@
       "path---visuals-a0e39f21c11f6a62c5ab.js.map"
     ],
     "commons": [
-      "commons-feb2b721abd2afd8b51a.js",
+      "commons-988056119ea867cad55b.js",
       "build-js-styles.css",
-      "commons-feb2b721abd2afd8b51a.js.map",
+      "commons-988056119ea867cad55b.js.map",
       "build-js-styles.css.map"
+    ],
+    "component---src-pages-language-index-mdx": [
+      "component---src-pages-language-index-mdx-19e69ba4bfbdf6f539f1.js",
+      "component---src-pages-language-index-mdx-19e69ba4bfbdf6f539f1.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "component---src-pages-molecules-index-mdx": [
+      "component---src-pages-molecules-index-mdx-76718d346a54f0c33c7c.js",
+      "component---src-pages-molecules-index-mdx-76718d346a54f0c33c7c.js.map"
+    ],
+    "component---src-pages-organisms-index-mdx": [
+      "component---src-pages-organisms-index-mdx-a6bd319834c3d6ca040f.js",
+      "component---src-pages-organisms-index-mdx-a6bd319834c3d6ca040f.js.map"
+    ],
     "path---pages": [
       "path---pages-a0e39f21c11f6a62c5ab.js",
       "path---pages-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "component---src-pages-atoms-button-mdx": [
+      "component---src-pages-atoms-button-mdx-cb48458287927068838c.js",
+      "component---src-pages-atoms-button-mdx-cb48458287927068838c.js.map"
+    ],
     "app": [
-      "app-4124d7ea4f066e531577.js",
+      "app-977dc932f7e9d09982a4.js",
       "build-js-styles.css",
-      "app-4124d7ea4f066e531577.js.map",
+      "app-977dc932f7e9d09982a4.js.map",
       "build-js-styles.css.map"
     ],
-    "component---src-pages-visuals-index-js": [
-      "component---src-pages-visuals-index-js-d2e845e8f39044ec9223.js",
-      "component---src-pages-visuals-index-js-d2e845e8f39044ec9223.js.map"
+    "component---src-pages-atoms-index-mdx": [
+      "component---src-pages-atoms-index-mdx-30dc4d3f10f5f9b0d8ed.js",
+      "component---src-pages-atoms-index-mdx-30dc4d3f10f5f9b0d8ed.js.map"
+    ],
+    "component---src-pages-pages-index-mdx": [
+      "component---src-pages-pages-index-mdx-61f6d853e50b366b8ab2.js",
+      "component---src-pages-pages-index-mdx-61f6d853e50b366b8ab2.js.map"
     ],
     "path---atoms-icon": [
       "path---atoms-icon-a0e39f21c11f6a62c5ab.js",
@@ -107,10 +135,6 @@
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
       "path---404-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "component---src-pages-molecules-index-js": [
-      "component---src-pages-molecules-index-js-7164ace2ee2966c17401.js",
-      "component---src-pages-molecules-index-js-7164ace2ee2966c17401.js.map"
     ]
   }
 }
