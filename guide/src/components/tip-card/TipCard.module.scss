@@ -2,6 +2,8 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~components/card/Card.module.scss';
 
+$cardPadding: 24px;
+
 .cardWithHeader {
   composes: card;
   padding: 0;
@@ -16,7 +18,16 @@
 }
 
 .cardBody {
-  padding: $cardPadding;
+  padding: ($cardPadding / 2) $cardPadding;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li::before {
+      $mdash: '\2014\a0';
+      content: $mdash;
+      float: left;
+    }
+  }
 }
 
 .iconWrapper {
