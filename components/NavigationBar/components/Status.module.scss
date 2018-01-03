@@ -33,7 +33,7 @@
   font-weight: $ca-weight-semibold;
 
   background-color: add-tint($ca-palette-ink, 60%);
-  color: add-tint($ca-palette-ink, 30%);
+  color: rgba($ca-palette-ink, 0.5);
 
   // focus is non-interactive; displays tooltip only
   &:focus {
@@ -45,7 +45,7 @@
   composes: status;
 
   background-color: add-tint($ca-palette-lapis, 60%);
-  color: add-tint($ca-palette-lapis, 30%);
+  color: rgba($ca-palette-lapis, 0.5);
 
   animation: breathe cubic-bezier(0.42, 0, 0.79, 1) 2.5s infinite alternate;
   @keyframes breathe {
@@ -62,7 +62,7 @@
   composes: status;
 
   background-color: add-tint($ca-palette-peach, 60%);
-  color: add-tint($ca-palette-peach, 30%);
+  color: rgba($ca-palette-peach, 0.5);
 }
 
 .tooltip {

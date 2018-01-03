@@ -18,7 +18,7 @@ const Link = ({ icon, href, active, tooltip, id, onClick }: Props) => {
   return (
     <div className={styles.root}>
       <a
-        className={active ? styles.activeLink : styles.hoverLink}
+        className={classNames(styles.hoverLink, { [styles.active]: active })}
         {...{ href, id, onClick }}
       >
         <Icon icon={icon} title={tooltip} />

@@ -19,23 +19,23 @@
   justify-content: center;
 
   border-radius: $ca-border-radius;
-  color: add-tint($ca-palette-ink, 50%);
+  color: rgba(#fff, 0.5);
 }
 
-// separate so other modules may compose link without hover effect
+// separate so that .link can be composed for non-interactive elements
 .hoverLink {
   composes: link;
 
-  &:hover {
+  &:hover,
+  &:focus {
+    background-color: rgba(#fff, 0.1);
+    color: rgba(#fff, 0.7);
+    outline: none; // override native focus styles
+  }
+
+  &.active {
     color: #fff;
   }
-}
-
-.activeLink {
-  composes: hoverLink;
-
-  background-color: add-tint($ca-palette-ink, 10%);
-  color: add-tint($ca-palette-ink, 75%);
 }
 
 .tooltip {
