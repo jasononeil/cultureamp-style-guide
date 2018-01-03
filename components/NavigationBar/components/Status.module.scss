@@ -64,8 +64,8 @@
 
 .tooltip {
   composes: tooltip from './Link.module.scss';
+}
 
-  &.hidden {
-    left: -1000em;
-  }
+.suppressed {
+  composes: suppressed from './Link.module.scss';
 }

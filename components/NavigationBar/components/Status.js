@@ -12,13 +12,7 @@ type Props = {|
   onClick?: (event: SyntheticMouseEvent<>) => void,
 |};
 
-const Status = ({
-  label,
-  tooltip,
-  hideTooltip = false,
-  style = 'status',
-  onClick,
-}: Props) => {
+const Status = ({ label, tooltip, hideTooltip, style, onClick }: Props) => {
   return (
     <div className={styles.root}>
       {onClick ? (
@@ -29,7 +23,9 @@ const Status = ({
         renderStatus()
       )}
       <div
-        className={classNames(styles.tooltip, { [styles.hidden]: hideTooltip })}
+        className={classNames(styles.tooltip, {
+          [styles.suppressed]: hideTooltip,
+        })}
         role="tooltip"
         id={`status-${label}-tooltip`}
       >

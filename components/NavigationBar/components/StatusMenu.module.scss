@@ -9,13 +9,7 @@
 }
 
 .menu {
-  composes: tooltip from './Link.module.scss';
-
-  // override tooltip focus/hover style
-  &.menu {
-    // a bit closer to cover other tooltips' arrows
-    left: calc(100% + #{$ca-grid * 0.75});
-  }
+  composes: tooltip visible from './Link.module.scss';
 
   > * {
     align-self: flex-end;
@@ -27,6 +21,7 @@
   display: block;
   padding: ($ca-grid / 4) 2em;
 
+  // TODO: try body small
   font-size: $ca-body-font-size;
   line-height: $ca-body-line-height;
   font-weight: $ca-body-font-weight;

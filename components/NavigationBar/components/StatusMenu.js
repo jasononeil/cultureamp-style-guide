@@ -7,8 +7,10 @@ import Status from './Status.js';
 type Props = {
   label: string,
   tooltip: string,
+  hideTooltip: boolean,
   style?: 'status' | 'masquerading' | 'superuser',
   menuItems: Array<{| label: string, link: string |}>,
+  onChange?: (open: boolean) => void,
 };
 
 type State = {
@@ -20,6 +22,7 @@ export default class StatusMenu extends React.Component<Props, State> {
 
   static defaultProps = {
     menuItems: [],
+    hideTooltip: false,
   };
 
   state = { open: false };
@@ -34,15 +37,17 @@ export default class StatusMenu extends React.Component<Props, State> {
           tooltip={tooltip}
           style={style}
           onClick={this.toggle}
-          hideTooltip={this.state.open}
+          hideTooltip={this.state.open || this.props.hideTooltip}
         />
         {this.state.open && this.renderMenu()}
       </div>
     );
   }
 
-  toggle = (e: SyntheticEvent<>) => {
-    this.setState({ open: !this.state.open });
+  toggle = (e: SyntheticEvent<> | MouseEvent) => {
+    const open = !this.state.open;
+    this.setState({ open });
+    if (this.props.onChange) this.props.onChange(open);
     e.preventDefault();
   };
 
@@ -68,11 +73,15 @@ export default class StatusMenu extends React.Component<Props, State> {
     document.removeEventListener('click', this.clickDocument);
   }
 
-  clickDocument = ({ target }: MouseEvent) => {
+  clickDocument = (e: MouseEvent) => {
     // We can't just stopPropagation of click events in the menu, because a
     // click in this menu may also need to dismiss another open menu.
-    if (this.root && !(target instanceof Node && this.root.contains(target))) {
-      this.setState({ open: false });
+    if (
+      this.state.open &&
+      this.root &&
+      !(e.target instanceof Node && this.root.contains(e.target))
+    ) {
+      this.toggle(e);
     }
   };
 }

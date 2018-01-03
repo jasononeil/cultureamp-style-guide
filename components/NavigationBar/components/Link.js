@@ -10,11 +10,20 @@ type Props = {|
   href: string,
   active: boolean,
   tooltip: string,
+  hideTooltip: boolean,
   id?: string,
   onClick?: (event: SyntheticMouseEvent<>) => void,
 |};
 
-const Link = ({ icon, href, active, tooltip, id, onClick }: Props) => {
+const Link = ({
+  icon,
+  href,
+  active,
+  tooltip,
+  hideTooltip,
+  id,
+  onClick,
+}: Props) => {
   return (
     <div className={styles.root}>
       <a
@@ -23,7 +32,12 @@ const Link = ({ icon, href, active, tooltip, id, onClick }: Props) => {
       >
         <Icon icon={icon} title={tooltip} />
       </a>
-      <div className={styles.tooltip} aria-hidden>
+      <div
+        className={classNames(styles.tooltip, {
+          [styles.suppressed]: hideTooltip,
+        })}
+        aria-hidden
+      >
         <small>{tooltip}</small>
       </div>
     </div>
@@ -32,6 +46,7 @@ const Link = ({ icon, href, active, tooltip, id, onClick }: Props) => {
 
 Link.defaultProps = {
   active: false,
+  hideTooltip: false,
 };
 
 export default Link;
