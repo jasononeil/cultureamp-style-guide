@@ -13,14 +13,15 @@ type BadgeProps = {|
 
 export function ProductionBadge(props: BadgeProps) {
   return (
+    // TODO: Make this clickable (go home)
     <div className={styles.badge}>
-      <span>
+      <a href="/">
         {props.loading ? (
           <Icon icon={spinner} title="loading…" />
         ) : (
           <Icon icon={monogram} title="Culture Amp" />
         )}
-      </span>
+      </a>
     </div>
   );
 }
@@ -77,13 +78,13 @@ function MonogramBadge(props: MonogramBadgeProps) {
       className={classNames(styles.badge, props.envClass)}
       title={props.monogram}
     >
-      <span aria-live="polite">
+      <a href="/" aria-live="polite">
         {props.loading ? (
           <Icon icon={spinner} title="loading…" />
         ) : (
           <span aria-hidden>{props.monogram.substr(0, 2)}</span>
         )}
-      </span>
+      </a>
     </div>
   );
 }
