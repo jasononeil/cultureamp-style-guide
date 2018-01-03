@@ -3,6 +3,8 @@
 
 .root {
   composes: root from './Link.module.scss';
+
+  padding: $ca-grid / 8;
 }
 
 .button {
@@ -13,6 +15,7 @@
   font: inherit;
   margin: 0;
   padding: 0;
+  transition: none; // override _bootstrap-overrides.scss
 
   // fill parent
   display: block;
@@ -22,12 +25,6 @@
 
 .status {
   composes: link from './Link.module.scss';
-
-  $status__margin: $ca-grid / 8;
-
-  margin: $status__margin;
-  width: calc(100% - #{2 * $status__margin});
-  height: calc(100% - #{2 * $status__margin});
 
   border-radius: 50%;
   font-weight: $ca-weight-semibold;
