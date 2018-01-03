@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+set -o pipefail
+set -u
+
+cd guide
+rm -rf public/*
+yarn gatsby build --prefix-paths
