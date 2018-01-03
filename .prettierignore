@@ -1,0 +1,3 @@
+# Do not format package.json as yarn has auto-formatting that differs from prettiers.
+package.json
+guide/package.json
