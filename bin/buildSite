@@ -4,4 +4,5 @@ set -o pipefail
 set -u
 
 cd guide
-yarn gatsby develop
+rm -rf public/*
+yarn gatsby build --prefix-paths

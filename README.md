@@ -19,9 +19,10 @@ To start the local development server:
 
 To deploy the site to Github pages:
 
-1. Ensure you have [NodeJS](#nodejs) and [Yarn][yarn] installed.
+1. Ensure you have NodeJS<sup id="fn1">[1](#nodejs)</sup> and [Yarn][yarn]
+   installed.
 2. Install the dependencies: `bin/setup`
-3. Run `yarn deploy`
+3. Run the Gatsby deploy script: `bin/deploySite`
 
 ## Using components in your project
 
