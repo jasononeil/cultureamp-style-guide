@@ -26,7 +26,7 @@ type Props = {|
 |};
 
 type State = {|
-  menuOpen: boolean,
+  menusOpen: number,
 |};
 
 export default class NavigationBar extends React.Component<Props, State> {
@@ -72,7 +72,7 @@ export default class NavigationBar extends React.Component<Props, State> {
           <li key={link.key} className={styles.child}>
             <div>
               {React.cloneElement(link, {
-                hideTooltip: this.state.menuOpen,
+                hideTooltip: this.state.menusOpen > 0,
               })}
             </div>
           </li>
@@ -86,7 +86,7 @@ export default class NavigationBar extends React.Component<Props, State> {
       <div key={child.key} className={styles.child}>
         <div>
           {React.cloneElement(child, {
-            hideTooltip: this.state.menuOpen,
+            hideTooltip: this.state.menusOpen > 0,
             onMenuChange: this.menuChange,
           })}
         </div>
@@ -95,12 +95,15 @@ export default class NavigationBar extends React.Component<Props, State> {
   }
 
   menuChange = (open: boolean) => {
-    this.setState({ menuOpen: open });
+    this.setState(state => ({
+      ...state,
+      menusOpen: state.menusOpen + (open ? 1 : -1),
+    }));
   };
 
   static defaultProps = { environment: 'production', loading: false };
 
-  state = { menuOpen: false };
+  state = { menusOpen: 0 };
 
   static AccountMenu = AccountMenu;
   static Link = Link;
