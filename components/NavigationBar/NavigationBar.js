@@ -15,6 +15,7 @@ import Status from './components/Status.js';
 import StatusMenu from './components/StatusMenu.js';
 
 type SupportedChild =
+  | React.Element<typeof AccountMenu>
   | React.Element<typeof Link>
   | React.Element<typeof Status>
   | React.Element<typeof StatusMenu>;
