@@ -9,6 +9,7 @@ import {
   LocalBadge,
   namedBadge,
 } from './components/Badge.js';
+import AccountMenu from './components/AccountMenu.js';
 import Link from './components/Link.js';
 import Status from './components/Status.js';
 import StatusMenu from './components/StatusMenu.js';
@@ -101,6 +102,7 @@ export default class NavigationBar extends React.Component<Props, State> {
 
   state = { menuOpen: false };
 
+  static AccountMenu = AccountMenu;
   static Link = Link;
   static StatusMenu = StatusMenu;
   static Status = Status;
