@@ -10,6 +10,7 @@ type Props = {|
   hideTooltip: boolean,
   style: 'status' | 'masquerading' | 'superuser',
   onClick?: (event: SyntheticMouseEvent<>) => void,
+  onMenuChange?: (open: boolean) => void,
 |};
 
 const Status = ({ label, tooltip, hideTooltip, style, onClick }: Props) => {

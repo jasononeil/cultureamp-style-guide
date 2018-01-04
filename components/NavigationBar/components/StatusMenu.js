@@ -10,7 +10,7 @@ type Props = {
   hideTooltip: boolean,
   style?: 'status' | 'masquerading' | 'superuser',
   menuItems: Array<{| label: string, link: string |}>,
-  onChange?: (open: boolean) => void,
+  onMenuChange?: (open: boolean) => void,
 };
 
 type State = {
@@ -47,7 +47,7 @@ export default class StatusMenu extends React.Component<Props, State> {
   toggle = (e: SyntheticEvent<> | MouseEvent) => {
     const open = !this.state.open;
     this.setState({ open });
-    if (this.props.onChange) this.props.onChange(open);
+    if (this.props.onMenuChange) this.props.onMenuChange(open);
     e.preventDefault();
   };
 
