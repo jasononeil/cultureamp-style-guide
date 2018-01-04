@@ -53,7 +53,11 @@ export default class StatusMenu extends React.Component<Props, State> {
 
   renderMenu() {
     return (
-      <div className={styles.menu}>
+      <div
+        className={styles.menu}
+        ref={menu => menu && menu.focus()}
+        tabIndex="-1"
+      >
         <div>
           {this.props.menuItems.map(({ label, link }, index) => (
             <a key={index} href={link} className={styles.menuItem}>

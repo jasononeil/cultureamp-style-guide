@@ -17,7 +17,11 @@ const Status = ({ label, tooltip, hideTooltip, style, onClick }: Props) => {
   return (
     <div className={styles.root}>
       {onClick ? (
-        <button onClick={onClick} className={styles.button}>
+        <button
+          onClick={onClick}
+          onMouseDown={e => e.preventDefault()} // avoid mouse-triggered focus
+          className={styles.button}
+        >
           {renderStatus()}
         </button>
       ) : (

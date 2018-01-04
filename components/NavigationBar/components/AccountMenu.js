@@ -38,7 +38,11 @@ export default class AccountMenu extends React.Component<Props, State> {
 
     return (
       <div className={styles.root} ref={root => (this.root = root)}>
-        <button onClick={this.toggle} className={styles.button}>
+        <button
+          onClick={this.toggle}
+          onMouseDown={e => e.preventDefault()} // avoid mouse-triggered focus
+          className={styles.button}
+        >
           <img src={company.logo} alt={company.name} className={styles.logo} />
         </button>
         <div
@@ -63,7 +67,11 @@ export default class AccountMenu extends React.Component<Props, State> {
 
   renderMenu() {
     return (
-      <div className={styles.menu}>
+      <div
+        className={styles.menu}
+        ref={menu => menu && menu.focus()}
+        tabIndex="-1"
+      >
         <div>
           {this.renderUserAndAccountDetails()}
           {this.renderStopMasqueradingLink()}
