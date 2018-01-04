@@ -10,6 +10,7 @@ type Props = {
   tooltip: string,
   hideTooltip: boolean,
   signOutLink: string,
+  stopMasqueradingLink?: string,
   menuItems: Array<{|
     label: string,
     link: string,
@@ -65,6 +66,7 @@ export default class AccountMenu extends React.Component<Props, State> {
       <div className={styles.menu}>
         <div>
           {this.renderUserAndAccountDetails()}
+          {this.renderStopMasqueradingLink()}
           {this.props.menuItems.map(({ label, link, data = {} }, index) => {
             const dataAttributes = {};
             Object.keys(data).forEach(key => {
@@ -82,15 +84,22 @@ export default class AccountMenu extends React.Component<Props, State> {
               </a>
             );
           })}
-          <a
-            href={this.props.signOutLink}
-            className={styles.menuItem}
-            data-method="delete"
-          >
-            Sign Out
-          </a>
+          {this.renderSignOutLink()}
         </div>
       </div>
+    );
+  }
+
+  renderStopMasqueradingLink() {
+    if (!this.props.stopMasqueradingLink) return null;
+    return (
+      <a
+        href={this.props.stopMasqueradingLink}
+        className={styles.menuItem}
+        data-method="delete"
+      >
+        Stop Masquerading
+      </a>
     );
   }
 
@@ -105,6 +114,18 @@ export default class AccountMenu extends React.Component<Props, State> {
         <div className={styles.userName}>{userName}</div>
         <div className={styles.companyName}>{companyName}</div>
       </div>
+    );
+  }
+
+  renderSignOutLink() {
+    return (
+      <a
+        href={this.props.signOutLink}
+        className={styles.menuItem}
+        data-method="delete"
+      >
+        Sign Out
+      </a>
     );
   }
 
