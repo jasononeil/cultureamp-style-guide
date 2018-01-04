@@ -11,9 +11,14 @@
 .menu {
   composes: tooltip visible from './Link.module.scss';
 
+  &:focus {
+    // focus is non-interactive
+    outline: 0;
+  }
+
   > * {
     align-self: flex-end;
-    padding: $ca-border-radius 0;
+    padding: 1em 0;
 
     // TODO: try body small
     font-size: $ca-body-font-size;
@@ -24,7 +29,7 @@
 
 .menuItem {
   display: block;
-  padding: ($ca-grid / 4) 2em;
+  padding: ($ca-grid / 8) 2em;
 
   &,
   &:hover {

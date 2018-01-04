@@ -68,14 +68,16 @@
   }
 
   > * {
+    $ca-body-small-baseline-shift: 1px;
+
     background-color: $ca-palette-ink;
     border-radius: $ca-border-radius;
     color: #fff;
-    font-size: $ca-labels-and-legends-font-size;
-    font-weight: $ca-labels-and-legends-font-weight;
-    line-height: $ca-labels-and-legends-line-height;
-    letter-spacing: $ca-labels-and-legends-letter-spacing;
-    padding: $ca-border-radius 1em;
+    font-size: $ca-body-small-font-size;
+    font-weight: $ca-body-small-font-weight;
+    line-height: $ca-body-small-line-height;
+    padding: ($ca-border-radius - $ca-body-small-baseline-shift) 1em ($ca-border-radius +
+          $ca-body-small-baseline-shift);
     white-space: nowrap;
   }
 }

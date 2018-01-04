@@ -37,8 +37,10 @@
 
 .userDetails {
   display: block;
-  margin: $ca-grid 0;
-  padding: ($ca-grid / 4) 2em;
+  margin-bottom: calc(#{$ca-grid / 2} - 1px);
+  padding: 0 2em ($ca-grid / 2);
+
+  border-bottom: 1px rgba(#fff, 0.1) solid;
 }
 
 .userName {
