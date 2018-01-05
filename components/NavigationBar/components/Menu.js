@@ -4,26 +4,24 @@ import * as React from 'react';
 import styles from './Menu.module.scss';
 import Tooltip from './Tooltip.js';
 
-type Props = {
+type MenuItem = {
+  label: string,
+  link: string,
+  data?: { [key: string]: string },
+};
+
+type Props = {|
   children?: React.Element<any>,
   header?: React.Element<any>,
   tooltip: string,
   hideTooltip: boolean,
   items: Array<MenuItem>,
   onMenuChange?: (open: boolean) => void,
-};
+|};
 
-type MenuItem =
-  | {|
-      label: string,
-      link: string,
-      data?: { [key: string]: string },
-    |}
-  | false;
-
-type State = {
+type State = {|
   open: boolean,
-};
+|};
 
 export default class Menu extends React.Component<Props, State> {
   root: ?HTMLElement;
@@ -79,7 +77,6 @@ export default class Menu extends React.Component<Props, State> {
   }
 
   renderMenuItem(item: MenuItem, index: number) {
-    if (item === false) return;
     const { label, link, data = {} } = item;
 
     const dataAttributes = {};
