@@ -9,16 +9,17 @@ type Props = {
   header?: React.Element<any>,
   tooltip: string,
   hideTooltip: boolean,
-  items: Array<
-    | {|
-        label: string,
-        link: string,
-        data?: { [key: string]: string },
-      |}
-    | false
-  >,
+  items: Array<MenuItem>,
   onMenuChange?: (open: boolean) => void,
 };
+
+type MenuItem =
+  | {|
+      label: string,
+      link: string,
+      data?: { [key: string]: string },
+    |}
+  | false;
 
 type State = {
   open: boolean,
@@ -61,38 +62,43 @@ export default class Menu extends React.Component<Props, State> {
   };
 
   renderMenu() {
-    const { header, items } = this.props;
+    const { header, items, tooltip } = this.props;
 
     return (
-      <div
-        className={styles.menu}
-        ref={menu => menu && menu.focus()}
-        tabIndex="-1"
-      >
+      <div className={styles.menu}>
+        <h1
+          className={styles.menuTitle}
+          ref={menu => menu && menu.focus()}
+          tabIndex="-1"
+        >
+          {tooltip}
+        </h1>
         <div>
           {header}
-          {items.map((item, index) => {
-            if (item === false) return;
-            const { label, link, data = {} } = item;
-
-            const dataAttributes = {};
-            Object.keys(data).forEach(key => {
-              dataAttributes[`data-${key}`] = data[key];
-            });
-
-            return (
-              <a
-                key={index}
-                href={link}
-                className={styles.menuItem}
-                {...dataAttributes}
-              >
-                {label}
-              </a>
-            );
-          })}
+          {items.map(this.renderMenuItem)}
         </div>
       </div>
+    );
+  }
+
+  renderMenuItem(item: MenuItem, index: number) {
+    if (item === false) return;
+    const { label, link, data = {} } = item;
+
+    const dataAttributes = {};
+    Object.keys(data).forEach(key => {
+      dataAttributes[`data-${key}`] = data[key];
+    });
+
+    return (
+      <a
+        key={index}
+        href={link}
+        className={styles.menuItem}
+        {...dataAttributes}
+      >
+        {label}
+      </a>
     );
   }
 

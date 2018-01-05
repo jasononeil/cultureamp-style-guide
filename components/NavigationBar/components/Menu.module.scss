@@ -43,6 +43,12 @@
   }
 }
 
+.menuTitle {
+  // screen readers only
+  position: absolute;
+  left: -9999em;
+}
+
 .menuItem {
   display: block;
   padding: ($ca-grid / 8) 2em;
