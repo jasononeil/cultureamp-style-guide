@@ -4,8 +4,13 @@
   @extend %ca-navigation-bar;
 }
 
-.linkList {
+.links {
   margin-bottom: auto;
+
+  > ul {
+    margin: 0;
+    list-style-type: none;
+  }
 }
 
 .child {

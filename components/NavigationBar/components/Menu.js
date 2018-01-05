@@ -39,18 +39,22 @@ export default class Menu extends React.Component<Props, State> {
     const { children, tooltip, hideTooltip } = this.props;
 
     return (
-      <div className={styles.root} ref={root => (this.root = root)}>
+      <nav className={styles.root} ref={root => (this.root = root)}>
         <Tooltip
           tooltip={tooltip}
           hideTooltip={this.state.open || hideTooltip}
           tabIndex={null} // button inside takes focus instead
         >
-          <button className={styles.button} onClick={this.toggle}>
+          <button
+            className={styles.button}
+            onClick={this.toggle}
+            aria-expanded={this.state.open}
+          >
             {children}
           </button>
         </Tooltip>
         {this.state.open && this.renderMenu()}
-      </div>
+      </nav>
     );
   }
 
@@ -66,13 +70,6 @@ export default class Menu extends React.Component<Props, State> {
 
     return (
       <div className={styles.menu}>
-        <h1
-          className={styles.menuTitle}
-          ref={menu => menu && menu.focus()}
-          tabIndex="-1"
-        >
-          {tooltip}
-        </h1>
         <div>
           {header}
           {items.map(this.renderMenuItem)}

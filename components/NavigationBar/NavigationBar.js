@@ -41,11 +41,11 @@ export default class NavigationBar extends React.Component<Props, State> {
     });
 
     return (
-      <nav className={styles.navigationBar}>
+      <header className={styles.navigationBar}>
         {this.renderBadge()}
         {this.renderLinks(links)}
         {this.renderOtherChildren(otherChildren)}
-      </nav>
+      </header>
     );
   }
 
@@ -66,17 +66,19 @@ export default class NavigationBar extends React.Component<Props, State> {
 
   renderLinks(links: SupportedChild[]) {
     return (
-      <ul className={styles.linkList}>
-        {links.map(link => (
-          <li key={link.key} className={styles.child}>
-            <div>
-              {React.cloneElement(link, {
-                hideTooltip: this.state.menusOpen > 0,
-              })}
-            </div>
-          </li>
-        ))}
-      </ul>
+      <nav className={styles.links}>
+        <ul className={styles.linkList}>
+          {links.map(link => (
+            <li key={link.key} className={styles.child}>
+              <div>
+                {React.cloneElement(link, {
+                  hideTooltip: this.state.menusOpen > 0,
+                })}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </nav>
     );
   }
 
