@@ -23,7 +23,7 @@ class IconTile extends React.Component {
         <div className={styles.tileWrapper}>
           <span className={styles.iconLabel}>{title}</span>
           <span className={styles.iconWrapper}>
-            {icon ? <Icon icon={icon} role="presentational" /> : 'TODO'}
+            <Icon icon={icon} role="presentational" />
           </span>
           {this.renderCopyLabel()}
         </div>
