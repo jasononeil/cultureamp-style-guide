@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../../../../../components/Icon/Icon.js';
-import styles from './IconGrid.module.scss';
+import styles from './_IconGrid.module.scss';
 import tick from 'cultureamp-style-guide/icons/check.svg';
 
 class IconTile extends React.Component {
@@ -47,6 +47,7 @@ class IconTile extends React.Component {
           value={path}
           readOnly={true}
           tabIndex={-1}
+          aria-label="Icon Import Path"
           className={styles.pathInput}
         />
       </span>

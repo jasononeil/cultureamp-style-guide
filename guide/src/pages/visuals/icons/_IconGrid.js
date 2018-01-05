@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import allIcons from './_allIcons.js';
 import IconTile from './_IconTile.js';
-import styles from './IconGrid.module.scss';
+import styles from './_IconGrid.module.scss';
 
 class IconGrid extends React.Component {
   render() {
