@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: center;
   }
-  padding: $cardPadding;
 }
 
 .iconExample {
@@ -19,7 +18,7 @@
   justify-content: space-between;
   min-width: 96px;
   height: 96px;
-  margin: 0 30px;
+  margin: $cardPadding 30px;
 
   strong {
     font-size: 11px;
