@@ -308,11 +308,6 @@ export default [
         icon: require('cultureamp-style-guide/icons/check.svg'),
       },
       {
-        title: 'Communications',
-        path: 'cultureamp-style-guide/icons/TODO_FIND_REAL_FILE.svg',
-        icon: null,
-      },
-      {
         title: 'Delta',
         path: 'cultureamp-style-guide/icons/delta.svg',
         icon: require('cultureamp-style-guide/icons/delta.svg'),
@@ -353,11 +348,6 @@ export default [
         icon: require('cultureamp-style-guide/icons/exclamation-white.svg'),
       },
       {
-        title: 'Factors',
-        path: 'cultureamp-style-guide/icons/TODO_FIND_REAL_FILE.svg',
-        icon: null,
-      },
-      {
         title: 'File',
         path: 'cultureamp-style-guide/icons/file.svg',
         icon: require('cultureamp-style-guide/icons/file.svg'),
@@ -366,11 +356,6 @@ export default [
         title: 'File (White)',
         path: 'cultureamp-style-guide/icons/file-white.svg',
         icon: require('cultureamp-style-guide/icons/file-white.svg'),
-      },
-      {
-        title: 'Guidance',
-        path: 'cultureamp-style-guide/icons/TODO_FIND_REAL_FILE.svg',
-        icon: null,
       },
       {
         title: 'Information',
@@ -396,16 +381,6 @@ export default [
         title: 'Minus',
         path: 'cultureamp-style-guide/icons/minus.svg',
         icon: require('cultureamp-style-guide/icons/minus.svg'),
-      },
-      {
-        title: 'Notification',
-        path: 'cultureamp-style-guide/icons/TODO_FIND_REAL_FILE.svg',
-        icon: null,
-      },
-      {
-        title: 'Percentage',
-        path: 'cultureamp-style-guide/icons/TODO_FIND_REAL_FILE.svg',
-        icon: null,
       },
       {
         title: 'Permissions',
@@ -832,16 +807,6 @@ export default [
         path: 'cultureamp-style-guide/icons/participation-white.svg',
         icon: require('cultureamp-style-guide/icons/participation-white.svg'),
       },
-      {
-        title: 'Process Manager',
-        path: 'cultureamp-style-guide/icons/TODO_FIND_REAL_FILE.svg',
-        icon: null,
-      },
-      {
-        title: 'Tasks',
-        path: 'cultureamp-style-guide/icons/TODO_FIND_REAL_FILE.svg',
-        icon: null,
-      },
     ],
   },
   {
@@ -876,11 +841,6 @@ export default [
         title: 'Participation (White)',
         path: 'cultureamp-style-guide/icons/participation-white.svg',
         icon: require('cultureamp-style-guide/icons/participation-white.svg'),
-      },
-      {
-        title: 'Questions',
-        path: 'cultureamp-style-guide/icons/TODO_FIND_REAL_FILE.svg',
-        icon: null,
       },
     ],
   },
