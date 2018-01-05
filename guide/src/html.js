@@ -21,7 +21,7 @@ module.exports = class HTML extends React.Component {
       );
     }
     return (
-      <html {...this.props.htmlAttributes}>
+      <html {...this.props.htmlAttributes} lang="en-au">
         <head>
           <meta name="referrer" content="origin" />
           <link
