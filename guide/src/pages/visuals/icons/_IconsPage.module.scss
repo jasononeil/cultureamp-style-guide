@@ -2,10 +2,12 @@
 @import '~components/card/Card.module.scss';
 
 .cardWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
   padding: $cardPadding;
 }
 
@@ -13,6 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: space-between;
   min-width: 96px;
   height: 96px;
