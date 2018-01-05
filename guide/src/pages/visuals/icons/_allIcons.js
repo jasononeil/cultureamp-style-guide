@@ -98,7 +98,7 @@ export default [
         icon: require('cultureamp-style-guide/icons/date-start.svg'),
       },
       {
-        title: 'Date Start',
+        title: 'Date Start (White)',
         path: 'cultureamp-style-guide/icons/date-start-white.svg',
         icon: require('cultureamp-style-guide/icons/date-start-white.svg'),
       },
@@ -188,7 +188,7 @@ export default [
         icon: require('cultureamp-style-guide/icons/launch.svg'),
       },
       {
-        title: 'Launch',
+        title: 'Launch (White)',
         path: 'cultureamp-style-guide/icons/launch-white.svg',
         icon: require('cultureamp-style-guide/icons/launch-white.svg'),
       },
@@ -223,7 +223,7 @@ export default [
         icon: require('cultureamp-style-guide/icons/print.svg'),
       },
       {
-        title: 'Print',
+        title: 'Print (White)',
         path: 'cultureamp-style-guide/icons/print-white.svg',
         icon: require('cultureamp-style-guide/icons/print-white.svg'),
       },
@@ -273,7 +273,7 @@ export default [
         icon: require('cultureamp-style-guide/icons/skip.svg'),
       },
       {
-        title: 'Skip',
+        title: 'Skip (White)',
         path: 'cultureamp-style-guide/icons/skip-white.svg',
         icon: require('cultureamp-style-guide/icons/skip-white.svg'),
       },
