@@ -12,37 +12,36 @@ class IconSizeSpaceTouch extends React.Component {
     return (
       <Card>
         <div className={styles.cardWrapper}>
-          {this.renderImage(
-            'Minimum Size',
-            minimumSize,
-            'Each icon should have a minimum width of 20px'
-          )}
-          {this.renderImage(
-            'Spacing',
-            spacing,
-            'Labels should sit 10px to the right of an icon'
-          )}
-          {this.renderImage(
-            'Touch Target',
-            touchArea,
-            'If an icon is clickable the clickable area should be at least a 48px square surrounding the icon'
-          )}
-          {this.renderImage(
-            'Neighbouring Icons',
-            neighbouringIcons,
-            'If two icons are side-by-side in a toolbar, they should each have a 48px touch area, resulting in 96px total width'
-          )}
+          <div className={styles.iconExample}>
+            <strong>Minimum Size</strong>
+            <img
+              src={minimumSize}
+              alt="Each icon should have a minimum width of 20px"
+            />
+          </div>
+          <div className={styles.iconExample}>
+            <strong>Spacing</strong>
+            <img
+              src={spacing}
+              alt="Labels should sit 10px to the right of an icon"
+            />
+          </div>
+          <div className={styles.iconExample}>
+            <strong>Touch Area</strong>
+            <img
+              src={touchArea}
+              alt="If an icon is clickable the clickable area should be at least a 48px square surrounding the icon"
+            />
+          </div>
+          <div className={styles.iconExample}>
+            <strong>Neighbouring Icons</strong>
+            <img
+              src={neighbouringIcons}
+              alt="If two icons are side-by-side in a toolbar, they should each have a 48px touch area, resulting in 96px total width"
+            />
+          </div>
         </div>
       </Card>
-    );
-  }
-
-  renderImage(title, img, alt) {
-    return (
-      <div className={styles.iconExample}>
-        <strong>{title}</strong>
-        <img src={img} alt={alt} title={alt} />
-      </div>
     );
   }
 }
