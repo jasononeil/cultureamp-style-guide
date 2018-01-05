@@ -1,15 +1,22 @@
 // @flow
 import * as React from 'react';
 
-import styles from './StatusMenu.module.scss';
-import Status from './Status.js';
+import styles from './Menu.module.scss';
+import Tooltip from './Tooltip.js';
 
 type Props = {
-  label: string,
+  children?: React.Element<any>,
+  header?: React.Element<any>,
   tooltip: string,
   hideTooltip: boolean,
-  style?: 'status' | 'masquerading' | 'superuser',
-  menuItems: Array<{| label: string, link: string |}>,
+  items: Array<
+    | {|
+        label: string,
+        link: string,
+        data?: { [key: string]: string },
+      |}
+    | false
+  >,
   onMenuChange?: (open: boolean) => void,
 };
 
@@ -17,28 +24,30 @@ type State = {
   open: boolean,
 };
 
-export default class StatusMenu extends React.Component<Props, State> {
+export default class Menu extends React.Component<Props, State> {
   root: ?HTMLElement;
 
   static defaultProps = {
-    menuItems: [],
+    items: [],
     hideTooltip: false,
   };
 
   state = { open: false };
 
   render() {
-    const { label, tooltip, style } = this.props;
+    const { children, tooltip, hideTooltip } = this.props;
 
     return (
       <div className={styles.root} ref={root => (this.root = root)}>
-        <Status
-          label={label}
+        <Tooltip
           tooltip={tooltip}
-          style={style}
-          onClick={this.toggle}
-          hideTooltip={this.state.open || this.props.hideTooltip}
-        />
+          hideTooltip={this.state.open || hideTooltip}
+          tabIndex={null} // button inside takes focus instead
+        >
+          <button className={styles.button} onClick={this.toggle}>
+            {children}
+          </button>
+        </Tooltip>
         {this.state.open && this.renderMenu()}
       </div>
     );
@@ -52,6 +61,8 @@ export default class StatusMenu extends React.Component<Props, State> {
   };
 
   renderMenu() {
+    const { header, items } = this.props;
+
     return (
       <div
         className={styles.menu}
@@ -59,11 +70,27 @@ export default class StatusMenu extends React.Component<Props, State> {
         tabIndex="-1"
       >
         <div>
-          {this.props.menuItems.map(({ label, link }, index) => (
-            <a key={index} href={link} className={styles.menuItem}>
-              {label}
-            </a>
-          ))}
+          {header}
+          {items.map((item, index) => {
+            if (item === false) return;
+            const { label, link, data = {} } = item;
+
+            const dataAttributes = {};
+            Object.keys(data).forEach(key => {
+              dataAttributes[`data-${key}`] = data[key];
+            });
+
+            return (
+              <a
+                key={index}
+                href={link}
+                className={styles.menuItem}
+                {...dataAttributes}
+              >
+                {label}
+              </a>
+            );
+          })}
         </div>
       </div>
     );

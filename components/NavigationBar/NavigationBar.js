@@ -9,16 +9,14 @@ import {
   LocalBadge,
   namedBadge,
 } from './components/Badge.js';
-import AccountMenu from './components/AccountMenu.js';
 import Link from './components/Link.js';
-import Status from './components/Status.js';
-import StatusMenu from './components/StatusMenu.js';
+import Menu from './components/Menu.js';
+import Tooltip from './components/Tooltip.js';
 
 type SupportedChild =
-  | React.Element<typeof AccountMenu>
   | React.Element<typeof Link>
-  | React.Element<typeof Status>
-  | React.Element<typeof StatusMenu>;
+  | React.Element<typeof Menu>
+  | React.Element<typeof Tooltip>;
 
 type Props = {|
   environment: string,
@@ -106,8 +104,7 @@ export default class NavigationBar extends React.Component<Props, State> {
 
   state = { menusOpen: 0 };
 
-  static AccountMenu = AccountMenu;
   static Link = Link;
-  static StatusMenu = StatusMenu;
-  static Status = Status;
+  static Menu = Menu;
+  static Tooltip = Tooltip;
 }
