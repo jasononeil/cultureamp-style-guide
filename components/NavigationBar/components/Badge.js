@@ -13,7 +13,6 @@ type BadgeProps = {|
 
 export function ProductionBadge(props: BadgeProps) {
   return (
-    // TODO: Make this clickable (go home)
     <div className={styles.badge}>
       <a href="/">
         {props.loading ? (
