@@ -16,11 +16,6 @@
 
   border-radius: $ca-border-radius;
   color: rgba(#fff, 0.5);
-}
-
-// separate so that .link can be composed for non-interactive elements
-.hoverLink {
-  composes: link;
 
   &:hover,
   &:focus {
