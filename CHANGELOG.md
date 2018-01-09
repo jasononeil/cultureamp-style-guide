@@ -1,8 +1,12 @@
 # Release History: cultureamp-style-guide
 
+## 5.1.0
+
+* ✨ Add NavigationBar component.
+
 ## 5.0.2
 
-* 👍  Add text analytics icons.
+* 👍 Add text analytics icons.
 
 ## 5.0.1
 
