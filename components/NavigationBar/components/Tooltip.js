@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import styles from './Tooltip.module.scss';
 
 type Props = {|
-  children?: React.Element<any>,
+  children?: React.Node,
   tabIndex: number | null,
   tooltip: string,
   hideTooltip: boolean,
