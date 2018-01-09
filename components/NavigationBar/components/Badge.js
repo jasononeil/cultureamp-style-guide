@@ -73,15 +73,12 @@ type MonogramBadgeProps = {|
 
 function MonogramBadge(props: MonogramBadgeProps) {
   return (
-    <div
-      className={classNames(styles.badge, props.envClass)}
-      title={props.monogram}
-    >
+    <div className={classNames(styles.badge, props.envClass)}>
       <a href="/" aria-live="polite">
         {props.loading ? (
-          <Icon icon={spinner} title="loading…" />
+          <Icon icon={spinner} title="loading" />
         ) : (
-          <span aria-hidden>{props.monogram.substr(0, 2)}</span>
+          <span aria-label={props.monogram}>{props.monogram.substr(0, 2)}</span>
         )}
       </a>
     </div>
