@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+set -o pipefail
+set -u
+
+bin/buildSite
+yarn run gh-pages -d guide/public

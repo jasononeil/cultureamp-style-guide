@@ -1,0 +1,5 @@
+steps:
+  - command: bin/ci_buildSite.sh
+    label: Test build of Gatsby Site
+    agents:
+      queue: buildkite-elastic

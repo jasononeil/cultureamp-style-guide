@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  style-guide-test:
+    build:
+      context: ./
+      dockerfile: Dockerfile-style-guide
+    image: style-guide-test
+    volumes:
+      - '.:/style-guide'
+      - 'node_modules:/style-guide/node_modules'
+      - 'guide_node_modules:/style-guide/guide/node_modules'
+volumes:
+  node_modules: null
+  guide_node_modules: null

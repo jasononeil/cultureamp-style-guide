@@ -1,18 +1,11 @@
 {
   "name": "cultureamp-style-guide",
-  "version": "5.0.0",
+  "version": "5.0.2",
   "description": "Culture Amp Living Style Guide",
   "main": "index.js",
   "repository": "git@github.com:cultureamp/cultureamp-style-guide.git",
   "author": "Kevin Yank <kevin@cultureamp.com>",
   "license": "MIT",
-  "scripts": {
-    "clean": "rm -rf guide/public/*",
-    "start": "cd guide && yarn gatsby develop",
-    "build": "cd guide && yarn gatsby build --prefix-paths",
-    "deploy": "yarn run clean && yarn run build && yarn run deploy:ghpages",
-    "deploy:ghpages": "gh-pages -d guide/public"
-  },
   "browserslist": [
     "> 1%",
     "Last 2 versions",
