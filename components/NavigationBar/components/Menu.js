@@ -64,7 +64,7 @@ export default class Menu extends React.Component<Props, State> {
   };
 
   renderMenu() {
-    const { header, items, tooltip } = this.props;
+    const { header, items } = this.props;
 
     return (
       <div className={styles.menu}>
