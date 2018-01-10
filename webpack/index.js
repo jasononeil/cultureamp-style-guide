@@ -132,6 +132,7 @@ function cssRule(options) {
       {
         loader: require.resolve('postcss-loader'),
         options: {
+          ident: 'cultureamp-style-guide-postcss',
           plugins: () => [require('autoprefixer')()],
           sourceMap: true,
         },
