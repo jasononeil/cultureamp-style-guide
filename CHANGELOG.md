@@ -1,5 +1,9 @@
 # Release History: cultureamp-style-guide
 
+## 5.1.1
+
+* 🐛 Fix compilation issue when multiple postcss-loaders exist.
+
 ## 5.1.0
 
 * ✨ Add NavigationBar component.
