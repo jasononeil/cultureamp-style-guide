@@ -1,0 +1,64 @@
+@import '~cultureamp-style-guide/styles/border';
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  // reset button styles
+  appearance: none;
+  background: transparent;
+  border: none;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  transition: none; // override _bootstrap-overrides.scss
+
+  // fill parent
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  composes: tooltip visible from './Tooltip.module.scss';
+
+  &:focus {
+    // focus is non-interactive
+    outline: 0;
+  }
+
+  > * {
+    align-self: flex-end;
+    padding: 1em 0;
+
+    font-size: $ca-body-font-size;
+    line-height: $ca-body-line-height;
+    font-weight: $ca-body-font-weight;
+  }
+}
+
+.menuTitle {
+  // screen readers only
+  position: absolute;
+  left: -9999em;
+}
+
+.menuItem {
+  display: block;
+  padding: ($ca-grid / 8) 2em;
+
+  &,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: add-tint($ca-palette-ink, 10%);
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "cultureamp-style-guide",
-  "version": "5.0.0",
+  "version": "5.1.2",
   "description": "Culture Amp Living Style Guide",
   "main": "index.js",
   "repository": "git@github.com:cultureamp/cultureamp-style-guide.git",
@@ -17,7 +17,10 @@
     "Android >= 4"
   ],
   "devDependencies": {
+    "css-module-flow": "^1.0.0",
+    "empty": "^0.10.1",
     "extract-text-webpack-plugin": "^3.0.0",
+    "flow-bin": "^0.61.0",
     "gh-pages": "^1.0.0",
     "postcss-normalize": "^3.0.0",
     "react": "^15.5.4",
@@ -28,6 +31,7 @@
     "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
+    "autoprefixer": "^7.2.3",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-add-react-displayname": "^0.0.4",

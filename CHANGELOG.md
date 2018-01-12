@@ -1,5 +1,25 @@
 # Release History: cultureamp-style-guide
 
+## 5.1.2
+
+* 👍 Add tasks icon.
+
+## 5.1.1
+
+* 🐛 Fix compilation issue when multiple postcss-loaders exist.
+
+## 5.1.0
+
+* ✨ Add NavigationBar component.
+
+## 5.0.2
+
+* 👍 Add text analytics icon.
+
+## 5.0.1
+
+* 👍 Add lock icon, re-export exclamation-white icon.
+
 ## 5.0.0
 
 * 💔 Renamed CSS modules to use `*.module.scss` naming convention for
