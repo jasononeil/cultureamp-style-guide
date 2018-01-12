@@ -1,0 +1,86 @@
+@import '~cultureamp-style-guide/styles/type';
+@import '~cultureamp-style-guide/styles/border';
+@import '~cultureamp-style-guide/styles/color';
+
+.header {
+  $font-size: $ca-grid * 5/6;
+  font-size: $font-size;
+  line-height: $ca-grid / $font-size * 2;
+  font-weight: $ca-weight-book;
+}
+
+$tileWidth: 160px;
+$tileHeight: 144px;
+
+.iconGrid {
+  border-top: 1px solid $ca-border-color;
+  padding-top: $ca-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $tileWidth);
+}
+
+.iconTile {
+  composes: buttonReset from 'components/HtmlContent.module.scss';
+  cursor: pointer;
+  border-radius: $ca-border-radius;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: add-tint($ca-palette-ink, 94%);
+  }
+}
+
+.tileWrapper {
+  // Due to a firefox bug, we must use the display:flex rule on a wrapper div rather than the button element directly.
+  box-sizing: border-box;
+  width: $tileWidth;
+  height: $tileHeight;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 10px;
+}
+
+.iconLabel {
+  display: block;
+  text-align: center;
+}
+
+.iconWrapper {
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.copyLabel {
+  display: block;
+  text-align: center;
+  opacity: 0;
+  color: $ca-palette-ocean;
+  font-size: $ca-control-action-font-size;
+
+  .iconTile:hover &,
+  .iconTile:focus &,
+  .iconTile:active & {
+    opacity: 1;
+  }
+  .clicked & {
+    opacity: 1;
+    color: $ca-palette-seedling;
+    transition-duration: 0s;
+  }
+}
+
+.tickIcon {
+  height: 16px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.pathInput {
+  position: absolute;
+  left: -100000px;
+}

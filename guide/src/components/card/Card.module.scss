@@ -11,3 +11,8 @@ $cardPadding: $ca-grid / 2;
   margin-bottom: 20px;
   padding: $cardPadding;
 }
+
+.dark {
+  background-color: $ca-palette-ink;
+  color: white;
+}
