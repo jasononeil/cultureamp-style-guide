@@ -10,7 +10,7 @@ class IconGrid extends React.Component {
       icons = allIcons.find(section => section.category === category).icons;
     return (
       <div>
-        <h2 className={styles.header}>{this.props.category}</h2>
+        <h2 className={styles.header}>{category}</h2>
         <div className={styles.iconGrid}>
           {icons.map(icon => <IconTile {...icon} />)}
         </div>
