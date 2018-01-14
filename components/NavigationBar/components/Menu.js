@@ -17,6 +17,7 @@ type Props = {|
   hideTooltip: boolean,
   items: Array<MenuItem>,
   onMenuChange?: (open: boolean) => void,
+  automationId?: string,
 |};
 
 type State = {|
@@ -34,7 +35,7 @@ export default class Menu extends React.Component<Props, State> {
   state = { open: false };
 
   render() {
-    const { children, tooltip, hideTooltip } = this.props;
+    const { children, tooltip, hideTooltip, automationId } = this.props;
 
     return (
       <nav className={styles.root} ref={root => (this.root = root)}>
@@ -47,6 +48,8 @@ export default class Menu extends React.Component<Props, State> {
             className={styles.button}
             onClick={this.toggle}
             aria-expanded={this.state.open}
+            data-automation-id={automationId}
+            onMouseDown={e => e.preventDefault()}
           >
             {children}
           </button>
@@ -60,7 +63,6 @@ export default class Menu extends React.Component<Props, State> {
     const open = !this.state.open;
     this.setState({ open });
     if (this.props.onMenuChange) this.props.onMenuChange(open);
-    e.preventDefault();
   };
 
   renderMenu() {
