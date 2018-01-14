@@ -1,5 +1,14 @@
 # Release History: cultureamp-style-guide
 
+## 5.1.3
+
+* ✨ Add `interactiveIconWrapper` that will apply icon opacities to icons that
+  sit inside buttons and other interactive elements. Usage:
+
+      .myButton {
+        composes: interactiveIconWrapper from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
+      }
+
 ## 5.1.2
 
 * 👍 Add tasks icon.

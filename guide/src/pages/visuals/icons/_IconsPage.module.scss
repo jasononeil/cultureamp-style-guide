@@ -1,0 +1,34 @@
+@import '~cultureamp-style-guide/styles/type';
+@import '~components/card/Card.module.scss';
+
+.cardWrapper {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.iconExample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  min-width: 96px;
+  height: 96px;
+  margin: $cardPadding 30px;
+
+  strong {
+    font-size: 11px;
+    font-weight: $ca-weight-book;
+    letter-spacing: $ca-labels-and-legends-letter-spacing;
+    text-transform: uppercase;
+  }
+
+  .opacityLabel {
+    font-size: 11px;
+    font-weight: $ca-weight-book;
+  }
+}
