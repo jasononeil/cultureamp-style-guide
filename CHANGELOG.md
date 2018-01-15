@@ -1,5 +1,9 @@
 # Release History: cultureamp-style-guide
 
+## 5.1.5
+
+* 🐛 Fix flaky positioning of tooltip arrows in Firefox.
+
 ## 5.1.4
 
 * 👍 Add `automationId` prop to `NavigationBar.Menu`.
