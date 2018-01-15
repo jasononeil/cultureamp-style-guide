@@ -5,8 +5,9 @@
 .header {
   $font-size: $ca-grid * 5/6;
   font-size: $font-size;
-  line-height: $ca-grid / $font-size * 2;
+  line-height: $ca-grid / $font-size;
   font-weight: $ca-weight-book;
+  margin-top: $ca-grid * 3;
 }
 
 $tileWidth: 160px;
@@ -21,6 +22,7 @@ $tileHeight: 144px;
 
 .iconTile {
   composes: buttonReset from 'components/HtmlContent.module.scss';
+  composes: interactiveIconWrapper from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
   cursor: pointer;
   border-radius: $ca-border-radius;
 
