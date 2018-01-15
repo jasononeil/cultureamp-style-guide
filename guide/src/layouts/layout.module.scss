@@ -1,9 +1,61 @@
 @import '~cultureamp-style-guide/styles/type';
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/border';
+@import '~cultureamp-style-guide/styles/layers';
+@import '~cultureamp-style-guide/components/NavigationBar/_styles';
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    'navbar header'
+    'navbar content';
+  grid-template-columns: $ca-navigation-bar__width auto;
+  grid-template-rows: $ca-navigation-bar__width auto;
+}
+
+.header {
+  grid-area: header;
+  height: $ca-navigation-bar__width;
+  position: relative;
+
+  .headerBar {
+    background: white;
+    position: fixed;
+    z-index: $ca-z-index-fixed;
+    height: $ca-navigation-bar__width;
+    width: calc(100% - #{$ca-navigation-bar__width});
+    padding: 5px 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav {
+  grid-area: navbar;
+  width: $ca-navigation-bar__width;
+}
+
+.content {
+  grid-area: content;
+
+  // Create a pseudo-element for inline anchor elements to make sure they're
+  // positioned correctly under the fixed header.
+  :target:before {
+    content: '';
+    display: block;
+    height: $ca-navigation-bar__width;
+    margin: -$ca-navigation-bar__width 0 0;
+  }
+}
 
 .pageContainer {
   margin: 0 auto;
   max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
+  padding: 1.45em 1.0875rem 1.45rem;
   clear: both;
 }
 
@@ -27,4 +79,12 @@
 }
 .item a {
   text-decoration: none;
+}
+
+.cultureAmpMenu {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  color: add-tint($ca-palette-coral, 50%);
+  border-radius: $ca-border-radius;
 }

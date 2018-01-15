@@ -6,38 +6,34 @@ import NavigationBar from 'cultureamp-style-guide/components/NavigationBar';
 import Icon from 'cultureamp-style-guide/components/Icon';
 import enso from 'cultureamp-style-guide/icons/ca-monogram.svg';
 import homeIcon from 'cultureamp-style-guide/icons/home.svg';
-import emptyIcon from 'cultureamp-style-guide/icons/empty.svg';
-import Link from 'components/Link';
+import hamburgerIcon from 'cultureamp-style-guide/icons/hamburger.svg';
+import { Link, ExternalLink } from 'components/Link';
 import './index.scss';
 import styles from './layout.module.scss';
 
 const pages = [
-  { title: 'Language', url: '/language', icon: emptyIcon },
-  { title: 'Visuals', url: '/visuals', icon: emptyIcon },
-  { title: 'Atoms', url: '/atoms', icon: emptyIcon },
-  { title: 'Molecules', url: '/molecules', icon: emptyIcon },
-  { title: 'Organisms', url: '/organisms', icon: emptyIcon },
-  { title: 'Templates', url: '/templates', icon: emptyIcon },
-  { title: 'Pages', url: '/pages', icon: emptyIcon },
+  { title: 'Language', url: '/language', icon: enso },
+  { title: 'Visuals', url: '/visuals', icon: enso },
+  { title: 'Atoms', url: '/atoms', icon: enso },
+  { title: 'Molecules', url: '/molecules', icon: enso },
+  { title: 'Organisms', url: '/organisms', icon: enso },
+  { title: 'Templates', url: '/templates', icon: enso },
+  { title: 'Pages', url: '/pages', icon: enso },
 ];
 
 const Header = () => (
-  <div className={styles.pageContainer}>
-    <h1 className={styles.title}>
-      <Link to="/">Kaizen</Link> - Culture Amp's Living Style Guide
-    </h1>
-    <ul className={styles.menu}>
-      {pages.map(page => (
-        <li key={page.url} className={styles.item}>
-          <Link to={page.url}>{page.title}</Link>
-        </li>
-      ))}
-    </ul>
+  <div className={styles.headerBar}>
+    <Link to="/">
+      <Icon icon={hamburgerIcon} type="img" title="Expand Menu" />
+    </Link>
+    <ExternalLink to="https://github.com/cultureamp/component-library">
+      Download Style Guide
+    </ExternalLink>
   </div>
 );
 
 const Nav = () => (
-  <NavigationBar loading={false}>
+  <NavigationBar loading={false} colorScheme="kaizen">
     {pages.map(page => (
       <NavigationBar.Link
         key={page.url}
@@ -68,14 +64,7 @@ const Nav = () => (
         },
       ]}
     >
-      <div
-        style={{
-          background: '#fff',
-          width: '100%',
-          height: '100%',
-          color: '#F8A6AE', // add-tint($ca-palette-coral, 50%)
-        }}
-      >
+      <div className={styles.cultureAmpMenu}>
         <Icon
           icon={enso}
           role="img"
@@ -94,9 +83,17 @@ const TemplateWrapper = ({ children }) => (
       <meta name="description" content="Kaizen - Culture Amp's Style Guide" />
       <meta name="keywords" content="Culture Amp, design system, style guide" />
     </Helmet>
-    <Nav />
-    <Header />
-    <div className={styles.pageContainer}>{children()}</div>
+    <div className={styles.grid}>
+      <div className={styles.header}>
+        <Header />
+      </div>
+      <div className={styles.nav}>
+        <Nav />
+      </div>
+      <div className={styles.content}>
+        <div className={styles.pageContainer}>{children()}</div>
+      </div>
+    </div>
   </div>
 );
 
