@@ -30,14 +30,20 @@ $ca-heading-2-line-height: $ca-grid / $ca-heading-2-font-size;
 $ca-heading-2-font-weight: $ca-weight-medium;
 
 // Heading 3
-$ca-heading-3-font-size: $ca-grid * 2/3;
+$ca-heading-3-font-size: 16px;
 $ca-heading-3-line-height: $ca-grid / $ca-heading-3-font-size;
 $ca-heading-3-font-weight: $ca-weight-medium;
 
 // Intro Para
-$ca-intro-para-font-size: $ca-grid * 2/3;
+$ca-intro-para-font-size: 16px;
 $ca-intro-para-line-height: $ca-grid / $ca-intro-para-font-size;
 $ca-intro-para-font-weight: $ca-weight-book;
+
+// Intro Para (Ideal Sans variant)
+$ca-intro-para-ideal-sans-font-size: 18px;
+$ca-intro-para-ideal-sans-line-height: $ca-grid /
+  $ca-intro-para-ideal-sans-font-size;
+$ca-intro-para-ideal-sans-font-weight: $ca-weight-light;
 
 // Body
 $ca-body-font-size: $ca-default-font-size;

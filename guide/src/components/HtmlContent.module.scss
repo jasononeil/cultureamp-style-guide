@@ -59,6 +59,13 @@
   margin: $ca-grid 0;
 }
 
+.introParagraph {
+  composes: p;
+  font-size: $ca-intro-para-ideal-sans-font-size;
+  line-height: $ca-intro-para-ideal-sans-line-height;
+  font-weight: $ca-intro-para-ideal-sans-font-weight;
+}
+
 .table,
 .htmlContent table {
   width: 100%;
