@@ -10,9 +10,13 @@ $ca-weight-semibold: 500; // Note: in Sketch, semibold is 600. But murmur has an
 $ca-weight-normal: $ca-weight-book;
 
 $ca-default-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$ca-ideal-sans: 'Ideal Sans A', 'Ideal Sans B', $ca-default-font-family;
 $ca-default-font-size: 14px;
 $ca-default-line-height: $ca-grid / $ca-default-font-size;
+
+$ca-ideal-sans: 'Ideal Sans A', 'Ideal Sans B', $ca-default-font-family;
+$ca-ideal-sans-font-size: 16px;
+$ca-ideal-sans-line-height: $ca-grid / $ca-ideal-sans-font-size;
+
 $ca-base-text-color: $ca-palette-ink;
 $ca-link-text-color: $ca-palette-ocean;
 $ca-link-hover-text-color: $ca-palette-ocean;
@@ -36,9 +40,14 @@ $ca-intro-para-line-height: $ca-grid / $ca-intro-para-font-size;
 $ca-intro-para-font-weight: $ca-weight-book;
 
 // Body
-$ca-body-font-size: 14px;
-$ca-body-line-height: $ca-grid / $ca-body-font-size;
+$ca-body-font-size: $ca-default-font-size;
+$ca-body-line-height: $ca-default-line-height;
 $ca-body-font-weight: $ca-weight-book;
+
+// Body (Ideal Sans variant)
+$ca-body-ideal-sans-font-size: $ca-ideal-sans-font-size;
+$ca-body-ideal-sans-line-height: $ca-ideal-sans-line-height;
+$ca-body-ideal-sans-font-weight: $ca-weight-light;
 
 // Control Action
 $ca-control-action-font-size: 14px;
