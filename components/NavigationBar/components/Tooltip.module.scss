@@ -36,11 +36,13 @@
     }
   }
 
+  // tooltip arrow
   &::before {
-    // tooltip arrow
     content: '';
     position: absolute;
     left: -$tooltip__arrow-size;
+    top: calc(50% - #{$tooltip__arrow-size});
+
     border: $tooltip__arrow-size solid transparent;
     border-left-width: 0;
     border-right-color: $ca-palette-ink;
