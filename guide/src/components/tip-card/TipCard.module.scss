@@ -20,12 +20,11 @@ $cardPadding: 24px;
 .cardBody {
   padding: ($cardPadding / 2) $cardPadding;
   ul {
-    list-style: none;
-    padding-left: 0;
-    li::before {
-      $mdash: '\2014\a0';
-      content: $mdash;
-      float: left;
+    $mdash: '\2014\a0';
+    list-style: $mdash;
+    padding-left: 21px;
+    p {
+      margin-left: 7px;
     }
   }
 }
