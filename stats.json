@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-visuals-icons-index-mdx": [
-      "component---src-pages-visuals-icons-index-mdx-f0835f1dc930c9e85fbb.js",
-      "component---src-pages-visuals-icons-index-mdx-f0835f1dc930c9e85fbb.js.map"
+      "component---src-pages-visuals-icons-index-mdx-c3b906492eaef2866f14.js",
+      "component---src-pages-visuals-icons-index-mdx-c3b906492eaef2866f14.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-ceda7ea7c13aa9ac84b2.js",
@@ -29,8 +29,8 @@
       "component---src-pages-templates-index-mdx-aefbc67ebdc662ecaa47.js.map"
     ],
     "component---src-pages-visuals-colors-index-mdx": [
-      "component---src-pages-visuals-colors-index-mdx-e368fd83a2bf7004c471.js",
-      "component---src-pages-visuals-colors-index-mdx-e368fd83a2bf7004c471.js.map"
+      "component---src-pages-visuals-colors-index-mdx-67a693332e21b3d5bec8.js",
+      "component---src-pages-visuals-colors-index-mdx-67a693332e21b3d5bec8.js.map"
     ],
     "component---src-pages-language-checklist-mdx": [
       "component---src-pages-language-checklist-mdx-6eb4eaaac60086ecad80.js",
@@ -53,8 +53,8 @@
       "path---atoms-button-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-b40842b34dac97dad31d.js",
-      "component---src-layouts-index-js-b40842b34dac97dad31d.js.map"
+      "component---src-layouts-index-js-b98a3d0c92b4be07c33c.js",
+      "component---src-layouts-index-js-b98a3d0c92b4be07c33c.js.map"
     ],
     "component---src-pages-visuals-typography-index-js": [
       "component---src-pages-visuals-typography-index-js-e79956f896ad7d5d029e.js",
@@ -89,14 +89,14 @@
       "path---visuals-a0e39f21c11f6a62c5ab.js.map"
     ],
     "commons": [
-      "commons-6f23a1a86d5d4492802d.js",
+      "commons-698a72a87abce55ba931.js",
       "build-js-styles.css",
-      "commons-6f23a1a86d5d4492802d.js.map",
+      "commons-698a72a87abce55ba931.js.map",
       "build-js-styles.css.map"
     ],
     "component---src-pages-language-index-mdx": [
-      "component---src-pages-language-index-mdx-b34d1afc5c37e4733b26.js",
-      "component---src-pages-language-index-mdx-b34d1afc5c37e4733b26.js.map"
+      "component---src-pages-language-index-mdx-8c0927ab558a5c09489e.js",
+      "component---src-pages-language-index-mdx-8c0927ab558a5c09489e.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
@@ -123,9 +123,9 @@
       "path---visuals-icons-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-700286c7a251625c279e.js",
+      "app-8e9595c53a978b2951af.js",
       "build-js-styles.css",
-      "app-700286c7a251625c279e.js.map",
+      "app-8e9595c53a978b2951af.js.map",
       "build-js-styles.css.map"
     ],
     "component---src-pages-atoms-index-mdx": [
