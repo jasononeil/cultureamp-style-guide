@@ -7,7 +7,8 @@ import Icon from 'cultureamp-style-guide/components/Icon';
 import enso from 'cultureamp-style-guide/icons/ca-monogram.svg';
 import homeIcon from 'cultureamp-style-guide/icons/home.svg';
 import hamburgerIcon from 'cultureamp-style-guide/icons/hamburger.svg';
-import { Link, ExternalLink } from 'components/Link';
+import diamond from './diamond.svg';
+import { Link, ExternalLink, ActionLink } from 'components/Link';
 import './index.scss';
 import styles from './layout.module.scss';
 
@@ -23,11 +24,14 @@ const pages = [
 
 const Header = () => (
   <div className={styles.headerBar}>
-    <Link to="/">
+    <ActionLink action={() => navigateTo('/')}>
       <Icon icon={hamburgerIcon} type="img" title="Expand Menu" />
-    </Link>
+    </ActionLink>
     <ExternalLink to="https://github.com/cultureamp/component-library">
       Download Style Guide
+      <span className={styles.downloadIcon}>
+        <Icon icon={diamond} type="presentational" />
+      </span>
     </ExternalLink>
   </div>
 );

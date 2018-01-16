@@ -88,3 +88,9 @@
   color: add-tint($ca-palette-coral, 50%);
   border-radius: $ca-border-radius;
 }
+
+.downloadIcon {
+  padding-left: 10px;
+  position: relative;
+  top: 5px;
+}
