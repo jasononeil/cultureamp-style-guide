@@ -3,9 +3,9 @@
 @import '~cultureamp-style-guide/styles/border';
 
 .contentContainer {
-  font-size: $ca-body-font-size;
-  line-height: $ca-body-line-height;
-  font-weight: $ca-body-font-weight;
+  font-size: $ca-body-ideal-sans-font-size;
+  line-height: $ca-body-ideal-sans-line-height;
+  font-weight: $ca-body-ideal-sans-font-weight;
 
   h1,
   h2,
@@ -40,7 +40,7 @@
   line-height: $ca-heading-2-line-height;
   // Note, we're not using $ca-heading-2-font-weight as the styleguide uses a lighter weight than murmur.
   font-weight: $ca-weight-book;
-  margin-top: 0;
+  margin-top: $ca-grid * 3;
   margin-bottom: $ca-grid;
 }
 
@@ -52,6 +52,18 @@
   font-weight: $ca-heading-3-font-weight;
   margin-top: 0;
   margin-bottom: $ca-grid;
+}
+
+.p,
+.htmlContent p {
+  margin: $ca-grid 0;
+}
+
+.introParagraph {
+  composes: p;
+  font-size: $ca-intro-para-ideal-sans-font-size;
+  line-height: $ca-intro-para-ideal-sans-line-height;
+  font-weight: $ca-intro-para-ideal-sans-font-weight;
 }
 
 .table,

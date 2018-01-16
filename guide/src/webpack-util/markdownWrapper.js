@@ -23,6 +23,7 @@ const loader = function(source) {
             h1: { className: htmlStyles.h1 },
             h2: { className: htmlStyles.h2 },
             h3: { className: htmlStyles.h3 },
+            p: { className: htmlStyles.p },
             table: { className: htmlStyles.table },
             blockquote: { className: htmlStyles.blockquote },
             hr: { className: htmlStyles.hr },

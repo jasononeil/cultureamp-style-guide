@@ -4,11 +4,6 @@ export default [
     icons: [
       {
         title: 'Action Off',
-        path: 'cultureamp-style-guide/icons/action-off.svg',
-        icon: require('cultureamp-style-guide/icons/action-off.svg'),
-      },
-      {
-        title: 'Action Off (White)',
         path: 'cultureamp-style-guide/icons/action-off-white.svg',
         icon: require('cultureamp-style-guide/icons/action-off-white.svg'),
       },
@@ -24,11 +19,6 @@ export default [
       },
       {
         title: 'Clear',
-        path: 'cultureamp-style-guide/icons/clear.svg',
-        icon: require('cultureamp-style-guide/icons/clear.svg'),
-      },
-      {
-        title: 'Clear (White)',
         path: 'cultureamp-style-guide/icons/clear-white.svg',
         icon: require('cultureamp-style-guide/icons/clear-white.svg'),
       },
@@ -39,31 +29,16 @@ export default [
       },
       {
         title: 'Comment',
-        path: 'cultureamp-style-guide/icons/comment.svg',
-        icon: require('cultureamp-style-guide/icons/comment.svg'),
-      },
-      {
-        title: 'Comment (White)',
         path: 'cultureamp-style-guide/icons/comment-white.svg',
         icon: require('cultureamp-style-guide/icons/comment-white.svg'),
       },
       {
         title: 'Comment Add',
-        path: 'cultureamp-style-guide/icons/comment-add.svg',
-        icon: require('cultureamp-style-guide/icons/comment-add.svg'),
-      },
-      {
-        title: 'Comment Add (White)',
         path: 'cultureamp-style-guide/icons/comment-add-white.svg',
         icon: require('cultureamp-style-guide/icons/comment-add-white.svg'),
       },
       {
         title: 'Comment Disabled',
-        path: 'cultureamp-style-guide/icons/comment-disabled.svg',
-        icon: require('cultureamp-style-guide/icons/comment-disabled.svg'),
-      },
-      {
-        title: 'Comment Disabled (White)',
         path: 'cultureamp-style-guide/icons/comment-disabled-white.svg',
         icon: require('cultureamp-style-guide/icons/comment-disabled-white.svg'),
       },
@@ -74,41 +49,21 @@ export default [
       },
       {
         title: 'Date End',
-        path: 'cultureamp-style-guide/icons/date-end.svg',
-        icon: require('cultureamp-style-guide/icons/date-end.svg'),
-      },
-      {
-        title: 'Date End (White)',
         path: 'cultureamp-style-guide/icons/date-end-white.svg',
         icon: require('cultureamp-style-guide/icons/date-end-white.svg'),
       },
       {
         title: 'Date Range',
-        path: 'cultureamp-style-guide/icons/date-range.svg',
-        icon: require('cultureamp-style-guide/icons/date-range.svg'),
-      },
-      {
-        title: 'Date Range (White)',
         path: 'cultureamp-style-guide/icons/date-range-white.svg',
         icon: require('cultureamp-style-guide/icons/date-range-white.svg'),
       },
       {
         title: 'Date Start',
-        path: 'cultureamp-style-guide/icons/date-start.svg',
-        icon: require('cultureamp-style-guide/icons/date-start.svg'),
-      },
-      {
-        title: 'Date Start (White)',
         path: 'cultureamp-style-guide/icons/date-start-white.svg',
         icon: require('cultureamp-style-guide/icons/date-start-white.svg'),
       },
       {
         title: 'Draft',
-        path: 'cultureamp-style-guide/icons/draft.svg',
-        icon: require('cultureamp-style-guide/icons/draft.svg'),
-      },
-      {
-        title: 'Draft (White)',
         path: 'cultureamp-style-guide/icons/draft-white.svg',
         icon: require('cultureamp-style-guide/icons/draft-white.svg'),
       },
@@ -124,21 +79,11 @@ export default [
       },
       {
         title: 'Equal',
-        path: 'cultureamp-style-guide/icons/equal.svg',
-        icon: require('cultureamp-style-guide/icons/equal.svg'),
-      },
-      {
-        title: 'Equal (White)',
         path: 'cultureamp-style-guide/icons/equal-white.svg',
         icon: require('cultureamp-style-guide/icons/equal-white.svg'),
       },
       {
         title: 'Export',
-        path: 'cultureamp-style-guide/icons/export.svg',
-        icon: require('cultureamp-style-guide/icons/export.svg'),
-      },
-      {
-        title: 'Export (White)',
         path: 'cultureamp-style-guide/icons/export-white.svg',
         icon: require('cultureamp-style-guide/icons/export-white.svg'),
       },
@@ -154,11 +99,6 @@ export default [
       },
       {
         title: 'Flag Off',
-        path: 'cultureamp-style-guide/icons/flag-off.svg',
-        icon: require('cultureamp-style-guide/icons/flag-off.svg'),
-      },
-      {
-        title: 'Flag Off (White)',
         path: 'cultureamp-style-guide/icons/flag-off-white.svg',
         icon: require('cultureamp-style-guide/icons/flag-off-white.svg'),
       },
@@ -169,11 +109,6 @@ export default [
       },
       {
         title: 'Import',
-        path: 'cultureamp-style-guide/icons/import.svg',
-        icon: require('cultureamp-style-guide/icons/import.svg'),
-      },
-      {
-        title: 'Import (White)',
         path: 'cultureamp-style-guide/icons/import-white.svg',
         icon: require('cultureamp-style-guide/icons/import-white.svg'),
       },
@@ -184,13 +119,13 @@ export default [
       },
       {
         title: 'Launch',
-        path: 'cultureamp-style-guide/icons/launch.svg',
-        icon: require('cultureamp-style-guide/icons/launch.svg'),
-      },
-      {
-        title: 'Launch (White)',
         path: 'cultureamp-style-guide/icons/launch-white.svg',
         icon: require('cultureamp-style-guide/icons/launch-white.svg'),
+      },
+      {
+        title: 'Lock',
+        path: 'cultureamp-style-guide/icons/lock-white.svg',
+        icon: require('cultureamp-style-guide/icons/lock-white.svg'),
       },
       {
         title: 'Log Out',
@@ -219,11 +154,6 @@ export default [
       },
       {
         title: 'Print',
-        path: 'cultureamp-style-guide/icons/print.svg',
-        icon: require('cultureamp-style-guide/icons/print.svg'),
-      },
-      {
-        title: 'Print (White)',
         path: 'cultureamp-style-guide/icons/print-white.svg',
         icon: require('cultureamp-style-guide/icons/print-white.svg'),
       },
@@ -244,11 +174,6 @@ export default [
       },
       {
         title: 'Search',
-        path: 'cultureamp-style-guide/icons/search.svg',
-        icon: require('cultureamp-style-guide/icons/search.svg'),
-      },
-      {
-        title: 'Search (White)',
         path: 'cultureamp-style-guide/icons/search-white.svg',
         icon: require('cultureamp-style-guide/icons/search-white.svg'),
       },
@@ -269,11 +194,6 @@ export default [
       },
       {
         title: 'Skip',
-        path: 'cultureamp-style-guide/icons/skip.svg',
-        icon: require('cultureamp-style-guide/icons/skip.svg'),
-      },
-      {
-        title: 'Skip (White)',
         path: 'cultureamp-style-guide/icons/skip-white.svg',
         icon: require('cultureamp-style-guide/icons/skip-white.svg'),
       },
@@ -309,71 +229,36 @@ export default [
       },
       {
         title: 'Delta',
-        path: 'cultureamp-style-guide/icons/delta.svg',
-        icon: require('cultureamp-style-guide/icons/delta.svg'),
-      },
-      {
-        title: 'Delta (White)',
         path: 'cultureamp-style-guide/icons/delta-white.svg',
         icon: require('cultureamp-style-guide/icons/delta-white.svg'),
       },
       {
         title: 'Delta 2',
-        path: 'cultureamp-style-guide/icons/delta-bare.svg',
-        icon: require('cultureamp-style-guide/icons/delta-bare.svg'),
-      },
-      {
-        title: 'Delta 2 (White)',
         path: 'cultureamp-style-guide/icons/delta-bare-white.svg',
         icon: require('cultureamp-style-guide/icons/delta-bare-white.svg'),
       },
       {
         title: 'Empty',
-        path: 'cultureamp-style-guide/icons/empty.svg',
-        icon: require('cultureamp-style-guide/icons/empty.svg'),
-      },
-      {
-        title: 'Empty (White)',
         path: 'cultureamp-style-guide/icons/empty-white.svg',
         icon: require('cultureamp-style-guide/icons/empty-white.svg'),
       },
       {
         title: 'Error',
-        path: 'cultureamp-style-guide/icons/exclamation.svg',
-        icon: require('cultureamp-style-guide/icons/exclamation.svg'),
-      },
-      {
-        title: 'Error (White)',
         path: 'cultureamp-style-guide/icons/exclamation-white.svg',
         icon: require('cultureamp-style-guide/icons/exclamation-white.svg'),
       },
       {
         title: 'File',
-        path: 'cultureamp-style-guide/icons/file.svg',
-        icon: require('cultureamp-style-guide/icons/file.svg'),
-      },
-      {
-        title: 'File (White)',
         path: 'cultureamp-style-guide/icons/file-white.svg',
         icon: require('cultureamp-style-guide/icons/file-white.svg'),
       },
       {
         title: 'Information',
-        path: 'cultureamp-style-guide/icons/information.svg',
-        icon: require('cultureamp-style-guide/icons/information.svg'),
-      },
-      {
-        title: 'Information (White)',
         path: 'cultureamp-style-guide/icons/information-white.svg',
         icon: require('cultureamp-style-guide/icons/information-white.svg'),
       },
       {
         title: 'Kiosk',
-        path: 'cultureamp-style-guide/icons/kiosk.svg',
-        icon: require('cultureamp-style-guide/icons/kiosk.svg'),
-      },
-      {
-        title: 'Kiosk (White)',
         path: 'cultureamp-style-guide/icons/kiosk-white.svg',
         icon: require('cultureamp-style-guide/icons/kiosk-white.svg'),
       },
@@ -389,31 +274,16 @@ export default [
       },
       {
         title: 'Promotions',
-        path: 'cultureamp-style-guide/icons/promotion.svg',
-        icon: require('cultureamp-style-guide/icons/promotion.svg'),
-      },
-      {
-        title: 'Promotions (White)',
         path: 'cultureamp-style-guide/icons/promotion-white.svg',
         icon: require('cultureamp-style-guide/icons/promotion-white.svg'),
       },
       {
         title: 'Question',
-        path: 'cultureamp-style-guide/icons/question.svg',
-        icon: require('cultureamp-style-guide/icons/question.svg'),
-      },
-      {
-        title: 'Question (White)',
         path: 'cultureamp-style-guide/icons/question-white.svg',
         icon: require('cultureamp-style-guide/icons/question-white.svg'),
       },
       {
         title: 'Report',
-        path: 'cultureamp-style-guide/icons/exclamation-octagon.svg',
-        icon: require('cultureamp-style-guide/icons/exclamation-octagon.svg'),
-      },
-      {
-        title: 'Report (White)',
         path: 'cultureamp-style-guide/icons/exclamation-octagon-white.svg',
         icon: require('cultureamp-style-guide/icons/exclamation-octagon-white.svg'),
       },
@@ -429,21 +299,11 @@ export default [
       },
       {
         title: 'Success',
-        path: 'cultureamp-style-guide/icons/success.svg',
-        icon: require('cultureamp-style-guide/icons/success.svg'),
-      },
-      {
-        title: 'Success (White)',
         path: 'cultureamp-style-guide/icons/success-white.svg',
         icon: require('cultureamp-style-guide/icons/success-white.svg'),
       },
       {
         title: 'Time',
-        path: 'cultureamp-style-guide/icons/time.svg',
-        icon: require('cultureamp-style-guide/icons/time.svg'),
-      },
-      {
-        title: 'Time (White)',
         path: 'cultureamp-style-guide/icons/time-white.svg',
         icon: require('cultureamp-style-guide/icons/time-white.svg'),
       },
@@ -614,11 +474,6 @@ export default [
     icons: [
       {
         title: 'Survey Archived',
-        path: 'cultureamp-style-guide/icons/archived.svg',
-        icon: require('cultureamp-style-guide/icons/archived.svg'),
-      },
-      {
-        title: 'Survey Archived (White)',
         path: 'cultureamp-style-guide/icons/archived-white.svg',
         icon: require('cultureamp-style-guide/icons/archived-white.svg'),
       },
@@ -629,51 +484,26 @@ export default [
       },
       {
         title: 'Survey Closed',
-        path: 'cultureamp-style-guide/icons/closed.svg',
-        icon: require('cultureamp-style-guide/icons/closed.svg'),
-      },
-      {
-        title: 'Survey Closed (White)',
         path: 'cultureamp-style-guide/icons/closed-white.svg',
         icon: require('cultureamp-style-guide/icons/closed-white.svg'),
       },
       {
         title: 'Survey Draft',
-        path: 'cultureamp-style-guide/icons/draft.svg',
-        icon: require('cultureamp-style-guide/icons/draft.svg'),
-      },
-      {
-        title: 'Survey Draft (White)',
         path: 'cultureamp-style-guide/icons/draft-white.svg',
         icon: require('cultureamp-style-guide/icons/draft-white.svg'),
       },
       {
         title: 'Survey Open',
-        path: 'cultureamp-style-guide/icons/open.svg',
-        icon: require('cultureamp-style-guide/icons/open.svg'),
-      },
-      {
-        title: 'Survey Open (White)',
         path: 'cultureamp-style-guide/icons/open-white.svg',
         icon: require('cultureamp-style-guide/icons/open-white.svg'),
       },
       {
         title: 'Survey Template',
-        path: 'cultureamp-style-guide/icons/template.svg',
-        icon: require('cultureamp-style-guide/icons/template.svg'),
-      },
-      {
-        title: 'Survey Template (White)',
         path: 'cultureamp-style-guide/icons/template-white.svg',
         icon: require('cultureamp-style-guide/icons/template-white.svg'),
       },
       {
         title: 'Survey Unattributed',
-        path: 'cultureamp-style-guide/icons/unattributed.svg',
-        icon: require('cultureamp-style-guide/icons/unattributed.svg'),
-      },
-      {
-        title: 'Survey Unattributed (White)',
         path: 'cultureamp-style-guide/icons/unattributed-white.svg',
         icon: require('cultureamp-style-guide/icons/unattributed-white.svg'),
       },
@@ -694,51 +524,26 @@ export default [
       },
       {
         title: 'Very Dissatisfied',
-        path: 'cultureamp-style-guide/icons/face-very-dissatisfied.svg',
-        icon: require('cultureamp-style-guide/icons/face-very-dissatisfied.svg'),
-      },
-      {
-        title: 'Very Dissatisfied (White)',
         path: 'cultureamp-style-guide/icons/face-very-dissatisfied-white.svg',
         icon: require('cultureamp-style-guide/icons/face-very-dissatisfied-white.svg'),
       },
       {
         title: 'Dissatisfied',
-        path: 'cultureamp-style-guide/icons/face-dissatisfied.svg',
-        icon: require('cultureamp-style-guide/icons/face-dissatisfied.svg'),
-      },
-      {
-        title: 'Dissatisfied (White)',
         path: 'cultureamp-style-guide/icons/face-dissatisfied-white.svg',
         icon: require('cultureamp-style-guide/icons/face-dissatisfied-white.svg'),
       },
       {
         title: 'Neutral',
-        path: 'cultureamp-style-guide/icons/face-neutral.svg',
-        icon: require('cultureamp-style-guide/icons/face-neutral.svg'),
-      },
-      {
-        title: 'Neutral (White)',
         path: 'cultureamp-style-guide/icons/face-neutral-white.svg',
         icon: require('cultureamp-style-guide/icons/face-neutral-white.svg'),
       },
       {
         title: 'Satisfied',
-        path: 'cultureamp-style-guide/icons/face-satisfied.svg',
-        icon: require('cultureamp-style-guide/icons/face-satisfied.svg'),
-      },
-      {
-        title: 'Satisfied (White)',
         path: 'cultureamp-style-guide/icons/face-satisfied-white.svg',
         icon: require('cultureamp-style-guide/icons/face-satisfied-white.svg'),
       },
       {
         title: 'Very Satisfied',
-        path: 'cultureamp-style-guide/icons/face-very-satisfied.svg',
-        icon: require('cultureamp-style-guide/icons/face-very-satisfied.svg'),
-      },
-      {
-        title: 'Very Satisfied (White)',
         path: 'cultureamp-style-guide/icons/face-very-satisfied-white.svg',
         icon: require('cultureamp-style-guide/icons/face-very-satisfied-white.svg'),
       },
@@ -749,31 +554,16 @@ export default [
     icons: [
       {
         title: 'Completed Feedback',
-        path: 'cultureamp-style-guide/icons/feedback-completed.svg',
-        icon: require('cultureamp-style-guide/icons/feedback-completed.svg'),
-      },
-      {
-        title: 'Completed Feedback (White)',
         path: 'cultureamp-style-guide/icons/feedback-completed-white.svg',
         icon: require('cultureamp-style-guide/icons/feedback-completed-white.svg'),
       },
       {
         title: 'Feedback Classify',
-        path: 'cultureamp-style-guide/icons/feedback-classify.svg',
-        icon: require('cultureamp-style-guide/icons/feedback-classify.svg'),
-      },
-      {
-        title: 'Feedback Classify (White)',
         path: 'cultureamp-style-guide/icons/feedback-classify-white.svg',
         icon: require('cultureamp-style-guide/icons/feedback-classify-white.svg'),
       },
       {
         title: 'Feedback Report',
-        path: 'cultureamp-style-guide/icons/feedback-report.svg',
-        icon: require('cultureamp-style-guide/icons/feedback-report.svg'),
-      },
-      {
-        title: 'Feedback Report (White)',
         path: 'cultureamp-style-guide/icons/feedback-report-white.svg',
         icon: require('cultureamp-style-guide/icons/feedback-report-white.svg'),
       },
@@ -783,29 +573,19 @@ export default [
         icon: require('cultureamp-style-guide/icons/feedback-review.svg'),
       },
       {
-        title: 'Feedback Review (White)',
-        path: 'cultureamp-style-guide/icons/feedback-review.svg',
-        icon: require('cultureamp-style-guide/icons/feedback-review.svg'),
-      },
-      {
         title: 'Feedback Share',
-        path: 'cultureamp-style-guide/icons/feedback-share.svg',
-        icon: require('cultureamp-style-guide/icons/feedback-share.svg'),
-      },
-      {
-        title: 'Feedback Share (White)',
         path: 'cultureamp-style-guide/icons/feedback-share-white.svg',
         icon: require('cultureamp-style-guide/icons/feedback-share-white.svg'),
       },
       {
         title: 'Participation',
-        path: 'cultureamp-style-guide/icons/participation.svg',
-        icon: require('cultureamp-style-guide/icons/participation.svg'),
-      },
-      {
-        title: 'Participation (White)',
         path: 'cultureamp-style-guide/icons/participation-white.svg',
         icon: require('cultureamp-style-guide/icons/participation-white.svg'),
+      },
+      {
+        title: 'Process Manager',
+        path: 'cultureamp-style-guide/icons/process-manager.svg',
+        icon: require('cultureamp-style-guide/icons/process-manager.svg'),
       },
     ],
   },
@@ -819,11 +599,6 @@ export default [
       },
       {
         title: 'Heatmap',
-        path: 'cultureamp-style-guide/icons/heatmap.svg',
-        icon: require('cultureamp-style-guide/icons/heatmap.svg'),
-      },
-      {
-        title: 'Heatmap (White)',
         path: 'cultureamp-style-guide/icons/heatmap-white.svg',
         icon: require('cultureamp-style-guide/icons/heatmap-white.svg'),
       },
@@ -834,13 +609,13 @@ export default [
       },
       {
         title: 'Participation',
-        path: 'cultureamp-style-guide/icons/participation.svg',
-        icon: require('cultureamp-style-guide/icons/participation.svg'),
-      },
-      {
-        title: 'Participation (White)',
         path: 'cultureamp-style-guide/icons/participation-white.svg',
         icon: require('cultureamp-style-guide/icons/participation-white.svg'),
+      },
+      {
+        title: 'Text Analytics',
+        path: 'cultureamp-style-guide/icons/text-analytics-white.svg',
+        icon: require('cultureamp-style-guide/icons/text-analytics-white.svg'),
       },
     ],
   },
@@ -869,11 +644,6 @@ export default [
       },
       {
         title: 'Settings',
-        path: 'cultureamp-style-guide/icons/settings.svg',
-        icon: require('cultureamp-style-guide/icons/settings.svg'),
-      },
-      {
-        title: 'Settings (White)',
         path: 'cultureamp-style-guide/icons/settings-white.svg',
         icon: require('cultureamp-style-guide/icons/settings-white.svg'),
       },
@@ -884,13 +654,13 @@ export default [
       },
       {
         title: 'Surveys',
-        path: 'cultureamp-style-guide/icons/surveys.svg',
-        icon: require('cultureamp-style-guide/icons/surveys.svg'),
-      },
-      {
-        title: 'Surveys (White)',
         path: 'cultureamp-style-guide/icons/surveys-white.svg',
         icon: require('cultureamp-style-guide/icons/surveys-white.svg'),
+      },
+      {
+        title: 'Tasks',
+        path: 'cultureamp-style-guide/icons/tasks-white.svg',
+        icon: require('cultureamp-style-guide/icons/tasks-white.svg'),
       },
     ],
   },

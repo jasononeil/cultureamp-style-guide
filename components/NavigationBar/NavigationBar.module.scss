@@ -2,6 +2,10 @@
 
 .navigationBar {
   @extend %ca-navigation-bar;
+
+  &.kaizen {
+    background: $ca-palette-wisteria;
+  }
 }
 
 .links {

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Icon from '../../../../../components/Icon/Icon.js';
+import Icon from 'cultureamp-style-guide/components/Icon/Icon.js';
 import styles from './_IconGrid.module.scss';
+import iconStyles from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
 import tick from 'cultureamp-style-guide/icons/check.svg';
 
 class IconTile extends React.Component {
@@ -17,6 +18,7 @@ class IconTile extends React.Component {
         className={classNames({
           [styles.iconTile]: true,
           [styles.clicked]: this.state.recentlyCopied,
+          [iconStyles.active]: this.state.recentlyCopied,
         })}
         onClick={e => this.copyPath()}
       >

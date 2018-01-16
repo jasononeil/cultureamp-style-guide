@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import classNames from 'classnames';
 
 import styles from './NavigationBar.module.scss';
 import {
@@ -21,6 +22,7 @@ type SupportedChild =
 type Props = {|
   environment: string,
   loading: boolean,
+  colorScheme: 'cultureamp' | 'kaizen',
   children: React.ChildrenArray<SupportedChild | false>,
 |};
 
@@ -30,7 +32,7 @@ type State = {|
 
 export default class NavigationBar extends React.Component<Props, State> {
   render() {
-    const { environment, loading, children } = this.props;
+    const { environment, loading, children, colorScheme } = this.props;
 
     const links = [];
     const otherChildren = [];
@@ -41,7 +43,7 @@ export default class NavigationBar extends React.Component<Props, State> {
     });
 
     return (
-      <header className={styles.navigationBar}>
+      <header className={classNames(styles.navigationBar, styles[colorScheme])}>
         {this.renderBadge()}
         {this.renderLinks(links)}
         {this.renderOtherChildren(otherChildren)}
@@ -102,7 +104,11 @@ export default class NavigationBar extends React.Component<Props, State> {
     }));
   };
 
-  static defaultProps = { environment: 'production', loading: false };
+  static defaultProps = {
+    environment: 'production',
+    loading: false,
+    colorScheme: 'cultureamp',
+  };
 
   state = { menusOpen: 0 };
 
