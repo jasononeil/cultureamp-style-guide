@@ -9,6 +9,7 @@ import homeIcon from 'cultureamp-style-guide/icons/home.svg';
 import hamburgerIcon from 'cultureamp-style-guide/icons/hamburger.svg';
 import diamond from './diamond.svg';
 import { Link, ExternalLink, ActionLink } from 'components/Link';
+import Breadcrumb from 'components/Breadcrumb';
 import './index.scss';
 import styles from './layout.module.scss';
 
@@ -95,7 +96,10 @@ const TemplateWrapper = ({ children }) => (
         <Nav />
       </div>
       <div className={styles.content}>
-        <div className={styles.pageContainer}>{children()}</div>
+        <div className={styles.pageContainer}>
+          <Breadcrumb />
+          {children()}
+        </div>
       </div>
     </div>
   </div>
