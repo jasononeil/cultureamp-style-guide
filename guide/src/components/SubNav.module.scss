@@ -1,0 +1,29 @@
+@import '~cultureamp-style-guide/styles/type';
+@import '~cultureamp-style-guide/styles/color';
+
+.subNav {
+  position: fixed;
+  box-sizing: border-box;
+  width: inherit;
+  height: 100vh;
+  background: add-tint($ca-palette-wisteria, 90%);
+  padding: $ca-grid;
+  h1 {
+    font-size: $ca-heading-2-font-size;
+    line-height: $ca-heading-2-line-height;
+    font-weight: $ca-weight-light;
+    margin: 0;
+    padding-bottom: $ca-grid;
+    border-bottom: add-alpha($ca-palette-ink, 10%) 1px solid;
+  }
+}
+
+.closeBtn {
+  composes: buttonReset from 'components/HtmlContent.module.scss';
+  composes: interactiveIconWrapper from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 0;
+  top: 0;
+}

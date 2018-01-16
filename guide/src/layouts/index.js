@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { navigateTo } from 'gatsby-link';
+import classNames from 'classnames';
 import NavigationBar from 'cultureamp-style-guide/components/NavigationBar';
 import Icon from 'cultureamp-style-guide/components/Icon';
 import enso from 'cultureamp-style-guide/icons/ca-monogram.svg';
@@ -10,6 +11,7 @@ import hamburgerIcon from 'cultureamp-style-guide/icons/hamburger.svg';
 import diamond from './diamond.svg';
 import { Link, ExternalLink, ActionLink } from 'components/Link';
 import Breadcrumb from 'components/Breadcrumb';
+import SubNav from 'components/SubNav';
 import './index.scss';
 import styles from './layout.module.scss';
 
@@ -23,9 +25,9 @@ const pages = [
   { title: 'Pages', url: '/pages', icon: enso },
 ];
 
-const Header = () => (
+const Header = ({ toggleNav }) => (
   <div className={styles.headerBar}>
-    <ActionLink action={() => navigateTo('/')}>
+    <ActionLink action={() => toggleNav()}>
       <Icon icon={hamburgerIcon} type="img" title="Expand Menu" />
     </ActionLink>
     <ExternalLink to="https://github.com/cultureamp/component-library">
@@ -37,7 +39,7 @@ const Header = () => (
   </div>
 );
 
-const Nav = () => (
+const MainNav = () => (
   <NavigationBar loading={false} colorScheme="kaizen">
     {pages.map(page => (
       <NavigationBar.Link
@@ -81,29 +83,63 @@ const Nav = () => (
   </NavigationBar>
 );
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet>
-      <title>Kaizen</title>
-      <meta name="description" content="Kaizen - Culture Amp's Style Guide" />
-      <meta name="keywords" content="Culture Amp, design system, style guide" />
-    </Helmet>
-    <div className={styles.grid}>
-      <div className={styles.header}>
-        <Header />
-      </div>
-      <div className={styles.nav}>
-        <Nav />
-      </div>
-      <div className={styles.content}>
-        <div className={styles.pageContainer}>
-          <Breadcrumb />
-          {children()}
+class TemplateWrapper extends React.Component {
+  state = {
+    navOpen: false,
+  };
+
+  render() {
+    const { children } = this.props;
+    return (
+      <div>
+        <Helmet>
+          <title>Kaizen</title>
+          <meta
+            name="description"
+            content="Kaizen - Culture Amp's Style Guide"
+          />
+          <meta
+            name="keywords"
+            content="Culture Amp, design system, style guide"
+          />
+        </Helmet>
+        <div
+          className={classNames(styles.grid, {
+            [styles.navOpen]: this.state.navOpen,
+          })}
+        >
+          <div className={styles.nav}>
+            <MainNav />
+          </div>
+          <div className={styles.subnav}>
+            <SubNav title="What" closeNav={() => this.closeNav()} />
+          </div>
+          <div
+            className={styles.submenuBackdrop}
+            onClick={() => this.closeNav()}
+          />
+          <div className={styles.header}>
+            <Header toggleNav={() => this.toggleNav()} />
+          </div>
+          <div className={styles.content}>
+            <div className={styles.pageContainer}>
+              <Breadcrumb />
+              {children()}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+    );
+  }
+
+  toggleNav() {
+    this.setState({ navOpen: !this.state.navOpen });
+  }
+
+  closeNav() {
+    this.setState({ navOpen: false });
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

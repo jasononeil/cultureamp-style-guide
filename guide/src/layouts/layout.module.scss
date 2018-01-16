@@ -3,27 +3,179 @@
 @import '~cultureamp-style-guide/styles/border';
 @import '~cultureamp-style-guide/styles/layers';
 @import '~cultureamp-style-guide/components/NavigationBar/_styles';
+@import '~components/SubNav.module.scss';
 
+/*
+* Mobile layout (and fallback layout for old browsers).
+* Here we toggle between two states:
+*  - default: top bar and content is visible, nav is hidden
+*  - openNav: nav is visible, top bar and content are hidden
+*/
 .grid {
-  display: grid;
-  grid-template-areas:
-    'navbar header'
-    'navbar content';
-  grid-template-columns: $ca-navigation-bar__width auto;
-  grid-template-rows: $ca-navigation-bar__width auto;
+  display: flex;
+  flex-direction: column;
+  .header {
+    display: block;
+    .headerBar {
+      width: 100%;
+    }
+  }
+  .nav {
+    display: none;
+  }
+  .subnav {
+    display: none;
+  }
+  .content {
+    display: block;
+    flex: 1;
+  }
+}
+.grid.navOpen {
+  flex-direction: row;
+  .header {
+    display: none;
+  }
+  .nav {
+    display: block;
+  }
+  .subnav {
+    display: block;
+    width: calc(100% - #{$ca-navigation-bar__width});
+  }
+  .content {
+    display: none;
+    flex: 1;
+  }
+}
+.submenuBackdrop {
+  display: none;
+}
+
+/*
+* Grid layout for tablets and above
+*/
+@supports (grid-template-areas: '') {
+  $ca-subNav__width: $ca-grid * 12;
+  @media screen and (min-width: 768px) {
+    .grid {
+      display: grid;
+      grid-template-areas:
+        'navbar subnav header'
+        'navbar subnav content';
+      // By default we don't assign any grid space for the subnav, instead it sits over other content.
+      // On larger screens we will assign it space in the grid (see below).
+      grid-template-columns: $ca-navigation-bar__width 0 auto;
+      grid-template-rows: $ca-navigation-bar__width 0 auto;
+      .header {
+        display: block;
+        grid-area: header;
+        .headerBar {
+          width: calc(100% - #{$ca-navigation-bar__width});
+          position: fixed;
+          z-index: $ca-z-index-fixed;
+        }
+      }
+      .nav {
+        display: block;
+        grid-area: navbar;
+        z-index: $ca-z-index-modal + 1;
+      }
+      .subnav {
+        display: block;
+        grid-area: subnav;
+        transition: width 200ms ease;
+        z-index: $ca-z-index-modal;
+
+        width: 0;
+        > * {
+          transition: transform 200ms ease;
+          transform: translateX(-100%);
+          width: $ca-subNav__width;
+        }
+      }
+      .content {
+        display: block;
+        grid-area: content;
+        // Create a pseudo-element for inline anchor elements to make sure they're
+        // positioned correctly under the fixed header.
+        :target:before {
+          content: '';
+          display: block;
+          height: $ca-navigation-bar__width;
+          margin: -$ca-navigation-bar__width 0 0;
+        }
+      }
+      .submenuBackdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $ca-palette-ink;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: -1;
+      }
+    }
+    .grid.navOpen {
+      .header {
+        display: block;
+        .headerBar {
+          width: calc(100% - #{$ca-navigation-bar__width});
+        }
+      }
+      .content {
+        display: block;
+      }
+      .subnav {
+        width: $ca-subNav__width;
+        * {
+          transform: translateX(0);
+        }
+      }
+      .submenuBackdrop {
+        z-index: $ca-z-index-modal-backdrop;
+        opacity: 0.9;
+      }
+    }
+  }
+  /*
+  * Variations for large screens
+  */
+  @media screen and (min-width: 1366px) {
+    .grid {
+      grid-template-columns: $ca-navigation-bar__width min-content auto;
+      grid-template-rows: $ca-navigation-bar__width min-content auto;
+      .nav {
+        z-index: $ca-z-index-fixed + 1;
+      }
+      .subnav {
+        z-index: $ca-z-index-fixed;
+      }
+    }
+    .grid.navOpen {
+      .subnav {
+        z-index: $ca-z-index-fixed;
+      }
+      .submenuBackdrop {
+        display: none;
+      }
+    }
+    .submenuBackdrop {
+      display: none;
+    }
+  }
 }
 
 .header {
-  grid-area: header;
   height: $ca-navigation-bar__width;
   position: relative;
 
   .headerBar {
     background: white;
-    position: fixed;
-    z-index: $ca-z-index-fixed;
     height: $ca-navigation-bar__width;
-    width: calc(100% - #{$ca-navigation-bar__width});
     padding: 5px 15px;
     box-sizing: border-box;
     overflow: hidden;
@@ -35,50 +187,14 @@
 }
 
 .nav {
-  grid-area: navbar;
   width: $ca-navigation-bar__width;
-}
-
-.content {
-  grid-area: content;
-
-  // Create a pseudo-element for inline anchor elements to make sure they're
-  // positioned correctly under the fixed header.
-  :target:before {
-    content: '';
-    display: block;
-    height: $ca-navigation-bar__width;
-    margin: -$ca-navigation-bar__width 0 0;
-  }
 }
 
 .pageContainer {
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1200px;
   padding: 1.45em 1.0875rem 1.45rem;
   clear: both;
-}
-
-.title {
-  composes: h1 from 'components/HtmlContent.module.scss';
-}
-
-.menu {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-  line-height: $ca-grid;
-  margin-bottom: $ca-grid;
-}
-.item {
-  float: left;
-}
-.item + .item:before {
-  content: '|';
-  padding: 0 10px;
-}
-.item a {
-  text-decoration: none;
 }
 
 .cultureAmpMenu {
