@@ -123,11 +123,6 @@ export default [
         icon: require('cultureamp-style-guide/icons/launch-white.svg'),
       },
       {
-        title: 'Lock',
-        path: 'cultureamp-style-guide/icons/lock-white.svg',
-        icon: require('cultureamp-style-guide/icons/lock-white.svg'),
-      },
-      {
         title: 'Log Out',
         path: 'cultureamp-style-guide/icons/log-out.svg',
         icon: require('cultureamp-style-guide/icons/log-out.svg'),
@@ -261,6 +256,11 @@ export default [
         title: 'Kiosk',
         path: 'cultureamp-style-guide/icons/kiosk-white.svg',
         icon: require('cultureamp-style-guide/icons/kiosk-white.svg'),
+      },
+      {
+        title: 'Lock',
+        path: 'cultureamp-style-guide/icons/lock-white.svg',
+        icon: require('cultureamp-style-guide/icons/lock-white.svg'),
       },
       {
         title: 'Minus',
@@ -587,6 +587,11 @@ export default [
         path: 'cultureamp-style-guide/icons/process-manager.svg',
         icon: require('cultureamp-style-guide/icons/process-manager.svg'),
       },
+      {
+        title: 'Tasks',
+        path: 'cultureamp-style-guide/icons/tasks-white.svg',
+        icon: require('cultureamp-style-guide/icons/tasks-white.svg'),
+      },
     ],
   },
   {
@@ -656,11 +661,6 @@ export default [
         title: 'Surveys',
         path: 'cultureamp-style-guide/icons/surveys-white.svg',
         icon: require('cultureamp-style-guide/icons/surveys-white.svg'),
-      },
-      {
-        title: 'Tasks',
-        path: 'cultureamp-style-guide/icons/tasks-white.svg',
-        icon: require('cultureamp-style-guide/icons/tasks-white.svg'),
       },
     ],
   },
