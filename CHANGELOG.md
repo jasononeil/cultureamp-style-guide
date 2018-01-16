@@ -1,5 +1,15 @@
 # Release History: cultureamp-style-guide
 
+## 5.1.7
+
+* 👍 Add `colorScheme` prop to NavigationBar, allowing you to choose
+  'cultureamp' (default) or 'kaizen'.
+* 👍 Add new SASS variables specific to Ideal Sans.
+
+## 5.1.6
+
+* 👍 Add process manager icon.
+
 ## 5.1.5
 
 * 🐛 Fix flaky positioning of tooltip arrows in Firefox.
