@@ -5,6 +5,10 @@
 @import '~cultureamp-style-guide/components/NavigationBar/_styles';
 @import '~components/SubNav.module.scss';
 
+$tablet: (min-width: 768px);
+$desktop: (min-width: 1366px);
+$headerHeight: $ca-navigation-bar__width;
+
 @mixin fullscreenFixed {
   display: block;
   position: fixed;
@@ -14,12 +18,7 @@
   bottom: 0;
 }
 
-/*
-* Mobile layout (and fallback layout for old browsers).
-* Here we toggle between two states:
-*  - default: top bar and content is visible, nav is hidden
-*  - openNav: nav is visible, top bar and content are hidden
-*/
+// Basic mobile styles, will also be used on old browsers that don't support CSS Grid
 .nav {
   display: none;
   .navOpen & {
@@ -44,10 +43,6 @@
   display: block;
   z-index: $ca-z-index-body;
 }
-
-$tablet: (min-width: 768px);
-$desktop: (min-width: 1366px);
-$headerHeight: $ca-navigation-bar__width;
 
 // Note, if the browser doesn't support CSS Grids, we leave them on the mobile view as a fallback.
 @supports (display: grid) {
