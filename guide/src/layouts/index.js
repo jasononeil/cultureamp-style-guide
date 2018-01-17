@@ -104,7 +104,7 @@ class TemplateWrapper extends React.Component {
           />
         </Helmet>
         <div
-          className={classNames(styles.grid, {
+          className={classNames(styles.layout, {
             [styles.navOpen]: this.state.navOpen,
           })}
         >
@@ -115,7 +115,7 @@ class TemplateWrapper extends React.Component {
             <SubNav title="What" closeNav={() => this.closeNav()} />
           </div>
           <div
-            className={styles.submenuBackdrop}
+            className={styles.subnavBackdrop}
             onClick={() => this.closeNav()}
           />
           <div className={styles.header}>

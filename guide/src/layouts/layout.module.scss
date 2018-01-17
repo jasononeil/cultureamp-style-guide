@@ -5,198 +5,155 @@
 @import '~cultureamp-style-guide/components/NavigationBar/_styles';
 @import '~components/SubNav.module.scss';
 
+@mixin fullscreenFixed {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 /*
 * Mobile layout (and fallback layout for old browsers).
 * Here we toggle between two states:
 *  - default: top bar and content is visible, nav is hidden
 *  - openNav: nav is visible, top bar and content are hidden
 */
-.grid {
-  display: flex;
-  flex-direction: column;
-  .header {
-    display: block;
-    .headerBar {
-      width: 100%;
-    }
-  }
-  .nav {
-    display: none;
-  }
-  .subnav {
-    display: none;
-  }
-  .content {
-    display: block;
-    flex: 1;
+.nav {
+  display: none;
+  .navOpen & {
+    @include fullscreenFixed();
+    z-index: $ca-z-index-fixed;
+    width: $ca-navigation-bar__width;
+    right: auto;
   }
 }
-.grid.navOpen {
-  flex-direction: row;
-  .header {
-    display: none;
-  }
-  .nav {
-    display: block;
-  }
-  .subnav {
-    display: block;
-    width: calc(100% - #{$ca-navigation-bar__width});
-  }
-  .content {
-    display: none;
-    flex: 1;
+.subnav {
+  display: none;
+  .navOpen & {
+    @include fullscreenFixed();
+    z-index: $ca-z-index-fixed;
+    left: $ca-navigation-bar__width;
   }
 }
-.submenuBackdrop {
+.subnavBackdrop {
   display: none;
 }
+.header {
+  display: block;
+  z-index: $ca-z-index-body;
+}
 
-/*
-* Grid layout for tablets and above
-*/
-@supports (grid-template-areas: '') {
-  $ca-subNav__width: $ca-grid * 12;
-  @media screen and (min-width: 768px) {
-    .grid {
+$tablet: (min-width: 768px);
+$desktop: (min-width: 1366px);
+$headerHeight: $ca-navigation-bar__width;
+
+// Note, if the browser doesn't support CSS Grids, we leave them on the mobile view as a fallback.
+@supports (display: grid) {
+  @media screen and #{$tablet} {
+    $ca-subNav__width: $ca-grid * 12;
+
+    // layout: set up the grid locations, with the subnav occupying no width on tablets
+    .layout {
       display: grid;
       grid-template-areas:
         'navbar subnav header'
         'navbar subnav content';
-      // By default we don't assign any grid space for the subnav, instead it sits over other content.
-      // On larger screens we will assign it space in the grid (see below).
+      grid-template-rows: $headerHeight auto;
       grid-template-columns: $ca-navigation-bar__width 0 auto;
-      grid-template-rows: $ca-navigation-bar__width 0 auto;
-      .header {
-        display: block;
-        grid-area: header;
-        .headerBar {
-          width: calc(100% - #{$ca-navigation-bar__width});
-          position: fixed;
-          z-index: $ca-z-index-fixed;
-        }
-      }
-      .nav {
-        display: block;
-        grid-area: navbar;
-        z-index: $ca-z-index-modal + 1;
-      }
-      .subnav {
-        display: block;
-        grid-area: subnav;
-        transition: width 200ms ease;
-        z-index: $ca-z-index-modal;
-
-        width: 0;
-        > * {
-          transition: transform 200ms ease;
-          transform: translateX(-100%);
-          width: $ca-subNav__width;
-        }
-      }
-      .content {
-        display: block;
-        grid-area: content;
-        // Create a pseudo-element for inline anchor elements to make sure they're
-        // positioned correctly under the fixed header.
-        :target:before {
-          content: '';
-          display: block;
-          height: $ca-navigation-bar__width;
-          margin: -$ca-navigation-bar__width 0 0;
-        }
-      }
-      .submenuBackdrop {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: $ca-palette-ink;
-        opacity: 0;
-        transition: opacity 0.2s ease;
-        z-index: -1;
+      @media #{$desktop} {
+        grid-template-columns: $ca-navigation-bar__width min-content auto;
       }
     }
-    .grid.navOpen {
-      .header {
-        display: block;
-        .headerBar {
-          width: calc(100% - #{$ca-navigation-bar__width});
-        }
+
+    // nav: Sit in the leftmost column, one layer above the subnav
+    .nav {
+      display: block;
+      grid-area: navbar;
+      &,
+      .navOpen & {
+        z-index: $ca-z-index-modal + 1;
       }
-      .content {
-        display: block;
-      }
-      .subnav {
+    }
+
+    // subnav: Sit in the second column, and animate in, sliding underneath navbar (1 layer underneath)
+    .subnav {
+      display: block;
+      grid-area: subnav;
+      transition: width 2000ms ease;
+      width: 0;
+
+      > * {
+        transition: transform 2000ms ease;
+        transform: translateX(-100%);
         width: $ca-subNav__width;
-        * {
+      }
+
+      z-index: $ca-z-index-modal;
+
+      .navOpen & {
+        width: $ca-subNav__width;
+        z-index: $ca-z-index-modal;
+        position: static;
+        > * {
+          position: fixed;
           transform: translateX(0);
         }
       }
-      .submenuBackdrop {
+    }
+
+    // header: sit fixed to the top of the page
+    .header {
+      grid-area: header;
+      .headerBar {
+        position: fixed;
+        left: $ca-navigation-bar__width;
+        right: 0;
+        top: 0;
+        z-index: $ca-z-index-fixed;
+      }
+    }
+
+    // content: sit in the bottom right grid square
+    .content {
+      grid-area: content;
+
+      // hack to correctly position inline anchor links under the fixed header
+      :target:before {
+        content: '';
+        display: block;
+        height: $headerHeight;
+        margin: -$headerHeight 0 0;
+      }
+    }
+
+    // subnavBackdrop: only visible on tablet, fades in
+    .subnavBackdrop {
+      @include fullscreenFixed();
+      background: $ca-palette-ink;
+      opacity: 0;
+      transition: opacity 2000ms ease;
+      z-index: -1;
+      .navOpen & {
         z-index: $ca-z-index-modal-backdrop;
         opacity: 0.9;
       }
-    }
-  }
-  /*
-  * Variations for large screens
-  */
-  @media screen and (min-width: 1366px) {
-    .grid {
-      grid-template-columns: $ca-navigation-bar__width min-content auto;
-      grid-template-rows: $ca-navigation-bar__width min-content auto;
-      .nav {
-        z-index: $ca-z-index-fixed + 1;
+      @media #{$desktop} {
+        &,
+        .navOpen & {
+          display: none;
+        }
       }
-      .subnav {
-        z-index: $ca-z-index-fixed;
-      }
-    }
-    .grid.navOpen {
-      .subnav {
-        z-index: $ca-z-index-fixed;
-      }
-      .submenuBackdrop {
-        display: none;
-      }
-    }
-    .submenuBackdrop {
-      display: none;
     }
   }
 }
 
-.header {
-  height: $ca-navigation-bar__width;
-  position: relative;
+//
+// TODO: move the styles below into separate modules, keep this module all about layout
+//
 
-  .headerBar {
-    background: white;
-    height: $ca-navigation-bar__width;
-    padding: 5px 15px;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-.nav {
-  width: $ca-navigation-bar__width;
-}
-
-.pageContainer {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 1.45em 1.0875rem 1.45rem;
-  clear: both;
-}
-
+// Nav components
 .cultureAmpMenu {
   background-color: #ffffff;
   width: 100%;
@@ -205,8 +162,28 @@
   border-radius: $ca-border-radius;
 }
 
+// Header components
+.headerBar {
+  background: white;
+  height: $headerHeight;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .downloadIcon {
   padding-left: 10px;
   position: relative;
   top: 5px;
+}
+
+// Content components
+.pageContainer {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1.45em 1.0875rem 1.45rem;
+  clear: both;
 }
