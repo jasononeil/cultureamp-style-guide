@@ -7,7 +7,10 @@ import styles from './Breadcrumb.module.scss';
 class Breadcrumb extends React.Component {
   render() {
     const prefix = withPrefix('/'),
-      path = location.pathname.substr(prefix.length),
+      path =
+        typeof window !== `undefined`
+          ? location.pathname.substr(prefix.length)
+          : '',
       parts = path.split('/');
 
     parts.unshift('/');
