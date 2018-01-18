@@ -25,7 +25,7 @@ class IconTile extends React.Component {
         <div className={styles.tileWrapper}>
           <span className={styles.iconLabel}>{title}</span>
           <span className={styles.iconWrapper}>
-            <Icon icon={icon} role="presentational" />
+            <Icon icon={icon} role="presentation" />
           </span>
           {this.renderCopyLabel()}
         </div>
@@ -41,7 +41,7 @@ class IconTile extends React.Component {
         {copied ? 'Copied to clipboard' : 'Copy import path'}
         {copied && (
           <span className={styles.tickIcon}>
-            <Icon icon={tick} role="presentational" />
+            <Icon icon={tick} role="presentation" />
           </span>
         )}
         <input

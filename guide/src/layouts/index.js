@@ -33,7 +33,7 @@ const Header = ({ toggleNav }) => (
     <ExternalLink to="https://github.com/cultureamp/component-library">
       Download Style Guide
       <span className={styles.downloadIcon}>
-        <Icon icon={diamond} type="presentational" />
+        <Icon icon={diamond} type="presentation" />
       </span>
     </ExternalLink>
   </div>
