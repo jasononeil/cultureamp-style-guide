@@ -108,6 +108,13 @@ $transitionSpeed: 200ms;
         right: 0;
         top: 0;
         z-index: $ca-z-index-fixed;
+        transition: transform $transitionSpeed ease;
+        transform: translateX(0);
+        @media #{$desktop} {
+          .navOpen & {
+            transform: translateX($ca-subNav__width);
+          }
+        }
       }
     }
 
