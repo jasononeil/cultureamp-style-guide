@@ -39,7 +39,7 @@ const Header = ({ toggleNav }) => (
   </div>
 );
 
-const MainNav = () => (
+const MainNav = ({ openNav }) => (
   <NavigationBar loading={false} colorScheme="kaizen">
     {pages.map(page => (
       <NavigationBar.Link
@@ -49,6 +49,7 @@ const MainNav = () => (
         tooltip={page.title}
         onClick={e => {
           navigateTo(page.url);
+          openNav();
           e.preventDefault();
         }}
       />
@@ -109,7 +110,7 @@ class TemplateWrapper extends React.Component {
           })}
         >
           <div className={styles.nav}>
-            <MainNav />
+            <MainNav openNav={() => this.openNav()} />
           </div>
           <div className={styles.subnav}>
             <SubNav title="What" closeNav={() => this.closeNav()} />
@@ -138,6 +139,10 @@ class TemplateWrapper extends React.Component {
 
   closeNav() {
     this.setState({ navOpen: false });
+  }
+
+  openNav() {
+    this.setState({ navOpen: true });
   }
 }
 

@@ -27,6 +27,7 @@
   padding: $ca-grid / 2;
   color: $ca-palette-ink;
   text-decoration: none;
+  composes: interactiveIconWrapper from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
 
   &:hover,
   &:active,
