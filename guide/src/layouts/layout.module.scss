@@ -8,6 +8,7 @@
 $tablet: (min-width: 768px);
 $desktop: (min-width: 1366px);
 $headerHeight: $ca-navigation-bar__width;
+$transitionSpeed: 200ms;
 
 @mixin fullscreenFixed {
   display: block;
@@ -76,11 +77,11 @@ $headerHeight: $ca-navigation-bar__width;
     .subnav {
       display: block;
       grid-area: subnav;
-      transition: width 2000ms ease;
+      transition: width $transitionSpeed ease;
       width: 0;
 
       > * {
-        transition: transform 2000ms ease;
+        transition: transform $transitionSpeed ease;
         transform: translateX(-100%);
         width: $ca-subNav__width;
       }
@@ -128,7 +129,7 @@ $headerHeight: $ca-navigation-bar__width;
       @include fullscreenFixed();
       background: $ca-palette-ink;
       opacity: 0;
-      transition: opacity 2000ms ease;
+      transition: opacity $transitionSpeed ease;
       z-index: -1;
       .navOpen & {
         z-index: $ca-z-index-modal-backdrop;
