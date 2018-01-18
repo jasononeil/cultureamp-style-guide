@@ -7,10 +7,7 @@ import styles from './Breadcrumb.module.scss';
 class Breadcrumb extends React.Component {
   render() {
     const prefix = withPrefix('/'),
-      path =
-        typeof window !== `undefined`
-          ? location.pathname.substr(prefix.length)
-          : '',
+      path = this.context.router.route.location.pathname.substr(prefix.length),
       parts = path.split('/');
 
     parts.unshift('/');
@@ -32,6 +29,9 @@ class Breadcrumb extends React.Component {
     return <nav className={styles.breadcrumb}>{links}</nav>;
   }
 }
+Breadcrumb.contextTypes = {
+  router: React.PropTypes.object.isRequired,
+};
 
 function capitaliseWord(word) {
   return word.charAt(0).toUpperCase() + word.substr(1);
