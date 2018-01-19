@@ -35,7 +35,7 @@
   &:active,
   &.active {
     color: $ca-palette-ocean;
-    background-color: add-tint($ca-palette-ink, 90%);
+    background-color: add-alpha($ca-palette-ink, 3%);
   }
 }
 
