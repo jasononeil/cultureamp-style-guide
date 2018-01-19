@@ -12,18 +12,9 @@ import diamond from './diamond.svg';
 import { Link, ExternalLink, ActionLink } from 'components/Link';
 import Breadcrumb from 'components/Breadcrumb';
 import SubNav from 'components/SubNav';
+import sitemap from 'pages/_sitemap.js';
 import './index.scss';
 import styles from './layout.module.scss';
-
-const pages = [
-  { title: 'Language', url: '/language', icon: enso },
-  { title: 'Visuals', url: '/visuals', icon: enso },
-  { title: 'Atoms', url: '/atoms', icon: enso },
-  { title: 'Molecules', url: '/molecules', icon: enso },
-  { title: 'Organisms', url: '/organisms', icon: enso },
-  { title: 'Templates', url: '/templates', icon: enso },
-  { title: 'Pages', url: '/pages', icon: enso },
-];
 
 const Header = ({ toggleNav }) => (
   <div className={styles.headerBar}>
@@ -43,14 +34,14 @@ const Header = ({ toggleNav }) => (
 
 const MainNav = ({ openNav }) => (
   <NavigationBar loading={false} colorScheme="kaizen">
-    {pages.map(page => (
+    {sitemap.children.map(page => (
       <NavigationBar.Link
-        key={page.url}
+        key={page.title}
         icon={page.icon}
-        href={page.url}
+        href={page.href}
         tooltip={page.title}
         onClick={e => {
-          navigateTo(page.url);
+          navigateTo(page.href);
           openNav();
           e.preventDefault();
         }}

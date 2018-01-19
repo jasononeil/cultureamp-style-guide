@@ -1,51 +1,41 @@
+import enso from 'cultureamp-style-guide/icons/ca-monogram.svg';
+
 const sitemap = {
   title: 'Kaizen',
   href: '/',
+  icon: enso,
   children: [
     {
-      title: 'Language',
-      href: '/language',
+      title: 'Product',
+      href: '/',
+      icon: enso,
       children: [
-        { title: 'Product Language Style Guide', href: '/language' },
-        { title: 'Product Writing Checklist', href: '/language/checklist' },
+        {
+          title: 'Components',
+          href: '/atoms',
+          children: [
+            { title: 'Button', href: '/atoms/button' },
+            { title: 'Icon', href: '/atoms/icon' },
+          ],
+        },
+        {
+          title: 'Language',
+          href: '/language',
+          children: [
+            { title: 'Product Language Style Guide', href: '/language' },
+            { title: 'Product Writing Checklist', href: '/language/checklist' },
+          ],
+        },
+        {
+          title: 'Visual Styles',
+          href: '/visuals',
+          children: [
+            { title: 'Typography', href: '/visuals/typography' },
+            { title: 'Colors', href: '/visuals/colors' },
+            { title: 'Icons', href: '/visuals/icons' },
+          ],
+        },
       ],
-    },
-    {
-      title: 'Visuals',
-      href: '/visuals',
-      children: [
-        { title: 'Typography', href: '/visuals/typography' },
-        { title: 'Colors', href: '/visuals/colors' },
-        { title: 'Icons', href: '/visuals/icons' },
-      ],
-    },
-    {
-      title: 'Atoms',
-      href: '/atoms',
-      children: [
-        { title: 'Button', href: '/atoms/button' },
-        { title: 'Icon', href: '/atoms/icon' },
-      ],
-    },
-    {
-      title: 'Molecules',
-      href: '/molecules',
-      children: [],
-    },
-    {
-      title: 'Organisms',
-      href: '/organisms',
-      children: [],
-    },
-    {
-      title: 'Templates',
-      href: '/templates',
-      children: [],
-    },
-    {
-      title: 'Pages',
-      href: '/pages',
-      children: [],
     },
   ],
 };

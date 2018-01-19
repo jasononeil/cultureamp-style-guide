@@ -15,7 +15,6 @@ const SubNav = ({ closeNav }, context) => {
   if (sectionInfo == null) {
     sectionInfo = sitemap;
   }
-  const childLinks = sectionInfo.children;
   return (
     <section className={styles.subNav}>
       <button className={styles.closeBtn} onClick={() => closeNav()}>
@@ -23,7 +22,7 @@ const SubNav = ({ closeNav }, context) => {
       </button>
       <h1>{sectionInfo.title}</h1>
       {sectionInfo.children.map(child => (
-        <SubNavItem closeNav={closeNav} {...child} key={child.href} />
+        <SubNavSection closeNav={closeNav} {...child} key={child.href} />
       ))}
     </section>
   );
@@ -31,6 +30,15 @@ const SubNav = ({ closeNav }, context) => {
 SubNav.contextTypes = {
   router: React.PropTypes.object.isRequired,
 };
+
+const SubNavSection = ({ href, title, children, closeNav }) => (
+  <div>
+    <h2 className={styles.navSectionLabel}>{title}</h2>
+    {children.map(child => (
+      <SubNavItem closeNav={closeNav} {...child} key={child.href} />
+    ))}
+  </div>
+);
 
 const SubNavItem = ({ href, title, closeNav }) => (
   <Link to={href} className={styles.navItem} onClick={closeNav}>
