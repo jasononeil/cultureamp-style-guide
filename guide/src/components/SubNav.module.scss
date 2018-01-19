@@ -1,5 +1,6 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/border';
 
 .subNav {
   box-sizing: border-box;
@@ -27,6 +28,7 @@
   padding: $ca-grid / 2;
   color: $ca-palette-ink;
   text-decoration: none;
+  border-radius: $ca-border-radius;
   composes: interactiveIconWrapper from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
 
   &:hover,
