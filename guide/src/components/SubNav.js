@@ -8,7 +8,7 @@ import sitemap from 'pages/_sitemap.js';
 
 const SubNav = ({ closeNav }, context) => {
   const prefix = withPrefix('/'),
-    path = context.router.route.location.pathname;
+    path = '/' + context.router.route.location.pathname.substr(prefix.length);
   let sectionInfo = sitemap.children.find(section =>
     path.startsWith(section.href)
   );
