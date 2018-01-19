@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-visuals-icons-index-mdx": [
-      "component---src-pages-visuals-icons-index-mdx-c3b906492eaef2866f14.js",
-      "component---src-pages-visuals-icons-index-mdx-c3b906492eaef2866f14.js.map"
+      "component---src-pages-visuals-icons-index-mdx-e28d996df87ca22e671f.js",
+      "component---src-pages-visuals-icons-index-mdx-e28d996df87ca22e671f.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-ceda7ea7c13aa9ac84b2.js",
@@ -53,8 +53,8 @@
       "path---atoms-button-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-b98a3d0c92b4be07c33c.js",
-      "component---src-layouts-index-js-b98a3d0c92b4be07c33c.js.map"
+      "component---src-layouts-index-js-cd828e9764c157f80ea5.js",
+      "component---src-layouts-index-js-cd828e9764c157f80ea5.js.map"
     ],
     "component---src-pages-visuals-typography-index-js": [
       "component---src-pages-visuals-typography-index-js-e79956f896ad7d5d029e.js",
@@ -123,9 +123,9 @@
       "path---visuals-icons-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-8e9595c53a978b2951af.js",
+      "app-4931b4125ee9eef262f2.js",
       "build-js-styles.css",
-      "app-8e9595c53a978b2951af.js.map",
+      "app-4931b4125ee9eef262f2.js.map",
       "build-js-styles.css.map"
     ],
     "component---src-pages-atoms-index-mdx": [
