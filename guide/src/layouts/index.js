@@ -28,7 +28,9 @@ const pages = [
 const Header = ({ toggleNav }) => (
   <div className={styles.headerBar}>
     <ActionLink action={() => toggleNav()}>
-      <Icon icon={hamburgerIcon} type="img" title="Expand Menu" />
+      <span className={styles.hamburgerIcon}>
+        <Icon icon={hamburgerIcon} type="img" title="Expand Menu" />
+      </span>
     </ActionLink>
     <ExternalLink to="https://github.com/cultureamp/component-library">
       Download Style Guide
