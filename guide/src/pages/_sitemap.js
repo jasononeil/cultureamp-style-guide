@@ -30,7 +30,6 @@ const sitemap = {
           title: 'Visual Styles',
           href: '/visuals',
           children: [
-            { title: 'Typography', href: '/visuals/typography' },
             { title: 'Colors', href: '/visuals/colors' },
             { title: 'Icons', href: '/visuals/icons' },
           ],
