@@ -1,7 +1,9 @@
 import React from 'react';
 import Link, { withPrefix } from 'gatsby-link';
+import classNames from 'classnames';
 import styles from './SubNav.module.scss';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon.js';
+import iconStyles from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
 import close from 'cultureamp-style-guide/icons/close.svg';
 import page from 'cultureamp-style-guide/icons/insight.svg';
 import sitemap from 'pages/_sitemap.js';
@@ -41,7 +43,12 @@ const SubNavSection = ({ href, title, children, closeNav }) => (
 );
 
 const SubNavItem = ({ href, title, closeNav }) => (
-  <Link to={href} className={styles.navItem} onClick={closeNav}>
+  <Link
+    to={href}
+    className={styles.navItem}
+    onClick={closeNav}
+    activeClassName={classNames(styles.active, iconStyles.active)}
+  >
     <span className={styles.navItemIcon}>
       <Icon icon={page} role="presentation" />
     </span>

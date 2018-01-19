@@ -40,10 +40,16 @@
   composes: interactiveIconWrapper from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
 
   &:hover,
-  &:active,
-  &.active {
+  &:active {
     color: $ca-palette-ocean;
     background-color: add-alpha($ca-palette-ink, 3%);
+  }
+
+  &.active,
+  &.active:hover,
+  &.active:active {
+    color: $ca-palette-ocean;
+    background-color: transparent;
   }
 }
 
