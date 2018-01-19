@@ -38,7 +38,7 @@ export default class NavigationBar extends React.Component<Props, State> {
     const otherChildren = [];
     React.Children.toArray(children).forEach(child => {
       if (child === false) return;
-      if (child.type.name == 'Link') links.push(child);
+      if (child.type.name == Link.name) links.push(child);
       else otherChildren.push(child);
     });
 
