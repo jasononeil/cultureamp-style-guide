@@ -22,8 +22,13 @@
   &:hover,
   &:focus {
     background-color: rgba(#fff, 0.1);
+    color: #fff; // override hyperlink hover color
     outline: none; // override native focus styles
   }
+}
+
+.active {
+  composes: active from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
 }
 
 .tooltip {
