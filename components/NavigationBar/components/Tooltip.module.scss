@@ -49,16 +49,15 @@
   }
 
   > * {
-    $ca-body-small-baseline-shift: 1px;
-
+    color: #fff;
     background-color: $ca-palette-ink;
     border-radius: $ca-border-radius;
-    color: #fff;
-    font-size: $ca-body-small-font-size;
-    font-weight: $ca-body-small-font-weight;
-    line-height: $ca-body-small-line-height;
-    padding: ($ca-border-radius - $ca-body-small-baseline-shift) 1em ($ca-border-radius +
-          $ca-body-small-baseline-shift);
+    padding: $ca-border-radius 0;
     white-space: nowrap;
   }
+}
+
+.content {
+  @extend %ca-small-type;
+  margin: 0 1em;
 }

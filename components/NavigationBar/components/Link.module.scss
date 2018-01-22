@@ -30,6 +30,10 @@
   composes: tooltip from './Tooltip.module.scss';
 }
 
+.content {
+  composes: content from './Tooltip.module.scss';
+}
+
 .suppressed {
   composes: suppressed from './Tooltip.module.scss';
 }
