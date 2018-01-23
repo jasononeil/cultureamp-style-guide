@@ -25,10 +25,12 @@ $ca-ideal-sans-font-descender-height: 0.24;
   $descender-height: $ca-default-font-descender-height,
   $size: 1,
   $grid-span: 1,
-  $weight: $ca-weight-book
+  $weight: $ca-weight-book,
+  $letter-spacing: normal
 ) {
   font-family: $family;
   font-weight: $weight;
+  letter-spacing: $letter-spacing;
 
   $font-size: $base-size * $size; // rem
   font-size: $font-size;
@@ -39,40 +41,74 @@ $ca-ideal-sans-font-descender-height: 0.24;
   transform: translateY(#{$descender-height + ($line-height - 1) / 2}em);
 }
 
-%ca-title-type {
+@mixin ca-title-type($args...) {
   @include ca-type(
     $size: 12/7,
     $grid-span: 1.5,
-    $weight: $ca-weight-medium
+    $weight: $ca-weight-medium,
+    $args...
   );
 }
 
-%ca-display-type {
+@mixin ca-display-type($args...) {
   @include ca-type(
     $size: 10/7,
-    $weight: $ca-weight-medium
+    $weight: $ca-weight-medium,
+    $args...
   );
 }
 
-%ca-heading-type {
+@mixin ca-heading-type($args...) {
   @include ca-type(
     $size: 8/7,
     $weight: $ca-weight-medium
   );
 }
 
-%ca-lede-type {
+@mixin ca-lede-type($args...) {
   @include ca-type(
-    $size: 8/7
+    $size: 8/7,
+    $args...
   );
 }
 
-%ca-body-type {
-  @include ca-type();
+@mixin ca-ideal-lede-type {
+  @include ca-lede-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height
+  );
 }
 
-%ca-small-type {
+@mixin ca-body-type($args...) {
+  @include ca-type($args...);
+}
+
+@mixin ca-ideal-body-type {
+  @include ca-body-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height
+  );
+}
+
+@mixin ca-control-action-type($args...) {
   @include ca-type(
+    $weight: $ca-weight-medium,
+    $args...
+  );
+}
+
+@mixin ca-small-type($args...) {
+  @include ca-type(
+    $args...,
     $size: 6/7
+  );
+}
+
+@mixin ca-labels-and-legends-type($args...) {
+  @include ca-type(
+    $args...,
+    $size: 3/4
   );
 }

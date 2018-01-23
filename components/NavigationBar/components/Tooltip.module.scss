@@ -58,6 +58,6 @@
 }
 
 .content {
-  @extend %ca-small-type;
+  @include ca-small-type;
   margin: 0 1em;
 }
