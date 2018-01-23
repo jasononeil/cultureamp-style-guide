@@ -85,7 +85,7 @@ const MainNav = ({ openNav }, context) => {
   );
 };
 MainNav.contextTypes = {
-  router: React.PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 class TemplateWrapper extends React.Component {

@@ -30,7 +30,7 @@ class Breadcrumb extends React.Component {
   }
 }
 Breadcrumb.contextTypes = {
-  router: React.PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 function capitaliseWord(word) {

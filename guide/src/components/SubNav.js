@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link, { withPrefix } from 'gatsby-link';
 import classNames from 'classnames';
 import styles from './SubNav.module.scss';
@@ -30,7 +31,7 @@ const SubNav = ({ closeNav }, context) => {
   );
 };
 SubNav.contextTypes = {
-  router: React.PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 const SubNavSection = ({ href, title, children, closeNav }) => (
