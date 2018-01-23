@@ -109,6 +109,7 @@ $ca-ideal-sans-font-descender-height: 0.24;
 @mixin ca-labels-and-legends-type($args...) {
   @include ca-type(
     $args...,
-    $size: 3/4
+    $size: 3/4,
+    $letter-spacing: 0.04em
   );
 }
