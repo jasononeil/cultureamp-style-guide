@@ -158,7 +158,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
   @include ca-type(
     $size: 3/4,
     $letter-spacing: 0.04em,
-    $args...,
+    $args...
   );
 }
 
