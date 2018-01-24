@@ -16,8 +16,10 @@ $ca-palette-stone: add-tint($ca-palette-ink, 97%);
 $ca-palette-positive-delta: #43e699;
 $ca-palette-negative-delta: #ff4757;
 
-// Original page background color
-$ca-palette-tan: #f4f0ef;
+// Text colours
+$ca-base-text-color: $ca-palette-ink;
+$ca-link-text-color: $ca-palette-ocean;
+$ca-link-hover-text-color: $ca-palette-ocean;
 
 @function add-tint($color, $percentage) {
   @return mix(#fff, $color, $percentage);

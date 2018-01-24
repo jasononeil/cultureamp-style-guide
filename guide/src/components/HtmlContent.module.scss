@@ -3,9 +3,7 @@
 @import '~cultureamp-style-guide/styles/border';
 
 .contentContainer {
-  font-size: $ca-body-ideal-sans-font-size;
-  line-height: $ca-body-ideal-sans-line-height;
-  font-weight: $ca-body-ideal-sans-font-weight;
+  @include ca-ideal-body-type();
 
   h1,
   h2,
@@ -27,29 +25,21 @@
 
 .h1,
 .htmlContent h1 {
-  font: $ca-heading-font;
-  font-weight: $ca-weight-book;
+  @include ca-title-type();
   margin-top: 0;
   margin-bottom: $ca-grid;
 }
 
 .h2,
 .htmlContent h2 {
-  font: $ca-heading-font;
-  font-size: $ca-heading-2-font-size;
-  line-height: $ca-heading-2-line-height;
-  // Note, we're not using $ca-heading-2-font-weight as the styleguide uses a lighter weight than murmur.
-  font-weight: $ca-weight-book;
+  @include ca-display-type();
   margin-top: $ca-grid * 3;
   margin-bottom: $ca-grid;
 }
 
 .h3,
 .htmlContent h3 {
-  font: $ca-heading-font;
-  font-size: $ca-heading-3-font-size;
-  line-height: $ca-heading-3-line-height;
-  font-weight: $ca-heading-3-font-weight;
+  @include ca-heading-type();
   margin-top: 0;
   margin-bottom: $ca-grid;
 }
@@ -61,9 +51,7 @@
 
 .introParagraph {
   composes: p;
-  font-size: $ca-intro-para-ideal-sans-font-size;
-  line-height: $ca-intro-para-ideal-sans-line-height;
-  font-weight: $ca-intro-para-ideal-sans-font-weight;
+  @include ca-ideal-lede-type();
 }
 
 .table,
