@@ -54,7 +54,8 @@ $ca-ideal-sans-font-descender-height: 0.14;
   @include ca-title-type(
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
-    $descender-height: $ca-ideal-sans-font-descender-height
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
   );
 }
 
@@ -70,14 +71,16 @@ $ca-ideal-sans-font-descender-height: 0.14;
   @include ca-display-type(
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
-    $descender-height: $ca-ideal-sans-font-descender-height
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
   );
 }
 
 @mixin ca-heading-type($args...) {
   @include ca-type(
     $size: 8/7,
-    $weight: $ca-weight-medium
+    $weight: $ca-weight-medium,
+    $args...
   );
 }
 
@@ -85,7 +88,8 @@ $ca-ideal-sans-font-descender-height: 0.14;
   @include ca-heading-type(
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
-    $descender-height: $ca-ideal-sans-font-descender-height
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
   );
 }
 
@@ -96,11 +100,12 @@ $ca-ideal-sans-font-descender-height: 0.14;
   );
 }
 
-@mixin ca-ideal-lede-type {
+@mixin ca-ideal-lede-type($args...) {
   @include ca-lede-type(
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
-    $descender-height: $ca-ideal-sans-font-descender-height
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
   );
 }
 
@@ -108,11 +113,12 @@ $ca-ideal-sans-font-descender-height: 0.14;
   @include ca-type($args...);
 }
 
-@mixin ca-ideal-body-type {
+@mixin ca-ideal-body-type($args...) {
   @include ca-body-type(
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
-    $descender-height: $ca-ideal-sans-font-descender-height
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
   );
 }
 
@@ -127,14 +133,15 @@ $ca-ideal-sans-font-descender-height: 0.14;
   @include ca-control-action-type(
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
-    $descender-height: $ca-ideal-sans-font-descender-height
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
   );
 }
 
 @mixin ca-small-type($args...) {
   @include ca-type(
-    $args...,
-    $size: 6/7
+    $size: 6/7,
+    $args...
   );
 }
 
@@ -142,15 +149,16 @@ $ca-ideal-sans-font-descender-height: 0.14;
   @include ca-small-type(
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
-    $descender-height: $ca-ideal-sans-font-descender-height
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
   );
 }
 
 @mixin ca-labels-and-legends-type($args...) {
   @include ca-type(
-    $args...,
     $size: 3/4,
-    $letter-spacing: 0.04em
+    $letter-spacing: 0.04em,
+    $args...,
   );
 }
 
@@ -158,6 +166,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
   @include ca-labels-and-legends-type(
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
-    $descender-height: $ca-ideal-sans-font-descender-height
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
   );
 }
