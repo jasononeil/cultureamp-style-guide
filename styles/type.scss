@@ -50,6 +50,14 @@ $ca-ideal-sans-font-descender-height: 0.14;
   );
 }
 
+@mixin ca-ideal-title-type($args...) {
+  @include ca-title-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height
+  );
+}
+
 @mixin ca-display-type($args...) {
   @include ca-type(
     $size: 10/7,
@@ -58,10 +66,26 @@ $ca-ideal-sans-font-descender-height: 0.14;
   );
 }
 
+@mixin ca-ideal-display-type($args...) {
+  @include ca-display-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height
+  );
+}
+
 @mixin ca-heading-type($args...) {
   @include ca-type(
     $size: 8/7,
     $weight: $ca-weight-medium
+  );
+}
+
+@mixin ca-ideal-heading-type($args...) {
+  @include ca-heading-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height
   );
 }
 
@@ -99,10 +123,26 @@ $ca-ideal-sans-font-descender-height: 0.14;
   );
 }
 
+@mixin ca-ideal-control-action-type($args...) {
+  @include ca-control-action-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height
+  );
+}
+
 @mixin ca-small-type($args...) {
   @include ca-type(
     $args...,
     $size: 6/7
+  );
+}
+
+@mixin ca-ideal-small-type($args...) {
+  @include ca-small-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height
   );
 }
 
@@ -111,5 +151,13 @@ $ca-ideal-sans-font-descender-height: 0.14;
     $args...,
     $size: 3/4,
     $letter-spacing: 0.04em
+  );
+}
+
+@mixin ca-ideal-labels-and-legends-type($args...) {
+  @include ca-labels-and-legends-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height
   );
 }

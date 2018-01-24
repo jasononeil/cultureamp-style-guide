@@ -7,7 +7,7 @@
 
 .colorCard h3 {
   margin-top: 8px;
-  @include ca-heading-type();
+  @include ca-ideal-heading-type();
   font-weight: $ca-weight-light;
 }
 
