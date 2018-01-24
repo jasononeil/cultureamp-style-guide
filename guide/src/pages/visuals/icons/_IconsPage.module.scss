@@ -21,9 +21,7 @@
   margin: $cardPadding 30px;
 
   strong {
-    font-size: $ca-labels-and-legends-font-size;
-    font-weight: $ca-weight-book;
-    letter-spacing: $ca-labels-and-legends-letter-spacing;
+    @include ca-ideal-labels-and-legends-type();
     text-transform: uppercase;
   }
 

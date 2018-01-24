@@ -22,7 +22,9 @@ const Tooltip = ({ children, tabIndex, tooltip, hideTooltip }: Props) => {
         })}
         aria-hidden // tooltips are hidden from screen readers! Use aria-label/aria-labelled-by on children
       >
-        <small>{tooltip}</small>
+        <div>
+          <small className={styles.content}>{tooltip}</small>
+        </div>
       </div>
     </div>
   );

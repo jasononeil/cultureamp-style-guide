@@ -1,72 +1,172 @@
 @import 'color';
 
-$ca-grid: 24px;
+$ca-grid: 1.5rem; // 24px @ default root font-size of 16px
 
 $ca-weight-extra-light: 200;
 $ca-weight-light: 300;
 $ca-weight-book: 400;
 $ca-weight-medium: 500;
 $ca-weight-semibold: 500; // Note: in Sketch, semibold is 600. But murmur has an existing value of semibold=500 that is heavily used.
-$ca-weight-normal: $ca-weight-book;
 
+// Combine these into a Sass map ($ca-default-font) once node-sass includes libsass 3.5.0.beta.3 with this bug fix: https://github.com/sass/libsass/issues/2309
 $ca-default-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$ca-default-font-size: 14px;
-$ca-default-line-height: $ca-grid / $ca-default-font-size;
+$ca-default-font-base-size: 0.875rem;
+$ca-default-font-descender-height: 0.115;
 
-$ca-ideal-sans: 'Ideal Sans A', 'Ideal Sans B', $ca-default-font-family;
-$ca-ideal-sans-font-size: 16px;
-$ca-ideal-sans-line-height: $ca-grid / $ca-ideal-sans-font-size;
+// Combine these into a Sass map ($ca-default-font) once node-sass includes libsass 3.5.0.beta.3 with this bug fix: https://github.com/sass/libsass/issues/2309
+$ca-ideal-sans-font-family: 'Ideal Sans A', 'Ideal Sans B',
+  $ca-default-font-family;
+$ca-ideal-sans-font-base-size: 1rem;
+$ca-ideal-sans-font-descender-height: 0.14;
 
-$ca-base-text-color: $ca-palette-ink;
-$ca-link-text-color: $ca-palette-ocean;
-$ca-link-hover-text-color: $ca-palette-ocean;
+@mixin ca-type(
+  $family: $ca-default-font-family,
+  $base-size: $ca-default-font-base-size,
+  $descender-height: $ca-default-font-descender-height,
+  $size: 1,
+  $grid-span: 1,
+  $weight: $ca-weight-book,
+  $letter-spacing: normal
+) {
+  font-family: $family;
+  font-weight: $weight;
+  letter-spacing: $letter-spacing;
 
-// Heading 1
-$ca-heading-font: $ca-weight-medium 22px $ca-ideal-sans;
+  $font-size: $base-size * $size; // rem
+  font-size: $font-size;
+  $line-height: ($ca-grid * $grid-span) / $font-size;
+  line-height: $line-height;
 
-// Heading 2
-$ca-heading-2-font-size: 18px;
-$ca-heading-2-line-height: $ca-grid / $ca-heading-2-font-size;
-$ca-heading-2-font-weight: $ca-weight-medium;
+  // shift text down to baseline grid
+  transform: translateY(#{$descender-height + ($line-height - 1) / 2}em);
+}
 
-// Heading 3
-$ca-heading-3-font-size: 16px;
-$ca-heading-3-line-height: $ca-grid / $ca-heading-3-font-size;
-$ca-heading-3-font-weight: $ca-weight-medium;
+@mixin ca-title-type($args...) {
+  @include ca-type(
+    $size: 12/7,
+    $grid-span: 1.5,
+    $weight: $ca-weight-medium,
+    $args...
+  );
+}
 
-// Intro Para
-$ca-intro-para-font-size: 16px;
-$ca-intro-para-line-height: $ca-grid / $ca-intro-para-font-size;
-$ca-intro-para-font-weight: $ca-weight-book;
+@mixin ca-ideal-title-type($args...) {
+  @include ca-title-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
+  );
+}
 
-// Intro Para (Ideal Sans variant)
-$ca-intro-para-ideal-sans-font-size: 18px;
-$ca-intro-para-ideal-sans-line-height: $ca-grid /
-  $ca-intro-para-ideal-sans-font-size;
-$ca-intro-para-ideal-sans-font-weight: $ca-weight-light;
+@mixin ca-display-type($args...) {
+  @include ca-type(
+    $size: 10/7,
+    $weight: $ca-weight-medium,
+    $args...
+  );
+}
 
-// Body
-$ca-body-font-size: $ca-default-font-size;
-$ca-body-line-height: $ca-default-line-height;
-$ca-body-font-weight: $ca-weight-book;
+@mixin ca-ideal-display-type($args...) {
+  @include ca-display-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
+  );
+}
 
-// Body (Ideal Sans variant)
-$ca-body-ideal-sans-font-size: $ca-ideal-sans-font-size;
-$ca-body-ideal-sans-line-height: $ca-ideal-sans-line-height;
-$ca-body-ideal-sans-font-weight: $ca-weight-light;
+@mixin ca-heading-type($args...) {
+  @include ca-type(
+    $size: 8/7,
+    $weight: $ca-weight-medium,
+    $args...
+  );
+}
 
-// Control Action
-$ca-control-action-font-size: 14px;
-$ca-control-action-line-height: $ca-grid / $ca-control-action-font-size;
-$ca-control-action-font-weight: $ca-weight-medium;
+@mixin ca-ideal-heading-type($args...) {
+  @include ca-heading-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
+  );
+}
 
-// Body Small
-$ca-body-small-font-size: $ca-grid / 2;
-$ca-body-small-line-height: $ca-grid / $ca-body-small-font-size;
-$ca-body-small-font-weight: $ca-weight-book;
+@mixin ca-lede-type($args...) {
+  @include ca-type(
+    $size: 8/7,
+    $args...
+  );
+}
 
-// Labels & Legends
-$ca-labels-and-legends-font-size: 12px;
-$ca-labels-and-legends-line-height: $ca-grid / $ca-labels-and-legends-font-size;
-$ca-labels-and-legends-font-weight: $ca-weight-medium;
-$ca-labels-and-legends-letter-spacing: 0.5px;
+@mixin ca-ideal-lede-type($args...) {
+  @include ca-lede-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
+  );
+}
+
+@mixin ca-body-type($args...) {
+  @include ca-type($args...);
+}
+
+@mixin ca-ideal-body-type($args...) {
+  @include ca-body-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
+  );
+}
+
+@mixin ca-control-action-type($args...) {
+  @include ca-type(
+    $weight: $ca-weight-medium,
+    $args...
+  );
+}
+
+@mixin ca-ideal-control-action-type($args...) {
+  @include ca-control-action-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
+  );
+}
+
+@mixin ca-small-type($args...) {
+  @include ca-type(
+    $size: 6/7,
+    $args...
+  );
+}
+
+@mixin ca-ideal-small-type($args...) {
+  @include ca-small-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
+  );
+}
+
+@mixin ca-labels-and-legends-type($args...) {
+  @include ca-type(
+    $size: 3/4,
+    $letter-spacing: 0.04em,
+    $args...
+  );
+}
+
+@mixin ca-ideal-labels-and-legends-type($args...) {
+  @include ca-labels-and-legends-type(
+    $family: $ca-ideal-sans-font-family,
+    $base-size: $ca-ideal-sans-font-base-size,
+    $descender-height: $ca-ideal-sans-font-descender-height,
+    $args...
+  );
+}
