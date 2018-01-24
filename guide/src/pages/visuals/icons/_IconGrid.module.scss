@@ -62,7 +62,7 @@ $tileHeight: 144px;
   text-align: center;
   opacity: 0;
   color: $ca-palette-ocean;
-  @include ca-ideal-control-action-type();
+  @include ca-ideal-labels-and-legends-type();
 
   .iconTile:hover &,
   .iconTile:focus &,
