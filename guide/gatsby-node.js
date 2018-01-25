@@ -1,5 +1,5 @@
 const path = require('path');
-const ExtractTextPlugin = require(`extract-text-webpack-plugin`);
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 function modifyWebpackConfig(_ref, options) {
   var config = _ref.config,
@@ -19,51 +19,55 @@ function addSassLoaders(config, stage) {
   // This is based on gatsby-plugin-postcss-sass, but matched to our configuration.
   const sassFiles = /\.s[ac]ss$/,
     sassModulesFiles = /\.module\.s[ac]ss$/,
-    cssLoader = `css?${JSON.stringify({
-      modules: true,
-      minimize: true,
-      // This ensures `compose:` will use both sass-loader and postcss-loader.
-      importLoaders: 2,
-      localIdentName: `[path]---[name]---[local]---[hash:base64:5]`,
-      sourcMap: stage.startsWith('build'),
-    })}`,
-    sassLoader = `sass`,
-    postCssLoader = `postcss?${JSON.stringify({
-      // Each postcss-loader instance needs a unique ident.
-      ident: 'kaizen-gatsby-website',
-    })}`;
-
-  switch (stage) {
-    case `develop`: {
-      config.loader(`sass`, {
-        test: sassFiles,
-        exclude: sassModulesFiles,
-        loaders: [`style`, `css`, postCssLoader, sassLoader],
+    cssLoader =
+      'css?' +
+      JSON.stringify({
+        modules: true,
+        minimize: true,
+        // This ensures `compose:` will use both sass-loader and postcss-loader.
+        importLoaders: 2,
+        localIdentName: '[name]__[local]--[hash:base64:5]',
+        sourcMap: stage.startsWith('build'),
+      }),
+    sassLoader = 'sass',
+    postCssLoader =
+      'postcss?' +
+      JSON.stringify({
+        // Each postcss-loader instance needs a unique ident.
+        ident: 'kaizen-gatsby-website',
       });
 
-      config.loader(`sassModules`, {
+  switch (stage) {
+    case 'develop': {
+      config.loader('sass', {
+        test: sassFiles,
+        exclude: sassModulesFiles,
+        loaders: ['style', 'css', postCssLoader, sassLoader],
+      });
+
+      config.loader('sassModules', {
         test: sassModulesFiles,
-        loaders: [`style`, cssLoader, postCssLoader, sassLoader],
+        loaders: ['style', cssLoader, postCssLoader, sassLoader],
       });
       return config;
     }
-    case `build-css`:
-    case `develop-html`:
-    case `build-javascript`:
-    case `build-html`: {
-      config.loader(`sass`, {
+    case 'build-css':
+    case 'develop-html':
+    case 'build-javascript':
+    case 'build-html': {
+      config.loader('sass', {
         test: sassFiles,
         exclude: sassModulesFiles,
         loader: ExtractTextPlugin.extract([
-          `css?minimize`,
+          'css?minimize',
           postCssLoader,
           sassLoader,
         ]),
       });
 
-      config.loader(`sassModules`, {
+      config.loader('sassModules', {
         test: sassModulesFiles,
-        loader: ExtractTextPlugin.extract(`style`, [
+        loader: ExtractTextPlugin.extract('style', [
           cssLoader,
           postCssLoader,
           sassLoader,
