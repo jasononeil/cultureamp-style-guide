@@ -34,11 +34,8 @@
 
   > * {
     align-self: flex-end;
-    padding: 1em 0;
-
-    font-size: $ca-body-font-size;
-    line-height: $ca-body-line-height;
-    font-weight: $ca-body-font-weight;
+    padding-bottom: $ca-grid * 0.75;
+    padding-top: $ca-grid * 0.25;
   }
 }
 
@@ -49,6 +46,8 @@
 }
 
 .menuItem {
+  @include ca-body-type;
+
   display: block;
   padding: ($ca-grid / 8) 2em;
 

@@ -5,9 +5,5 @@
 html {
   background: $ca-palette-stone;
   color: $ca-palette-ink;
-  font-family: $ca-ideal-sans;
-  font-weight: $ca-weight-light;
-  font-size: $ca-default-font-size;
-  line-height: $ca-default-line-height;
-  font-weight: $ca-body-font-weight;
+  @include ca-ideal-body-type;
 }

@@ -38,7 +38,9 @@ const Link = ({
         })}
         aria-hidden
       >
-        <small>{tooltip}</small>
+        <div>
+          <small className={styles.content}>{tooltip}</small>
+        </div>
       </div>
     </div>
   );
