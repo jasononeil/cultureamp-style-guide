@@ -1,5 +1,9 @@
 # Release History: cultureamp-style-guide
 
+## 7.1.0
+
+* ✨ Introduce Layout page layout styles module.
+
 ## 7.0.0
 
 * 💔 Renamed type style mixins to make them more autocomplete-friendly:
