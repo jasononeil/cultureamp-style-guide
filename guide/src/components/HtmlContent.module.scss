@@ -3,7 +3,7 @@
 @import '~cultureamp-style-guide/styles/border';
 
 .contentContainer {
-  @include ca-ideal-body-type;
+  @include ca-type-ideal-body;
 
   h1,
   h2,
@@ -25,21 +25,21 @@
 
 .h1,
 .htmlContent h1 {
-  @include ca-ideal-title-type;
+  @include ca-type-ideal-title;
   margin-top: 0;
   margin-bottom: $ca-grid;
 }
 
 .h2,
 .htmlContent h2 {
-  @include ca-ideal-display-type;
+  @include ca-type-ideal-display;
   margin-top: $ca-grid * 3;
   margin-bottom: $ca-grid;
 }
 
 .h3,
 .htmlContent h3 {
-  @include ca-ideal-heading-type;
+  @include ca-type-ideal-heading;
   margin-top: 0;
   margin-bottom: $ca-grid;
 }
@@ -51,7 +51,7 @@
 
 .introParagraph {
   composes: p;
-  @include ca-ideal-lede-type;
+  @include ca-type-ideal-lede;
 }
 
 .table,

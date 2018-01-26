@@ -1,5 +1,18 @@
 # Release History: cultureamp-style-guide
 
+## 7.0.0
+
+* 💔 Renamed type style mixins to make them more autocomplete-friendly:
+
+  * `@include ca-type-title;`
+  * `@include ca-type-display;`
+  * `@include ca-type-heading;`
+  * `@include ca-type-lede;`
+  * `@include ca-type-body;`
+  * `@include ca-type-control-action;`
+  * `@include ca-type-small;`
+  * `@include ca-type-labels-and-legends;`
+
 ## 6.0.0
 
 * ✨ New type style mixins. These set font-sizes, line-heights and transforms
