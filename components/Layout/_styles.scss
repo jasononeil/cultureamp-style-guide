@@ -1,0 +1,53 @@
+/*
+      +-------------------------------------+
+      |n|         header                    |
+      |a|-----------------------------------| --
+      |v|       |                           |  |
+      |b|       |                           |  |
+      |a|   s   |                           |  |
+      |r|   i   |                           |  |
+      | |   d   |                           |  |
+      | |   e   |         content           |  |  body
+      | |   b   |                           |  |
+      | |   a   |                           |  |
+      | |   r   |                           |  |
+      | |       |                           |  |
+      | |       |                           |  |
+      | |-----------------------------------| --
+      | |         footer                    |
+      +-------------------------------------+
+
+        |-----------------------------------|
+                      page
+*/
+
+%root {
+  display: flex;
+  align-items: stretch;
+}
+
+%navigation-bar {
+  flex: 0 0 auto;
+}
+
+%page {
+  display: flex;
+  flex: 1 0 0px;
+  flex-direction: column;
+  height: 100vh; // scrolling content will overflow
+}
+
+%header,
+%footer {
+  flex: 0 0 auto;
+}
+
+%body {
+  // a flex column to support legacy sticky .app-layout__content-footer in Murmur
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 0px;
+  height: 0; // flex-basis 0px doesn't work in most browsers
+  position: relative;
+}
