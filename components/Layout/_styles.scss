@@ -42,12 +42,56 @@
   flex: 0 0 auto;
 }
 
-%body {
-  // a flex column to support legacy sticky .app-layout__content-footer in Murmur
+%legacy-sticky-footer-container {
+  // a flex column to support legacy sticky .app-layout__legacy-sticky-footer in Murmur
   display: flex;
   flex-direction: column;
 
   flex: 1 1 0px;
   height: 0; // flex-basis 0px doesn't work in most browsers
   position: relative;
+}
+
+// TODO: Enhance below styles with capabilities of report-container.scss
+
+%body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; // for centered only child
+
+  position: absolute; // required for height to work when content is short
+  height: 100%;
+  width: 100%;
+
+  padding: 20px 0 0;
+  @media (min-width: 480px) {
+    padding-left: 30px;
+    padding-right: 40px;
+  }
+}
+
+// Used by SurveyBrowser.scss in Murmur (TODO: REMOVE THESE)
+$sidebar-width: 250px;
+$sidebar-right-padding: 30px;
+%sidebar {
+  flex: 0 0 $sidebar-width;
+  padding-right: $sidebar-right-padding;
+}
+
+%content {
+  // to support sticky footer
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 auto;
+
+  &:only-child {
+    width: 100%; // fixes centering in IE 11 at max-width
+    min-width: 100%; // prevents too-wide content slipping under NavigationBarApp
+
+    @media (min-width: 480px) {
+      min-width: auto;
+      max-width: 900px;
+    }
+  }
 }
