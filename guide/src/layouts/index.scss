@@ -5,5 +5,5 @@
 html {
   background: $ca-palette-stone;
   color: $ca-palette-ink;
-  @include ca-ideal-body-type;
+  @include ca-type-ideal-body;
 }
