@@ -10,21 +10,23 @@ $ca-weight-semibold: 500; // Note: in Sketch, semibold is 600. But murmur has an
 
 // Combine these into a Sass map ($ca-default-font) once node-sass includes libsass 3.5.0.beta.3 with this bug fix: https://github.com/sass/libsass/issues/2309
 $ca-default-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$ca-default-font-base-size: 0.875rem;
+$ca-default-font-base-size: 0.875rem; /* 14px */
 $ca-default-font-descender-height: 0.115;
 
 // Combine these into a Sass map ($ca-default-font) once node-sass includes libsass 3.5.0.beta.3 with this bug fix: https://github.com/sass/libsass/issues/2309
 $ca-ideal-sans-font-family: 'Ideal Sans A', 'Ideal Sans B',
   $ca-default-font-family;
-$ca-ideal-sans-font-base-size: 1rem;
+$ca-ideal-sans-font-base-size: 1rem; /* 16px */
 $ca-ideal-sans-font-descender-height: 0.14;
 
+// Inspired by Basekick from SEEK: https://github.com/michaeltaranto/basekick
 @mixin ca-type(
   $family: $ca-default-font-family,
   $base-size: $ca-default-font-base-size,
   $descender-height: $ca-default-font-descender-height,
-  $size: 1,
-  $grid-span: 1,
+
+  $size-ratio: 1,
+  $line-height-in-grid-units: 1,
   $weight: $ca-weight-book,
   $letter-spacing: normal
 ) {
@@ -32,19 +34,20 @@ $ca-ideal-sans-font-descender-height: 0.14;
   font-weight: $weight;
   letter-spacing: $letter-spacing;
 
-  $font-size: $base-size * $size; // rem
+  $font-size: $base-size * $size-ratio; // in rem
+  $absolute-line-height: $ca-grid * $line-height-in-grid-units; // in rem
+  $line-height-ratio: $absolute-line-height / $font-size; // unitless number
+  $line-spacing: $line-height-ratio - 1;
   font-size: $font-size;
-  $line-height: ($ca-grid * $grid-span) / $font-size;
-  line-height: $line-height;
+  line-height: $line-height-ratio;
 
-  // shift text down to baseline grid
-  transform: translateY(#{$descender-height + ($line-height - 1) / 2}em);
+  transform: translateY(#{$descender-height + $line-spacing / 2}em);
 }
 
 @mixin ca-title-type($args...) {
   @include ca-type(
-    $size: 12/7,
-    $grid-span: 1.5,
+    $size-ratio: 12/7,
+    $line-height-in-grid-units: 1.5,
     $weight: $ca-weight-medium,
     $args...
   );
@@ -61,7 +64,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
 
 @mixin ca-display-type($args...) {
   @include ca-type(
-    $size: 10/7,
+    $size-ratio: 10/7,
     $weight: $ca-weight-medium,
     $args...
   );
@@ -78,7 +81,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
 
 @mixin ca-heading-type($args...) {
   @include ca-type(
-    $size: 8/7,
+    $size-ratio: 8/7,
     $weight: $ca-weight-medium,
     $args...
   );
@@ -95,7 +98,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
 
 @mixin ca-lede-type($args...) {
   @include ca-type(
-    $size: 8/7,
+    $size-ratio: 8/7,
     $args...
   );
 }
@@ -140,7 +143,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
 
 @mixin ca-small-type($args...) {
   @include ca-type(
-    $size: 6/7,
+    $size-ratio: 6/7,
     $args...
   );
 }
@@ -156,7 +159,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
 
 @mixin ca-labels-and-legends-type($args...) {
   @include ca-type(
-    $size: 3/4,
+    $size-ratio: 3/4,
     $letter-spacing: 0.04em,
     $args...
   );
