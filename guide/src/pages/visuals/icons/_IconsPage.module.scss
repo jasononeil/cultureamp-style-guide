@@ -26,7 +26,6 @@
   }
 
   .opacityLabel {
-    font-size: $ca-labels-and-legends-font-size;
-    font-weight: $ca-weight-book;
+    @include ca-type-ideal-labels-and-legends;
   }
 }

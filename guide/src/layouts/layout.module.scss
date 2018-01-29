@@ -61,6 +61,7 @@ $transitionSpeed: 200ms;
       @media #{$desktop} {
         grid-template-columns: $ca-navigation-bar__width min-content auto;
       }
+      height: 100vh;
     }
 
     // nav: Sit in the leftmost column, one layer above the subnav

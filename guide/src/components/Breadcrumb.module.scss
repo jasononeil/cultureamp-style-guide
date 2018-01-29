@@ -2,8 +2,7 @@
 @import '~cultureamp-style-guide/styles/type.scss';
 
 .breadcrumb {
-  font-size: $ca-control-action-font-size;
-  line-height: $ca-control-action-line-height;
+  @include ca-type-ideal-control-action;
   font-weight: $ca-weight-light;
 
   margin: $ca-grid / 2 0 $ca-grid;

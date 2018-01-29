@@ -7,14 +7,14 @@
   width: 100%;
   height: 100vh;
   background: add-tint($ca-palette-wisteria, 90%);
-  padding: 10px;
+  $padding: $ca-grid * 4/7;
+  padding: $padding;
   overflow-y: auto;
   h1 {
-    font-size: $ca-heading-2-font-size;
-    line-height: $ca-heading-2-line-height;
+    @include ca-type-ideal-display;
     font-weight: $ca-weight-light;
     margin: 0;
-    padding: $ca-grid - 10px;
+    padding: $ca-grid - $padding;
     padding-bottom: $ca-grid / 2;
     border-bottom: add-alpha($ca-palette-ink, 10%) 1px solid;
     margin-bottom: $ca-grid / 2;
@@ -22,9 +22,7 @@
 }
 
 .navSectionLabel {
-  font-size: $ca-labels-and-legends-font-size;
-  line-height: $ca-labels-and-legends-line-height;
-  font-weight: $ca-weight-book;
+  @include ca-type-ideal-labels-and-legends;
   padding-left: 14px;
 }
 
@@ -62,9 +60,8 @@
 
 .navItemText {
   display: inline-block;
-  font-size: $ca-control-action-font-size;
+  @include ca-type-ideal-control-action;
   font-weight: $ca-weight-light;
-  line-height: $ca-control-action-line-height;
 }
 
 .closeBtn {
