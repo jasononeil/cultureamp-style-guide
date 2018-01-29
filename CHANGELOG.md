@@ -1,5 +1,41 @@
 # Release History: cultureamp-style-guide
 
+## 7.1.0
+
+* ✨ Introduce Layout page layout styles module.
+
+## 7.0.0
+
+* 💔 Renamed type style mixins to make them more autocomplete-friendly:
+
+  * `@include ca-type-title;`
+  * `@include ca-type-display;`
+  * `@include ca-type-heading;`
+  * `@include ca-type-lede;`
+  * `@include ca-type-body;`
+  * `@include ca-type-control-action;`
+  * `@include ca-type-small;`
+  * `@include ca-type-labels-and-legends;`
+
+## 6.0.0
+
+* ✨ New type style mixins. These set font-sizes, line-heights and transforms
+  required for text to correctly sit on a baseline grid. Usage:
+
+  * `@include ca-title-type;`
+  * `@include ca-display-type;`
+  * `@include ca-heading-type;`
+  * `@include ca-lede-type;`
+  * `@include ca-body-type;`
+  * `@include ca-control-action-type;`
+  * `@include ca-small-type;`
+  * `@include ca-labels-and-legends-type;`
+
+  There are also variations for Ideal Sans.
+
+* 💔 Previous sass variables for type styles have been removed. Please use the
+  new mixins instead.
+
 ## 5.1.7
 
 * 👍 Add `colorScheme` prop to NavigationBar, allowing you to choose
