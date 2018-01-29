@@ -1,0 +1,9 @@
+@import '~cultureamp-style-guide/styles/color';
+
+.cultureAmpMenu {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  color: add-tint($ca-palette-coral, 50%);
+  border-radius: $ca-border-radius;
+}
