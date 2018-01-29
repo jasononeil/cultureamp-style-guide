@@ -4,31 +4,29 @@ import { withPrefix } from 'gatsby-link';
 import { Link } from './Link.js';
 import styles from './Breadcrumb.module.scss';
 
-class Breadcrumb extends React.Component {
-  render() {
-    const prefix = withPrefix('/'),
-      path = this.context.router.route.location.pathname.substr(prefix.length),
-      parts = path.split('/');
+const Breadcrumb = ({}, context) => {
+  const prefix = withPrefix('/'),
+    path = context.router.route.location.pathname.substr(prefix.length),
+    parts = path.split('/');
 
-    parts.unshift('/');
+  parts.unshift('/');
 
-    let href = '';
-    const links = parts.map(function(part, index) {
-      const title = getPageTitle(part);
-      if (index < parts.length - 1) {
-        href = part != '/' ? `${href}/${part}` : '';
-        return (
-          <Link to={href} key={part}>
-            {title}
-          </Link>
-        );
-      }
-      return <span key={part}>{title}</span>;
-    });
+  let href = '';
+  const links = parts.map(function(part, index) {
+    const title = getPageTitle(part);
+    if (index < parts.length - 1) {
+      href = part != '/' ? `${href}/${part}` : '';
+      return (
+        <Link to={href} key={part}>
+          {title}
+        </Link>
+      );
+    }
+    return <span key={part}>{title}</span>;
+  });
 
-    return <nav className={styles.breadcrumb}>{links}</nav>;
-  }
-}
+  return <nav className={styles.breadcrumb}>{links}</nav>;
+};
 Breadcrumb.contextTypes = {
   router: PropTypes.object.isRequired,
 };
