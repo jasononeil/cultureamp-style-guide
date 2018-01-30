@@ -6,6 +6,7 @@ import Icon from 'cultureamp-style-guide/components/Icon';
 import homeIcon from 'cultureamp-style-guide/icons/home.svg';
 import enso from 'cultureamp-style-guide/icons/ca-monogram.svg';
 import sitemap from 'pages/_sitemap.js';
+import styles from './mainNav.module.scss';
 
 const MainNav = ({ openNav }, context) => {
   const prefix = withPrefix('/'),
@@ -31,11 +32,15 @@ const MainNav = ({ openNav }, context) => {
       ))}
       <NavigationBar.Menu
         tooltip="Culture Amp"
-        header={<div>About Culture Amp</div>}
+        header={
+          <div className={styles.popupMenuHeader}>
+            <span>Culture Amp</span>
+          </div>
+        }
         items={[
           {
-            label: 'Culture Amp',
-            link: 'http://cultureamp.com/',
+            label: 'About Culture Amp',
+            link: 'https://cultureamp.com/',
           },
           {
             label: 'Careers',

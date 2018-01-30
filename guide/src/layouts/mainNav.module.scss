@@ -1,4 +1,6 @@
+@import '~cultureamp-style-guide/styles/type';
 @import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/border';
 
 .cultureAmpMenu {
   background-color: #ffffff;
@@ -6,4 +8,19 @@
   height: 100%;
   color: add-tint($ca-palette-coral, 50%);
   border-radius: $ca-border-radius;
+}
+
+.popupMenuHeader {
+  width: 200px;
+
+  @include ca-type-body;
+  display: block;
+  padding: ($ca-grid / 8) 2em;
+
+  border-bottom: 1px rgba(#fff, 0.1) solid;
+
+  span {
+    @include ca-type-display;
+    margin-bottom: $ca-grid / 2;
+  }
 }
