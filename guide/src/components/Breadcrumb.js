@@ -25,7 +25,11 @@ const Breadcrumb = ({}, context) => {
     return <span key={part}>{title}</span>;
   });
 
-  return <nav className={styles.breadcrumb}>{links}</nav>;
+  return (
+    <nav className={styles.breadcrumb}>
+      <span className={styles.text}>{links}</span>
+    </nav>
+  );
 };
 Breadcrumb.contextTypes = {
   router: PropTypes.object.isRequired,

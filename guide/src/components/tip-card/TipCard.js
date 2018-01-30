@@ -16,7 +16,7 @@ const TipCard = ({ title, type, children }) => {
             <Icon icon={icon} role="presentation" />
           </span>
         )}
-        {title}
+        <span className={styles.headerText}>{title}</span>
       </div>
       <div className={styles.cardBody}>{children}</div>
     </div>

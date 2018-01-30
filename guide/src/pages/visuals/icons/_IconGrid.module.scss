@@ -3,9 +3,7 @@
 @import '~cultureamp-style-guide/styles/color';
 
 .header {
-  $font-size: $ca-grid * 5/6;
-  font-size: $font-size;
-  line-height: $ca-grid / $font-size;
+  @include ca-type-display;
   font-weight: $ca-weight-book;
   margin-top: $ca-grid * 3;
 }
@@ -48,6 +46,8 @@ $tileHeight: 144px;
 .iconLabel {
   display: block;
   text-align: center;
+  @include ca-type-ideal-body;
+  font-weight: $ca-weight-light;
 }
 
 .iconWrapper {

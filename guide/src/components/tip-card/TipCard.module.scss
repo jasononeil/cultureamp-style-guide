@@ -12,6 +12,9 @@ $cardPadding: 24px;
 .cardHeader {
   background: add-alpha(add-tint($ca-palette-ink, 70%), 30%);
   padding: $cardPadding;
+}
+
+.headerText {
   @include ca-type-ideal-heading;
 }
 

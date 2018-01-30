@@ -109,6 +109,7 @@ $transitionSpeed: 200ms;
     // header: sit fixed to the top of the page
     .header {
       grid-area: header;
+      z-index: $ca-z-index-fixed;
       .headerBar {
         position: fixed;
         left: $ca-navigation-bar__width;

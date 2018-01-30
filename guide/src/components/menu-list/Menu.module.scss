@@ -1,3 +1,4 @@
+@import '~cultureamp-style-guide/styles/type';
 @import '~cultureamp-style-guide/styles/color';
 @import '~cultureamp-style-guide/styles/border';
 @import '~cultureamp-style-guide/styles/layers';
@@ -26,7 +27,8 @@ $side-padding: 18px;
 }
 
 .header__title {
-  font-weight: 500;
+  @include ca-type-ideal-control-action;
+  font-weight: $ca-weight-semibold;
   text-transform: uppercase;
 }
 

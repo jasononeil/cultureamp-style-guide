@@ -40,7 +40,7 @@ const MainNav = ({ openNav }, context) => {
         items={[
           {
             label: 'About Culture Amp',
-            link: 'https://cultureamp.com/',
+            link: 'https://www.cultureamp.com/',
           },
           {
             label: 'Careers',
