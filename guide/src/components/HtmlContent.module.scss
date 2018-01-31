@@ -120,6 +120,18 @@
   padding-left: 18px;
 }
 
+.buttonReset {
+  appearance: none;
+  display: inline;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 .link,
 .htmlContent a[href] {
   @include ca-type-ideal-body;
@@ -138,24 +150,12 @@
   }
 }
 
-.buttonReset {
-  appearance: none;
-  display: inline;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
 .buttonLink {
+  // Note: the definition of `.buttonReset` must come before the definition of `.link` in the source order,
+  // as we want the styles in `.link` to take override those in `.buttonReset`.
   composes: buttonReset;
   composes: link;
   padding: 0 2px;
-  // Note: the `font: inherit` rule in buttonReset clashes with the font mixin in `link`.
-  // We include the mixin again here to ensure the rules are correctly applied.
-  @include ca-type-ideal-body;
 }
 
 .img,
