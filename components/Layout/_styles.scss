@@ -1,3 +1,7 @@
+@import '~cultureamp-style-guide/styles/layers';
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+
 /*
       +-------------------------------------+
       |n|         header                    |
@@ -8,7 +12,7 @@
       |r|   i   |                           |  |
       | |   d   |                           |  |
       | |   e   |         content           |  |  body
-      | |   b   |                           |  |
+      | |   b   |                           |  |  (containing body-content)
       | |   a   |                           |  |
       | |   r   |                           |  |
       | |       |                           |  |
@@ -42,50 +46,77 @@
   flex: 0 0 auto;
 }
 
-%legacy-sticky-footer-container {
-  // a flex column to support legacy sticky .app-layout__legacy-sticky-footer in Murmur
-  display: flex;
-  flex-direction: column;
-
+%body {
+  // %body provides a positioning context for %body-content,
+  // which may be nested n levels deep in the DOM.
+  position: relative;
   flex: 1 1 0px;
   height: 0; // flex-basis 0px doesn't work in most browsers
-  position: relative;
 }
 
-// TODO: Enhance below styles with capabilities of report-container.scss
+%body-content {
+  display: flex; // TODO: check this is needed for sticky footer in IE
 
-%body {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; // for centered only child
-
+  // match position & dimensions of %body so that child sticky footer can stick to bottom of %body
   position: absolute; // required for height to work when content is short
   height: 100%;
   width: 100%;
 
-  padding: 20px 0 0;
-  @media (min-width: 480px) {
-    padding-left: 30px;
-    padding-right: 40px;
+  @media print {
+    display: block;
+    position: static;
+    height: auto;
+    width: auto;
   }
 }
 
-// Used by SurveyBrowser.scss in Murmur (TODO: REMOVE THESE)
-$sidebar-width: 250px;
-$sidebar-right-padding: 30px;
+$sidebar-width: 12 * $ca-grid;
 %sidebar {
-  flex: 0 0 $sidebar-width;
-  padding-right: $sidebar-right-padding;
+  background-color: $ca-palette-stone;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  width: $sidebar-width;
+  z-index: $ca-z-index-fixed;
+  padding: $ca-grid;
+
+  // stack sidebar and content vertically in print
+  @media print {
+    background-color: transparent;
+    overflow-y: visible;
+    overflow-x: visible;
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+}
+
+// enforce fixed width despite potential scrollbar on %sidebar
+%sidebar-content {
+  width: $sidebar-width - 2 * $ca-grid;
 }
 
 %content {
   // to support sticky footer
   display: flex;
   flex-direction: column;
+  margin-left: $sidebar-width;
+  padding: $ca-grid;
 
   flex: 1 1 auto;
 
+  // stack sidebar and content vertically in print
+  @media print {
+    display: block;
+    padding: 0;
+    margin-left: 0;
+    overflow: visible;
+  }
+
   &:only-child {
+    margin: 0 auto;
     width: 100%; // fixes centering in IE 11 at max-width
     min-width: 100%; // prevents too-wide content slipping under NavigationBarApp
 
@@ -95,3 +126,20 @@ $sidebar-right-padding: 30px;
     }
   }
 }
+
+// sidebar/content styles cannot be used inside of this container
+%body--legacy-sticky-footer {
+  // a flex column to support %legacy-sticky-footer
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 0px;
+  height: 0; // flex-basis 0px doesn't work in most browsers
+}
+
+%legacy-sticky-footer {
+  // sticky footer inside of %body--legacy-sticky-footer
+  margin-top: auto;
+  width: 100%;
+}
+
