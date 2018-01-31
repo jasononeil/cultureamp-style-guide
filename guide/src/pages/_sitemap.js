@@ -1,4 +1,5 @@
 import enso from 'cultureamp-style-guide/icons/ca-monogram.svg';
+import starCircle from 'cultureamp-style-guide/icons/promotion.svg';
 
 const sitemap = {
   title: 'Kaizen',
@@ -8,7 +9,7 @@ const sitemap = {
     {
       title: 'Product',
       href: '/',
-      icon: enso,
+      icon: starCircle,
       children: [
         {
           title: 'Components',

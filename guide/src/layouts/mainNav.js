@@ -17,7 +17,7 @@ const MainNav = ({ openNav }, context) => {
         <NavigationBar.Link
           key={page.title}
           icon={page.icon}
-          href={page.href}
+          href={withPrefix(page.href)}
           tooltip={page.title}
           onClick={e => {
             // Only navigate to this section if we're not already in this section.
