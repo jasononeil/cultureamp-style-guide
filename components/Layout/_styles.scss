@@ -55,7 +55,7 @@
 }
 
 %body-content {
-  display: flex; // TODO: check this is needed for sticky footer in IE
+  display: flex;
 
   // match position & dimensions of %body so that child sticky footer can stick to bottom of %body
   position: absolute; // required for height to work when content is short
