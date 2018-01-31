@@ -12,7 +12,7 @@ class IconGrid extends React.Component {
       <div>
         <h2 className={styles.header}>{category}</h2>
         <div className={styles.iconGrid}>
-          {icons.map(icon => <IconTile {...icon} />)}
+          {icons.map(icon => <IconTile {...icon} key={icon.title} />)}
         </div>
       </div>
     );

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import styles from './Link.module.scss';
 import Icon from '../../Icon';
+import iconStyles from '../../Icon/Icon.module.scss';
 
 type Props = {|
   icon: { id: string, viewBox: string },
@@ -27,7 +28,7 @@ const Link = ({
   return (
     <div className={styles.root}>
       <a
-        className={classNames(styles.link, { [styles.active]: active })}
+        className={classNames(styles.link, { [iconStyles.active]: active })}
         {...{ href, id, onClick }}
       >
         <Icon icon={icon} title={tooltip} />

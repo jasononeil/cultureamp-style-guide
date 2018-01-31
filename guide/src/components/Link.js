@@ -1,21 +1,32 @@
 import React from 'react';
+import classNames from 'classnames';
 import GatsbyLink from 'gatsby-link';
 import styles from './HtmlContent.module.scss';
+import iconStyles from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
 
 export const Link = ({ to, children }) => (
-  <GatsbyLink to={to} className={styles.link}>
+  <GatsbyLink
+    to={to}
+    className={classNames(styles.link, iconStyles.interactiveIconWrapper)}
+  >
     {children}
   </GatsbyLink>
 );
 
 export const ExternalLink = ({ to, children }) => (
-  <a href={to} className={styles.link}>
+  <a
+    href={to}
+    className={classNames(styles.link, iconStyles.interactiveIconWrapper)}
+  >
     {children}
   </a>
 );
 
 export const ActionLink = ({ action, children }) => (
-  <button onClick={action} className={styles.buttonLink}>
+  <button
+    onClick={action}
+    className={classNames(styles.buttonLink, iconStyles.interactiveIconWrapper)}
+  >
     {children}
   </button>
 );

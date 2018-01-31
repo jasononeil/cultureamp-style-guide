@@ -1,0 +1,19 @@
+@import '~cultureamp-style-guide/styles/color.scss';
+@import '~cultureamp-style-guide/styles/type.scss';
+
+.breadcrumb {
+  margin: $ca-grid / 2 0 $ca-grid;
+  a {
+    &:after {
+      content: '/';
+      color: add-alpha($ca-palette-ink, 50%);
+      padding: 0 5px;
+    }
+  }
+
+  .text {
+    display: block;
+    @include ca-type-ideal-control-action;
+    font-weight: $ca-weight-light;
+  }
+}

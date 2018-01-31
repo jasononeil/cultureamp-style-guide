@@ -4,4 +4,4 @@ set -o pipefail
 set -u
 
 cd guide
-yarn gatsby develop
+yarn gatsby develop -H 0.0.0.0

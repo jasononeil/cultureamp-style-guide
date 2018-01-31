@@ -3,8 +3,6 @@
 @import '~cultureamp-style-guide/styles/border';
 
 .contentContainer {
-  @include ca-type-ideal-body;
-
   h1,
   h2,
   h3,
@@ -44,13 +42,44 @@
   margin-bottom: $ca-grid;
 }
 
+.h4,
+.htmlContent h4 {
+  @include ca-type-ideal-heading;
+  margin-top: 0;
+  margin-bottom: $ca-grid;
+  font-weight: $ca-weight-light;
+}
+
+.h5,
+.htmlContent h5 {
+  @include ca-type-ideal-body;
+  font-weight: $ca-weight-semibold;
+  margin-top: 0;
+  margin-bottom: $ca-grid;
+}
+
+.h6,
+.htmlContent h6 {
+  @include ca-type-ideal-small;
+  font-weight: $ca-weight-book;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .p,
 .htmlContent p {
   margin: $ca-grid 0;
+  @include ca-type-ideal-body;
 }
 
 .introParagraph {
   composes: p;
+  @include ca-type-ideal-lede;
+}
+
+// Ensure that nested paragraphs use the larger font size.
+.introParagraph .p {
   @include ca-type-ideal-lede;
 }
 
@@ -72,6 +101,18 @@
   }
 }
 
+.ul,
+.ol,
+.htmlContent ul,
+.htmlContent ol {
+  margin-bottom: $ca-grid;
+}
+
+.li,
+.htmlContent li {
+  @include ca-type-ideal-body;
+}
+
 .blockquote,
 .htmlContent blockquote {
   border-left: 2px solid $ca-border-color;
@@ -79,8 +120,21 @@
   padding-left: 18px;
 }
 
+.buttonReset {
+  appearance: none;
+  display: inline;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 .link,
 .htmlContent a[href] {
+  @include ca-type-ideal-body;
   color: $ca-link-text-color;
   text-decoration: none;
   &:hover,
@@ -96,19 +150,9 @@
   }
 }
 
-.buttonReset {
-  appearance: none;
-  display: inline;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
 .buttonLink {
+  // Note: the definition of `.buttonReset` must come before the definition of `.link` in the source order,
+  // as we want the styles in `.link` to take override those in `.buttonReset`.
   composes: buttonReset;
   composes: link;
   padding: 0 2px;

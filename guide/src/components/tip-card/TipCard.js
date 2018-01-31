@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import Icon from 'cultureamp-style-guide/components/Icon/Icon';
-import success from 'cultureamp-style-guide/icons/success.svg';
-import exclamation from 'cultureamp-style-guide/icons/exclamation.svg';
+import success from 'cultureamp-style-guide/icons/success-white.svg';
+import exclamation from 'cultureamp-style-guide/icons/exclamation-white.svg';
 import styles from './TipCard.module.scss';
 
 const TipCard = ({ title, type, children }) => {
@@ -16,7 +16,7 @@ const TipCard = ({ title, type, children }) => {
             <Icon icon={icon} role="presentation" />
           </span>
         )}
-        {title}
+        <span className={styles.headerText}>{title}</span>
       </div>
       <div className={styles.cardBody}>{children}</div>
     </div>

@@ -1,46 +1,75 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'components/Link';
 import Helmet from 'react-helmet';
+import classNames from 'classnames';
+import Breadcrumb from 'components/Breadcrumb';
+import SubNav from 'components/SubNav';
+import MainNav from './mainNav.js';
+import HeaderBar from './headerBar.js';
 import './index.scss';
 import styles from './layout.module.scss';
 
-const pages = [
-  'Language',
-  'Visuals',
-  'Atoms',
-  'Molecules',
-  'Organisms',
-  'Templates',
-  'Pages',
-];
+class TemplateWrapper extends React.Component {
+  state = {
+    navOpen: false,
+  };
 
-const Header = () => (
-  <div className={styles.pageContainer}>
-    <h1 className={styles.title}>
-      <Link to="/">Kaizen</Link> - Culture Amp's Living Style Guide
-    </h1>
-    <ul className={styles.menu}>
-      {pages.map(page => (
-        <li key={page} className={styles.item}>
-          <Link to={'/' + page.toLowerCase()}>{page}</Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+  render() {
+    const { children } = this.props;
+    return (
+      <div>
+        <Helmet>
+          <title>Kaizen</title>
+          <meta
+            name="description"
+            content="Kaizen - Culture Amp's Style Guide"
+          />
+          <meta
+            name="keywords"
+            content="Culture Amp, design system, style guide"
+          />
+        </Helmet>
+        <div
+          className={classNames(styles.layout, {
+            [styles.navOpen]: this.state.navOpen,
+          })}
+        >
+          <div className={styles.nav}>
+            <MainNav openNav={() => this.openNav()} />
+          </div>
+          <div className={styles.subnav}>
+            <SubNav title="What" closeNav={() => this.closeNav()} />
+          </div>
+          <div
+            className={styles.subnavBackdrop}
+            onClick={() => this.closeNav()}
+          />
+          <div className={styles.header}>
+            <HeaderBar toggleNav={() => this.toggleNav()} />
+          </div>
+          <div className={styles.content}>
+            <div className={styles.pageContainer}>
+              <Breadcrumb />
+              {children()}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet>
-      <title>Kaizen</title>
-      <meta name="description" content="Kaizen - Culture Amp's Style Guide" />
-      <meta name="keywords" content="Culture Amp, design system, style guide" />
-    </Helmet>
-    <Header />
-    <div className={styles.pageContainer}>{children()}</div>
-  </div>
-);
+  toggleNav() {
+    this.setState({ navOpen: !this.state.navOpen });
+  }
+
+  closeNav() {
+    this.setState({ navOpen: false });
+  }
+
+  openNav() {
+    this.setState({ navOpen: true });
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

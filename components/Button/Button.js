@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Button.module.scss';
 
@@ -32,8 +33,8 @@ export default function Button({
 }
 
 Button.propTypes = {
-  disabled: React.PropTypes.bool,
-  primary: React.PropTypes.bool,
-  destructive: React.PropTypes.bool,
-  icon: React.PropTypes.bool,
+  disabled: PropTypes.bool,
+  primary: PropTypes.bool,
+  destructive: PropTypes.bool,
+  icon: PropTypes.bool,
 };
