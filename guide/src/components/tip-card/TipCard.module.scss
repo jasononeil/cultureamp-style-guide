@@ -2,7 +2,7 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~components/card/Card.module.scss';
 
-$cardPadding: 24px;
+$cardPadding: $ca-grid;
 
 .cardWithHeader {
   composes: card;
@@ -12,10 +12,12 @@ $cardPadding: 24px;
 .cardHeader {
   background: add-alpha(add-tint($ca-palette-ink, 70%), 30%);
   padding: $cardPadding;
+  height: $ca-grid;
 }
 
 .headerText {
   @include ca-type-ideal-heading;
+  display: inline-block;
 }
 
 .cardBody {

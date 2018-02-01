@@ -23,7 +23,9 @@ class IconTile extends React.Component {
         onClick={e => this.copyPath()}
       >
         <div className={styles.tileWrapper}>
-          <span className={styles.iconLabel}>{title}</span>
+          <span className={styles.iconLabel}>
+            <span className={styles.iconLabelText}>{title}</span>
+          </span>
           <span className={styles.iconWrapper}>
             <Icon icon={icon} role="presentation" />
           </span>
@@ -38,7 +40,9 @@ class IconTile extends React.Component {
       copied = this.state.recentlyCopied;
     return (
       <span className={styles.copyLabel}>
-        {copied ? 'Copied to clipboard' : 'Copy import path'}
+        <span class={styles.copyLabelText}>
+          {copied ? 'Copied to clipboard' : 'Copy import path'}
+        </span>
         {copied && (
           <span className={styles.tickIcon}>
             <Icon icon={tick} role="presentation" />
