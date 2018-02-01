@@ -93,6 +93,7 @@ $transitionSpeed: 200ms;
         width: $ca-subNav__width;
       }
 
+      position: fixed;
       z-index: $ca-z-index-modal;
 
       .navOpen & {
