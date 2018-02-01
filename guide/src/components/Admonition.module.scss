@@ -3,7 +3,10 @@
 @import '~cultureamp-style-guide/styles/border';
 @import '~components/card/Card.module.scss';
 
+// The padding and border combined should sit nicely on our vertical grid..
 $padding: $ca-grid / 2;
+$borderSize: 1px;
+$paddingMinusBorder: calc(#{$padding} - #{$borderSize});
 
 .admonition {
   border: 1px solid;
@@ -20,13 +23,12 @@ $padding: $ca-grid / 2;
 }
 
 .iconWrapper {
-  padding: $padding;
+  padding: $paddingMinusBorder $padding;
   width: $padding * 2;
 }
 
 .content {
-  padding: $padding;
-  padding-left: 0;
+  padding: $paddingMinusBorder $padding $paddingMinusBorder 0;
   flex: 1;
 }
 
