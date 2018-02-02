@@ -1,5 +1,9 @@
 # Release History: cultureamp-style-guide
 
+## 9.0.0
+
+* 💔 Further refine page layout styles.
+
 ## 8.0.0
 
 * 💔 Refine page layout styles to support legacy sticky footers and independent sidebar scrolling.

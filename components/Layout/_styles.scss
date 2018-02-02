@@ -12,7 +12,7 @@
       |r|   i   |                           |  |
       | |   d   |                           |  |
       | |   e   |         content           |  |  body
-      | |   b   |                           |  |  (containing body-content)
+      | |   b   |                           |  |
       | |   a   |                           |  |
       | |   r   |                           |  |
       | |       |                           |  |
@@ -47,17 +47,30 @@
 }
 
 %body {
-  // %body provides a positioning context for %body-content,
+  // %body provides a positioning context for %body-inner,
   // which may be nested n levels deep in the DOM.
   position: relative;
   flex: 1 1 0px;
   height: 0; // flex-basis 0px doesn't work in most browsers
+
+  // to support %legacy-sticky-footer (TODO: remove once it's not used)
+  display: flex;
+  flex-direction: column;
 }
 
-%body-content {
+// old Murmur pages include this as a child of %body
+// NOTE: not compatible with %body-inner - cannot use both on same page
+%legacy-sticky-footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+// nested (possibly deeply) descendant of %body that will adopt its dimensions
+// and support a sticky footer that conforms to those dimensions
+%body-inner {
   display: flex;
 
-  // match position & dimensions of %body so that child sticky footer can stick to bottom of %body
+  // match position & dimensions of %body
   position: absolute; // required for height to work when content is short
   height: 100%;
   width: 100%;
@@ -93,8 +106,8 @@ $sidebar-width: 12 * $ca-grid;
   }
 }
 
-// enforce fixed width despite potential scrollbar on %sidebar
-%sidebar-content {
+// enforce fixed width to avoid change when scrollbar on %sidebar is visible
+%sidebar-inner {
   width: $sidebar-width - 2 * $ca-grid;
 }
 
@@ -126,20 +139,3 @@ $sidebar-width: 12 * $ca-grid;
     }
   }
 }
-
-// sidebar/content styles cannot be used inside of this container
-%body--legacy-sticky-footer {
-  // a flex column to support %legacy-sticky-footer
-  display: flex;
-  flex-direction: column;
-
-  flex: 1 1 0px;
-  height: 0; // flex-basis 0px doesn't work in most browsers
-}
-
-%legacy-sticky-footer {
-  // sticky footer inside of %body--legacy-sticky-footer
-  margin-top: auto;
-  width: 100%;
-}
-
