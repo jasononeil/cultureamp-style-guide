@@ -10,6 +10,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  // Prevent baseline shifting on the menu buttons.
+  a,
+  button {
+    transform: none;
+  }
 }
 .hamburgerIcon {
   width: 48px;
