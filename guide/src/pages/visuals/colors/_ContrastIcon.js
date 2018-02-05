@@ -34,10 +34,9 @@ export function renderContrastHeaderIcons(colorHex) {
     prepareAccessibilityHeaderIcon('dark', 'large', colorHex),
   ];
   return iconCombinations.map((icon, i) => (
-    <div>
+    <div key={i}>
       <span
         className={icon.className}
-        key={i}
         style={{ background: icon.bgColor }}
         title={icon.title}
       >

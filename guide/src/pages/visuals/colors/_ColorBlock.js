@@ -50,10 +50,34 @@ const ColorBlock = ({ colorName, amount, showContrast }) => {
     name = `${colorName} ${label}`,
     icons = showContrast ? (
       [
-        <ContrastIcon color={bgColor} name={name} text="White" size={12} />,
-        <ContrastIcon color={bgColor} name={name} text="White" size={18} />,
-        <ContrastIcon color={bgColor} name={name} text="Ink" size={12} />,
-        <ContrastIcon color={bgColor} name={name} text="Ink" size={18} />,
+        <ContrastIcon
+          color={bgColor}
+          name={name}
+          text="White"
+          size={12}
+          key="white small"
+        />,
+        <ContrastIcon
+          color={bgColor}
+          name={name}
+          text="White"
+          size={18}
+          key="white large"
+        />,
+        <ContrastIcon
+          color={bgColor}
+          name={name}
+          text="Ink"
+          size={12}
+          key="ink small"
+        />,
+        <ContrastIcon
+          color={bgColor}
+          name={name}
+          text="Ink"
+          size={18}
+          key="ink large"
+        />,
       ]
     ) : (
       <ColorBlockKebab bgColor={bgColor} sassVar={sassVar} />

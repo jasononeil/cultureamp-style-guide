@@ -20,7 +20,7 @@ const ColorBlockKebab = ({ bgColor, sassVar }) => {
     <span className={styles.kebabContainer}>
       <Kebab>
         <MenuList>
-          <MenuHeader title="Copy to clipboard" />
+          <MenuHeader title="Color Values" />
           <MenuItem {...getColorDropdownItem('SASS', sassVar)} />
           <MenuItem {...getColorDropdownItem('HEX', hex)} />
           <MenuItem {...getColorDropdownItem('RGB', rgb)} />
