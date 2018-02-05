@@ -83,9 +83,9 @@ $tileHeight: $ca-grid * 6;
 }
 
 .tickIcon {
-  height: 16px;
-  display: inline-block;
-  overflow: hidden;
+  height: $ca-grid * 2/3;
+  float: right;
+  transform: translateY($ca-grid / 3);
 }
 
 .pathInput {

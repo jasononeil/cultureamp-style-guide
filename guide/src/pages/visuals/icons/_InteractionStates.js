@@ -34,7 +34,7 @@ class InteractionStates extends React.Component {
         <span>
           <Icon icon={enso} role="presentation" />
         </span>
-        <span className={styles.opacityLabel}>{opacity} %</span>
+        <span>{opacity} %</span>
       </div>
     );
   }

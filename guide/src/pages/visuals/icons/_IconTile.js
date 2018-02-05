@@ -40,14 +40,14 @@ class IconTile extends React.Component {
       copied = this.state.recentlyCopied;
     return (
       <span className={styles.copyLabel}>
-        <span class={styles.copyLabelText}>
-          {copied ? 'Copied to clipboard' : 'Copy import path'}
-        </span>
         {copied && (
           <span className={styles.tickIcon}>
             <Icon icon={tick} role="presentation" />
           </span>
         )}
+        <span class={styles.copyLabelText}>
+          {copied ? 'Copied to clipboard' : 'Copy import path'}
+        </span>
         <input
           ref={i => (this.input = i)}
           value={path}
