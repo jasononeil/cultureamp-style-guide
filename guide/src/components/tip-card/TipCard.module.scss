@@ -12,7 +12,6 @@ $cardPadding: $ca-grid;
 .cardHeader {
   background: add-alpha(add-tint($ca-palette-ink, 70%), 30%);
   padding: $cardPadding;
-  height: $ca-grid;
 }
 
 .headerText {
@@ -34,8 +33,10 @@ $cardPadding: $ca-grid;
 
 .iconWrapper {
   margin-right: $ca-grid / 3;
-  position: relative;
-  top: 3px;
+  display: inline-block;
+  height: $ca-grid;
+  transform: translateY(3px);
+  float: left;
 }
 
 .tipIcon {
