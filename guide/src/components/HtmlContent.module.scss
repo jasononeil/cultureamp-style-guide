@@ -170,6 +170,13 @@
     outline-color: add-tint($ca-palette-wisteria, 30%);
     outline-offset: 2px;
   }
+
+  // Make sure links inside a paragraph aren't baseline-adjusted twice.
+  p & {
+    transform: none;
+    font-size: inherit;
+    line-height: inherit;
+  }
 }
 
 .buttonLink {
@@ -189,7 +196,7 @@
   border: none;
   border-bottom: 1px solid add-alpha($ca-palette-ink, 10%);
   margin-top: $ca-grid;
-  margin-bottom: $ca-grid * 2;
+  margin-bottom: calc(#{$ca-grid * 2} - 1px);
 }
 
 // Hack for our design system website: the [[toc]] table-of-contents generator places the
