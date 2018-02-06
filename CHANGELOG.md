@@ -1,5 +1,9 @@
 # Release History: cultureamp-style-guide
 
+## 9.0.1
+
+* 👍 Use relative styles imports in Layout component.
+
 ## 9.0.0
 
 * 💔 Further refine page layout styles.
