@@ -32,6 +32,9 @@ const SubNav = ({ closeNav }, context) => {
     </section>
   );
 };
+SubNav.propTypes = {
+  closeNav: PropTypes.func.isRequired,
+};
 SubNav.contextTypes = {
   router: PropTypes.object.isRequired,
 };

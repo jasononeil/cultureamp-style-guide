@@ -26,6 +26,8 @@ export const ActionLink = ({ action, children }) => (
   <button
     onClick={action}
     className={classNames(styles.buttonLink, iconStyles.interactiveIconWrapper)}
+    // Prevent the element from being left in an "active" state after the click is complete.
+    onMouseDown={e => e.preventDefault()}
   >
     {children}
   </button>
