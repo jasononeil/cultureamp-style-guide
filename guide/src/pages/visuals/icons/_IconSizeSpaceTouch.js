@@ -46,6 +46,6 @@ class IconSizeSpaceTouch extends React.Component {
   }
 }
 
-IconSizeSpaceTouch.PropTypes = {};
+IconSizeSpaceTouch.propTypes = {};
 
 export default IconSizeSpaceTouch;

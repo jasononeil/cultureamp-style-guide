@@ -45,7 +45,7 @@ class IconTile extends React.Component {
             <Icon icon={tick} role="presentation" />
           </span>
         )}
-        <span class={styles.copyLabelText}>
+        <span className={styles.copyLabelText}>
           {copied ? 'Copied to clipboard' : 'Copy import path'}
         </span>
         <input
@@ -70,7 +70,7 @@ class IconTile extends React.Component {
   }
 }
 
-IconTile.PropTypes = {
+IconTile.propTypes = {
   title: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   icon: PropTypes.object.isRequired,

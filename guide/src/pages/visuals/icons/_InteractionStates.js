@@ -40,7 +40,7 @@ class InteractionStates extends React.Component {
   }
 }
 
-InteractionStates.PropTypes = {
+InteractionStates.propTypes = {
   dark: PropTypes.bool.isRequired,
 };
 
