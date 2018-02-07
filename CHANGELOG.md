@@ -1,5 +1,13 @@
 # Release History: cultureamp-style-guide
 
+## 10.0.0
+
+* 💔 Remove kaizen "Button" component which is not actually used.
+* 🐛 Change type style mixins to position text using
+  `position: relative; top: $offset;` rather than
+  `transform: translateY(offset);` so to avoid creating "stacking contexts"
+  which break the z-index rules required for popups and modals.
+
 ## 9.0.1
 
 * 👍 Use relative styles imports in Layout component.
@@ -10,7 +18,8 @@
 
 ## 8.0.0
 
-* 💔 Refine page layout styles to support legacy sticky footers and independent sidebar scrolling.
+* 💔 Refine page layout styles to support legacy sticky footers and independent
+  sidebar scrolling.
 
 ## 7.1.0
 

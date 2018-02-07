@@ -3,7 +3,7 @@
 @import '~cultureamp-style-guide/styles/border';
 @import '~components/card/Card.module.scss';
 
-// The padding and border combined should sit nicely on our vertical grid..
+// The padding and border combined should sit nicely on our vertical grid.
 $padding: $ca-grid / 2;
 $borderSize: 1px;
 $paddingMinusBorder: calc(#{$padding} - #{$borderSize});

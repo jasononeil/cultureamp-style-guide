@@ -14,10 +14,7 @@ const sitemap = {
         {
           title: 'Components',
           href: '/atoms',
-          children: [
-            { title: 'Button', href: '/atoms/button' },
-            { title: 'Icon', href: '/atoms/icon' },
-          ],
+          children: [{ title: 'Icon', href: '/atoms/icon' }],
         },
         {
           title: 'Language',
