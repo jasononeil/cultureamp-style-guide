@@ -45,7 +45,8 @@ $ca-ideal-sans-font-descender-height: 0.14;
   // Therefore we're using $absolute-line-height, which means for now we can't nest type styles.
   line-height: $absolute-line-height;
 
-  transform: translateY(#{$descender-height + $line-spacing / 2}em);
+  position: relative;
+  top: #{$descender-height + $line-spacing / 2}em;
 }
 
 @mixin ca-type-title($args...) {

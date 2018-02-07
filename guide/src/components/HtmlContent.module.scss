@@ -131,7 +131,8 @@
   .h5,
   .p,
   .li {
-    transform: none;
+    // Prevent the baseline transform from being applied twice.
+    position: static;
   }
 }
 
@@ -173,7 +174,7 @@
 
   // Make sure links inside a paragraph aren't baseline-adjusted twice.
   p & {
-    transform: none;
+    position: static;
     font-size: inherit;
     line-height: inherit;
   }
@@ -205,6 +206,6 @@
 :global(.table-of-contents) {
   .p,
   .li {
-    transform: none;
+    position: static;
   }
 }
