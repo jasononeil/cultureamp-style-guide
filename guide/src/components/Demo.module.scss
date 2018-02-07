@@ -1,5 +1,6 @@
-@import "~cultureamp-style-guide/styles/color";
-@import "checkerboard";
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
+@import 'checkerboard';
 
 .root {
   position: relative;
@@ -24,6 +25,9 @@
   right: 0;
   bottom: calc(100% + 1em);
   max-width: 20%;
+  select {
+    @include ca-type-ideal-control-action;
+  }
 }
 
 .controls {
@@ -31,8 +35,10 @@
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
+  margin-bottom: $ca-grid;
 
   > * {
+    @include ca-type-ideal-body;
     flex: 1;
     text-align: center;
 
@@ -42,6 +48,10 @@
 
     &:last-child {
       text-align: right;
+    }
+
+    button {
+      @include ca-type-ideal-control-action;
     }
   }
 }
