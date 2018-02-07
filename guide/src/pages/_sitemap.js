@@ -13,8 +13,8 @@ const sitemap = {
       children: [
         {
           title: 'Components',
-          href: '/atoms',
-          children: [{ title: 'Icon', href: '/atoms/icon' }],
+          href: '/components',
+          children: [{ title: 'Icon', href: '/components/icon' }],
         },
         {
           title: 'Language',
