@@ -130,7 +130,8 @@
   .h4,
   .h5,
   .p,
-  .li {
+  .li,
+  .link {
     // Prevent the baseline transform from being applied twice.
     position: static;
   }
