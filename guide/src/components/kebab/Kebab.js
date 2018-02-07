@@ -50,6 +50,7 @@ export default class Kebab extends React.Component {
         <button
           className={btnClass}
           onClick={this.toggleKebabMenu}
+          onMouseDown={e => e.preventDefault()}
           ref={k => (this.kebab = k)}
         >
           <Icon icon={kebabIcon} role="img" title="Open menu" />

@@ -20,7 +20,11 @@ const SubNav = ({ closeNav }, context) => {
   }
   return (
     <section className={styles.subNav}>
-      <button className={styles.closeBtn} onClick={() => closeNav()}>
+      <button
+        className={styles.closeBtn}
+        onClick={() => closeNav()}
+        onMouseDown={e => e.preventDefault()}
+      >
         <Icon icon={close} role="img" title="Close Nav" />
       </button>
       <h1>
