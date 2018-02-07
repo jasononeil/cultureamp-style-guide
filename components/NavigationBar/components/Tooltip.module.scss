@@ -60,4 +60,5 @@
 .content {
   @include ca-type-small;
   margin: 0 1em;
+  position: static;
 }
