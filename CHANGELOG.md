@@ -1,5 +1,9 @@
 # Release History: cultureamp-style-guide
 
+## 9.0.2
+
+* 👍 Add notification icon.
+
 ## 9.0.1
 
 * 👍 Use relative styles imports in Layout component.
