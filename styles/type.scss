@@ -113,8 +113,9 @@ $ca-ideal-sans-font-descender-height: 0.14;
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
     $descender-height: $ca-ideal-sans-font-descender-height,
+    $weight: $ca-weight-light,
     $args...
-  );
+    );
 }
 
 @mixin ca-type-body($args...) {
@@ -126,6 +127,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
     $descender-height: $ca-ideal-sans-font-descender-height,
+    $weight: $ca-weight-light,
     $args...
   );
 }
@@ -158,6 +160,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
     $descender-height: $ca-ideal-sans-font-descender-height,
+    $weight: $ca-weight-light,
     $args...
   );
 }
@@ -168,6 +171,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
     $letter-spacing: 0.04em,
     $args...
   );
+  text-transform: uppercase;
 }
 
 @mixin ca-type-ideal-labels-and-legends($args...) {
@@ -175,6 +179,7 @@ $ca-ideal-sans-font-descender-height: 0.14;
     $family: $ca-ideal-sans-font-family,
     $base-size: $ca-ideal-sans-font-base-size,
     $descender-height: $ca-ideal-sans-font-descender-height,
+    $weight: $ca-weight-light,
     $args...
   );
 }
