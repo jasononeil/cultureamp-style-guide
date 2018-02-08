@@ -18,8 +18,7 @@
     }
     margin: 0;
     border-bottom: add-alpha($ca-palette-ink, 10%) 1px solid;
-    padding: $padding;
-    padding-bottom: calc(#{$padding} - 1px);
+    padding: 0 $padding calc(#{$padding * 2} - 1px) $padding;
     pointer-events: none;
   }
 }
