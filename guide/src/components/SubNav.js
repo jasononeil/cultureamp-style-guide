@@ -59,10 +59,7 @@ const SubNavItem = ({ href, title, closeNav }) => (
     onClick={closeNav}
     activeClassName={classNames(styles.active, iconStyles.active)}
   >
-    <span className={styles.navItemIcon}>
-      <Icon icon={page} role="presentation" />
-    </span>
-    <span>{title}</span>
+    {title}
   </Link>
 );
 

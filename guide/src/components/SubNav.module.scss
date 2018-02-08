@@ -32,8 +32,7 @@
 .navItem {
   @include ca-type-ideal-control-action;
   font-weight: $ca-weight-light;
-  display: flex;
-  flex-direction: row;
+  display: block;
   box-sizing: border-box;
   height: $ca-grid * 2;
   padding: $ca-grid / 2;
@@ -54,13 +53,6 @@
     color: $ca-palette-ocean;
     background-color: transparent;
   }
-}
-
-.navItemIcon {
-  display: inline-block;
-  margin-right: 10px;
-  position: relative;
-  top: 2px;
 }
 
 .closeBtn {
