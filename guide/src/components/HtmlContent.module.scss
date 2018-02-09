@@ -124,6 +124,9 @@
 .li,
 .htmlContent li {
   @include ca-type-ideal-body;
+  ul & {
+    list-style-type: disc;
+  }
   .h1,
   .h2,
   .h3,
