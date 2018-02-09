@@ -12,24 +12,24 @@ const sitemap = {
       icon: starCircle,
       children: [
         {
+          title: 'Visual Styles',
+          href: '/visuals',
+          children: [
+            {title: 'Colors', href: '/visuals/colors'},
+            {title: 'Icons', href: '/visuals/icons'},
+          ],
+        },
+        {
           title: 'Components',
           href: '/components',
-          children: [{ title: 'Icon', href: '/components/icon' }],
+          children: [{title: 'Icon', href: '/components/icon'}],
         },
         {
           title: 'Language',
           href: '/language',
           children: [
-            { title: 'Product Language Style Guide', href: '/language' },
-            { title: 'Product Writing Checklist', href: '/language/checklist' },
-          ],
-        },
-        {
-          title: 'Visual Styles',
-          href: '/visuals',
-          children: [
-            { title: 'Colors', href: '/visuals/colors' },
-            { title: 'Icons', href: '/visuals/icons' },
+            {title: 'Product Language Style Guide', href: '/language'},
+            {title: 'Product Writing Checklist', href: '/language/checklist'},
           ],
         },
       ],
