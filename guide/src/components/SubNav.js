@@ -27,9 +27,9 @@ const SubNav = ({ closeNav }, context) => {
       >
         <Icon icon={close} role="img" title="Close Nav" />
       </button>
-      <h1>
+      <h2>
         <span>{sectionInfo.title}</span>
-      </h1>
+      </h2>
       {sectionInfo.children.map(child => (
         <SubNavSection closeNav={closeNav} {...child} key={child.href} />
       ))}

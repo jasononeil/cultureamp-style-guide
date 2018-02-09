@@ -10,10 +10,9 @@
   $padding: $ca-grid / 2;
   padding: $padding;
   overflow-y: auto;
-  h1 {
+  h2 {
     span {
       @include ca-type-ideal-display;
-      font-weight: $ca-weight-light;
       display: block;
     }
     margin: 0;
