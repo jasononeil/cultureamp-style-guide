@@ -7,6 +7,12 @@
   `position: relative; top: $offset;` rather than
   `transform: translateY(offset);` so to avoid creating "stacking contexts"
   which break the z-index rules required for popups and modals.
+* 👍 Add `ca-inherit-baseline` mixin that can be used to prevent a baseline
+  shift from occuring when using the type style mixins.
+
+  ## 9.0.2
+
+* 👍 Add notification icon.
 
 ## 9.0.1
 
