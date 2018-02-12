@@ -29,7 +29,11 @@ function addSassLoaders(config, stage) {
         localIdentName: '[name]__[local]--[hash:base64:5]',
         sourcMap: stage.startsWith('build'),
       }),
-    sassLoader = 'sass',
+    sassLoader =
+      'sass?' +
+      JSON.stringify({
+        precision: 9,
+      }),
     postCssLoader =
       'postcss?' +
       JSON.stringify({
