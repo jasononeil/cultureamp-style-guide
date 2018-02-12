@@ -186,5 +186,6 @@ $ca-ideal-sans-font-descender-height: 0.14;
     left: 0;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAKUlEQVRIiWN49OjRf1pihlEwCkbBKCACvH379j8t8UD7bxSMglEwJAAAvrOyCTd0/dgAAAAASUVORK5CYII=');
     pointer-events: none;
+    z-index: $ca-z-index-popover;
   }
 }
