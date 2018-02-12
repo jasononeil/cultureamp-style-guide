@@ -14,7 +14,7 @@
   // Prevent baseline shifting on the menu buttons.
   a,
   button {
-    position: static;
+    @include ca-inherit-baseline;
   }
 }
 .hamburgerIcon {

@@ -130,8 +130,7 @@ $accessibilityTileWidth: 46px;
 
 .dropdownItem strong {
   @include ca-type-ideal-small;
-  // Don't worry about baseline grid positioning in dropdown menu.
-  position: static;
+  @include ca-inherit-baseline;
   text-transform: uppercase;
   display: inline-block;
   width: 4em;
@@ -139,8 +138,7 @@ $accessibilityTileWidth: 46px;
 
 .dropdownItem input {
   @include ca-type-ideal-labels-and-legends;
-  // Don't worry about baseline grid positioning in dropdown menu.
-  position: static;
+  @include ca-inherit-baseline;
   opacity: 0.4;
   flex: 1;
   outline: none;

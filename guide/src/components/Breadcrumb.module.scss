@@ -9,8 +9,6 @@
       color: add-alpha($ca-palette-ink, 50%);
       padding: 0 5px;
     }
-    // Prevent the baseline transform from being applied twice.
-    position: static;
   }
 
   .text {

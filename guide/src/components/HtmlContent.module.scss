@@ -133,7 +133,7 @@
   .li,
   .link {
     // Prevent the baseline transform from being applied twice.
-    position: static;
+    @include ca-inherit-baseline;
   }
 }
 
@@ -158,7 +158,6 @@
 
 .link,
 .htmlContent a[href] {
-  @include ca-type-ideal-body;
   color: $ca-link-text-color;
   text-decoration: none;
   &:hover,
@@ -172,13 +171,6 @@
     outline-color: add-tint($ca-palette-wisteria, 30%);
     outline-offset: 2px;
   }
-
-  // Make sure links inside a paragraph aren't baseline-adjusted twice.
-  p & {
-    position: static;
-    font-size: inherit;
-    line-height: inherit;
-  }
 }
 
 .buttonLink {
@@ -186,6 +178,7 @@
   // as we want the styles in `.link` to take override those in `.buttonReset`.
   composes: buttonReset;
   composes: link;
+  @include ca-type-ideal-body;
   padding: 0 2px;
 }
 
@@ -207,6 +200,6 @@
 :global(.table-of-contents) {
   .p,
   .li {
-    position: static;
+    @include ca-inherit-baseline;
   }
 }
