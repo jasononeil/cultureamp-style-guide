@@ -43,6 +43,9 @@ $ca-ideal-sans-font-descender-height: 0.14;
 
   position: relative;
   top: #{$descender-height + $line-spacing / 2}em;
+  // If `position: relative` creates issues, we could alternatively use a transform,
+  // though this creates a new stacking context which can break z-index based layers:
+  // transform: translateY(#{$descender-height + $line-spacing / 2}em);
 }
 
 @mixin ca-type-title($args...) {
