@@ -41,7 +41,15 @@ $ca-ideal-sans-font-descender-height: 0.14;
   font-size: $font-size;
   line-height: $line-height-ratio;
 
-  transform: translateY(#{$descender-height + $line-spacing / 2}em);
+  position: relative;
+  top: #{$descender-height + $line-spacing / 2}em;
+  // If `position: relative` creates issues, we could alternatively use a transform,
+  // though this creates a new stacking context which can break z-index based layers:
+  // transform: translateY(#{$descender-height + $line-spacing / 2}em);
+}
+
+@mixin ca-inherit-baseline {
+  position: static;
 }
 
 @mixin ca-type-title($args...) {
@@ -172,4 +180,19 @@ $ca-ideal-sans-font-descender-height: 0.14;
     $descender-height: $ca-ideal-sans-font-descender-height,
     $args...
   );
+}
+
+@mixin debug-vertical-rhythm-grid() {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAKUlEQVRIiWN49OjRf1pihlEwCkbBKCACvH379j8t8UD7bxSMglEwJAAAvrOyCTd0/dgAAAAASUVORK5CYII=');
+    pointer-events: none;
+    z-index: $ca-z-index-popover;
+  }
 }

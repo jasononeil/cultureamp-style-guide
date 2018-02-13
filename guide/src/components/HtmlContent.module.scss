@@ -24,7 +24,7 @@
 .h1,
 .htmlContent h1 {
   @include ca-type-ideal-title;
-  margin-top: 0;
+  margin-top: $ca-grid * 1.5;
   margin-bottom: $ca-grid;
 }
 
@@ -71,27 +71,40 @@
 .htmlContent p {
   margin: $ca-grid 0;
   @include ca-type-ideal-body;
+  code,
+  kbd,
+  samp {
+    // Default styles are "monospace", which will result in different line heights, breaking our vertical rhythm.
+    padding: 0 0.25em;
+    border-radius: $ca-border-radius;
+    background-color: add-tint($ca-palette-ink, 70%);
+    color: $ca-palette-ink;
+    font-family: inherit;
+  }
 }
 
-.introParagraph {
-  composes: p;
-  @include ca-type-ideal-lede;
-}
-
-// Ensure that nested paragraphs use the larger font size.
+// Apply the styles to the paragraphs inside of .introParagraph, rather than to the .introParagraph element.
+// This will prevent doubling up of baseline positioning.
+.introParagraph p,
 .introParagraph .p {
   @include ca-type-ideal-lede;
+  margin: $ca-grid 0;
 }
 
 .table,
 .htmlContent table {
   width: 100%;
+  border-collapse: collapse;
+  $padding: $ca-grid / 4;
+  margin: ($ca-grid + $padding) 0;
   th {
     text-align: left;
     border-bottom: 2px solid $ca-border-color;
+    padding: $padding 0 calc(#{$padding} - 2px) 0;
   }
   td {
     border-bottom: 1px solid $ca-border-color;
+    padding: $padding 0 calc(#{$padding} - 1px) 0;
   }
   p:first-child {
     margin-top: 0;
@@ -105,12 +118,23 @@
 .ol,
 .htmlContent ul,
 .htmlContent ol {
-  margin-bottom: $ca-grid;
+  margin: $ca-grid 0;
 }
 
 .li,
 .htmlContent li {
   @include ca-type-ideal-body;
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .p,
+  .li,
+  .link {
+    // Prevent the baseline transform from being applied twice.
+    @include ca-inherit-baseline;
+  }
 }
 
 .blockquote,
@@ -134,7 +158,6 @@
 
 .link,
 .htmlContent a[href] {
-  @include ca-type-ideal-body;
   color: $ca-link-text-color;
   text-decoration: none;
   &:hover,
@@ -155,6 +178,7 @@
   // as we want the styles in `.link` to take override those in `.buttonReset`.
   composes: buttonReset;
   composes: link;
+  @include ca-type-ideal-body;
   padding: 0 2px;
 }
 
@@ -167,5 +191,15 @@
   border: none;
   border-bottom: 1px solid add-alpha($ca-palette-ink, 10%);
   margin-top: $ca-grid;
-  margin-bottom: $ca-grid * 2;
+  margin-bottom: calc(#{$ca-grid * 2} - 1px);
+}
+
+// Hack for our design system website: the [[toc]] table-of-contents generator places the
+// <div class="table-of-contents"> inside of a <p>, and this nesting breaks our baseline adjustments.
+// The hack is to not re-apply the transforms on the children of the TOC.
+:global(.table-of-contents) {
+  .p,
+  .li {
+    @include ca-inherit-baseline;
+  }
 }

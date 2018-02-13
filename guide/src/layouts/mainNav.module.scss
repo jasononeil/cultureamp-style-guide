@@ -14,6 +14,7 @@
   width: 200px;
 
   @include ca-type-body;
+  @include ca-inherit-baseline;
   display: block;
   padding: ($ca-grid / 8) 2em;
 
@@ -21,6 +22,7 @@
 
   span {
     @include ca-type-display;
+    @include ca-inherit-baseline;
     margin-bottom: $ca-grid / 2;
   }
 }

@@ -6,9 +6,10 @@
 }
 
 .colorCard h3 {
-  margin-top: 8px;
   @include ca-type-ideal-heading;
   font-weight: $ca-weight-light;
+  height: $ca-grid;
+  margin: 0;
 }
 
 .cardToggleButton {
@@ -22,7 +23,7 @@
 .toggleIconWrapper {
   color: add-tint($ca-palette-ink, 80);
   position: relative;
-  top: 6px;
+  top: 4px;
   left: 2px;
 }
 
@@ -31,8 +32,7 @@
   text-transform: uppercase;
   color: add-tint($ca-palette-ink, 50%);
   font-weight: $ca-weight-book;
-  margin-top: 16px;
-  margin-bottom: 8px;
+  margin: $ca-grid/2 0;
 }
 
 $accessibilityTileWidth: 46px;
@@ -57,6 +57,10 @@ $accessibilityTileWidth: 46px;
     display: block;
     font-family: sans-serif;
     text-align: center;
+    &.dark {
+      background: $ca-palette-ink;
+      color: white;
+    }
     &.small {
       font-size: 10px;
       line-height: 18px;
@@ -69,23 +73,28 @@ $accessibilityTileWidth: 46px;
 }
 
 .colorBlock {
-  composes: kebabHoverArea from 'components/kebab/Kebab.module.scss';
+  @include ca-type-ideal-body;
+
   box-sizing: border-box;
-  background: black;
-  height: 91px;
-  line-height: 71px;
-  vertical-align: middle;
-  margin-bottom: 4px;
-  padding: 10px 0;
-  font-weight: $ca-weight-light;
-  color: $ca-palette-ink;
+  $bottomMargin: 2px;
+  height: calc(#{$ca-grid * 4} - #{$bottomMargin});
+  margin: 0 0 $bottomMargin 0;
+  padding-top: calc(#{$ca-grid / 2} + #{$bottomMargin / 2});
+  padding-bottom: calc(#{$ca-grid / 2} - #{$bottomMargin / 2});
+
+  composes: kebabHoverArea from 'components/kebab/Kebab.module.scss';
+
   display: flex;
   flex-direction: row;
+  align-items: center;
+
+  background: black;
+  color: $ca-palette-ink;
 }
 
 .colorBlockHalf {
-  height: 41px;
-  line-height: 21px;
+  $bottomMargin: 2px;
+  height: calc(#{$ca-grid * 2} - #{$bottomMargin});
 }
 
 .whiteText {
@@ -95,6 +104,7 @@ $accessibilityTileWidth: 46px;
 .accessibilityIcon {
   flex: 0 0 $accessibilityTileWidth;
   text-align: center;
+  transform: translateY(3px);
 }
 
 .kebabContainer {
@@ -104,11 +114,8 @@ $accessibilityTileWidth: 46px;
 
 .colorBlockLabel {
   flex: 1;
-  margin-left: 10px;
-  @include ca-type-ideal-body;
-  // We want the labels centered, rather than with baseline offsets.
-  line-height: inherit;
-  transform: none;
+  font-weight: $ca-weight-light;
+  margin-left: $ca-grid / 2;
 }
 
 .colorBlockHalf .kebabContainer {
@@ -123,6 +130,7 @@ $accessibilityTileWidth: 46px;
 
 .dropdownItem strong {
   @include ca-type-ideal-small;
+  @include ca-inherit-baseline;
   text-transform: uppercase;
   display: inline-block;
   width: 4em;
@@ -130,6 +138,7 @@ $accessibilityTileWidth: 46px;
 
 .dropdownItem input {
   @include ca-type-ideal-labels-and-legends;
+  @include ca-inherit-baseline;
   opacity: 0.4;
   flex: 1;
   outline: none;

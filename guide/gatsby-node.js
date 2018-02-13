@@ -6,8 +6,8 @@ function modifyWebpackConfig(_ref, options) {
     stage = _ref.stage;
   addSassLoaders(config, stage);
   addSrcResolveRoot(config);
+  addSvgLoaders(config);
   if (stage === 'build-javascript' || stage === 'develop') {
-    addSvgLoaders(config);
     addElmLoader(config);
   }
   addRawLoader(config);
@@ -29,7 +29,11 @@ function addSassLoaders(config, stage) {
         localIdentName: '[name]__[local]--[hash:base64:5]',
         sourcMap: stage.startsWith('build'),
       }),
-    sassLoader = 'sass',
+    sassLoader =
+      'sass?' +
+      JSON.stringify({
+        precision: 9,
+      }),
     postCssLoader =
       'postcss?' +
       JSON.stringify({
@@ -101,7 +105,6 @@ function addSvgLoaders(config) {
 
   let spriteLoaderConf = {
     symbolId: 'ca-icon-[name]',
-    spriteModule: require.resolve('cultureamp-style-guide/util/svg-sprite.js'),
   };
   config.removeLoader('url-loader');
   config.loader('svg-sprite-loader', {

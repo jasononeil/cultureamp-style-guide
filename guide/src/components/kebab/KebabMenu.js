@@ -26,39 +26,14 @@ export default class KebabMenu extends React.Component {
     const heightBetweenTopOfRowAndKebabIcon = (pos.bottom - pos.top) / 2;
     const { innerHeight } = window;
     const rect = this.menu.getBoundingClientRect();
-    this.menu.style.left = this.calculateLeftOffset(
-      window.scrollX,
-      pos.right,
-      rect.width
-    );
-    this.menu.style.top = this.calculateTopOffset(
-      window.scrollY,
-      pos.top,
-      heightBetweenTopOfRowAndKebabIcon
-    );
     if (pos.bottom > innerHeight - rect.height) {
-      this.menu.style.top = this.calculateShiftedUpTopOffset(
-        window.scrollY,
-        pos.top,
-        rect.height - heightBetweenTopOfRowAndKebabIcon + 12
-      );
+      this.menu.style.bottom = '20px';
+      this.menu.style.top = undefined;
+    } else {
+      this.menu.style.top = '20px';
+      this.menu.style.bottom = undefined;
     }
-  }
-
-  convertToPx(pixel) {
-    return pixel + 'px';
-  }
-
-  calculateLeftOffset(scrollDistanceFromLeft, rightOfRow, rectWidth) {
-    return this.convertToPx(scrollDistanceFromLeft + rightOfRow - rectWidth);
-  }
-
-  calculateTopOffset(scrollDistanceFromTop, topOfRow, yOffset) {
-    return this.convertToPx(scrollDistanceFromTop + (topOfRow + yOffset));
-  }
-
-  calculateShiftedUpTopOffset(scrollDistanceFromTop, topOfRow, yOffset) {
-    return this.convertToPx(scrollDistanceFromTop + (topOfRow - yOffset));
+    this.menu.style.right = '0px';
   }
 
   handleDocumentClick = e => {

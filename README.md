@@ -82,12 +82,12 @@ be imported automatically thanks to the Webpack configuration decorator above.
 
 ```js
 import React from 'react';
-import Button from 'cultureamp-style-guide/components/Button/Button';
+import Icon from 'cultureamp-style-guide/components/Icon/Icon';
 
 export default function MyComponent(props) {
   return (
     <div>
-      <Button />
+      <Icon />
     </div>
   );
 }
@@ -97,7 +97,7 @@ export default function MyComponent(props) {
 this:
 
 ```js
-import { Button, Card } from 'cultureamp-style-guide/components';
+import { Icon, Card } from 'cultureamp-style-guide/components';
 ```
 
 The Culture Amp Style Guide does not support this (the components directory does

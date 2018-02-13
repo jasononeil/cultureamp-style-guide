@@ -2,7 +2,7 @@
 @import '~cultureamp-style-guide/styles/type.scss';
 
 .breadcrumb {
-  margin: $ca-grid / 2 0 $ca-grid;
+  margin: 0;
   a {
     &:after {
       content: '/';

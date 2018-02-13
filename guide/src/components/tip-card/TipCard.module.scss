@@ -2,7 +2,7 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~components/card/Card.module.scss';
 
-$cardPadding: 24px;
+$cardPadding: $ca-grid;
 
 .cardWithHeader {
   composes: card;
@@ -16,6 +16,7 @@ $cardPadding: 24px;
 
 .headerText {
   @include ca-type-ideal-heading;
+  display: inline-block;
 }
 
 .cardBody {
@@ -32,8 +33,9 @@ $cardPadding: 24px;
 
 .iconWrapper {
   margin-right: $ca-grid / 3;
-  position: relative;
-  top: 3px;
+  height: $ca-grid;
+  transform: translateY(6px);
+  float: left;
 }
 
 .tipIcon {
@@ -46,7 +48,7 @@ $cardPadding: 24px;
 
 .tipsContainer {
   display: grid;
-  grid-gap: 1rem;
+  grid-column-gap: 1rem;
   justify-content: space-between;
   grid-template-columns: repeat(2, minmax(150px, 1fr));
   @media screen and (max-width: 767px) {

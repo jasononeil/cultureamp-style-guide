@@ -27,7 +27,7 @@ $side-padding: 18px;
 }
 
 .header__title {
-  @include ca-type-ideal-control-action;
+  @include ca-type-ideal-labels-and-legends;
   font-weight: $ca-weight-semibold;
   text-transform: uppercase;
 }

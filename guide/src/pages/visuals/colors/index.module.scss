@@ -23,7 +23,8 @@
 
 .cardContainer {
   display: grid;
-  grid-gap: 1rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: $ca-grid;
   justify-content: space-between;
 }
 
@@ -31,14 +32,11 @@
   grid-column-start: 1;
   display: flex;
   flex-direction: row;
-  align-items: baseline;
   justify-content: space-between;
   h2 {
     flex: 1;
-    line-height: $ca-grid;
   }
-  button {
-    line-height: $ca-grid;
-    margin-bottom: $ca-grid;
+  .toggleAccessibilityButton {
+    margin: $ca-grid * 3 0 $ca-grid 0;
   }
 }

@@ -35,11 +35,13 @@ class ColorShowcase extends React.Component {
     return [
       <div className={styles.gridHeader} key={title}>
         <h2 className={htmlStyles.h2}>{title}</h2>
-        <ActionLink action={() => this.toggleAccessibility(title)}>
-          {showAccessibility
-            ? 'Hide Contrast Checker'
-            : 'Show Contrast Checker'}
-        </ActionLink>
+        <div className={styles.toggleAccessibilityButton}>
+          <ActionLink action={() => this.toggleAccessibility(title)}>
+            {showAccessibility
+              ? 'Hide Contrast Checker'
+              : 'Show Contrast Checker'}
+          </ActionLink>
+        </div>
       </div>,
       colors.map(color => (
         <ColorCard

@@ -59,5 +59,7 @@
 
 .content {
   @include ca-type-small;
+  @include ca-inherit-baseline;
   margin: 0 1em;
+  position: static;
 }

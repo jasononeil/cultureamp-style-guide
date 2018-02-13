@@ -20,15 +20,24 @@ const SubNav = ({ closeNav }, context) => {
   }
   return (
     <section className={styles.subNav}>
-      <button className={styles.closeBtn} onClick={() => closeNav()}>
+      <button
+        className={styles.closeBtn}
+        onClick={() => closeNav()}
+        onMouseDown={e => e.preventDefault()}
+      >
         <Icon icon={close} role="img" title="Close Nav" />
       </button>
-      <h1>{sectionInfo.title}</h1>
+      <h1>
+        <span>{sectionInfo.title}</span>
+      </h1>
       {sectionInfo.children.map(child => (
         <SubNavSection closeNav={closeNav} {...child} key={child.href} />
       ))}
     </section>
   );
+};
+SubNav.propTypes = {
+  closeNav: PropTypes.func.isRequired,
 };
 SubNav.contextTypes = {
   router: PropTypes.object.isRequired,
@@ -53,7 +62,7 @@ const SubNavItem = ({ href, title, closeNav }) => (
     <span className={styles.navItemIcon}>
       <Icon icon={page} role="presentation" />
     </span>
-    <span className={styles.navItemText}>{title}</span>
+    <span>{title}</span>
   </Link>
 );
 

@@ -4,6 +4,7 @@ import chevronUp from 'cultureamp-style-guide/icons/chevron-up.svg';
 import chevronDown from 'cultureamp-style-guide/icons/chevron-down.svg';
 import styles from './ColorCard.module.scss';
 import ColorBlock from './_ColorBlock.js';
+import Palette from './_Palette.js';
 import { renderContrastHeaderIcons } from './_ContrastIcon.js';
 
 class ColorCard extends React.Component {
@@ -35,6 +36,7 @@ class ColorCard extends React.Component {
       <button
         className={styles.cardToggleButton}
         onClick={() => this.toggleOpen()}
+        onMouseDown={e => e.preventDefault()}
       >
         {this.props.name}
         <span className={styles.toggleIconWrapper}>
@@ -54,11 +56,12 @@ class ColorCard extends React.Component {
 
   renderSubtitle() {
     const showContrast = this.props.showAccessibility,
-      title = showContrast ? 'WCAG 2.0 AA' : 'Tint & Shade';
+      title = showContrast ? 'WCAG 2.0 AA' : 'Tint & Shade',
+      color = Palette[this.props.name.toLowerCase()];
     return (
       <div className={styles.subheader}>
         <h4>{title}</h4>
-        {showContrast && renderContrastHeaderIcons()}
+        {showContrast && renderContrastHeaderIcons(color)}
       </div>
     );
   }

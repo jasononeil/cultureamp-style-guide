@@ -19,7 +19,7 @@ class IconGrid extends React.Component {
   }
 }
 
-IconGrid.PropTypes = {
+IconGrid.propTypes = {
   category: PropTypes.string.isRequired,
 };
 

@@ -1,31 +1,33 @@
 @import '~cultureamp-style-guide/styles/type';
 @import '~components/card/Card.module.scss';
 
-.cardWrapper {
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .cardWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-bottom: $ca-grid / 2;
   }
 }
 
 .iconExample {
+  @include ca-type-ideal-labels-and-legends;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: space-between;
-  min-width: 96px;
-  height: 96px;
-  margin: $cardPadding 30px;
+  min-width: $ca-grid * 4;
+  min-height: $ca-grid * 4.5;
+  margin: $cardPadding*2 30px;
 
-  strong {
-    @include ca-type-ideal-labels-and-legends;
-    text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    margin: $cardPadding 30px;
   }
 
-  .opacityLabel {
-    @include ca-type-ideal-labels-and-legends;
+  strong {
+    text-transform: uppercase;
+    font-weight: $ca-weight-book;
   }
 }

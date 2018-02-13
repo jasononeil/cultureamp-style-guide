@@ -25,10 +25,6 @@ export default class Kebab extends React.Component {
     });
   };
 
-  kebabRef = c => {
-    this.kebab = c;
-  };
-
   getPosition() {
     return this.kebab ? this.kebab.getBoundingClientRect() : null;
   }
@@ -54,7 +50,8 @@ export default class Kebab extends React.Component {
         <button
           className={btnClass}
           onClick={this.toggleKebabMenu}
-          ref={this.kebabRef}
+          onMouseDown={e => e.preventDefault()}
+          ref={k => (this.kebab = k)}
         >
           <Icon icon={kebabIcon} role="img" title="Open menu" />
         </button>

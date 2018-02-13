@@ -1,6 +1,16 @@
 # Release History: cultureamp-style-guide
 
-## 9.0.2
+## 10.0.0
+
+* 💔 Remove kaizen "Button" component which is not actually used.
+* 🐛 Change type style mixins to position text using
+  `position: relative; top: $offset;` rather than
+  `transform: translateY(offset);` so to avoid creating "stacking contexts"
+  which break the z-index rules required for popups and modals.
+* 👍 Add `ca-inherit-baseline` mixin that can be used to prevent a baseline
+  shift from occuring when using the type style mixins.
+
+  ## 9.0.2
 
 * 👍 Add notification icon.
 
@@ -14,7 +24,8 @@
 
 ## 8.0.0
 
-* 💔 Refine page layout styles to support legacy sticky footers and independent sidebar scrolling.
+* 💔 Refine page layout styles to support legacy sticky footers and independent
+  sidebar scrolling.
 
 ## 7.1.0
 
