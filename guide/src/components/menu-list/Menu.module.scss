@@ -28,17 +28,20 @@ $side-padding: 18px;
 
 .header__title {
   @include ca-type-ideal-labels-and-legends;
+  @include ca-inherit-baseline;
   font-weight: $ca-weight-semibold;
   text-transform: uppercase;
 }
 
 .menuItem {
+  @include ca-type-ideal-labels-and-legends;
+  @include ca-inherit-baseline;
   background: transparent;
-  font-size: 14px;
-  line-height: 20px;
   color: $ca-palette-ink;
   cursor: pointer;
   text-align: left;
+
+  transition: 0.2s background color;
 
   padding: 10px $side-padding;
   text-decoration: none;
@@ -60,8 +63,11 @@ $side-padding: 18px;
 }
 
 .menuItem__Icon {
+  composes: interactiveIconWrapper from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
   text-align: right;
-  color: add-tint($ca-palette-ink, 80%);
+  color: $ca-palette-ink;
+  position: relative;
+  top: 3px;
 
   .hoverIcon & {
     opacity: 0;

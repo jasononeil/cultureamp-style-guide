@@ -35,7 +35,7 @@ const getColorDropdownItem = (type, value) => {
   let input;
   return {
     children: (
-      <div className={styles.dropdownItem}>
+      <div className={styles.dropdownItem} title="Copy to clipboard">
         <strong>{type}</strong>
         <input
           type="text"
