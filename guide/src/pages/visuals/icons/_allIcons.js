@@ -138,6 +138,11 @@ export default [
         icon: require('cultureamp-style-guide/icons/minus.svg'),
       },
       {
+        title: 'Notification',
+        path: 'cultureamp-style-guide/icons/notification.svg',
+        icon: require('cultureamp-style-guide/icons/notification.svg'),
+      },
+      {
         title: 'Pause',
         path: 'cultureamp-style-guide/icons/pause.svg',
         icon: require('cultureamp-style-guide/icons/pause.svg'),

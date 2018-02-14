@@ -38,7 +38,7 @@ class ColorCard extends React.Component {
         onClick={() => this.toggleOpen()}
         onMouseDown={e => e.preventDefault()}
       >
-        {this.props.name}
+        <span className={styles.toggleButtonLabel}>{this.props.name}</span>
         <span className={styles.toggleIconWrapper}>
           <Icon icon={toggleIcon} role="img" title={toggleTitle} />
         </span>

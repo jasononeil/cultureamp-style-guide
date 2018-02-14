@@ -1,6 +1,11 @@
+@import '~cultureamp-style-guide/styles/color';
+@import '~cultureamp-style-guide/styles/type';
 @import './layout.module.scss';
 
 .headerBar {
+  @include ca-type-ideal-body;
+  @include ca-inherit-baseline;
+
   background: white;
   height: $headerHeight;
   padding: 5px 15px;
@@ -14,7 +19,7 @@
   // Prevent baseline shifting on the menu buttons.
   a,
   button {
-    position: static;
+    @include ca-inherit-baseline;
   }
 }
 .hamburgerIcon {
@@ -22,6 +27,7 @@
   height: 48px;
   padding-top: 27px;
   display: inline-block;
+  color: $ca-palette-ink;
 }
 .downloadIcon {
   padding-left: 10px;
