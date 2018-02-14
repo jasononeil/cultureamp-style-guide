@@ -15,9 +15,15 @@
 .cardToggleButton {
   composes: buttonReset from 'components/HtmlContent.module.scss';
   color: $ca-palette-ink;
-  display: block;
+  display: flex;
+  width: 100%;
   color: $ca-palette-ink;
   cursor: pointer;
+}
+
+.toggleButtonLabel {
+  flex: 1;
+  text-align: left;
 }
 
 .toggleIconWrapper {
@@ -25,6 +31,7 @@
   position: relative;
   top: 4px;
   left: 2px;
+  width: 24px;
 }
 
 .colorCard h4 {
