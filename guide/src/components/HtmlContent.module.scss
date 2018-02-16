@@ -24,8 +24,7 @@
 .h1,
 .htmlContent h1 {
   @include ca-type-ideal-title;
-  margin-top: $ca-grid * 1.5;
-  margin-bottom: $ca-grid;
+  margin: $ca-grid 0;
 }
 
 .h2,
