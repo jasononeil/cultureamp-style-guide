@@ -202,8 +202,8 @@
 .hr {
   border: none;
   border-bottom: 1px solid add-alpha($ca-palette-ink, 10%);
-  margin-top: $ca-grid;
-  margin-bottom: calc(#{$ca-grid * 2} - 1px);
+  margin-top: $ca-grid * 3;
+  margin-bottom: calc(#{$ca-grid * 3} - 1px);
 }
 
 // Hack for our design system website: the [[toc]] table-of-contents generator places the
