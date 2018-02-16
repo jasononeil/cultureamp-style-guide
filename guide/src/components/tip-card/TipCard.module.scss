@@ -12,6 +12,7 @@ $cardPadding: $ca-grid;
 .cardHeader {
   background: add-alpha(add-tint($ca-palette-ink, 70%), 30%);
   padding: $cardPadding;
+  padding-bottom: $cardPadding * 1.5;
 }
 
 .headerText {
