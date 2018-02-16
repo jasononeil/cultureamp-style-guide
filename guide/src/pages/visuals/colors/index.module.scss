@@ -33,10 +33,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  h2 {
-    flex: 1;
-  }
-  .toggleAccessibilityButton {
-    margin: $ca-grid * 3 0 $ca-grid 0;
-  }
+}
+
+.sectionHeader {
+  composes: h3 from 'components/HtmlContent.module.scss';
+  flex: 1;
+  margin-top: $ca-grid * 3;
+}
+
+.toggleAccessibilityButton {
+  margin: $ca-grid * 3 0 $ca-grid 0;
 }
