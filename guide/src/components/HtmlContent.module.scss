@@ -80,6 +80,13 @@
     color: $ca-palette-ink;
     font-family: inherit;
   }
+  .link,
+  a[href] {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 // Apply the styles to the paragraphs inside of .introParagraph, rather than to the .introParagraph element.
@@ -172,6 +179,9 @@
   &:focus {
     outline-color: add-tint($ca-palette-wisteria, 30%);
     outline-offset: 2px;
+  }
+  &:hover {
+    text-decoration: underline;
   }
 }
 
