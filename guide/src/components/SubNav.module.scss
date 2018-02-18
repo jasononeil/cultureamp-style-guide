@@ -22,6 +22,10 @@
   }
 }
 
+.navSection {
+  margin-bottom: $ca-grid * 2;
+}
+
 .navSectionLabel {
   @include ca-type-ideal-labels-and-legends;
   padding-left: 14px;

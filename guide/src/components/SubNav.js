@@ -44,8 +44,8 @@ SubNav.contextTypes = {
 };
 
 const SubNavSection = ({ href, title, children, closeNav }) => (
-  <div>
-    <h2 className={styles.navSectionLabel}>{title}</h2>
+  <div className={styles.navSection}>
+    <h3 className={styles.navSectionLabel}>{title}</h3>
     {children.map(child => (
       <SubNavItem closeNav={closeNav} {...child} key={child.href} />
     ))}
