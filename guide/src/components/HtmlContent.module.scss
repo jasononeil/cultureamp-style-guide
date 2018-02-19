@@ -24,8 +24,7 @@
 .h1,
 .htmlContent h1 {
   @include ca-type-ideal-title;
-  margin-top: $ca-grid * 1.5;
-  margin-bottom: $ca-grid;
+  margin: $ca-grid 0;
 }
 
 .h2,
@@ -81,6 +80,13 @@
     color: $ca-palette-ink;
     font-family: inherit;
   }
+  .link,
+  a[href] {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 // Apply the styles to the paragraphs inside of .introParagraph, rather than to the .introParagraph element.
@@ -124,6 +130,9 @@
 .li,
 .htmlContent li {
   @include ca-type-ideal-body;
+  ul & {
+    list-style-type: disc;
+  }
   .h1,
   .h2,
   .h3,
@@ -171,6 +180,9 @@
     outline-color: add-tint($ca-palette-wisteria, 30%);
     outline-offset: 2px;
   }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .buttonLink {
@@ -190,8 +202,8 @@
 .hr {
   border: none;
   border-bottom: 1px solid add-alpha($ca-palette-ink, 10%);
-  margin-top: $ca-grid;
-  margin-bottom: calc(#{$ca-grid * 2} - 1px);
+  margin-top: $ca-grid * 3;
+  margin-bottom: calc(#{$ca-grid * 3} - 1px);
 }
 
 // Hack for our design system website: the [[toc]] table-of-contents generator places the

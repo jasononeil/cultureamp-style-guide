@@ -27,9 +27,9 @@ const SubNav = ({ closeNav }, context) => {
       >
         <Icon icon={close} role="img" title="Close Nav" />
       </button>
-      <h1>
+      <h2>
         <span>{sectionInfo.title}</span>
-      </h1>
+      </h2>
       {sectionInfo.children.map(child => (
         <SubNavSection closeNav={closeNav} {...child} key={child.href} />
       ))}
@@ -44,8 +44,8 @@ SubNav.contextTypes = {
 };
 
 const SubNavSection = ({ href, title, children, closeNav }) => (
-  <div>
-    <h2 className={styles.navSectionLabel}>{title}</h2>
+  <div className={styles.navSection}>
+    <h3 className={styles.navSectionLabel}>{title}</h3>
     {children.map(child => (
       <SubNavItem closeNav={closeNav} {...child} key={child.href} />
     ))}
@@ -59,10 +59,7 @@ const SubNavItem = ({ href, title, closeNav }) => (
     onClick={closeNav}
     activeClassName={classNames(styles.active, iconStyles.active)}
   >
-    <span className={styles.navItemIcon}>
-      <Icon icon={page} role="presentation" />
-    </span>
-    <span>{title}</span>
+    {title}
   </Link>
 );
 

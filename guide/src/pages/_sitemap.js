@@ -1,5 +1,5 @@
 import enso from 'cultureamp-style-guide/icons/ca-monogram.svg';
-import starCircle from 'cultureamp-style-guide/icons/promotion.svg';
+import home from 'cultureamp-style-guide/icons/home.svg';
 
 const sitemap = {
   title: 'Kaizen',
@@ -9,8 +9,16 @@ const sitemap = {
     {
       title: 'Product',
       href: '/',
-      icon: starCircle,
+      icon: home,
       children: [
+        {
+          title: 'Visual Styles',
+          href: '/visuals',
+          children: [
+            { title: 'Colors', href: '/visuals/colors' },
+            { title: 'Icons', href: '/visuals/icons' },
+          ],
+        },
         {
           title: 'Components',
           href: '/components',
@@ -22,14 +30,6 @@ const sitemap = {
           children: [
             { title: 'Product Language Style Guide', href: '/language' },
             { title: 'Product Writing Checklist', href: '/language/checklist' },
-          ],
-        },
-        {
-          title: 'Visual Styles',
-          href: '/visuals',
-          children: [
-            { title: 'Colors', href: '/visuals/colors' },
-            { title: 'Icons', href: '/visuals/icons' },
           ],
         },
       ],

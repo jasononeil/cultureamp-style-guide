@@ -10,18 +10,20 @@
   $padding: $ca-grid / 2;
   padding: $padding;
   overflow-y: auto;
-  h1 {
+  h2 {
     span {
       @include ca-type-ideal-display;
-      font-weight: $ca-weight-light;
       display: block;
     }
     margin: 0;
     border-bottom: add-alpha($ca-palette-ink, 10%) 1px solid;
-    padding: $padding;
-    padding-bottom: calc(#{$padding} - 1px);
+    padding: 0 $padding calc(#{$padding * 2} - 1px) $padding;
     pointer-events: none;
   }
+}
+
+.navSection {
+  margin-bottom: $ca-grid * 2;
 }
 
 .navSectionLabel {
@@ -33,8 +35,7 @@
 .navItem {
   @include ca-type-ideal-control-action;
   font-weight: $ca-weight-light;
-  display: flex;
-  flex-direction: row;
+  display: block;
   box-sizing: border-box;
   height: $ca-grid * 2;
   padding: $ca-grid / 2;
@@ -55,13 +56,6 @@
     color: $ca-palette-ocean;
     background-color: transparent;
   }
-}
-
-.navItemIcon {
-  display: inline-block;
-  margin-right: 10px;
-  position: relative;
-  top: 2px;
 }
 
 .closeBtn {

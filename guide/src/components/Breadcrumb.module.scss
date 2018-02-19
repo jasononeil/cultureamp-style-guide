@@ -13,7 +13,7 @@
 
   .text {
     display: block;
-    @include ca-type-ideal-control-action;
+    @include ca-type-ideal-small;
     font-weight: $ca-weight-light;
   }
 }

@@ -1,0 +1,13 @@
+@import '~cultureamp-style-guide/styles/type';
+@import '~cultureamp-style-guide/styles/color';
+
+.label {
+  @include ca-type-ideal-body;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.checked {
+  color: add-alpha($ca-palette-ink, 50%);
+  text-decoration: line-through;
+}

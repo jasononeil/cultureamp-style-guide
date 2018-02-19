@@ -14,24 +14,29 @@
 
 .cardToggleButton {
   composes: buttonReset from 'components/HtmlContent.module.scss';
+  composes: interactiveIconWrapper from 'cultureamp-style-guide/components/Icon/Icon.module.scss';
   color: $ca-palette-ink;
-  display: block;
+  display: flex;
+  width: 100%;
   color: $ca-palette-ink;
   cursor: pointer;
 }
 
+.toggleButtonLabel {
+  flex: 1;
+  text-align: left;
+}
+
 .toggleIconWrapper {
-  color: add-tint($ca-palette-ink, 80);
   position: relative;
   top: 4px;
   left: 2px;
+  width: 24px;
 }
 
 .colorCard h4 {
   @include ca-type-ideal-labels-and-legends;
-  text-transform: uppercase;
   color: add-tint($ca-palette-ink, 50%);
-  font-weight: $ca-weight-book;
   margin: $ca-grid/2 0;
 }
 
@@ -129,19 +134,17 @@ $accessibilityTileWidth: 46px;
 }
 
 .dropdownItem strong {
-  @include ca-type-ideal-small;
+  @include ca-type-ideal-labels-and-legends;
   @include ca-inherit-baseline;
-  text-transform: uppercase;
-  display: inline-block;
-  width: 4em;
+  width: 25%;
 }
 
 .dropdownItem input {
-  @include ca-type-ideal-labels-and-legends;
+  @include ca-type-ideal-small;
   @include ca-inherit-baseline;
   opacity: 0.4;
-  flex: 1;
   outline: none;
+  width: 75%;
   appearance: none;
   border: 0;
   padding: 0;

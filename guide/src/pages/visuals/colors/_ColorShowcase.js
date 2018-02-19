@@ -1,7 +1,6 @@
 import React from 'react';
 import { ActionLink } from 'components/Link';
 import styles from './index.module.scss';
-import htmlStyles from 'components/HtmlContent.module.scss';
 import ColorCard from './_ColorCard.js';
 
 class ColorShowcase extends React.Component {
@@ -34,7 +33,7 @@ class ColorShowcase extends React.Component {
     const showAccessibility = this.state.showAccessibility[title];
     return [
       <div className={styles.gridHeader} key={title}>
-        <h2 className={htmlStyles.h2}>{title}</h2>
+        <h2 className={styles.sectionHeader}>{title}</h2>
         <div className={styles.toggleAccessibilityButton}>
           <ActionLink action={() => this.toggleAccessibility(title)}>
             {showAccessibility
