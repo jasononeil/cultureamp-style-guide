@@ -2,8 +2,7 @@
 
 ## Viewing the Living Style Guide
 
-Visit the living style guide at
-<https://cultureamp.github.io/cultureamp-style-guide>.
+Visit the living style guide at <http://www.cultureamp.design>.
 
 Alternatively, build it yourself:
 
